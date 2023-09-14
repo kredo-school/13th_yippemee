@@ -86,7 +86,7 @@ $ type ~/.ssh/id_rsa.pub
 
 ##### 1. Clone repository
 ```
-$ git clone git@github.com:kredo-school/samurai_travel.git
+$ git clone git@github.com:kredo-school/13th_yippemee.git
 ```
 
 ##### 2. Go to your directory
@@ -95,7 +95,7 @@ $ cd Desktop
 ```
 
 ```
-$ cd samurai_travel
+$ cd 13th_yippemee
 ```
 
 ##### 3. Create .env
@@ -106,7 +106,7 @@ $ cp .env.example .env
 ##### 4. Modify .env L14
 <kbd><img width="400" alt="Screenshot 2022-12-14 at 3 03 57 PM" src="https://user-images.githubusercontent.com/119660809/207519051-4baa21c0-74e2-4d50-9eed-0c4e13f5c981.png"><kbd>
     
-##### DB_DATABASE=samurai_travel
+##### DB_DATABASE=13th_yippemee
 
 ##### 5. install php 
 ```
@@ -142,7 +142,7 @@ $ mysql -u root
 
 ##### create your database 
 ```
-> create database samurai_travel;
+> create database 13th_yippemee;
 ```
 
 ##### exit mysql 
@@ -210,11 +210,11 @@ http://127.0.0.1:8000/
 ## Set Sequel Ace    
 <kbd><img width="400" alt="Screenshot 2022-12-14 at 3 12 15 PM" src="https://user-images.githubusercontent.com/119660809/207520076-f413e459-9ab4-44bb-91fe-6a908dc8283d.png"><kbd>
 
-##### Name: localhost/samurai_travel
+##### Name: localhost/13th_yippemee
 ##### HOST: localhost
 ##### USERNAME: root
 ##### PASSWORD:     
-##### DATABASE: samurai_travel
+##### DATABASE: 13th_yippemee
 ##### PORT: 3306
 
     
