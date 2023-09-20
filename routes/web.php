@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 
@@ -29,3 +30,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //CREATE MYSELF
 Route::get('/profile/show', [ProfileController::class, 'show'])->name('profile.show');
 
+// Route::get('/users/private/group_lilst','group_list')->name('group_list');
+Route::get('/users/private/group_list', [HomeController::class, 'group_list'])->name('group_list');
