@@ -1,34 +1,27 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+@section('title', 'Profile')
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+@section('content')
+    @include('users.profile.header')
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{ TEST }}
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    {{-- show all posts here --}}
+    {{-- <div style="margin-top: 100px">
+        @if ($user->posts->isNotEmpty())
+            <div class="row">
+                @foreach ($user->posts as $post)
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="{{ route('post.show', $post->id) }}">
+                            <img src="{{ $post->image }}" alt="post id {{ $post->id }}" class="grid-img">
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        @else
+            <h3 class="text-muted text-center">No Posts Yet</h3>
+        @endif
+    </div> --}}
+@endsection
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
-    {{-- css --}}
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
-</head>
-<body>
-    {{ __('TEST') }}
-
-</body>
-</html>
