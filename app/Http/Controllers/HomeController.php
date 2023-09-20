@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function group_list()
+    {
+        return view ('users.private.group_list');
+    }
 }

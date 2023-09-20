@@ -5,8 +5,8 @@
 @section('content')
     {{-- @include() navbar here --}}
 
-    <div class="container mt-3 my-auto">
-        <h1 class="text-warning">Make a plan from place!</h1>
+    <div class="container mx-auto my-auto">
+        <h1 class="test-warning">Make a plan from place!</h1>
         <p>map icon here</p>
     </div>
 
