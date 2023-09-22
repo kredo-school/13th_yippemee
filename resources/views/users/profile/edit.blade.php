@@ -37,13 +37,14 @@ a.btn--green:hover {
   background: # fff20a;
   border-bottom: 2px solid #E6F2E9;
 }
+
 </style>
 
 
 
 <div class="row justify-content-center">
     <div class="col-6">
-        <form action="#" method="post" class="bg-white shadow rounded-3 p-5" enctype="multipart/form-data">
+        <form action="#" method="post" class="shadow rounded-3 p-5" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
             <h2 class="h3 mb-0 fw-light text-center" class="list-group-item">Update Profile</h2>
@@ -64,21 +65,41 @@ a.btn--green:hover {
             </div>
 
             <div class="mb-3">
-                <label for="name" class="form-label fw-bold">Name</label>
-                <input type="text" name="name" id="name" value="{{ "NAME" }}" class="form-control" autofocus>
-                </div>
-
-
-
-            <div class="mb-3">
-                <label for="name" class="form-label fw-bold">User Name</label>
-                <input type="text" name="name" id="name" value="{{ "USER NAME" }}" class="form-control" autofocus>
+                <label for="name" class="form-label fw-bold mb-0">Name</label>
+                <input type="text" name="name" id="name" value="" class="form-control" autofocus>
             </div>
 
+            <div class="mb-3">
+                <label for="user_name" class="form-label fw-bold mb-0">User Name</label>
+                <input type="text" name="user_name" id="user_name" value="" class="form-control" autofocus>
+            </div>
+
+            <div class="mb-3">
+                <label for="current_city" class="form-label fw-bold mb-0">Current City</label>
+                <input type="text" name="current_city" id="current_city" value="" class="form-control" autofocus>
+            </div>
+
+            <div class="mb-3">
+                <label for="restaurant" class="form-label fw-bold mb-0">Best Restaurant</label>
+                <input type="text" name="restaurant" id="restaurant" value="" class="form-control" autofocus>
+            </div>
+
+            <div class="mb-3">
+                <label for="genre" class="form-label fw-bold mb-0">Favorite Genre</label>
+                <input type="text" name="genre" id="genre" value="" class="form-control" autofocus>
+            </div>
+
+            <div class="mb-3">
+                <label for="introduction" class="form-label fw-bold mb-0">About you</label>
+                <textarea name="introduction" id="introduction" rows="5" placeholder="Write some details about yourself" class="form-control"></textarea>
+            </div>
+
+            {{-- Button --}}
             <div class="text-end">
             <a href="#" class="btn btn--green btn--cubic px-5">Cancel</a>
             <a href="#" class="btn btn--yellow btn--cubic px-5">Save</a>
             </div>
+            {{-- End Button --}}
         </form>
     </div>
 </div>

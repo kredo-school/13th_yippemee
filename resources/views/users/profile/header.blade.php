@@ -1,60 +1,44 @@
-<div class="row">
-    <div class="col-4">
-        @if ($user->avatar)
-            <img src="{{ $user->avatar }}" alt="{{ $user->name }}" class="img-thumbnail rounded-circle d-block mx-auto avatar-lg">
-        @else
-            <i class="fa-solid fa-circle-user text-secondary d-block text-center icon-lg"></i>
-        @endif
+
+
+{{-- Header --}}
+<div class="row bg-white container ms-auto me-auto mb-3 shadow rounded-3 p-5w">
+    <div class="col-5 mb-3 mt-3">
+            <i class="fa-regular fa-circle-user icon-md d-block text-end"></i>
     </div>
 
-    <div class="col-8">
-        <div class="row mb-3">
+    <div class="col-5">
+        <div class="row">
             <div class="col-auto">
-                <h2 class="display-6 mb-0">{{ $user->name }}</h2>
-            </div>
-
-            <div class="col-auto p-2">
-                @if (Auth::user()->id === $user->id)
-                    <a href="{{ route('profile.edit') }}" class="btn btn-outline-secondary btn-sm fw-bold">Edit Profile</a>
-                @else
-                    @if ($user->isFollowed())
-                    {{-- UNFOLLOW --}}
-                    <form action="{{ route('follow.destroy', $user->id) }}" method="post">
-                        @csrf
-                        @method('DELETE')
-
-                        <button type="submit" class="btn btn-outline-secondary btn-sm fw-bold">
-                            Following
-                        </button>
-                    </form>
-                    @else
-                    {{-- FOLLOW --}}
-                    <form action="{{ route('follow.store', $user->id) }}" method="post" class="d-inline">
-                        @csrf
-                        <button type="submit" class="btn btn-primary btn-sm fw-bold">Follow</button>
-                    </form>
-                    @endif
-                @endif
+                <div class="display-6 mt-3">{{ "John Smith" }}
+                <a href="#" class="btn-sm mb-3 ms-3"><i class="fa-solid fa-pen-clip icon-sm"></i></a></div>
             </div>
         </div>
-
         <div class="row mb-3">
-            <div class="col-auto">
-                <a href="{{ route('profile.show', $user->id) }}" class="text-decoration-none text-dark">
-                    <strong>{{ $user->posts->count() }}</strong> {{ $user->posts->count() == 1 ? 'post' : 'posts' }}
-                </a>
-            </div>
-            <div class="col-auto">
-                <a href="{{ route('profile.followers', $user->id) }}" class="text-decoration-none text-dark">
-                    <strong>{{ $user->followers->count() }}</strong> {{ $user->followers->count() == 1 ? 'follower' : 'followers' }}
-                </a>
-            </div>
-            <div class="col-auto">
-                <a href="{{ route('profile.following', $user->id) }}" class="text-decoration-none text-dark">
-                    <strong>{{ $user->following->count() }}</strong> following
-                </a>
-            </div>
+            <div class="mt-0">{{"@JohnSmith12345678"}}</div>
         </div>
-        <p class="fw-bold">{{ $user->introduction }}</p>
+        <div class="row mb-4"></div>
+    </div>
+    <div class="col-12">
+        <div class="row justify-content-center me-5">
+            <div class="col-auto"><h4><a href="#" class="text-decoration-none">Post</a></h4></div>
+            <div class="col-auto"><h4><a href="#" class="text-decoration-none">Vists</a></h4></div>
+            <div class="col-auto"><h4><a href="#" class="text-decoration-none">Bucket Lists</a></h4></div>
+            <div class="col-auto"> <h4><a href="#" class="text-decoration-none">Schedule</a></h4></div>
+            <div class="col-auto"><h4><a href="#" class="text-decoration-none">Groups</a></h4></div>
+        </div>
     </div>
 </div>
+{{-- End of header --}}
+
+{{-- INTRO --}}
+<div class="row bg-white container ms-auto me-auto shadow rounded-3 p-5w">
+    <div class="col-3 mb-3 mt-3">
+        <div class="row bg-white ms-auto me-auto shadow rounded-3 p-5w">
+            <h4 class="fw-bold mt-2 mb-4">intro</h4>
+            <h5><div class="mb-4"><a href="#" class="text-decoration-none mb-2"><i class="fa-solid fa-house"></i> Live</h5></a>
+            <h5><div class="mb-4"><a href="#" class="text-decoration-none"><i class="fa-solid fa-utensils"></i> Best restaurant</h5></a>
+            <h5><div class="mb-4"><a href="#" class="text-decoration-none"><i class="fa-solid fa-pizza-slice"></i> Favorite Genre</h5></a>
+            <h5><div class="mb-4"><a href="#" class="text-decoration-none"><i class="fa-solid fa-plus"></i> {{ "Write about yourself" }}</h5></a>
+        </div>
+    </div>
+{{-- END of Intro--}}
