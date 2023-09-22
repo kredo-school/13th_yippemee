@@ -6,22 +6,22 @@
 <div class="container my-auto w-50">
     <div class="card">
         <div class="card-header bg-warning">
-            <div class="row">
-                <div class="col-10">
-                    <h3>
-                        <i class="fa-solid fa-square-plus fa-2x" style="color: #253c5c;"></i>
+            <div class="row align-items-center">
+                <div class="col-11 mt-2">
+                    <h1 style="color: #253c5c;">
+                        <i class="fa-solid fa-square-plus fa-xl" style="color: #253c5c;"></i>
                         Create a group
-                    </h3>
+                    </h1>
                 </div>
-                <div class="col-2">
-                    <div class="button"><i class="fa-solid fa-xmark" style="color: #253c5c;"></i></div>
+                <div class="col-1">
+                    <a href="#"><i class="fa-solid fa-xmark fa-2x" style="color: #253c5c;"></i></a>
                 </div>
             </div>
         </div>
         <form action="#" method="post">
             <div class="card-body">
                 <div class="form-group">
-                    <i class="fa-solid fa-circle"></i>
+                    <i class="fa-regular fa-circle fa-10x"></i>
                 </div>
 
                 <div class="form-group">
@@ -35,15 +35,17 @@
                     <input type="text" placeholder="Members">
 
                     <label for="description"></label>
-                    <textarea name="description" id="description" cols="60" rows="10"></textarea>
+                    <textarea name="description" id="description" cols="60" rows="10" placeholder="What is this group for?"></textarea>
                 </div>
             </div>
 
             <div class="card-footer border-0">
                 <div class="btn-radius-gradient-wrap">
-                    <a href="" class="btn btn-radius-gradient btn-primary">Create</a>
+                    <a href="" class="btn btn-radius-gradient">Create</a>
                 </div>
             </div>
         </form>
     </div>
 </div>
+
+@endsection

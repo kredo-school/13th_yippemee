@@ -11973,22 +11973,44 @@ textarea.form-control-lg {
   }
 }
 
+/* user/ calendar */
+
+
+*{
+    font-family: Muli;
+}
+h1{
+    font-family: Marcellus;
+}
 
 /* group list */
-  label {
+label {
     cursor: pointer;
-  }
+}
 
-  #menu-toggle {
+#menu-toggle {
     display: none;
-  }
+}
 
 
-  #menu {
+#menu {
     display: none;
-  }
+}
 
 
-  #menu-toggle:checked + #menu {
+#menu-toggle:checked + #menu {
     display: block;
+}
+
+/* modal form */
+input,textarea{
+    border-bottom:2px solid #253c5c;
+    border-right:none;
+    border-left:none;
+    border-top:none;
+}
+
+::placeholder {
+    color: #253c5c;
   }
+

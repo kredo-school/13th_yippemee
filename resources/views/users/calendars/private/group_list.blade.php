@@ -50,37 +50,6 @@
         </div>
     </div>
 
-
-{{-- modal --}}
-<div class="modal js-modal">
-  <div class="modal-bg js-modal-close"></div>
-
-    <div class="modal-content">
-      <p>ここにコンテンツが入ります。ここにコンテンツが入ります。ここにコンテンツが入ります。</p>
-      <a href="#" class="js-modal-close">閉じる</a>
-    </div>
-</div>
-
-<script>
-  var scrollPosition;
-
-  // モーダルウィンドウを開く
-  $('.js-modal-open').on('click', function(){
-    scrollPosition = $(window).scrollTop();
-    $('body').addClass('fixed').css({'top': -scrollPosition});
-    $('.js-modal').fadeIn();
-    return false;
-  });
-
-  // モーダルウィンドウを閉じる
-  $('.js-modal-close').on('click', function(){
-    $('body').removeClass('fixed');
-    window.scrollTo( 0 , scrollPosition );
-    $('.js-modal').fadeOut();
-    return false;
-  });
-</script>
-
 @endsection
 
 
