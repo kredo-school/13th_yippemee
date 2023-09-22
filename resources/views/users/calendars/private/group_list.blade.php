@@ -23,7 +23,7 @@
                 <div class="col-4"></div>
                 <div class="col-4 text-center"><h1 class="text-primary">Group List</h1></div>
                 <div class="col-4 text-end">
-                    <div class="btn" id="openModal"><i class="fa-solid fa-square-plus fa-3x" style="color: #253c5c;"></i></div>
+                    <a href="#" class="js-modal-open"><i class="fa-solid fa-square-plus fa-3x" style="color: #253c5c;"></i></a>
                 </div>
                 {{-- add_group modal --}}
                 <hr>
@@ -38,19 +38,12 @@
                 </div>
 
                 <div class="col-2">
-                    <div class="dropdown">
-                        <div class="btn text-end"><i class="fa-solid fa-bars fa-2x" style="color: #253c5c;"></i></div>
-
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">
-                                <i class="fa-regular fa-pen-to-square"></i> Edit
-                            </a>
-                            {{-- add edit modal --}}
-                            <button class="dropdown-item" data-bs-toggle="modal">
-                                <i class="fa-regular fa-trash-can"></i> Delete
-                            </button>
-                        </div>
-                    </div>
+                    <label for="menu-toggle"><i class="fa-solid fa-bars fa-2x" style="color: #253c5c;"></i></label>
+                    <input type="checkbox" id="menu-toggle" />
+                    <ul id="menu">
+                        <li><a href="#">Edit</a></li>
+                        <li><a href="#">Delete</a></li>
+                    </ul>
                 </div>
                 <hr>
             </div>
@@ -58,17 +51,35 @@
     </div>
 
 
+{{-- modal --}}
+<div class="modal js-modal">
+  <div class="modal-bg js-modal-close"></div>
 
-    {{-- create a group --}}
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span id="closeModal" class="close">&times;</span>
-            <h2>モーダルのタイトル</h2>
-            <p>モーダルのコンテンツ</p>
-        </div>
+    <div class="modal-content">
+      <p>ここにコンテンツが入ります。ここにコンテンツが入ります。ここにコンテンツが入ります。</p>
+      <a href="#" class="js-modal-close">閉じる</a>
     </div>
+</div>
 
+<script>
+  var scrollPosition;
 
+  // モーダルウィンドウを開く
+  $('.js-modal-open').on('click', function(){
+    scrollPosition = $(window).scrollTop();
+    $('body').addClass('fixed').css({'top': -scrollPosition});
+    $('.js-modal').fadeIn();
+    return false;
+  });
+
+  // モーダルウィンドウを閉じる
+  $('.js-modal-close').on('click', function(){
+    $('body').removeClass('fixed');
+    window.scrollTo( 0 , scrollPosition );
+    $('.js-modal').fadeOut();
+    return false;
+  });
+</script>
 
 @endsection
 

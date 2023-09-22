@@ -30,4 +30,9 @@ class HomeController extends Controller
     {
         return view ('users.calendars.private.group_list');
     }
+
+    public function add_group()
+    {
+        return view ('users.modals.add_group');
+    }
 }
