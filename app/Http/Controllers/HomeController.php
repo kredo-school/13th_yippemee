@@ -28,6 +28,6 @@ class HomeController extends Controller
 
     public function group_list()
     {
-        return view ('users.private.group_list');
+        return view ('users.calendars.private.group_list');
     }
 }

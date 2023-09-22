@@ -25,7 +25,7 @@
                 <div class="col-4 text-end">
                     <div class="btn" id="openModal"><i class="fa-solid fa-square-plus fa-3x" style="color: #253c5c;"></i></div>
                 </div>
-                {{-- add modal --}}
+                {{-- add_group modal --}}
                 <hr>
             </div>
 
