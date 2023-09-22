@@ -23,12 +23,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 //CREATE MYSELF
 Route::get('/profile/show', [ProfileController::class, 'show'])->name('profile.show');
+Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+
 
 // Route::get('/users/private/group_lilst','group_list')->name('group_list');
 Route::get('/users/private/group_list', [HomeController::class, 'group_list'])->name('group_list');
