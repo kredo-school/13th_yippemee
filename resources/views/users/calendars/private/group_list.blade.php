@@ -21,19 +21,21 @@
         <div class="container w-50 mt-5">
             <div class="row align-items-center bordered">
                 <div class="col-4"></div>
-                <div class="col-4 text-center"><h1 class="text-primary">Group List</h1></div>
+                <div class="col-4 text-center"><h1 style="color: #253c5c;">Group List</h1></div>
                 <div class="col-4 text-end">
-                    <a href="#" class="js-modal-open"><i class="fa-solid fa-square-plus fa-3x" style="color: #253c5c;"></i></a>
+                    <button type="button" class="border-0" data-bs-toggle="modal" data-bs-target="#add_group">
+                        <i class="fa-solid fa-square-plus fa-3x" style="color: #253c5c;"></i>
+                    </button>
                 </div>
-                {{-- add_group modal --}}
                 <hr>
             </div>
+
 
             {{-- group info foreach --}}
             <div class="row align-items-center">
                 <div class="col-3"><i class="fa-regular fa-circle-user fa-4x" style="color: #253c5c;"></i></div>
                 <div class="col-7">
-                    <div class="row"><h3><span>Name</span></h3></div>
+                    <div class="row"><h3 style="color: #253c5c;"><span>Name</span></h3></div>
                     <div class="row"><p><i class="fa-solid fa-location-dot" style="color: #253c5c;"></i> Restaurant's name</p></div>
                 </div>
 
@@ -49,7 +51,7 @@
             </div>
         </div>
     </div>
-
+    @include('users.modals.add_group')
 @endsection
 
 

@@ -30,4 +30,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // Route::get('/users/private/group_lilst','group_list')->name('group_list');
 Route::get('/users/calendars/private/group_list', [HomeController::class, 'group_list'])->name('group_list');
-Route::get('/users/modals/add_group', [HomeController::class, 'add_group'])->name('add_group');
+
