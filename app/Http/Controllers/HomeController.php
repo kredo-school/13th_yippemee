@@ -40,4 +40,9 @@ class HomeController extends Controller
     {
         return view('admin.plans.index');
     }
+
+    public function admin_posts_index()
+    {
+        return view('admin.posts.index');
+    }
 }

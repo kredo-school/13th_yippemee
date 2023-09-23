@@ -67,3 +67,22 @@
 .table thead.thead-plans th {
     color: #E6F2E9;
 }
+
+.table thead.thead-posts {
+    --bs-table-bg: #F1A29B !important;
+    --bs-table-color:#253C5C
+    ;
+}
+
+.icon-primary{
+    color:#0074d9
+}
+
+.modal-primary {
+    background-color: #0074d9;
+    color: #ffffff;
+}
+
+.icon-large {
+    font-size: 5rem;
+}
