@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +32,5 @@ Route::get('/profile/show', [ProfileController::class, 'show'])->name('profile.s
 
 // Route::get('/users/private/group_lilst','group_list')->name('group_list');
 Route::get('/users/private/group_list', [HomeController::class, 'group_list'])->name('group_list');
+Route::get('/myschedule', [HomeController::class, 'myschedule'])->name('myschedule');
+Route::get('/private/yourplan', [HomeController::class, 'yourplan'])->name('yourplan');

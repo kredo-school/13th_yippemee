@@ -1,0 +1,290 @@
+body{
+    background-image: url('/images/login-bg.png');
+    background-color:rgba(255,255,255,0.5);
+    background-blend-mode:lighten;
+    font: #253C5C;
+    font-family: 'Marcellus', serif;
+    font-family: 'Mulish', sans-serif;
+}
+.card{
+    background-color: #E6F2E9;
+}
+
+.btn-blue{
+    background-color:#253C5C ;
+    transition-duration: 0.5s;
+}
+
+.btn-blue:hover{
+    color: white;
+    background-color: #4e5c70;
+    box-shadow: 5px 5px 20px #777;
+}
+  
+  
+  @media print {
+    .table {
+      border-collapse: collapse !important; }
+    }
+  
+  body {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: normal;
+     }
+  
+  h2
+   {
+    line-height: 1.5;
+    font-weight: 400;
+    }
+  
+  .wrap-header {
+    position: relative;
+    width: 35%;
+    z-index: 0; }
+    .wrap-header:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: '';
+      background: #000;
+      opacity: .5;
+      z-index: -1; }
+
+  .button-wrap {
+    position: relative;
+    padding: 10px 0; }
+    .button-wrap .pre-button, .button-wrap .next-button {
+      cursor: pointer;
+      width: 1em;
+      height: 1em;
+      line-height: 1em;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      font-size: 18px; }
+     
+    .button-wrap .pre-button {
+      left: 20px; }
+    .button-wrap .next-button {
+      right: 20px; }
+  
+
+  .calendar-wrap {
+    width: 65%;
+    background: #fff;
+    padding: 40px 20px 20px 20px; }
+    
+  
+  #calendar {
+    width: 100%; }
+  
+  #calendar tr {
+    height: 5em; }
+  
+    .calendar tbody{
+        border-radius: 50%;
+    }
+
+  tbody td {
+    width: 14%;
+   
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    position: relative;
+    z-index: 0; }
+    tbody td:after {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: '';
+      width: 44px;
+      height: 44px;
+      margin: 0 auto;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      border-radius: 50%;
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s;
+      z-index: -1; }
+
+  
+  tbody td:hover, .selected {
+    color: #fff;
+    border: none; }
+  tbody td:hover:after, .selected:after {
+      background: #2a3246; }
+
+  
+
+    .head-day {
+  font-size: 5em;
+  line-height: 1;
+  color: #fff; }
+
+.head-month {
+  font-size: 2em;
+  line-height: 1;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 150; }
+
+  .elegant-calencar {
+    max-width: 1000px;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 5px;
+    }
+  
+  .wrap-header {
+    position: relative;
+    width: 35%;
+    z-index: 0; }
+    .wrap-header:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: '';
+      background: #000;
+      opacity: .5;
+      z-index: -1; }
+    @media (max-width: 767.98px) {
+      .wrap-header {
+        width: 100%;
+        padding: 20px 0; } }
+  
+  #header {
+    width: 100%;
+    position: relative; }
+    #header .pre-button, #header .next-button {
+      cursor: pointer;
+      width: 1em;
+      height: 1em;
+      line-height: 1em;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      font-size: 18px; }
+      #header .pre-button i, #header .next-button i {
+        color: #fff; }
+
+  .calendar-wrap {
+    width: 65%;
+  }
+    @media (max-width: 767.98px) {
+      .calendar-wrap {
+        width: 100%; } }
+
+  #today {
+    color: #fff; }
+    #today:after {
+      background: #e13a9d; }
+  
+      #reset {
+        display: block;
+        position: absolute;
+        right: 0.5em;
+        top: 0.5em;
+        color: rgba(255, 255, 255, 0.7);
+        cursor: pointer;
+        padding: 0 0.5em;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 4px;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        font-size: 11px; }
+  
+  #reset:hover {
+    color: #fff;
+    border-color: #fff; }
+  
+  #reset:active {
+    -webkit-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8); }
+  
+    /* myschedule modal */
+
+    .detal-right img{
+        width: 90%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .detal-right li{
+        cursor: pointer;
+        outline: none;
+        background:#333;
+        width:24%!important;
+        float: left;
+      }
+
+      .detal-right li img{
+        opacity: 0.4;/*選択されていないものは透過40%*/
+        aspect-ratio: 4 / 3;
+
+      }
+
+      .detal-right li img:hover{
+        opacity:1;/*選択されていないものは透過40%*/
+
+      }
+
+      .detal-right li.slick-current img{
+        opacity: 1;/*選択されているものは透過しない*/
+      }
+
+      .detal-right .slick-track {
+        transform: unset !important;/*画面幅サイズ変更に伴うサムネイル固定*/
+      }
+
+
+
+      ul{
+        margin:0;
+        padding: 0;
+        list-style: none;
+      }
+
+      iframe {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* yourplan */
+      .yourplan-img{
+        aspect-ratio: 16 / 9;
+        width: 70%;
+        object-fit: cover;
+      }
+
+      .yourplan{
+        background-color: #F1A29B;
+        color: white;
+      }
+
+      .noHover{
+        pointer-events: none;
+    }
+

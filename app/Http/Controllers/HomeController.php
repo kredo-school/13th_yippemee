@@ -30,4 +30,16 @@ class HomeController extends Controller
     {
         return view ('users.private.group_list');
     }
+
+    public function myschedule()
+    {
+        return view('users.myschadule');
+    }
+
+    public function yourplan()
+    {
+        return view('users.private.yourplan');
+    }
+
+  
 }
