@@ -41,6 +41,10 @@
     color: #2ca559; 
 }
 
+.modal-body{
+    color: #253C5C;
+}
+
 .modal-danger {
     background-color: #dc3545;
     color: #ffffff;
@@ -55,3 +59,11 @@
     color:#dc3545
 }
 
+.table thead.thead-plans {
+    --bs-table-bg: #617EA8 !important;
+    --bs-table-color:#E6F2E9;
+}
+
+.table thead.thead-plans th {
+    color: #E6F2E9;
+}

@@ -35,4 +35,9 @@ class HomeController extends Controller
     {
         return view('admin.users.index');
     }
+
+    public function admin_plans_index()
+    {
+        return view('admin.plans.index');
+    }
 }
