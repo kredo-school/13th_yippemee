@@ -16,3 +16,29 @@
 .text-decoration-none {color: #253C5C;}
 .mb-4 {color: #253C5C;}
 .text-center {color: #253C5C;}
+
+a.btn--yellow {
+    color: #253C5C;
+    background-color: #F1DD6C;
+    border-bottom: 5px solid #F1DD6C;
+  }
+
+  a.btn--yellow:hover {
+    margin-top: 3px;
+    color: #253C5C;
+    background: # fff20a;
+    border-bottom: 2px solid #F1DD6C;
+  }
+
+  a.btn--green {
+    color: #617EA8;
+    background-color: #E6F2E9;
+    border-bottom: 5px solid #E6F2E9;
+  }
+
+  a.btn--green:hover {
+    margin-top: 3px;
+    color: #617EA8;
+    background: # fff20a;
+    border-bottom: 2px solid #E6F2E9;
+  }
