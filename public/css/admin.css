@@ -1,0 +1,57 @@
+/* admin.css */
+.list-group .list-group-item {
+    background-color: #253C5C;
+    color: #ffffff;
+    font-family: 'Marcellus', serif;
+}
+
+.list-group-item:hover {
+    background-color: #E6F2E9;
+    color: #253C5C;
+    transition: background-color 0.3s;
+}
+
+.table thead {
+    --bs-table-bg: #253C5C !important;
+    --bs-table-color: #ffffff;
+    font-family: 'Marcellus', serif;
+}
+
+.table tbody {
+    font-family: 'Muli', serif;
+}
+
+.menu-hover .dropdown-item:hover {
+    background-color: #E6F2E9;  
+    color: #253C5C;
+    font-family: 'Muli', serif;            
+}
+
+.modal-success {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.modal-title-activate {
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
+}
+
+.icon-green{
+    color: #2ca559; 
+}
+
+.modal-danger {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+.modal-title-deactivate {
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
+}
+
+.icon-red{
+    color:#dc3545
+}
+

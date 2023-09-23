@@ -30,4 +30,9 @@ class HomeController extends Controller
     {
         return view ('users.private.group_list');
     }
+
+    public function admin_users_index()
+    {
+        return view('admin.users.index');
+    }
 }
