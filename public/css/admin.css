@@ -86,3 +86,24 @@
 .icon-large {
     font-size: 5rem;
 }
+
+.table thead.thead-genres {
+    --bs-table-bg: #F2C84B !important;
+    --bs-table-color:#253C5C;
+}
+
+.modal-warning {
+    background-color: #ffc107;
+    color: #253C5C;
+}
+
+.btn-close-edit {
+    color: #253C5C;
+}
+
+.text-width {
+    width: 400px;
+    text-align: left;
+    white-space: normal;
+    font-family: 'Muli', serif;   
+}

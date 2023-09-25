@@ -45,4 +45,9 @@ class HomeController extends Controller
     {
         return view('admin.posts.index');
     }
+
+    public function admin_genres_index()
+    {
+        return view('admin.genres.index');
+    }
 }

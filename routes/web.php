@@ -32,3 +32,4 @@ Route::get('/users/private/group_list', [HomeController::class, 'group_list'])->
 Route::get('/admin/users/index', [HomeController::class, 'admin_users_index'])->name('admin.users.index');
 Route::get('/admin/plans/index', [HomeController::class, 'admin_plans_index'])->name('admin.plans.index');
 Route::get('/admin/posts/index', [HomeController::class, 'admin_posts_index'])->name('admin.posts.index');
+Route::get('/admin/genres/index', [HomeController::class, 'admin_genres_index'])->name('admin.genres.index');
