@@ -11972,7 +11972,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-@media print {
+/* @media print {
     .table {
       border-collapse: collapse !important; }
     }
@@ -12141,4 +12141,4 @@ textarea.form-control-lg {
   #reset:active {
     -webkit-transform: scale(0.8);
     -ms-transform: scale(0.8);
-    transform: scale(0.8); }
+    transform: scale(0.8); } */
