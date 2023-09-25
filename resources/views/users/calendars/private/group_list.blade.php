@@ -23,7 +23,7 @@
                 <div class="col-4"></div>
                 <div class="col-4 text-center"><h1 style="color: #253c5c;">Group List</h1></div>
                 <div class="col-4 text-end">
-                    <button type="button" class="border-0" data-bs-toggle="modal" data-bs-target="#add_group">
+                    <button type="button" class="border-0" data-bs-toggle="modal" data-bs-target="#add-group">
                         <i class="fa-solid fa-square-plus fa-3x" style="color: #253c5c;"></i>
                     </button>
                 </div>
