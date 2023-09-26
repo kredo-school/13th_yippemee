@@ -2,7 +2,7 @@
   <div class="row">
       <div class="col-3">
         <a class="navbar-brand" href="{{ url('/') }}">
-        <img src="/images/logo.png" height="50px" class="mt-3 ms-3">
+        <img src="{{ asset('images/logo.png') }}" height="50px" class="mt-3 ms-3">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
