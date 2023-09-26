@@ -1,8 +1,8 @@
 <div class="container" style="background-color: #253C5C">
 
     <a class="navbar-brand text-white" href="{{ url('/') }}">
-        
-        <img src="/images/logo.png" height="40px" class="mt-1">
+
+        <img src="{{ asset('images/logo.png') }}" height="40px" class="mt-1">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
         <span class="navbar-toggler-icon"></span>
