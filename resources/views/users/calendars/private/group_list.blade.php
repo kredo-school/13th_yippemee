@@ -33,13 +33,13 @@
 
             {{-- group info foreach --}}
             <div class="row align-items-center">
-                <div class="col-3"><i class="fa-regular fa-circle-user fa-4x" style="color: #253c5c;"></i></div>
-                <div class="col-7">
+                <div class="col-3 ps-5"><i class="fa-regular fa-circle-user fa-4x" style="color: #253c5c;"></i></div>
+                <div class="col-7 ps-5">
                     <div class="row"><h3 style="color: #253c5c;"><span>Name</span></h3></div>
                     <div class="row"><p><i class="fa-solid fa-location-dot" style="color: #253c5c;"></i> Restaurant's name</p></div>
                 </div>
 
-                <div class="col-2">
+                <div class="col-2 ps-5">
                     <label for="menu-toggle"><i class="fa-solid fa-bars fa-2x" style="color: #253c5c;"></i></label>
                     <input type="checkbox" id="menu-toggle" />
                     <ul id="menu">

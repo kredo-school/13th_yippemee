@@ -1,8 +1,8 @@
 <div class="modal fade" id="add-group" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header border-warning">
-                <div class="row align-items-center">
+            <div class="modal-header add-header bg-warning">
+                <div class="row w-100 align-items-center">
                     <div class="col-11 mt-2">
                         <h1 style="color: #253c5c;">
                             <i class="fa-solid fa-square-plus fa-xl"></i>
@@ -10,7 +10,7 @@
                         </h1>
                     </div>
                     <div class="col-1">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" class="btn-close" aria-label="Close"></button>
                     </div>
                 </div>
             </div>
@@ -45,9 +45,7 @@
             </div>
 
             <div class="modal-footer border-0">
-                <div class="btn-radius-gradient-wrap">
-                    <a href="#" class="btn btn-radius-gradient btn-primary">Create</a>
-                </div>
+                <a href="#" class="btn btn-create btn-radius-gradient">Create</a>
             </div>
 
         </div>
