@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\VisitsController;
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -23,9 +24,13 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//CREATE MYSELF
+//CREATE PROFILE
 Route::get('/profile/show', [ProfileController::class, 'show'])->name('profile.show');
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+
+//CREATE VISITS
+Route::get('/visits/show', [VisitsController::class, 'show'])->name('visits.show');
+Route::delete('/visits/destroy', [VisitsController::class, 'destroy'])->name('visits.destroy');
 
 
 // Route::get('/users/private/group_lilst','group_list')->name('group_list');

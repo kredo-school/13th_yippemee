@@ -1,21 +1,15 @@
-.icon-lg {font-size: 9rem;}
-.icon-md {font-size: 3.5rem;}
-
 /* Profile */
-.col-3 {font-family: 'Marcellus', serif;}
-.col-5 {font-family: 'Marcellus', serif;}
-.col-9 {font-family: 'Marcellus', serif;}
-.col-12 {font-family: 'Marcellus', serif;}
+.main-font {font-family: 'Marcellus', serif;}
+.second-font {font-family: 'Muli', serif;}
 .icon-lg {font-size: 9rem;}
 .icon-md {font-size: 3.5rem;}
-.icon-sm {font-size: 2rem;}
-.display-6 {color: #253C5C;}
-.mt-0 {color: #253C5C;}
-.ms-3 {color: #253C5C;}
-.text-end {color: #253C5C;}
-.text-decoration-none {color: #253C5C;}
-.mb-4 {color: #253C5C;}
-.text-center {color: #253C5C;}
+.icon-sm {font-size: 1.5rem;}
+.main-font {color: #253C5C;}
+.second-font {color: #253C5C;}
+.icon-font {color: #253C5C;}
+.icon-font:hover {color: #617EA8;}
+.icon-font {font-family: 'Muli';}
+
 
 a.btn--yellow {
     color: #253C5C;
@@ -26,7 +20,7 @@ a.btn--yellow {
   a.btn--yellow:hover {
     margin-top: 3px;
     color: #253C5C;
-    background: # fff20a;
+    background: #F2C84B;
     border-bottom: 2px solid #F1DD6C;
   }
 
@@ -39,6 +33,11 @@ a.btn--yellow {
   a.btn--green:hover {
     margin-top: 3px;
     color: #617EA8;
-    background: # fff20a;
+    background: #C1E2E0;
     border-bottom: 2px solid #E6F2E9;
   }
+
+  /* Visits */
+  td.profile {color: #253C5C;}
+  td.profile {font-family: 'Muli';}
+  .icon-ex {font-size: 15rem;}
