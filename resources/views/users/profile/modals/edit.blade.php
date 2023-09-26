@@ -9,7 +9,7 @@
                 <form action="#" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
-                    <h2 class="h3 mb-0 fw-light text-center" class="list-group-item">Update Profile</h2></h1>
+                    <h2 class="h3 mb-0 fw-light text-center" class="list-group-item">Update_Profile</h2></h1>
         </div>
         <div class="modal-body">
         <p><div class="row mb-3">
