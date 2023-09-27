@@ -4,32 +4,33 @@
     <div class="container">
         <h2 class="mx-auto text-center mt-5 bg-white w-50 rounded"><u>Decide by Date</u></h2>
         <div class="row w-25">
-            <div class="col text-end">
-                <input type="radio" name="date" value="date">
-                <label for="date" class="fw-bold h4">Date</label>
-                <input type="radio" name="place" value="place" class="ms-3">
-                <label for="place" class="fw-bold h4">Place</label>
+            {{-- hover button --}}
+            <div class="hover-button">
+                <label class="rocker">
+                    <input type="checkbox">
+                    <span class="switch-left">M</span>
+                    <span class="switch-right">W</span>
+                </label>
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-12">
                         <div class="elegant-calencar d-md-flex">
                             <div class="wrap-header d-flex align-items-center img" >
-                                <p id="reset">Today</p>
-                                    <div class="header w-100" >
-                                        <div class="head-info" >
-                                            <div class="head-month text-center">September</div>
-                                            <div class="head-day ">16th</div>
-                                        </div>
-                                            <div class="head-month text-start ms-3
-                                            "><u>Title :</u></div>
-                                            <div class="head-month mt-3 text-start ms-3"><i class="fa-solid fa-map-pin me-2"></i>Location :</div>
-                                            <div class="head-month mt-3 text-start ms-3"><i class="fa-regular fa-clock me-2"></i>Time :</div>
-                                            <hr>
-                                            <div class="head-month text-start ms-3">Description:</div>
-                                            <hr>
-                                            <a href="#" class="text-end" data-bs-toggle="modal" data-bs-target="#activate-modal">Show more</a>
-                                        </div>
+                                <div class="header w-100" >
+                                    <div class="head-info" >
+                                        <div class="head-month text-center">September</div>
+                                        <div class="head-day ">16th</div>
+                                    </div>
+                                    <div class="head-month text-start ms-3"><u>Title :</u></div>
+                                    <div class="head-month mt-3 text-start ms-3"><i class="fa-solid fa-map-pin me-2"></i>Location :</div>
+                                    <div class="head-month mt-3 text-start ms-3"><i class="fa-regular fa-clock me-2"></i>Time :</div>
+                                    <hr>
+                                    <div class="head-month text-start ms-3">Description:</div>
+                                    <hr>
+                                    <a href="#" class="text-end" data-bs-toggle="modal" data-bs-target="#activate-modal">Show more</a>
+                                </div>
                             </div>
                             <div class="calendar-wrap">
                                 <div class="w-100 button-wrap">
