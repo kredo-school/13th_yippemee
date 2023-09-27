@@ -27,14 +27,18 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+
 
 
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+        <nav class="navbar navbar-expand-md shadow-sm" style="background-color: #253C5C">
+            {{-- <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -84,12 +88,16 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
+            </div> --}}
+            @include('layouts.navbar')
         </nav>
 
-        <main class="py-4">
+        <main>
             @yield('content')
         </main>
     </div>
 </body>
+<footer style="background-color: #617EA8;">
+    @include('layouts.footer')
+</footer>
 </html>
