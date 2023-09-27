@@ -14,6 +14,8 @@
 .footer-nav-item{
     position: relative;
     margin-right: 40px;
+    font-family: 'Muli', serif;
+
 }
 
 .footer-nav-item a:hover{
@@ -30,6 +32,12 @@
 .footer-nav-item:first-child::before {
     content: "";
 }
+
+
+.navbar-item {
+    font-family: 'Muli', serif;
+}
+
 
 .navbar-item a:hover{
     animation: zoom .3s;
@@ -87,4 +95,15 @@
     color: #F2C84B;
 }
 
+.main-text {
+    font-family: 'Marcellus', serif;
+}
+
+.main-p1 {
+    font-family: 'Marcellus', serif;
+}
+
+.main-p2 {
+    font-family: 'Muli', serif;
+}
 
