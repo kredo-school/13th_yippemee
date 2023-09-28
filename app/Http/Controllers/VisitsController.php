@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class VisitsController extends Controller
@@ -11,7 +12,7 @@ class VisitsController extends Controller
         return view('users.visits.show');
     }
 
-    public function destroy($id){
+    public function destroy(User $user){
         return redirect()->route('index');
     }
 

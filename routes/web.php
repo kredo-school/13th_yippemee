@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\BucketController;
 use App\Http\Controllers\VisitsController;
 use App\Http\Controllers\ProfileController;
 
@@ -30,7 +31,14 @@ Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.e
 
 //CREATE VISITS
 Route::get('/visits/show', [VisitsController::class, 'show'])->name('visits.show');
-Route::delete('/visits/destroy', [VisitsController::class, 'destroy'])->name('visits.destroy');
+Route::get('/visits/create', [VisitsController::class, 'create'])->name('visits.create');
+Route::delete('/visits/destroy/{id}', [VisitsController::class, 'destroy'])->name('visits.destroy');
+
+//CREATE BUCKET
+Route::get('/bucket/show', [BucketController::class, 'show'])->name('bucket.show');
+Route::get('/bucket/create', [BucketController::class, 'create'])->name('bucket.create');
+Route::delete('/bucket/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');
+
 
 
 // Route::get('/users/private/group_lilst','group_list')->name('group_list');

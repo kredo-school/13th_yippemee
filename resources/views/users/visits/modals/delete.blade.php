@@ -16,7 +16,7 @@
             </div>
 
             <div class="modal-footer border-0">
-                <form action="#" method="post">
+                <form action="{{ route('visits.destroy',1) }}" method="post">
                     @csrf
                     @method('DELETE')
                     <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">

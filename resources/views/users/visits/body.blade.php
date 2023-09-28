@@ -35,21 +35,24 @@
                             <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#edit-visits"></i> Edit
                         </a>
 
-                        {{-- Include Modal --}}
-                        @include('users.visits.modals.edit')
+                        <a href="#" class="dropdown-item">
+                            <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#delete-visits"></i> Delete
+                        </a>
 
-
-                        <button class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#delete-visits">
+                        {{-- <button class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#delete-visits">
                             <i class="fa-regular fa-trash-can"></i> Delete
-                        </button>
+                        </button> --}}
                     </div>
                     {{-- Include Modal here --}}
                     @include('users.visits.modals.delete')
+                    {{-- Include Modal --}}
+                    @include('users.visits.modals.edit')
             </div>
         </div>
 
         {{-- Adjusting the layout --}}
         <div class="col-3 mb-3 mt-3"></div>
+
 
         {{-- 2nd Post --}}
         <div class="col-3 ms-auto mb-3 mt-3">
@@ -86,16 +89,15 @@
                             <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#edit-visits"></i> Edit
                         </a>
 
-                            {{-- Include Modal --}}
-                            @include('users.visits.modals.edit')
-
-
-                            <button class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#delete-visits">
+                        {{-- 2nd modal --}}
+                            {{-- <button class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#delete-visits">
                                 <i class="fa-regular fa-trash-can"></i> Delete
-                            </button>
+                            </button> --}}
                         </div>
                             {{-- Include Modal here --}}
-                            @include('users.visits.modals.delete')
+                            {{-- @include('users.visits.modals.delete') --}}
+                            {{-- Include Modal --}}
+                            {{-- @include('users.visits.modals.edit') --}}
                 </div>
             </div>
 
