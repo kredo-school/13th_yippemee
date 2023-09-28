@@ -33,3 +33,6 @@ Route::get('/admin/users/index', [HomeController::class, 'admin_users_index'])->
 Route::get('/admin/plans/index', [HomeController::class, 'admin_plans_index'])->name('admin.plans.index');
 Route::get('/admin/posts/index', [HomeController::class, 'admin_posts_index'])->name('admin.posts.index');
 Route::get('/admin/genres/index', [HomeController::class, 'admin_genres_index'])->name('admin.genres.index');
+
+Route::get('/social/posts/create', [HomeController::class, 'social_posts_create'])->name('social.posts.create');
+Route::get('/social/posts/edit', [HomeController::class, 'social_posts_edit'])->name('social.posts.edit');
