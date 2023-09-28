@@ -11,7 +11,11 @@ class VisitsController extends Controller
         return view('users.visits.show');
     }
 
-    public function destroy(){
+    public function destroy($id){
         return redirect()->route('index');
+    }
+
+    public function create(){
+        return view('users.visits.create');
     }
 }
