@@ -29,8 +29,16 @@
                 </button>
                     <div class="dropdown-menu">
                         <a href="#" class="dropdown-item">
-                            <i class="fa-regular fa-pen-to-square"></i> Edit
+
+                        {{-- Modal Button --}}
+                        <a href="#" class="dropdown-item">
+                            <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#edit-visits"></i> Edit
                         </a>
+
+                        {{-- Include Modal --}}
+                        @include('users.visits.modals.edit')
+
+
                         <button class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#delete-visits">
                             <i class="fa-regular fa-trash-can"></i> Delete
                         </button>
@@ -71,16 +79,23 @@
                     <button class="btn btn-sm shadow-none" data-bs-toggle="dropdown">
                         <i class="fa-solid fa-ellipsis"></i>
                     </button>
+
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">
-                                <i class="fa-regular fa-pen-to-square"></i> Edit
-                            </a>
+                            {{-- Modal Button --}}
+                        <a href="#" class="dropdown-item">
+                            <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#edit-visits"></i> Edit
+                        </a>
+
+                            {{-- Include Modal --}}
+                            @include('users.visits.modals.edit')
+
+
                             <button class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#delete-visits">
                                 <i class="fa-regular fa-trash-can"></i> Delete
                             </button>
                         </div>
-                        {{-- Include Modal here --}}
-                        @include('users.visits.modals.delete')
+                            {{-- Include Modal here --}}
+                            @include('users.visits.modals.delete')
                 </div>
             </div>
 
