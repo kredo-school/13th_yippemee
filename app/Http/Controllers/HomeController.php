@@ -28,7 +28,17 @@ class HomeController extends Controller
 
     public function group_list()
     {
-        return view ('users.private.group_list');
+        return view ('users.calendars.private.group_list');
+    }
+
+    public function add_group()
+    {
+        return view('users.calendars.private.group_list');
+    }
+
+    public function create_plan()
+    {
+        return view('users.calendars..group');
     }
 
     public function admin_users_index()
