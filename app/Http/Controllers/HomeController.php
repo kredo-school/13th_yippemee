@@ -35,4 +35,8 @@ class HomeController extends Controller
     {
         return view ('users.calendars.public.calendar');
     }
+    public function showWeekly()
+    {
+        return view ('users.calendars.public.weekly');
+    }
 }

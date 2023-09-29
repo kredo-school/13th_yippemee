@@ -3,21 +3,32 @@
 @section('content')
     <div class="container">
         <h2 class="mx-auto text-center mt-5 bg-white w-50 rounded"><u>Decide by Date</u></h2>
-        <div class="row w-25">
-            {{-- hover button --}}
-            <div class="hover-button">
-                <label class="rocker">
-                    <input type="checkbox">
-                    <span class="switch-left">M</span>
-                    <span class="switch-right">W</span>
-                </label>
+        <div class="row w-100">
+            <div class="col-8">
+                {{-- hover button --}}
+                <div class="hover-button">
+                    <label class="rocker">
+                        <input type="checkbox" class="hover-check">
+                        <span class="switch-left">M</span>
+                        <span class="switch-right">W</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-2">
+
+            </div>
+            <div class="col-2">
+                <a href="#" class="btn btn-create-plan" data-bs-toggle="modal" data-bs-target="#create-plan"><i class="fa-regular fa-calendar-plus fa-3x"></i></a>
             </div>
         </div>
 
+        {{-- month --}}
+        {{-- カレンダーの左側の部分をとって左右から出てくるモーダルに情報を入れるようにする --}}
+        {{-- ホバーボタンをカレンダーのdivの中に入れる --}}
         <div class="row">
             <div class="col-md-12">
                         <div class="elegant-calencar d-md-flex">
-                            <div class="wrap-header d-flex align-items-center img" >
+                            {{-- <div class="wrap-header d-flex align-items-center img" >
                                 <div class="header w-100" >
                                     <div class="head-info" >
                                         <div class="head-month text-center">September</div>
@@ -31,7 +42,7 @@
                                     <hr>
                                     <a href="#" class="text-end" data-bs-toggle="modal" data-bs-target="#activate-modal">Show more</a>
                                 </div>
-                            </div>
+                            </div> --}}
                             <div class="calendar-wrap">
                                 <div class="w-100 button-wrap">
                                     <div class="pre-button d-flex align-items-center justify-content-center pt-4"><i class="fa fa-chevron-left fw-bold"></i>
@@ -42,7 +53,7 @@
                                     <div class="next-button d-flex align-items-center justify-content-center pt-4"><i class="fa fa-chevron-right"></i>
                                     </div>
                                 </div>
-                                <table id="calendar">
+                                <table id="public-calendar">
                                     <thead>
                                         <tr>
                                             <th>Sun</th>
@@ -61,7 +72,11 @@
                                             <td></td>
                                             <td></td>
                                             <td></td>
-                                            <td>1</td>
+                                            <td>
+                                                <button type="button" class="btn btn-day" data-toggle="modal" data-target="#detail-modal">
+                                                   1
+                                                </button>
+                                            </td>
                                             <td>2</td>
                                         </tr>
                                         <tr>
@@ -113,13 +128,9 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="row text-center">
-                            <div class="col">
-                                <button class="btn btn-warning mt-5 w-25 ">Back</button>
-                            </div>
-                        </div>
                 </div>
             </div>
         </div>
     </div>
+    @include('users.modals.detail')
 @endsection
