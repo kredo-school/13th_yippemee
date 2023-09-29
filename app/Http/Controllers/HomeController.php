@@ -36,9 +36,42 @@ class HomeController extends Controller
         return view('users.myschadule');
     }
 
-    public function yourplan()
+    public function privateyourplan()
     {
         return view('users.private.yourplan');
+    }
+
+    public function publicyourplan()
+    {
+        return view('users.public.yourplan');
+    }
+
+    public function restaurantlist()
+    {
+        return view('users.restaurant_lists.index');
+    }
+
+
+    public function genrejapanese()
+    {
+        return view('users.restaurant_lists.genre.japanese');
+    }
+    public function genreitalian()
+    {
+        return view('users.restaurant_lists.genre.italian');
+    }
+    public function genrechinese()
+    {
+        return view('users.restaurant_lists.genre.chinese');
+    }
+    public function genrecafe()
+    {
+        return view('users.restaurant_lists.genre.cafe');
+    }
+
+    public function detail()
+    {
+        return view('users.restaurant_lists.restaurant_detail');
     }
 
   

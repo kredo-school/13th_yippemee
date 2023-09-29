@@ -3,8 +3,8 @@ body{
     background-color:rgba(255,255,255,0.5);
     background-blend-mode:lighten;
     font: #253C5C;
-    font-family: 'Marcellus', serif;
-    font-family: 'Mulish', sans-serif;
+    font-family: 'Marcellus';
+    font-family: 'Mulish';
 }
 .card{
     background-color: #E6F2E9;
@@ -37,6 +37,7 @@ body{
    {
     line-height: 1.5;
     font-weight: 400;
+    font-family: 'Marcellus';
     }
   
   .wrap-header {
@@ -126,7 +127,7 @@ body{
 
   
 
-    .head-day {
+.head-day {
   font-size: 5em;
   line-height: 1;
   color: #fff; }
@@ -139,7 +140,7 @@ body{
   text-transform: uppercase;
   font-weight: 150; }
 
-  .elegant-calencar {
+.elegant-calencar {
     max-width: 1000px;
     text-align: center;
     position: relative;
@@ -148,7 +149,7 @@ body{
     border-radius: 5px;
     }
   
-  .wrap-header {
+.wrap-header {
     position: relative;
     width: 35%;
     z-index: 0; }
@@ -287,4 +288,18 @@ body{
       .noHover{
         pointer-events: none;
     }
+
+    /* restaurant-list */
+
+    .restaurant-list img{  
+        aspect-ratio: 4 / 3;
+        width: 75%;
+        object-fit:cover;
+    }
+
+    .area-list img{
+        height: 200px;
+        object-fit:cover;
+    }
+
 

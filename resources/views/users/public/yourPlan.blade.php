@@ -10,10 +10,10 @@
             <h2 class="h1  fw-bold mt-3 mb-3">--- Your Plan ---</h2>
             <img src="/images/cafe.png" alt="" class="yourplan-img rounded">
             <p class="h2 mt-5 mb-3"><u>12th September, 2023</u></p>
-            <table class="table mb-5 mx-auto w-50 rounded noHover">          
+            <table class="table mb-5 mx-auto w-50 rounded noHover bg-white">          
                 <tr>
                     <td class="w-25"><i class="fa-solid fa-utensils"></td>
-                    <td class="w-75">Restaurant Name</td>
+                    <td class="w-75 h4">Restaurant Name</td>
                 </tr>
                 <tr>
                     <td><i class="fa-solid fa-clock"></td>
@@ -29,10 +29,10 @@
                 </tr>
             </table>
             <div class="row mb-5">
-                <button class="btn btn-lg btn-warning w-25 mx-auto mb-5 "data-bs-toggle="modal" data-bs-target="#privatecreateplan-modal">Back</button>
+                <button class="btn btn-lg btn-warning w-25 mx-auto mb-5 "data-bs-toggle="modal" data-bs-target="#publiccreateplan-modal">Back</button>
             </div>
         </div>
         <p>&nbsp;</p>
     </div>
-    @include('users.private.createplan')
+    @include('users.public.createplan')
 @endsection
