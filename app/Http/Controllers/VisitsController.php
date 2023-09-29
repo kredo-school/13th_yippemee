@@ -13,6 +13,7 @@ class VisitsController extends Controller
     }
 
     public function destroy(User $user){
+        print($user);
         return redirect()->route('index');
     }
 

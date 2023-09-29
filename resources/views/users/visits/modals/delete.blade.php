@@ -1,3 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <div class="modal fade" id="delete-visits">
     <div class="modal-dialog">
         <div class="modal-content border-danger">
@@ -16,15 +18,22 @@
             </div>
 
             <div class="modal-footer border-0">
-                <form action="{{ route('visits.destroy',1) }}" method="post">
+                <form action="#" method="">
                     @csrf
                     @method('DELETE')
                     <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">
                         Cancel
                     </button>
-                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    <input type="button" class="btn btn-danger btn-sm" onclick="delete_visits()" id="delete_visits" value="delete">
+                    {{-- <button class="btn btn-danger btn-sm" onclick="delete_visits()" id="delete_visits">Delete</button> --}}
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+function delete_visits() {
+  alert("I am an alert box!");
+}
+</script>

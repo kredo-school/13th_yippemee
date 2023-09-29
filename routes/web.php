@@ -32,12 +32,12 @@ Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.e
 //CREATE VISITS
 Route::get('/visits/show', [VisitsController::class, 'show'])->name('visits.show');
 Route::get('/visits/create', [VisitsController::class, 'create'])->name('visits.create');
-Route::delete('/visits/destroy/{id}', [VisitsController::class, 'destroy'])->name('visits.destroy');
+// Route::delete('/visits/destroy/{id}', [VisitsController::class, 'destroy'])->name('visits.destroy');
 
 //CREATE BUCKET
 Route::get('/bucket/show', [BucketController::class, 'show'])->name('bucket.show');
 Route::get('/bucket/create', [BucketController::class, 'create'])->name('bucket.create');
-Route::delete('/bucket/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');
+// Route::delete('/bucket/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');
 
 
 
