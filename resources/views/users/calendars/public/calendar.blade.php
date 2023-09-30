@@ -19,6 +19,9 @@
             </div>
             <div class="col-2">
                 <a href="#" class="btn btn-create-plan" data-bs-toggle="modal" data-bs-target="#create-plan"><i class="fa-regular fa-calendar-plus fa-3x"></i></a>
+                {{-- <button type="button" class="border-0" data-bs-toggle="modal" data-bs-target="#add-group">
+                    <i class="fa-solid fa-square-plus fa-3x" style="color: #253c5c;"></i>
+                </button> --}}
             </div>
         </div>
 
@@ -47,7 +50,7 @@
                                 <div class="w-100 button-wrap">
                                     <div class="pre-button d-flex align-items-center justify-content-center pt-4"><i class="fa fa-chevron-left fw-bold"></i>
                                     </div>
-                                    <div class=" d-flex align-items-center justify-content-center h2 ">
+                                    <div class="d-flex align-items-center justify-content-center display-4">
                                         September
                                     </div>
                                     <div class="next-button d-flex align-items-center justify-content-center pt-4"><i class="fa fa-chevron-right"></i>
@@ -73,7 +76,7 @@
                                             <td></td>
                                             <td></td>
                                             <td>
-                                                <button type="button" class="btn btn-day" data-toggle="modal" data-target="#detail-modal">
+                                                <button type="button" class="btn btn-day" data-bs-toggle="modal" data-bs-target="#detail-modal">
                                                    1
                                                 </button>
                                             </td>
@@ -132,5 +135,6 @@
             </div>
         </div>
     </div>
+    @include('users.modals.create_plan')
     @include('users.modals.detail')
 @endsection

@@ -1,11 +1,12 @@
 .btn-create-plan {
     margin-right: 6rem;
+    color: #253c5c;
 }
 
 @media print {
-.table {
-    border-collapse: collapse !important;
-}
+    .table {
+        border-collapse: collapse !important;
+    }
 }
 body {
     font-size: 16px;
@@ -28,7 +29,7 @@ h2 {
     right: 0;
     bottom: 0;
     content: '';
-    background: #000;
+    background: #000000;
     opacity: .5;
     z-index: -1;
 }
@@ -97,7 +98,12 @@ tbody td:hover, .selected {
     border: none;
 }
 tbody td:hover:after, .selected:after {
-    background: #2A3246;
+    background: #f1a29b;
+    /* hover colour for public*/
+}
+tbody td:hover:after, .selected:after {
+    background: #f1a29b;
+    /* change name for weeily hover colour */
 }
 .head-day {
     font-size: 5em;
@@ -142,28 +148,10 @@ tbody td:hover:after, .selected:after {
         padding: 20px 0;
     }
 }
-#header {
-    width: 100%;
-    position: relative;
-}
-#header .pre-button, #header .next-button {
-    cursor: pointer;
-    width: 1em;
-    height: 1em;
-    line-height: 1em;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    font-size: 18px;
-}
-#header .pre-button i, #header .next-button i {
-    color: #fff; }
+
 .calendar-wrap
 {
-    width: 65%;
+    width: 100%;
 }
 @media (max-width: 767.98px) {
     .calendar-wrap {
@@ -439,6 +427,7 @@ font-weight: bold;
 font-size: 16px;
 color: #fff;
 }
+
 *{
     font-family: Muli;
 }
@@ -541,3 +530,62 @@ form input[type="file"] {
     display: none;
     cursor: pointer;
 }
+
+/* create_plan modal */
+
+.create-content {
+    width: 900px;
+    left: 125px;
+    text-align: left;
+}
+.create-body {
+    left: 3rem;
+}
+.create-body input,textarea {
+    border: 1px solid #617EA8;
+    border-radius: 5px;
+    width: 90%;
+}
+#s-time,
+#e-time {
+    width: 10rem;
+    color: #617EA8;
+    padding-left: 0.5rem;
+
+}
+#date,
+#s-time, #e-time,
+#restaurant,
+#create-description {
+    color: #253c5c;
+    border: 1px solid #253c5c;
+    font-size: 16px;
+}
+.label-title {
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: 3px;
+}
+.row .genre {
+    border-left: 4px solid #253c5c;
+    margin-top: 2px;
+    margin-bottom: 4px;
+}
+.btn-create {
+    color: #E6F2E9;
+    background-color: #617EA8;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+.label-title {
+    height: 30px;
+}
+.row .time-row {
+    height: 50px;
+}
+.col-auto {
+    line-height: 15px;
+    margin: 0;
+    padding: 0;
+}
+
