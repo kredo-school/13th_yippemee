@@ -20,21 +20,26 @@
                 </div>
             </div>
         </div> --}}
-      <div><br><br><br><br><br></div>
 
-      <div class="card w-50 mt-5 text-center" style="background-color: rgba(230,242,233,0.75)">
-         <div>
-            <h1 class="main-text display-5" style="color: #253C5C;">Make a plan</h1>
-            <p class="main-p1 h5" style="color: #617EA8;">Let's have food together!</p>
+      <div class="card w-50 text-center homecard">
+         <div class="mt-4">
+            <h1 class="main-text display-4">Make a plan</h1>
+            <p class="main-p1 h4">Let's have food together!</p>
          </div>
-        <div class="row mt-3">
+        <div class="row mt-3 mb-4">
          <div class="link-date col">
-           <a href="#" class="link-date-icon"><i class="fa-solid fa-calendar-days fa-5x"></i>
-           <p class="main-p2 h5 mt-2">Decide by date</p></a>
+           <a href="#" class="link-date-icon">
+            <i class="fa-solid fa-calendar-days fa-5x">
+              <p class="main-p2 h4 mt-2">Decide by date</p>
+            </i>
+           </a>
          </div>
          <div class="link-place col">
-            <a href="#" class="link-place-icon"><i class="fa-solid fa-map-location-dot fa-5x"></i>
-            <p class="main-p2 h5 mt-2">Decide by place</p></a>
+            <a href="#" class="link-place-icon">
+              <i class="fa-solid fa-map-location-dot fa-5x">
+                <p class="main-p2 h4 mt-2">Decide by place</p>
+              </i>
+            </a>
          </div>
         </div>
       </div>
