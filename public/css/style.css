@@ -1,3 +1,4 @@
+ login-page
 body{
     background-image: url('/images/login-bg.png');
     background-color:rgba(255,255,255,0.5);
@@ -13,6 +14,76 @@ body{
 .btn-blue{
     background-color:#253C5C ;
     transition-duration: 0.5s;
+
+/* home */
+.background-image {
+    background-image: url('/images/bg-mainpage.png');
+    background-size: cover;
+    height: 600px;
+}
+
+.homecard {
+    margin-top: 150px;
+    background-color: rgba(230,242,233,0.75);
+}
+
+.main-text {
+    font-family: 'Marcellus', serif;
+    color: #253C5C;
+}
+
+.main-p1 {
+    font-family: 'Marcellus', serif;
+    color: #617EA8;
+    font-weight: bold;
+}
+
+.main-p2 {
+    font-family: 'Muli', serif;
+    font-weight: bold;
+}
+
+.link-date:hover {
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.3), 1px 1px 1px rgba(0, 0, 0, 0.5);
+    /* animation: key1 .3s ease infinite alternate; */
+    animation: key1 .5s ease infinite alternate;
+}
+
+.link-date-icon {
+    color: #253C5C;
+    text-decoration: none;
+}
+
+.link-date-icon:hover {
+    color: #F1A29B;
+}
+
+.link-place:hover {
+    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.3), 1px 1px 1px rgba(0, 0, 0, 0.5);
+    animation: key1 .5s ease infinite alternate;
+}
+
+@keyframes key1{
+    0% {transform: perspective(200px)translateZ(0px);}
+    100% {transform: perspective(200px)translateZ(30px);}
+  }
+
+.link-place-icon {
+    color: #253C5C;
+    text-decoration: none;
+}
+
+.link-place-icon:hover {
+    color: #F2C84B;
+}
+
+/* footer */
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+
 }
 
 .btn-blue:hover{
@@ -42,6 +113,7 @@ body{
   
   .wrap-header {
     position: relative;
+ login-page
     width: 35%;
     z-index: 0; }
     .wrap-header:after {
@@ -73,6 +145,11 @@ body{
     .button-wrap .next-button {
       right: 20px; }
   
+
+    margin-right: 40px;
+    font-family: 'Muli', serif;
+}
+ main
 
   .calendar-wrap {
     width: 65%;
@@ -125,6 +202,7 @@ body{
   tbody td:hover:after, .selected:after {
       background: #2a3246; }
 
+ login-page
   
 
 .head-day {
@@ -139,6 +217,20 @@ body{
   font-size: 16px;
   text-transform: uppercase;
   font-weight: 150; }
+
+.fa-brands:hover {
+    animation: zoom .3s;
+}
+
+.copywrite {
+    font-family: 'Muli', serif;
+}
+
+/* navbar */
+.navbar-item {
+    font-family: 'Muli', serif;
+}
+
 
 .elegant-calencar {
     max-width: 1000px;
@@ -230,6 +322,7 @@ body{
         height: auto;
         aspect-ratio: 4 / 3;
     }
+ login-page
 
     .detal-right li{
         cursor: pointer;
@@ -302,4 +395,7 @@ body{
         object-fit:cover;
     }
 
+
+
+}
 

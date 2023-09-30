@@ -62,6 +62,7 @@ class HomeController extends Controller
     }
 
 
+
     public function genrejapanese()
     {
         return view('users.restaurant_lists.genre.japanese');
@@ -85,4 +86,26 @@ class HomeController extends Controller
     }
 
   
+
+    public function social_posts_create()
+    {
+        return view('social.posts.create');
+    }
+
+    public function social_posts_edit()
+    {
+        return view('social.posts.edit');
+    }
+
+    public function social_posts_show()
+    {
+        return view('social.posts.show');
+    }
+
+    public function social_home()
+    {
+        return view('social.social_home');
+    }
+
+ main
 }
