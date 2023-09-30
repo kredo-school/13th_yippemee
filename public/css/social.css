@@ -1,6 +1,15 @@
 body {
+
     font-family: 'Muli', sans-serif; 
     color: #253C5C;
+}
+
+    font-family: 'Marcellus', serif;
+    color: #253C5C;
+}
+
+.navbar {
+    font-family: 'Muli', sans-serif; 
 }
 
 .post-image {
@@ -64,5 +73,3 @@ div.bg-genre {
     background-color: rgba(37, 60, 92, 0.5);
     margin: 10px auto;
 }
-
-

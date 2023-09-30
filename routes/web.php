@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,8 +23,15 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 // Route::get('/users/private/group_lilst','group_list')->name('group_list');
+Route::get('/users/calendars/private/group_list', [HomeController::class, 'group_list'])->name('group_list');
+
 Route::get('/users/private/group_list', [HomeController::class, 'group_list'])->name('group_list');
 
 Route::get('/admin/users/index', [HomeController::class, 'admin_users_index'])->name('admin.users.index');
