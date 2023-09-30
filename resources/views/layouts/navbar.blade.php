@@ -1,8 +1,8 @@
-<div class="container" style="background-color: #253C5C">
+<div class="container">
 
     <a class="navbar-brand text-white" href="{{ url('/') }}">
 
-        <img src="{{ asset('images/logo.png') }}" height="40px" class="mt-1">
+        <img src="{{ asset('images/logo.png') }}" height="40px">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
         <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,7 @@
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Post</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><button type="button" class="btn-close float-end me-3" aria-label="Close"></button></li>
+                        <li><button type="button" class="btn-close float-end me-3 fs-6" aria-label="Close"></button></li>
                     </ul>
                 </li>
                 <li class="navbar-item dropdown">
@@ -78,7 +78,7 @@
                         </form>
                         </li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><button type="button" class="btn-close float-end me-3" aria-label="Close"></button></li>
+                        <li><button type="button" class="btn-close float-end me-3 fs-6" aria-label="Close"></button></li>
                     </ul>
                 </li>
 
