@@ -50,4 +50,25 @@ class HomeController extends Controller
     {
         return view('admin.genres.index');
     }
+
+    public function social_posts_create()
+    {
+        return view('social.posts.create');
+    }
+
+    public function social_posts_edit()
+    {
+        return view('social.posts.edit');
+    }
+
+    public function social_posts_show()
+    {
+        return view('social.posts.show');
+    }
+
+    public function social_home()
+    {
+        return view('social.social_home');
+    }
+
 }
