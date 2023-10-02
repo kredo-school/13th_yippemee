@@ -5,14 +5,14 @@
         <div class="modal-content border-danger">
             <div class="modal-header border-danger">
                 <div class="h5 modal-title text-danger">
-                    <i class="fa-solid fa-circle-exclamation"></i> Delete Visit
+                    <i class="fa-solid fa-circle-exclamation"></i> Delete the review
                 </div>
             </div>
 
             <div class="modal-body">
-                <p>Are you sure you want to delete the visit?</p>
+                <p>Are you sure you want to delete the review?</p>
                 <div class="mt-3">
-                    <img src="{{ "image" }}" class="image-lg">
+                    <img src="{{ asset('img/image.jpg') }}" alt="logo" class="w-100">
                     <p class="mt-1 text-muted"></p>
                 </div>
             </div>

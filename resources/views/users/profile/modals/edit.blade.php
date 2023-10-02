@@ -1,23 +1,21 @@
-
 <!-- Set Modal -->
 <div class="modal fade" id="edit-intro" tabindex="-1" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel"><div class="row justify-content-center">
-            <div class="col-6">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
                 <form action="#" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
-                    <h2 class="h3 mb-0 fw-light text-center" class="list-group-item">Update_Profile</h2></h1>
+                    <h2 class="h3 mb-0 fw-light text-center" class="list-group-item">Update Profile</h2></h1>
         </div>
+
         <div class="modal-body">
-        <p><div class="row mb-3">
+            <p><div class="row mb-3">
 
             <div class="col-4">
                 <i class="fa-regular fa-circle-user d-block text-center icon-md"></i>
             </div>
-
 
             <div class="col-auto align-self-end">
                 <input type="file" name="avatar" id="avatar" class="form-control form-control-sm mt-1" aria-describedby="avatar-info">

@@ -1,5 +1,5 @@
-
-    <div class="col-3 ms-auto mb-3 mt-3">
+{{-- Picture --}}
+    <div class="col-4 ms-auto mb-3 mt-3">
         <img src="{{ asset('img/image.jpg') }}" alt="logo" class="w-100">
     </div>
 
@@ -35,8 +35,8 @@
                             <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#edit-visits"></i> Edit
                         </a>
 
-                        <a href="#" class="dropdown-item">
-                            <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#delete-visits"></i> Delete
+                        <a href="#" class="dropdown-item text-danger">
+                            <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#delete-visits"></i> Delete
                         </a>
 
                         {{-- <button class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#delete-visits">
@@ -51,11 +51,11 @@
         </div>
 
         {{-- Adjusting the layout --}}
-        <div class="col-3 mb-3 mt-3"></div>
-
+        {{-- <div class="col-3 mb-3 mt-3"></div> --}}
+{{--
 
         {{-- 2nd Post --}}
-        <div class="col-3 ms-auto mb-3 mt-3">
+        {{-- <div class="col-3 ms-auto mb-3 mt-3">
             <img src="{{ asset('img/mekisikan_1.jpg') }}" alt="logo" class="w-100">
         </div>
 
@@ -74,32 +74,32 @@
                 </div>
                 <p class="d-inline fw-light">{{ "Write review here" }}</p>
             </div>
-        </div>
+        </div> --}}
 
             {{-- Modal Delete or Edit--}}
-            <div class="col-auto mt-3">
+            {{-- <div class="col-auto mt-3">
                 <div class="dropdown">
                     <button class="btn btn-sm shadow-none" data-bs-toggle="dropdown">
                         <i class="fa-solid fa-ellipsis"></i>
                     </button>
 
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu"> --}}
                             {{-- Modal Button --}}
-                        <a href="#" class="dropdown-item">
+                        {{-- <a href="#" class="dropdown-item">
                             <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#edit-visits"></i> Edit
-                        </a>
+                        </a> --}}
 
                         {{-- 2nd modal --}}
                             {{-- <button class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#delete-visits">
                                 <i class="fa-regular fa-trash-can"></i> Delete
                             </button> --}}
-                        </div>
+                        {{-- </div> --}}
                             {{-- Include Modal here --}}
                             {{-- @include('users.visits.modals.delete') --}}
                             {{-- Include Modal --}}
                             {{-- @include('users.visits.modals.edit') --}}
-                </div>
-            </div>
+                {{-- </div>
+            </div> --}}
 
 
 

@@ -7,26 +7,21 @@
                         <form action="#" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
-                            <h2 class="h3 mb-0 fw-light text-center" class="list-group-item">Edit_visit</h2></h1>
+                            <h2 class="h3 mb-0 fw-light text-center" class="list-group-item">Edit visit</h2></h1>
             </div>
 
             <div class="modal-body">
-                <div class="row mb-3">
-
-                    <div class="col-4">
-                        <i class="fa-regular fa-circle-user d-block text-center icon-md"></i>
-                    </div>
-
-                    <div class="col-auto align-self-end">
-                        <input type="file" name="avatar" id="avatar" class="form-control form-control-sm mt-1" aria-describedby="avatar-info">
-                        <div class="form-text" id="avatar-info">
-                            Acceptable formats: jpeg, jpg, png, gif only<br>
-                            Max file size is 1048kb
+                <div class="row mb-3 ms-4">
+                    <div class="col-auto text-center">
+                        <div class="drag-file-area-visit-edit">
+                            <span class="material-icons-outlined upload-icon"> file_upload </span>
+                            <h5 class="dynamic-message"> Drag & drop any file here </h5>
+                            <label class="label"> or browse file from device<span class="browse-files"> <input type="file" class="default-file-input"/></span> </label>
                         </div>
                     </div>
                 </div>
 
-                <div class="mb-3">
+                <div class="mt-2 mb-3">
                     <label for="restaurant_name" class="form-label fw-bold mb-0">Restaurant Name</label>
                     <input type="text" name="restaurant_name" id="restaurant_name" value="" class="form-control" autofocus>
                 </div>
@@ -37,7 +32,7 @@
                 </div>
 
                 <div class="mb-3 second-font">
-                    <label for="current_city" class="form-label fw-bold mb-0">How would you rate your experience ?</label>
+                    <label for="review" class="form-label fw-bold mb-0">How would you rate your experience ?</label>
                     <h3><i class="fa-regular fa-star"></i>
                         <i class="fa-regular fa-star"></i>
                         <i class="fa-regular fa-star"></i>
@@ -57,8 +52,8 @@
             </div>
 
             <div class="modal-footer">
-                <a href="#" class="btn btn--green btn--cubic px-5">Cancel</a>
-                <a href="#" class="btn btn--yellow btn--cubic px-5">Save</a>
+                <a href="{{ route('visits.show') }}" class="btn btn--green btn--cubic px-5">Cancel</a>
+                <a href="{{ route('visits.show') }}" class="btn btn--yellow btn--cubic px-5">Save</a>
             </div><!-- /.modal-footer -->
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

@@ -4,6 +4,7 @@
 
 @section('content')
     @include('users.profile.header')
+    @include('users.profile.side')
 
 {{-- Visits --}}
 
