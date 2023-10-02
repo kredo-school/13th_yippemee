@@ -41,7 +41,7 @@
                     <a href="#" class="nav-link text-white">User</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="#" class="nav-link text-white">Restaurant</a>
+                    <a href="{{ url('/restaurantlist') }}" class="nav-link text-white">Restaurant</a>
                 </li>
                 <li class="navbar-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
