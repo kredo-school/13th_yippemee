@@ -97,15 +97,6 @@ class HomeController extends Controller
         return view('social.posts.edit');
     }
 
-    public function social_posts_show()
-    {
-        return view('social.posts.show');
-    }
-
-    public function social_home()
-    {
-        return view('social.social_home');
-    }
 
  main
 }
