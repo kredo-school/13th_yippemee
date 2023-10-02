@@ -28,7 +28,6 @@
 
 .link-date:hover {
     text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.3), 1px 1px 1px rgba(0, 0, 0, 0.5);
-    /* animation: key1 .3s ease infinite alternate; */
     animation: key1 .5s ease infinite alternate;
 }
 
@@ -111,3 +110,23 @@
         transform: scale(1.2);
     }
 }
+
+/* contact */
+.contact-form {
+    background-color: #E6F2E9;
+    border-radius: 30px;
+}
+
+.btn-contact {
+    background-color: #F2C84B;
+    opacity: .8;
+    color: #253C5C;
+    font-family: 'Marcellus', serif;
+}
+
+.btn-contact:hover {
+    background-color: #F2C84B;
+    opacity: 1.0;
+}
+
+

@@ -71,5 +71,15 @@ class HomeController extends Controller
         return view('social.posts.edit');
     }
 
+    public function contact()
+    {
+        return view('contact.user_contact');
+    }
+
+    public function admin_contacts_index()
+    {
+        return view('admin.contacts.index');
+    }
+
 
 }

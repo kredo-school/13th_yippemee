@@ -40,3 +40,6 @@ Route::get('/admin/genres/index', [HomeController::class, 'admin_genres_index'])
 
 Route::get('/social/posts/create', [HomeController::class, 'social_posts_create'])->name('social.posts.create');
 Route::get('/social/posts/edit', [HomeController::class, 'social_posts_edit'])->name('social.posts.edit');
+
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/admin/contacts/index', [HomeController::class, 'admin_contacts_index'])->name('admin.contacts.index');
