@@ -1,0 +1,145 @@
+@extends('layouts.app')
+
+@section('title', 'Restaurant list')
+
+@section('content')
+<div class="w-75 mx-auto restaurant-list bg-white ">
+   <div class="container">
+    <div class="row  mt-4">
+    <form action="" >
+        <div class="col mx-auto">
+            <input type="text" name="serch" id="serch" class="form-control w-50 mx-auto mt-5" class="mx-auto">
+            <button type="submit" class="btn mt-3" style="background-color: #E6F2E9;">Serach</button>
+        <div >   
+        </form>
+    </div>
+    <div class="row mt-4">    
+            <h2 class="h3 text-start ms-3 mb-4">Cafe</h2> 
+            <hr>
+    </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="/images/tokyo.jpg" alt="" class="rounded  ">
+        </div>
+        <div class="col-md-8 float-left">
+            <div class="row">
+                <div class="col-md-10">
+                    <a href="" class="h2">restaurant:name</a>
+                </div>
+                <div class="col-md-2">
+                    <i class="fa-solid fa-bookmark ms-4 text-end h2"></i></div>
+                </div>
+           
+            
+                <p>[ Tokyo ] </p>
+                <hr>
+                <div class="rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                4.2 <i class="fa-regular fa-comment-dots ms-3"></i> <a href="">133 </a> <i class="fa-solid fa-bookmark ms-4"></i> 1236   <span class="ms-2">$$$</span>
+                <br>
+                <p class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem odit expedita corporis iure ex impedit delectus itaque? Nostrum, laborum deleniti.</p>
+                </div>
+                
+        </div>
+          <hr class="mt-3">
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <img src="/images/tokyo.jpg" alt="" class="rounded  ">
+        </div>
+        <div class="col-md-8 float-left">
+            <div class="row">
+                <div class="col-md-10">
+                    <a href="" class="h2">restaurant:name</a>
+                </div>
+                <div class="col-md-2">
+                    <i class="fa-solid fa-bookmark ms-4 text-end h2"></i></div>
+                </div>           
+            
+                <p>[ Tokyo ] </p>
+                <hr>
+                <div class="rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                4.2 <i class="fa-regular fa-comment-dots ms-3"></i> <a href="">133 </a> <i class="fa-solid fa-bookmark ms-4"></i> 1236   <span class="ms-2">$$$</span>
+                <br>
+                <p class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem odit expedita corporis iure ex impedit delectus itaque? Nostrum, laborum deleniti.</p>
+                </div>
+                
+        </div>
+          <hr class="mt-3">
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <img src="/images/tokyo.jpg" alt="" class="rounded  ">
+        </div>
+        <div class="col-md-8 float-left">
+            <div class="row">
+                <div class="col-md-10">
+                    <a href="" class="h2">restaurant:name</a>
+                </div>
+                <div class="col-md-2">
+                    <i class="fa-solid fa-bookmark ms-4 text-end h2"></i></div>
+                </div>           
+            
+                <p>[ Tokyo ] </p>
+                <hr>
+                <div class="rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                4.2 <i class="fa-regular fa-comment-dots ms-3"></i> <a href="">133 </a> <i class="fa-solid fa-bookmark ms-4"></i> 1236   <span class="ms-2">$$$</span>
+                <br>
+                <p class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem odit expedita corporis iure ex impedit delectus itaque? Nostrum, laborum deleniti.</p>
+                </div>
+                
+        </div>
+          <hr class="mt-3">
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-4">
+            <img src="/images/tokyo.jpg" alt="" class="rounded  ">
+        </div>
+        <div class="col-md-8 float-left">
+            <div class="row">
+                <div class="col-md-10">
+                    <a href="" class="h2">restaurant:name</a>
+                </div>
+                <div class="col-md-2">
+                    <i class="fa-solid fa-bookmark ms-4 text-end h2"></i></div>
+                </div>          
+            
+                <p>[ Tokyo ] </p>
+                <hr>
+                <div class="rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+                4.2 <i class="fa-regular fa-comment-dots ms-3"></i> <a href="">133 </a> <i class="fa-solid fa-bookmark ms-4"></i> 1236   <span class="ms-2">$$$</span>
+                <br>
+                <p class="mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem odit expedita corporis iure ex impedit delectus itaque? Nostrum, laborum deleniti.</p>
+                </div>
+                
+        </div>
+          <hr class="mt-3">
+    </div>
+    </div>
+</div>
+
+@endsection
