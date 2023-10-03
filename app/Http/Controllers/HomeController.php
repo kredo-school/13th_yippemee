@@ -85,18 +85,6 @@ class HomeController extends Controller
         return view('users.restaurant_lists.restaurant_detail');
     }
 
-  
-
-    public function social_posts_create()
-    {
-        return view('social.posts.create');
-    }
-
-    public function social_posts_edit()
-    {
-        return view('social.posts.edit');
-    }
-
     public function contact()
     {
         return view('contact.user_contact');
@@ -107,6 +95,47 @@ class HomeController extends Controller
         return view('admin.contacts.index');
     }
 
+    //admin
+    public function admin_users_index()
+    {
+        return view('admin.users.index');
+    }
 
- main
+    public function admin_plans_index()
+    {
+        return view('admin.plans.index');
+    }
+
+    public function admin_posts_index()
+    {
+        return view('admin.posts.index');
+    }
+
+    public function admin_genres_index()
+    {
+        return view('admin.genres.index');
+    }
+
+    //social
+    public function social_posts_create()
+    {
+        return view('social.posts.create');
+    }
+
+    public function social_posts_edit()
+    {
+        return view('social.posts.edit');
+    }
+
+    public function social_posts_show()
+    {
+        return view('social.posts.show');
+    }
+
+    public function social_home()
+    {
+        return view('social.social_home');
+    }
+
+
 }
