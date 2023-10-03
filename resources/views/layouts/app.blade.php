@@ -29,9 +29,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/user.css') }}" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/social.css') }}" rel="stylesheet">
 
 
 

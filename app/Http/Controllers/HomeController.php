@@ -45,25 +45,69 @@ class HomeController extends Controller
     }
     // end of calendar pages
 
-    public function admin_users_index()
+    public function myschedule()
     {
-        return view('admin.users.index');
+        return view('users.myschadule');
     }
 
-    public function admin_plans_index()
+    public function privateyourplan()
     {
-        return view('admin.plans.index');
+        return view('users.private.yourplan');
     }
 
-    public function admin_posts_index()
+    public function publicyourplan()
     {
-        return view('admin.posts.index');
+        return view('users.public.yourplan');
     }
 
-    public function admin_genres_index()
+    public function restaurantlist()
     {
-        return view('admin.genres.index');
+        return view('users.restaurant_lists.index');
     }
 
 
+
+    public function genrejapanese()
+    {
+        return view('users.restaurant_lists.genre.japanese');
+    }
+    public function genreitalian()
+    {
+        return view('users.restaurant_lists.genre.italian');
+    }
+    public function genrechinese()
+    {
+        return view('users.restaurant_lists.genre.chinese');
+    }
+    public function genrecafe()
+    {
+        return view('users.restaurant_lists.genre.cafe');
+    }
+
+    public function detail()
+    {
+        return view('users.restaurant_lists.restaurant_detail');
+    }
+
+
+
+    public function social_posts_create()
+    {
+        return view('social.posts.create');
+    }
+
+    public function social_posts_edit()
+    {
+        return view('social.posts.edit');
+    }
+
+    public function contact()
+    {
+        return view('contact.user_contact');
+    }
+
+    public function admin_contacts_index()
+    {
+        return view('admin.contacts.index');
+    }
 }
