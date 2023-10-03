@@ -57,6 +57,7 @@ Route::get('/admin/genres/index', [HomeController::class, 'admin_genres_index'])
 
 Route::get('/social/posts/create', [HomeController::class, 'social_posts_create'])->name('social.posts.create');
 Route::get('/social/posts/edit', [HomeController::class, 'social_posts_edit'])->name('social.posts.edit');
+Route::get('/social/posts/show', [HomeController::class, 'social_posts_show'])->name('social.posts.show');
 
 Route::get('/social/home',  [HomeController::class, 'social_home'])->name('social.social_home');
 
