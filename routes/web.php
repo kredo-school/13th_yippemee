@@ -52,7 +52,7 @@ Route::get('/admin/plans/index', [HomeController::class, 'admin_plans_index'])->
 Route::get('/admin/posts/index', [HomeController::class, 'admin_posts_index'])->name('admin.posts.index');
 Route::get('/admin/genres/index', [HomeController::class, 'admin_genres_index'])->name('admin.genres.index');
 
-<<<<<<< HEAD
+
 
 
 Route::get('/social/posts/create', [HomeController::class, 'social_posts_create'])->name('social.posts.create');
@@ -61,7 +61,7 @@ Route::get('/social/posts/show', [HomeController::class, 'social_posts_show'])->
 
 Route::get('/social/home',  [HomeController::class, 'social_home'])->name('social.social_home');
 
-=======
-Route::get('/social/posts/create', [HomeController::class, 'social_posts_create'])->name('social.posts.create');
-Route::get('/social/posts/edit', [HomeController::class, 'social_posts_edit'])->name('social.posts.edit');
->>>>>>> parent of a457f21 (Merge pull request #23 from kredo-school/social_post_home_0930)
+
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/admin/contacts/index', [HomeController::class, 'admin_contacts_index'])->name('admin.contacts.index');
+

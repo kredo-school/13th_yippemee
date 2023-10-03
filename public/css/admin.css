@@ -22,9 +22,9 @@
 }
 
 .menu-hover .dropdown-item:hover {
-    background-color: #E6F2E9;  
+    background-color: #E6F2E9;
     color: #253C5C;
-    font-family: 'Muli', serif;            
+    font-family: 'Muli', serif;
 }
 
 .modal-success {
@@ -38,7 +38,7 @@
 }
 
 .icon-green{
-    color: #2ca559; 
+    color: #2ca559;
 }
 
 .modal-body{
@@ -105,5 +105,16 @@
     width: 400px;
     text-align: left;
     white-space: normal;
-    font-family: 'Muli', serif;   
+    font-family: 'Muli', serif;
+}
+
+/* admin/contact */
+.table thead.thead-contact {
+    --bs-table-bg: #E6F2E9 !important;
+    --bs-table-color:#253C5C;
+}
+
+.modal-title-contact {
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
 }
