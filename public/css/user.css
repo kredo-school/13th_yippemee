@@ -1,3 +1,19 @@
+/* calendar.blade */
+.container-calendar {
+    display: flex;
+    margin-top: 4rem;
+}
+.title-box {
+    flex-basis: 30%;
+    margin-top: 250px;
+}
+.calendar-box {
+    flex-basis: 70%;
+    margin-left: 10px;
+    margin-bottom: 4rem;
+    background:#E6F2E9;
+}
+
 .btn-create-plan {
     margin-right: 6rem;
     color: #253c5c;
@@ -7,15 +23,6 @@
     .table {
         border-collapse: collapse !important;
     }
-}
-body {
-    font-size: 16px;
-    line-height: 1.8;
-    font-weight: normal;
-}
-h2 {
-    line-height: 1.5;
-    font-weight: 400;
 }
 .wrap-header {
     position: relative;
@@ -54,9 +61,7 @@ h2 {
     right: 20px;
 }
 .calendar-wrap {
-    width: 65%;
-    background: #fff;
-    padding: 40px 20px 20px 20px;
+    padding: 40px 20px 10px 20px;
 }
 #public-calendar {
     width: 100%;
@@ -73,6 +78,8 @@ tbody td {
     transition: all 0.2s ease-in;
     position: relative;
     z-index: 0;
+    margin-bottom: 4px;
+
 }
 tbody td:after {
     position: absolute;
@@ -186,23 +193,24 @@ html {
     font-size: 12px;
     font-weight: bold;
     text-align: center;
-    color: #888;
     width: 7em;
-    height: 4em;
-    overflow: hidden;
-    border-bottom: 0.5em solid #eee;
+    height: 3.7em;
+    /* overflow: hidden; */
+    border-bottom: 0px solid #a1aba4;
+
 }
 
 .rocker::before {
     content: "";
     position: absolute;
-    top: 0.5em;
-    left: 0;
+    width: 72px;
+    top: 15px;
+    left: 6px;
     right: 0;
     bottom: 0;
-    background-color: #999;
-    border: 0.5em solid #eee;
+    background-color:  #a1aba4;
     border-bottom: 0;
+    box-shadow: 2;
 }
 
 .rocker input {
@@ -588,4 +596,5 @@ form input[type="file"] {
     margin: 0;
     padding: 0;
 }
+
 
