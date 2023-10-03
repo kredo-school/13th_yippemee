@@ -65,4 +65,17 @@ div.bg-genre {
     margin: 10px auto;
 }
 
+.show-post {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.col-4.post {
+    overflow-y: scroll;
+}
+
+.card-body{
+    position: absolute;
+    top: 65px;
+}
 
