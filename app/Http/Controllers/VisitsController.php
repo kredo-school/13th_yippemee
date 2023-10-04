@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class VisitsController extends Controller
 {
+    public function create(){
+        return view('users.visits.create');
+    }
+
     public function show(){
         return view('users.visits.show');
     }
@@ -17,7 +21,5 @@ class VisitsController extends Controller
         return redirect()->route('index');
     }
 
-    public function create(){
-        return view('users.visits.create');
-    }
+
 }

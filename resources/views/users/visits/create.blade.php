@@ -13,16 +13,15 @@
             @csrf
             <h1 class="main-font mb-0 fw-light text-center mb-5" class="list-group-item">Make a Visit List</h1>
 
-
     {{-- image --}}
     <div class="row">
-        <div class="col-5 ms-auto">
-            <div class="drag-file-area-visit">
-                <span class="material-icons-outlined upload-icon"> file_upload </span>
-                <h5 class="dynamic-message"> Drag & drop any file here </h5>
-                <label class="label"> or browse file from device<span class="browse-files"> <input type="file" class="default-file-input"/></span> </label>
+            <div class="col-5 ms-auto">
+                <div class="drag-file-area-visit">
+                    <span class="material-icons-outlined upload-icon"> file_upload </span>
+                    <h5 class="dynamic-message"> Drag & drop any file here </h5>
+                    <label class="label"> or browse file from device<span class="browse-files"> <input type="file" class="default-file-input"/></span> </label>
+                </div>
             </div>
-        </div>
 
         {{-- info --}}
         <div class="col-5 ms-auto me-5">
@@ -31,154 +30,66 @@
                 <input type="text" name="restaurant_name" id="restaurant_name" value="" class="form-control" autofocus class="form-control">{{ old('restaurant_name') }}
             </div>
 
-            <div class="mb-3 second-font">
-                <label for="current_city" class="form-label fw-bold mb-0">How would you rate your experience ?</label>
-                <h3><i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i>
-                    <i class="fa-regular fa-star"></i></h3>
+            {{-- raiting --}}
+        <div class="mb-3 second-font">
+            <label for="star" class="form-label fw-bold mb-0">How would you rate your experience ?</label>
 
-            </div>
+            <fieldset class="rating">
+                <input id="demo-1" type="radio" name="demo" value="1">
+                <label for="demo-1">1 star</label>
+                <input id="demo-2" type="radio" name="demo" value="2">
+                <label for="demo-2">2 stars</label>
+                <input id="demo-3" type="radio" name="demo" value="3">
+                <label for="demo-3">3 stars</label>
+                <input id="demo-4" type="radio" name="demo" value="4">
+                <label for="demo-4">4 stars</label>
+                <input id="demo-5" type="radio" name="demo" value="5">
+                <label for="demo-5">5 stars</label>
 
-<div class="mb-3 second-font">
-    <label for="date" class="form-label fw-bold mb-0">When did you go ?</label>
-    <input type="date" name="date" id="date" value="" class="form-control" autofocus>
-</div>
+                <div class="stars">
+                    <label for="demo-1" aria-label="1 star" title="1 star"></label>
+                    <label for="demo-2" aria-label="2 stars" title="2 stars"></label>
+                    <label for="demo-3" aria-label="3 stars" title="3 stars"></label>
+                    <label for="demo-4" aria-label="4 stars" title="4 stars"></label>
+                    <label for="demo-5" aria-label="5 stars" title="5 stars"></label>
+                </div>
+            </fieldset>
 
-
-
-<div class="mb-3 second-font">
-    <label for="introduction" class="form-label fw-bold mb-0">Write your review</label>
-    <textarea name="introduction" id="introduction" rows="5" placeholder="Write some comments about the restaurant" class="form-control" class="form-control">{{ old('introduction') }}</textarea>
-    {{-- Error --}}
-    @error('description')
-        <div class="text-danger small">{{ $message }}</div>
-    @enderror
-</div>
-{{--  --}}
-            {{-- Button --}}
-            <div class="text-end">
-                <a href="{{ route('visits.show') }}" class="btn btn--green btn--cubic px-5">Cancel</a>
-                <a href="{{ route('visits.show') }}" class="btn btn--yellow btn--cubic px-5">Save</a>
-            </div>
-            {{-- End Button --}}
+        <div class="mb-3 mt-2 second-font">
+            <label for="date" class="form-label fw-bold mb-0">When did you go ?</label>
+            <input type="date" name="date" id="date" value="" class="form-control" autofocus>
         </div>
-        </form>
+
+
+
+        <div class="mb-3 second-font">
+            <label for="introduction" class="form-label fw-bold mb-0">Sharing your reviews about the restaurant</label>
+            <textarea name="introduction" id="introduction" rows="5" placeholder="Write some comments about the restaurant" class="form-control" class="form-control">{{ old('introduction') }}</textarea>
+            {{-- Error --}}
+            @error('description')
+                <div class="text-danger small">{{ $message }}</div>
+            @enderror
+        </div>
+
+        {{-- Button --}}
+        <div class="text-end">
+            <a href="{{ route('visits.show') }}" class="btn btn--green btn--cubic px-5">Cancel</a>
+            <a href="{{ route('visits.show') }}" class="btn btn--yellow btn--cubic px-5">Save</a>
+        </div>
+        {{-- End Button --}}
     </div>
+        </form>
+        </div>
 </div>
 @endsection
 
 
 <script>
-var isAdvancedUpload = function() {
-  var div = document.createElement('div');
-  return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
-}();
-
-let draggableFileArea = document.querySelector(".drag-file-area");
-let browseFileText = document.querySelector(".browse-files");
-let uploadIcon = document.querySelector(".upload-icon");
-let dragDropText = document.querySelector(".dynamic-message");
-let fileInput = document.querySelector(".default-file-input");
-let cannotUploadMessage = document.querySelector(".cannot-upload-message");
-let cancelAlertButton = document.querySelector(".cancel-alert-button");
-let uploadedFile = document.querySelector(".file-block");
-let fileName = document.querySelector(".file-name");
-let fileSize = document.querySelector(".file-size");
-let progressBar = document.querySelector(".progress-bar");
-let removeFileButton = document.querySelector(".remove-file-icon");
-let uploadButton = document.querySelector(".upload-button");
-let fileFlag = 0;
-
-fileInput.addEventListener("click", () => {
-	fileInput.value = '';
-	console.log(fileInput.value);
-});
-
-fileInput.addEventListener("change", e => {
-	console.log(" > " + fileInput.value)
-	uploadIcon.innerHTML = 'check_circle';
-	dragDropText.innerHTML = 'File Dropped Successfully!';
-	document.querySelector(".label").innerHTML = `drag & drop or <span class="browse-files"> <input type="file" class="default-file-input" style=""/> <span class="browse-files-text" style="top: 0;"> browse file</span></span>`;
-	uploadButton.innerHTML = `Upload`;
-	fileName.innerHTML = fileInput.files[0].name;
-	fileSize.innerHTML = (fileInput.files[0].size/1024).toFixed(1) + " KB";
-	uploadedFile.style.cssText = "display: flex;";
-	progressBar.style.width = 0;
-	fileFlag = 0;
-});
-
-uploadButton.addEventListener("click", () => {
-	let isFileUploaded = fileInput.value;
-	if(isFileUploaded != '') {
-		if (fileFlag == 0) {
-    		fileFlag = 1;
-    		var width = 0;
-    		var id = setInterval(frame, 50);
-    		function frame() {
-      			if (width >= 390) {
-        			clearInterval(id);
-					uploadButton.innerHTML = `<span class="material-icons-outlined upload-button-icon"> check_circle </span> Uploaded`;
-      			} else {
-        			width += 5;
-        			progressBar.style.width = width + "px";
-      			}
-    		}
-  		}
-	} else {
-		cannotUploadMessage.style.cssText = "display: flex; animation: fadeIn linear 1.5s;";
-	}
-});
-
-cancelAlertButton.addEventListener("click", () => {
-	cannotUploadMessage.style.cssText = "display: none;";
-});
-
-if(isAdvancedUpload) {
-	["drag", "dragstart", "dragend", "dragover", "dragenter", "dragleave", "drop"].forEach( evt =>
-		draggableFileArea.addEventListener(evt, e => {
-			e.preventDefault();
-			e.stopPropagation();
-		})
-	);
-
-	["dragover", "dragenter"].forEach( evt => {
-		draggableFileArea.addEventListener(evt, e => {
-			e.preventDefault();
-			e.stopPropagation();
-			uploadIcon.innerHTML = 'file_download';
-			dragDropText.innerHTML = 'Drop your file here!';
-		});
-	});
-
-	draggableFileArea.addEventListener("drop", e => {
-		uploadIcon.innerHTML = 'check_circle';
-		dragDropText.innerHTML = 'File Dropped Successfully!';
-		document.querySelector(".label").innerHTML = `drag & drop or <span class="browse-files"> <input type="file" class="default-file-input" style=""/> <span class="browse-files-text" style="top: -23px; left: -20px;"> browse file</span> </span>`;
-		uploadButton.innerHTML = `Upload`;
-
-		let files = e.dataTransfer.files;
-		fileInput.files = files;
-		console.log(files[0].name + " " + files[0].size);
-		console.log(document.querySelector(".default-file-input").value);
-		fileName.innerHTML = files[0].name;
-		fileSize.innerHTML = (files[0].size/1024).toFixed(1) + " KB";
-		uploadedFile.style.cssText = "display: flex;";
-		progressBar.style.width = 0;
-		fileFlag = 0;
-	});
-}
-
-removeFileButton.addEventListener("click", () => {
-	uploadedFile.style.cssText = "display: none;";
-	fileInput.value = '';
-	uploadIcon.innerHTML = 'file_upload';
-	dragDropText.innerHTML = 'Drag & drop any file here';
-	document.querySelector(".label").innerHTML = `or <span class="browse-files"> <input type="file" class="default-file-input"/> <span class="browse-files-text">browse file</span> <span>from device</span> </span>`;
-	uploadButton.innerHTML = `Upload`;
-});
+    (function(){
+        var rating = document.querySelector('.rating');
+        var handle = document.getElementById('toggle-rating');
+        handle.onchange = function(event) {
+            rating.classList.toggle('rating', handle.checked);
+        };
+    }());
 </script>
-
-<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
-

@@ -10,14 +10,14 @@
                 </div>
             </h3>
             <div class="mt-0 mb-0">{{ date('M d, Y') }}</div>
-            <div class="mt-0 mb-3">
+            <div class="show-star mt-0 mb-3">
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
                 <i class="fa-solid fa-star"></i>
             </div>
-            <p class="d-inline fw-light">{{ "Write review here" }}</p>
+            <h4><p class="d-inline fw-light">{{ "We enjoyed our meals here and our server was very nice and attentive. Prices are good too especially for Chicago. It’s a little noisy but it’s a pub so you have to expect some noise level. We would definitely go back" }}</p></h4>
         </div>
     </div>
 
@@ -25,11 +25,9 @@
         <div class="col-auto mt-3">
             <div class="dropdown">
                 <button class="btn btn-sm shadow-none" data-bs-toggle="dropdown">
-                    <i class="fa-solid fa-ellipsis"></i>
+                    <h4><i class="fa-solid fa-ellipsis"></i></h4>
                 </button>
                     <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item">
-
                         {{-- Modal Button --}}
                         <a href="#" class="dropdown-item">
                             <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#edit-visits"></i> Edit
