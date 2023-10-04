@@ -243,3 +243,13 @@ table tbody tr td {
     color: #253C5C;
     background: #E6F2E9;
 }
+
+.btn {
+    border: none;
+}
+
+.dropdown-menu {
+    margin: 0;
+    padding: 0;
+}
+
