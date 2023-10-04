@@ -16,28 +16,28 @@
                     <div class="card border-0">
                         <div class="card-header bg-white py-3">
                             <div class="row align-items-center">
-                                <div class="col">
+                                <div class="col text-start">
                                     <i class="fa-solid fa-circle-user"></i> <a href="#" class="text-decoration-none text-post"><strong>Mary Johnson</strong></a>
                                 </div>
                                 <div class="col-auto text-end"> Following</div>
                             </div>
                         </div>
-                        <div class="card-body body-padding">
+                        <div class="card-body body-padding bg-white border-0 p-3">
                             <div class="row">
-                                <div class="col-auto text-secondary small" style="opacity: 0.6;">
+                                <div class="col text-start text-secondary small" style="opacity: 0.6;">
                                     <strong>at: </strong>
                                     &nbsp;
                                     <a href="#" class="text-decoration-none text-post">Kitchin ABC</a>
                                 </div>
                         
                                 <div class="col-auto ms-auto">
-                                    <div class="badge bg-genre text-wrap">
+                                    <div class="badge bg-genre text-wrap mr-3">
                                         Italian
                                     </div>
                                 </div>
                             </div>
                             <div class="row align-items-center">
-                                <div class="col">
+                                <div class="col text-start">
                                     <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-heart"></i></button>
                                     <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-utensils"></i></button>
                                 </div>
@@ -59,12 +59,12 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col">
+                                <div class="col text-start">
                                     I ate this pizza. It's delisiou!
                                 </div>
                             </div>
                             <div class="row align-items-center">
-                                <div class="col">
+                                <div class="col text-start">
                                     <hr>
                                     <form action="#" method="post">
                                         <div class="input-group py-2" >
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                             <div class="row align-items-center">
-                                <div class="col">
+                                <div class="col text-start">
                                     <a href="#" class="text-decoration-none text-post"><strong>Mike Smith</strong></a>
                                     &nbsp;
                                     <p class="d-inline fw-light">I want to go there!</p>
@@ -85,7 +85,7 @@
                                     </form>
                                 </div>
                                 
-                                <div class="mt-0">
+                                <div class="mt-0 text-start">
                                     <a href="#" class="text-decoration-none small">View all comments</a>
                                 </div>
                             </div>
