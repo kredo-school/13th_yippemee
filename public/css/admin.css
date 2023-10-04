@@ -1,0 +1,120 @@
+/* admin.css */
+.list-group .list-group-item {
+    background-color: #253C5C;
+    color: #ffffff;
+    font-family: 'Marcellus', serif;
+}
+
+.list-group-item:hover {
+    background-color: #E6F2E9;
+    color: #253C5C;
+    transition: background-color 0.3s;
+}
+
+.table thead {
+    --bs-table-bg: #253C5C !important;
+    --bs-table-color: #ffffff;
+    font-family: 'Marcellus', serif;
+}
+
+.table tbody {
+    font-family: 'Muli', serif;
+}
+
+.menu-hover .dropdown-item:hover {
+    background-color: #E6F2E9;
+    color: #253C5C;
+    font-family: 'Muli', serif;
+}
+
+.modal-success {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.modal-title-activate {
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
+}
+
+.icon-green{
+    color: #2ca559;
+}
+
+.modal-body{
+    color: #253C5C;
+}
+
+.modal-danger {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+.modal-title-deactivate {
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
+}
+
+.icon-red{
+    color:#dc3545
+}
+
+.table thead.thead-plans {
+    --bs-table-bg: #617EA8 !important;
+    --bs-table-color:#E6F2E9;
+}
+
+.table thead.thead-plans th {
+    color: #E6F2E9;
+}
+
+.table thead.thead-posts {
+    --bs-table-bg: #F1A29B !important;
+    --bs-table-color:#253C5C
+    ;
+}
+
+.icon-primary{
+    color:#0074d9
+}
+
+.modal-primary {
+    background-color: #0074d9;
+    color: #ffffff;
+}
+
+.icon-large {
+    font-size: 5rem;
+}
+
+.table thead.thead-genres {
+    --bs-table-bg: #F2C84B !important;
+    --bs-table-color:#253C5C;
+}
+
+.modal-warning {
+    background-color: #ffc107;
+    color: #253C5C;
+}
+
+.btn-close-edit {
+    color: #253C5C;
+}
+
+.text-width {
+    width: 400px;
+    text-align: left;
+    white-space: normal;
+    font-family: 'Muli', serif;
+}
+
+/* admin/contact */
+.table thead.thead-contact {
+    --bs-table-bg: #E6F2E9 !important;
+    --bs-table-color:#253C5C;
+}
+
+.modal-title-contact {
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
+}
