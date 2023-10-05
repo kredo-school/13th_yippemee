@@ -2,6 +2,12 @@
 
 @section('content')
 
+<style>
+    body {
+        padding-top: 4rem;
+    }
+</style>
+
 <div class="background-image">
  <div class="container display-flex align-items-center">
     <div class="row justify-content-center">
