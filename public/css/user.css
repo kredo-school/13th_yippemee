@@ -1,7 +1,7 @@
 /* calendar.blade */
 .calendar-bg-image {
-    background-image: url('/images/schedule11.jpeg');
-    background-size: contain;
+    background-image: url('/images/schedule9.jpg');
+    background-size: cover;
     padding-top: 20px;
 }
 
@@ -10,11 +10,21 @@
     margin-top: 4rem;
 }
 .title-box {
-    flex-basis: 30%;
-    margin-top: 250px;
+    flex-basis: 35%;
+    padding-left: 20px;
+    margin-top: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    height: 180px;
+}
+.title-div {
+    font-weight: bold;
+    font-family: Marcellus;
+}
+.title-box p {
+    font-size: 16px;
 }
 .calendar-box {
-    flex-basis: 70%;
+    flex-basis: 65%;
     margin-left: 10px;
     margin-bottom: 4rem;
     background: rgba(230, 242, 233, 0.8);
@@ -33,6 +43,11 @@
 
 .calendar-button {
     position: relative;
+}
+
+.month-button {
+    position: relative;
+    width: 100%;
     padding: 10px 0;
 }
 .calendar-button .pre-button, .calendar-button .next-button {
@@ -54,8 +69,9 @@
 .monthly-calendar {
     padding: 40px 20px 10px 20px;
 }
-#public-calendar {
+#month-calendar{
     width: 100%;
+    height: 500px;
 }
 #public-calendar tr {
     height: 5em;
@@ -64,13 +80,11 @@
     width: 14%;
     border-radius: 50%;
     cursor: pointer;
-    -webkit-transition: all 0.2s ease-in;
+    -webkit-transition: all 02s ease-in;
     -o-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
     position: relative;
     z-index: 0;
-    margin-bottom: 4px;
-
 }
 #public-calendar tbody td:after {
     position: absolute;
@@ -91,15 +105,15 @@
     transition: 0.3s;
     z-index: -1;
 }
-#public-calendar tbody td:hover, .selected {
+#month-calendar tbody td:hover, .selected {
     color: #fff;
     border: none;
 }
-#public-calendar tbody td:hover:after, .selected:after {
+#month-calendar tbody td:hover:after, .selected:after {
     background: #f1a29b;
     /* hover colour for public*/
 }
-/* #public-calendar tbody td:hover:after, .selected:after {
+/* #month-calendar tbody td:hover:after, .selected:after {
     background: #f1a29b;
     change name for weeily hover colour
 } */
@@ -131,7 +145,7 @@
     width: 100%;
 }
 @media (max-width: 767.98px) {
-    .calendar-wrap {
+    .public-calendar {
         width: 100%;
     }
 }
@@ -332,18 +346,16 @@ body {
 .modal-left .modal-dialog {
     position: fixed;
     margin: auto;
-    width: 320px;
-    height: 100%;
+    height: 50%;
     -webkit-transform: translate3d(0%, 0, 0);
         -ms-transform: translate3d(0%, 0, 0);
          -o-transform: translate3d(0%, 0, 0);
             transform: translate3d(0%, 0, 0);
 }
 
-.modal-left .modal-content{
+/* .modal-left .modal-content{
     height: 100%;
-    overflow-y: auto;
-}
+} */
 
 .modal-left .modal-body{
     padding: 15px 15px 80px;
@@ -351,18 +363,12 @@ body {
 
 
 .modal-left .modal-dialog{
-    left: -320px;
+    left: 120px;
     -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
        -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
          -o-transition: opacity 0.3s linear, left 0.3s ease-out;
             transition: opacity 0.3s linear, left 0.3s ease-out;
 }
-
-.modal-left.fade.in .modal-dialog{
-    left: 0;
-}
-
-
 .modal-content {
     border-radius: 0;
     border: none;
@@ -373,38 +379,38 @@ body {
     background-color: #FAFAFA;
 }
 
-.demo {
+/* .demo {
 padding-top: 60px;
 padding-bottom: 110px;
-}
+} */
 
-.btn-demo {
+/* .btn-demo {
 margin: 15px;
 padding: 10px 15px;
 border-radius: 0;
 font-size: 16px;
 background-color: #FFFFFF;
-}
+} */
 
-.btn-demo:focus {
+/* .btn-demo:focus {
 outline: 0;
-}
+} */
 
-.demo-footer {
+/* .demo-footer {
 position: fixed;
 bottom: 0;
 width: 100%;
 padding: 15px;
 background-color: #212121;
 text-align: center;
-}
+} */
 
-.demo-footer > a {
+/* .demo-footer > a {
 text-decoration: none;
 font-weight: bold;
 font-size: 16px;
 color: #fff;
-}
+} */
 
 *{
     font-family: Muli;
