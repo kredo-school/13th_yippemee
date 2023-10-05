@@ -24,27 +24,12 @@
         border-collapse: collapse !important;
     }
 }
-.wrap-header {
-    position: relative;
-    width: 35%;
-    z-index: 0;
-}
-.wrap-header:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    content: '';
-    background: #000000;
-    opacity: .5;
-    z-index: -1;
-}
-.button-wrap {
+
+.calendar-button {
     position: relative;
     padding: 10px 0;
 }
-.button-wrap .pre-button, .button-wrap .next-button {
+.calendar-button .pre-button, .calendar-button .next-button {
     cursor: pointer;
     width: 1em;
     height: 1em;
@@ -54,10 +39,10 @@
     top: 0;
     font-size: 18px;
 }
-.button-wrap .pre-button {
+.calendar-button .pre-button {
     left: 20px;
 }
-.button-wrap .next-button {
+.calendar-button .next-button {
     right: 20px;
 }
 .calendar-wrap {
@@ -69,7 +54,7 @@
 #public-calendar tr {
     height: 5em;
 }
-tbody td {
+#public-calendar tbody td {
     width: 14%;
     border-radius: 50%;
     cursor: pointer;
@@ -81,7 +66,7 @@ tbody td {
     margin-bottom: 4px;
 
 }
-tbody td:after {
+#public-calendar tbody td:after {
     position: absolute;
     top: 50%;
     left: 0;
@@ -100,19 +85,20 @@ tbody td:after {
     transition: 0.3s;
     z-index: -1;
 }
-tbody td:hover, .selected {
+#public-calendar tbody td:hover, .selected {
     color: #fff;
     border: none;
 }
-tbody td:hover:after, .selected:after {
+#public-calendar tbody td:hover:after, .selected:after {
     background: #f1a29b;
     /* hover colour for public*/
 }
-tbody td:hover:after, .selected:after {
+/* #public-calendar tbody td:hover:after, .selected:after {
     background: #f1a29b;
-    /* change name for weeily hover colour */
-}
-.head-day {
+    change name for weeily hover colour
+} */
+
+/* .head-day {
     font-size: 5em;
     line-height: 1;
     color: #fff;
@@ -125,38 +111,17 @@ tbody td:hover:after, .selected:after {
     text-transform: uppercase;
     font-weight: 150;
 }
-.elegant-calencar {
+.elegant-calendar {
     max-width: 1000px;
     text-align: center;
     position: relative;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 5px;
-}
-.wrap-header {
-    position: relative;
-    width: 35%;
-    z-index: 0;
-}
-.wrap-header:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    content: '';
-    background: #000;
-    opacity: .5;
-    z-index: -1;
-}
-@media (max-width: 767.98px) {
-    .wrap-header {
-        width: 100%;
-        padding: 20px 0;
-    }
-}
+} */
 
-.calendar-wrap
+
+.monthly-calendar
 {
     width: 100%;
 }

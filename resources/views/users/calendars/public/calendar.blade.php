@@ -16,7 +16,7 @@
             <div class="row w-100">
                 <div class="col-8">
                     {{-- hover button --}}
-                    <div class="hover-button">
+                    <div class="calender-hover">
                         <label class="rocker">
                             <input type="checkbox" class="hover-check">
                             <span class="switch-left">M</span>
@@ -30,8 +30,8 @@
                 </div>
             </div>
 
-            <div class="calendar-wrap">
-                <div class="w-100 button-wrap">
+            <div class="monthly-calendar">
+                <div class="w-100 calendar-button">
                     <div class="pre-button d-flex align-items-center justify-content-center pt-4"><i class="fa fa-chevron-left fw-bold"></i>
                     </div>
                     <div class="d-flex align-items-center justify-content-center display-4">
@@ -117,7 +117,7 @@
         </div>
     </div>
 
-
-    @include('users.modals.create_plan')
+{{--
+    @include('users.modals.create_plan') --}}
     @include('users.modals.detail')
 @endsection
