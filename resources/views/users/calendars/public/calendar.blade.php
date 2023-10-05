@@ -1,12 +1,8 @@
 @extends('layouts.app')
 @section('title', 'Decide by date')
 @section('content')
-<style>
-    body{
-        background-color: white;
-    }
-</style>
 
+<div class="calendar-bg-image">
     <div class="container container-calendar">
         <div class="box title-box">
             <h1 class="title-div mx-auto text-center mt-5 bg-white rounded"><u>Decide by Date</u></h1>
@@ -116,6 +112,7 @@
             </div>
         </div>
     </div>
+</div>
 
 {{--
     @include('users.modals.create_plan') --}}

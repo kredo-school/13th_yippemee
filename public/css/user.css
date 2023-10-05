@@ -1,4 +1,10 @@
 /* calendar.blade */
+.calendar-bg-image {
+    background-image: url('/images/schedule11.jpeg');
+    background-size: contain;
+    padding-top: 20px;
+}
+
 .container-calendar {
     display: flex;
     margin-top: 4rem;
@@ -11,7 +17,7 @@
     flex-basis: 70%;
     margin-left: 10px;
     margin-bottom: 4rem;
-    background:#E6F2E9;
+    background: rgba(230, 242, 233, 0.8);
 }
 
 .btn-create-plan {
