@@ -1,10 +1,7 @@
 body {
-    font-family: 'Marcellus', serif;
-    color: #253C5C;
-}
-
-.navbar {
     font-family: 'Muli', sans-serif; 
+    color: #253C5C;
+    background-color: #fff;
 }
 
 .post-image {
@@ -23,3 +20,61 @@ body {
     font-weight: bold;
 }
 
+.card-header.border-0 {
+    background-color: transparent;
+}
+
+div.bg-genre {
+    background-color: #F2C84B !important;
+    color: #253C5C;
+    font-weight: bold;
+}
+
+.text-post{
+    color: #253C5C; 
+}
+
+.header-padding {
+    padding-top: 5px; 
+    padding-bottom: 0;    
+    padding-left: 10px;    
+    padding-right: 10px;
+}
+
+.body-padding {
+    padding-top: 0;    
+    padding-bottom: 10px; 
+    padding-left: 10px;    
+    padding-right: 10px;
+}
+
+.custom-margin {
+    margin-top: 3rem;  
+    margin-left: 8rem;  
+    margin-right: 8rem;  
+}
+
+.post_title{
+    color: #253C5C;
+    font-family: 'Marcellus', sans-serif; 
+}
+
+.bar {
+    display: block;
+    width: 100px;
+    height: 0.5px;
+    background-color: rgba(37, 60, 92, 0.5);
+    margin: 10px auto;
+}
+
+.show-post {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.col-4.post {
+    overflow-y: scroll;
+}
+
+.card-body{
+    top: 65px;
+}
