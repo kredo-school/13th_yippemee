@@ -5,7 +5,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BucketController;
 use App\Http\Controllers\VisitsController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes(); 
 
 //PROFILE
 Route::get('/profile/show', [ProfileController::class, 'show'])->name('profile.show');
