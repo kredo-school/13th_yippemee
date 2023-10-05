@@ -45,7 +45,7 @@
 .calendar-button .next-button {
     right: 20px;
 }
-.calendar-wrap {
+.monthly-calendar {
     padding: 40px 20px 10px 20px;
 }
 #public-calendar {
@@ -119,7 +119,6 @@
     overflow: hidden;
     border-radius: 5px;
 } */
-
 
 .monthly-calendar
 {
