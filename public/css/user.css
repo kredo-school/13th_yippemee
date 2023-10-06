@@ -11,10 +11,13 @@
 }
 .title-box {
     flex-basis: 35%;
-    padding-left: 20px;
-    margin-top: 100px;
-    background: rgba(255, 255, 255, 0.2);
-    height: 180px;
+    margin-left: -80px;
+    margin-right: 80px;
+    background: white;
+    border-right: 20px solid #f1a29b;
+    height: 160px;
+    width: 400px;
+    overflow: hidden;
 }
 .title-div {
     font-weight: bold;
@@ -27,7 +30,7 @@
     flex-basis: 65%;
     margin-left: 10px;
     margin-bottom: 4rem;
-    background: rgba(255, 255, 255, 0.8) ;
+    background: rgba(255, 255, 255, 0.9) ;
     border-radius: 20px;
 }
 .top-button {

@@ -5,8 +5,17 @@
 <div class="calendar-bg-image">
     <div class="container container-calendar">
         <div class="box title-box">
-            <h1 class="title-div mx-auto text-center mt-5 rounded"><u>Decide by Date</u></h1>
-            <p class="fw-400">Let's check what your friends are craving,<br>and add yours too.</p>
+            <div class="row">
+                <div class="col-2 icon-div">
+                    <i class="fa-regular fa-calendar fa-5x mt-5 ms-4" style="color: #253c5c;"></i>
+                </div>
+                <div class="col-10">
+                    <h1 class="title-div mx-auto text-center mt-4 rounded">Decide by Date</h1>
+                    <p class="fw-400">Let's check what your friends are craving,<br>and add yours too.</p>
+                </div>
+            </div>
+
+
         </div>
         <div class="box calendar-box">
             <div class="row w-75 top-button">
