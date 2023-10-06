@@ -5,23 +5,21 @@
 <div class="calendar-bg-image">
     <div class="container container-calendar">
         <div class="box title-box">
-            <h1 class="title-div mx-auto text-center mt-5 bg-white rounded"><u>Decide by Date</u></h1>
+            <h1 class="title-div mx-auto text-center mt-5 rounded"><u>Decide by Date</u></h1>
             <p class="fw-400">Let's check what your friends are craving,<br>and add yours too.</p>
         </div>
         <div class="box calendar-box">
-            <div class="row w-100">
-                <div class="col-8">
-                    {{-- hover button --}}
-                    <div class="calender-hover">
-                        <label class="rocker">
-                            <input type="checkbox" class="hover-check">
-                            <span class="switch-left">M</span>
-                            <span class="switch-right">W</span>
-                        </label>
-                    </div>
+            <div class="row w-75 top-button">
+                {{-- hover button --}}
+                <div class="col-10 calender-hover w-25">
+                    <label class="rocker">
+                        <input type="checkbox" class="hover-check">
+                        <span class="switch-left">M</span>
+                        <span class="switch-right">W</span>
+                    </label>
                 </div>
-                <div class="col-3"></div>
-                <div class="col-1">
+
+                <div class="col-2">
                     <a href="#" class="btn btn-create-plan mt-2 me-2" data-bs-toggle="modal" data-bs-target="#create-plan"><i class="fa-regular fa-calendar-plus fa-3x"></i></a>
                 </div>
             </div>

@@ -27,11 +27,14 @@
     flex-basis: 65%;
     margin-left: 10px;
     margin-bottom: 4rem;
-    background: rgba(230, 242, 233, 0.8);
+    background: rgba(255, 255, 255, 0.8) ;
+    border-radius: 20px;
 }
-
+.top-button {
+    margin-left: 215px;
+}
 .btn-create-plan {
-    margin-right: 6rem;
+    margin-left: 23rem;
     color: #253c5c;
 }
 
@@ -69,7 +72,7 @@
 .monthly-calendar {
     padding: 40px 20px 10px 20px;
 }
-#month-calendar{
+#public-calendar{
     width: 100%;
     height: 500px;
 }
@@ -105,15 +108,15 @@
     transition: 0.3s;
     z-index: -1;
 }
-#month-calendar tbody td:hover, .selected {
+#public-calendar tbody td:hover, .selected {
     color: #fff;
     border: none;
 }
-#month-calendar tbody td:hover:after, .selected:after {
+#public-calendar tbody td:hover:after, .selected:after {
     background: #f1a29b;
     /* hover colour for public*/
 }
-/* #month-calendar tbody td:hover:after, .selected:after {
+/* #public-calendar tbody td:hover:after, .selected:after {
     background: #f1a29b;
     change name for weeily hover colour
 } */
