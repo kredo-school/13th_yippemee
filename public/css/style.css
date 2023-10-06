@@ -254,8 +254,8 @@ table tbody tr td {
     padding: 0;
 }
 
-=======
- login-page
+
+
 body{
     background-image: url('/images/login-bg.png');
     background-color:rgba(255,255,255,0.5);
@@ -301,7 +301,8 @@ body{
 
   .wrap-header {
     position: relative;
- login-page
+
+
     width: 35%;
     z-index: 0; }
     .wrap-header:after {
@@ -335,7 +336,7 @@ body{
 
 
 
- main
+
 
   .calendar-wrap {
     width: 65%;
@@ -388,7 +389,7 @@ body{
   tbody td:hover:after, .selected:after {
       background: #2a3246; }
 
- login-page
+
 
 
 .head-day {
@@ -505,7 +506,7 @@ body{
         height: auto;
         aspect-ratio: 4 / 3;
     }
- login-page
+
 
     .detal-right li{
         cursor: pointer;
@@ -567,7 +568,7 @@ body{
 
     /* restaurant-list */
 
-    .restaurant-list img{
+    .restaurant-list-img{
         aspect-ratio: 4 / 3;
         width: 75%;
         object-fit:cover;
@@ -578,9 +579,13 @@ body{
         object-fit:cover;
     }
 
+    .avatar-md{
+        width: 3.5rem;
+        height: 3.5rem;
+        object-fit: cover;
+}
 
 
 }
-
 
 
