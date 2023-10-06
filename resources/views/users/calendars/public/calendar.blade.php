@@ -14,9 +14,14 @@
                     <p class="fw-400">Let's check what your friends are craving,<br>and add yours too.</p>
                 </div>
             </div>
-
-
         </div>
+        {{-- <div class="container plan-box">
+            <div class="plan-box-title">
+                <h2>Friday, 1 September</h2>
+                <hr>
+            </div>
+
+        </div> --}}
         <div class="box calendar-box">
             <div class="row w-75 top-button">
                 {{-- hover button --}}
@@ -37,9 +42,9 @@
                 <div class="w-100 calendar-button">
                     <div class="pre-button d-flex align-items-center justify-content-center pt-4"><i class="fa fa-chevron-left fw-bold"></i>
                     </div>
-                    <div class="d-flex align-items-center justify-content-center display-4">
+                    <h1 class="d-flex align-items-center justify-content-center display-4">
                         September
-                    </div>
+                    </h1>
                     <div class="next-button d-flex align-items-center justify-content-center pt-4"><i class="fa fa-chevron-right"></i>
                     </div>
                 </div>
