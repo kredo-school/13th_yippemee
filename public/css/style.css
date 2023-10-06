@@ -254,16 +254,22 @@ table tbody tr td {
     padding: 0;
 }
 
-=======
- login-page
+
 body{
-    background-image: url('/images/login-bg.png');
-    background-color:rgba(255,255,255,0.5);
-    background-blend-mode:lighten;
+    
     font: #253C5C;
     font-family: 'Marcellus';
     font-family: 'Mulish';
 }
+
+.background{
+    background-image: url('/images/login-bg.png');
+    background-color:rgba(255,255,255,0.5);
+    background-blend-mode:lighten;
+    background-size: cover;
+    height: 1050px;
+}
+
 .card{
     background-color: #E6F2E9;
 }
