@@ -153,3 +153,25 @@
     font-family: 'Marcellus', serif;
     font-weight: bold;
 }
+
+/* define "no-hover-effect" */
+.no-hover-effect td {
+    cursor: default !important;
+    transition: none !important;
+}
+
+.no-hover-effect td:after {
+    content: none !important;
+}
+
+.no-hover-effect td:hover, 
+.no-hover-effect .selected {
+    color: inherit !important;
+    border: inherit !important;
+}
+
+.no-hover-effect td:hover:after, 
+.no-hover-effect .selected:after {
+    background: none !important;
+}
+

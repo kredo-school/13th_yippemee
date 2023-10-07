@@ -28,6 +28,9 @@
                         <a href="{{ route('admin.genres.index') }}" class="list-group-item">
                             <i class="fa-solid fa-shapes"></i>  Genre
                         </a>
+                        <a href="{{ route('admin.contacts.index') }}" class="list-group-item">
+                            <i class="fa-solid fa-envelopes-bulk"></i>  contact
+                        </a>
                     </div>
                 </div>
                 
@@ -35,7 +38,7 @@
 
             <div class="col-9 mb-3">
                 <div class="admin-table">
-                    <table class="table table-hover align-middle bg-white border">
+                    <table class="table align-middle bg-white border">
                         <thead class="thead-plans">
                             <tr>
                                 <th>plan ID</th>
@@ -46,28 +49,31 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <td>10</td>
-                            <td>2023:09:01</td>
-                            <td>Mike Smith</td>
-                            <td>2023:08:15</td>
-                            <td><i class="fa-solid fa-calendar text-success"></i>&nbsp; Activate</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button class="btn btn-sm" data-bs-toggle="dropdown">
-                                        <i class="fa-solid fa-calendar text-secondary"></i>
-                                    </button>
-    
-                                    <div class="dropdown-menu menu-hover">
-                                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#activateModal">
-                                            <i class="fa-solid fa-calendar text-success"></i>  Activate
-                                        </a>
-                                        
-                                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deactivateModal">
-                                            <i class="fa-solid fa-calendar-xmark text-danger"></i></i>  Deactivate
-                                        </a>
+                        <tbody class="no-hover-effect">
+                            <tr>
+                                <td>10</td>
+                                <td>2023:09:01</td>
+                                <td>Mike Smith</td>
+                                <td>2023:08:15</td>
+                                <td><i class="fa-solid fa-calendar text-success"></i>&nbsp; Activate</td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm" data-bs-toggle="dropdown">
+                                            <i class="fa-solid fa-calendar text-secondary"></i>
+                                        </button>
+        
+                                        <div class="dropdown-menu menu-hover">
+                                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#activateModal">
+                                                <i class="fa-solid fa-calendar text-success"></i>  Activate
+                                            </a>
+                                            
+                                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deactivateModal">
+                                                <i class="fa-solid fa-calendar-xmark text-danger"></i></i>  Deactivate
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

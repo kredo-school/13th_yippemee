@@ -61,9 +61,9 @@ aria-hidden="true">
         <div class="modal-content">
 
             <!--Header-->
-            <div class="modal-header modal-danger">
-                <p class="heading lead modal-title-activate">Delete Post</p>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header-danger">
+                <p class="heading lead modal-title-activate m-4">Delete Post</p>
+                <button type="button" class="btn-close btn-close-white m-4" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             
             <!--Body-->

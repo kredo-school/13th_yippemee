@@ -29,6 +29,9 @@
                         <a href="{{ route('admin.genres.index') }}" class="list-group-item">
                             <i class="fa-solid fa-shapes"></i>  Genre
                         </a>
+                        <a href="{{ route('admin.contacts.index') }}" class="list-group-item">
+                            <i class="fa-solid fa-envelopes-bulk"></i>  contact
+                        </a>
                     </div>
                 </div>
                 
@@ -36,7 +39,7 @@
 
             <div class="col-9 mb-3">
                 <div class="admin-table">
-                    <table class="table table-hover align-middle border">
+                    <table class="table align-middle border">
                         <thead class="users-thead">
                             <tr>
                                 <th></th>
@@ -48,7 +51,7 @@
                             </tr>
                         </thead>
     
-                        <tbody>
+                        <tbody class="no-hover-effect">
                             <tr>
                                 <td>
                                     <i class="fa-solid fa-circle-user d-block text-center admin-users-icon"></i>
