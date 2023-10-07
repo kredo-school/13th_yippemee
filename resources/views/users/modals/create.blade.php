@@ -1,3 +1,15 @@
+<style>
+    .checkbox-input {
+        display: flex;
+        align-items: center;
+    }
+
+    .checkbox-input label {
+        width: 400px;
+        font-size: 17px
+    }
+</style>
+
 <div class="modal fade" id="create-plan" aria-hidden="true">
     <div class="modal-dialog create-dialog modal-xl">
         <div class="modal-content create-content">
@@ -47,11 +59,11 @@
                                         <input type="checkbox" name="genre" value="japanese" id="japanese">
                                         <label for="japanese">Japanese</label>
                                     </div>
-                                    <div class="checkbox-input">
+                                    <div class="checkbox-input mt-3">
                                         <input type="checkbox" name="genre" value="chinese" id="chinese">
                                         <label for="chinese">Chinese</label>
                                     </div>
-                                    <div class="checkbox-input">
+                                    <div class="checkbox-input mt-3">
                                         <input type="checkbox" name="genre" value="indian" id="indian">
                                         <label for="indian">Indian</label>
                                     </div>
@@ -62,11 +74,11 @@
                                         <input type="checkbox" name="genre" value="italian" id="italian">
                                         <label for="italian">Italian</label>
                                     </div>
-                                    <div class="checkbox-input">
+                                    <div class="checkbox-input mt-3">
                                         <input type="checkbox" name="genre" value="french" id="french">
                                         <label for="french">French</label>
                                     </div>
-                                    <div class="checkbox-input">
+                                    <div class="checkbox-input mt-3">
                                         <input type="checkbox" name="genre" value="other" id="other">
                                         <label for="other">Other</label>
                                     </div>
