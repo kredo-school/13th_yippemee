@@ -9,7 +9,7 @@
         <div class="col-9">
             <div class="row border shodow">
                 <div class="col p-0">
-                    <img src="https://images.pexels.com/photos/1435903/pexels-photo-1435903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="italian" class="w-100">
+                    <img src="{{ asset('img/italianfood.png') }}" alt="italianfood" class="w-100">
                 </div>
 
                 <div class="col-4 px-0 bg-white post">
@@ -98,29 +98,28 @@
 
 </div>
 
-<div class="modal fade" id="delete-post" tabindex="-1" role="dialog" aria-labelledby="hiddenModal" aria-hidden="true">
+<div class="modal fade" id="delete-post" tabindex="-1" role="dialog" aria-labelledby="delete-post" aria-hidden="true">
     
     <div class="modal-dialog">
         <!--Content-->
-        <div class="modal-content">
+        <div class="modal-dialog" role="document">
 
             <!--Header-->
-            <div class="modal-header modal-danger">
-                <p class="heading lead modal-title-activate">Delete Post</p>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header-danger">
+                <p class="heading lead modal-title-delete-post m-4">Delete Post</p>
+                <button type="button" class="btn-close btn-close-white m-4" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             
             <!--Body-->
             <div class="modal-body d-flex justify-content-center align-items-center flex-column">
-
-                <div class="modal-body d-flex justify-content-center align-items-center flex-column">
-                    <span><i class="fa-solid fa-trash-can fa-3x icon-red"></i></span>
+                <div class="row">
+                    <i class="fa-solid fa-trash-can fa-3x icon-red"></i>
                     <p class="pt-3 pr-2">Are you sure to want to delete this post?</p>
                 </div>
 
-                <div class="mt-3">
-                    <img src="https://images.pexels.com/photos/1435903/pexels-photo-1435903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="#" class="delete-post-img img-fluid">
-                    <p class="mt-1 text-muted">description.......................</p>
+                <div class="row">
+                    <p><img src="{{ asset('img/pizza.jpg') }}" alt="pizza" class="d-block mx-auto delete-post-img"></p>
+                    <p class=" text-muted">description.......................</p>
                 </div>
 
             </div>
@@ -128,8 +127,8 @@
             <!--Footer-->
             <div class="modal-footer d-flex justify-content-center border-0"> 
                 <form action="#" method="post">
-                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger btn-lg">Delete</button>
+                    <button type="button" class="btn btn-outline-danger btn-lg " data-bs-dismiss="modal">Cancel</button>
                 </form>
                 
             </div>

@@ -6,8 +6,8 @@ aria-hidden="true">
         <div class="modal-content">
 
             <!--Header-->
-            <div class="modal-header-primary">
-                <p class="heading lead modal-title-activate m-4">Unhide Post</p>
+            <div class="modal-header-primary modal-header-title">
+                <p class="heading lead modal-title-font m-4">Unhide Post</p>
                 <button type="button" class="btn-close btn-close-white m-4" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             
@@ -29,8 +29,8 @@ aria-hidden="true">
             <!--Footer-->
             <div class="modal-footer d-flex justify-content-center border-0"> 
                 <form action="#" method="post">
-                    <button type="submit" class="btn btn-primary btn-sm">Unhide</button>
-                    <button type="button" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-lg">Unhide</button>
+                    <button type="button" class="btn btn-outline-primary btn-lg" data-bs-dismiss="modal">Cancel</button>
                 </form>
                 
             </div>
