@@ -21,7 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes(); 
+Auth::routes();
 
 //PROFILE
 Route::get('/profile/show', [ProfileController::class, 'show'])->name('profile.show');
@@ -36,7 +36,6 @@ Route::get('/visits/create', [VisitsController::class, 'create'])->name('visits.
 Route::get('/bucket/show', [BucketController::class, 'show'])->name('bucket.show');
 Route::get('/bucket/create', [BucketController::class, 'create'])->name('bucket.create');
 // Route::delete('/bucket/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');
-
 
 
 
