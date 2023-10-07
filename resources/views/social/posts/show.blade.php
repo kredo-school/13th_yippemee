@@ -9,35 +9,35 @@
         <div class="col-9">
             <div class="row border shodow">
                 <div class="col p-0">
-                    <img src="https://images.pexels.com/photos/1435903/pexels-photo-1435903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="italian" class="w-100">
+                    <img src="{{ asset('img/italianfood.png') }}" alt="italianfood" class="w-100">
                 </div>
 
                 <div class="col-4 px-0 bg-white post">
                     <div class="card border-0">
                         <div class="card-header bg-white py-3">
                             <div class="row align-items-center">
-                                <div class="col">
+                                <div class="col text-start">
                                     <i class="fa-solid fa-circle-user"></i> <a href="#" class="text-decoration-none text-post"><strong>Mary Johnson</strong></a>
                                 </div>
                                 <div class="col-auto text-end"> Following</div>
                             </div>
                         </div>
-                        <div class="card-body body-padding">
+                        <div class="card-body body-padding bg-white border-0 p-3">
                             <div class="row">
-                                <div class="col-auto text-secondary small" style="opacity: 0.6;">
+                                <div class="col text-start text-secondary small" style="opacity: 0.6;">
                                     <strong>at: </strong>
                                     &nbsp;
                                     <a href="#" class="text-decoration-none text-post">Kitchin ABC</a>
                                 </div>
                         
                                 <div class="col-auto ms-auto">
-                                    <div class="badge bg-genre text-wrap">
+                                    <div class="badge bg-genre text-wrap mr-3">
                                         Italian
                                     </div>
                                 </div>
                             </div>
                             <div class="row align-items-center">
-                                <div class="col">
+                                <div class="col text-start">
                                     <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-heart"></i></button>
                                     <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-utensils"></i></button>
                                 </div>
@@ -59,12 +59,12 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col">
+                                <div class="col text-start">
                                     I ate this pizza. It's delisiou!
                                 </div>
                             </div>
                             <div class="row align-items-center">
-                                <div class="col">
+                                <div class="col text-start">
                                     <hr>
                                     <form action="#" method="post">
                                         <div class="input-group py-2" >
@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                             <div class="row align-items-center">
-                                <div class="col">
+                                <div class="col text-start">
                                     <a href="#" class="text-decoration-none text-post"><strong>Mike Smith</strong></a>
                                     &nbsp;
                                     <p class="d-inline fw-light">I want to go there!</p>
@@ -85,7 +85,7 @@
                                     </form>
                                 </div>
                                 
-                                <div class="mt-0">
+                                <div class="mt-0 text-start">
                                     <a href="#" class="text-decoration-none small">View all comments</a>
                                 </div>
                             </div>
@@ -98,29 +98,28 @@
 
 </div>
 
-<div class="modal fade" id="delete-post" tabindex="-1" role="dialog" aria-labelledby="hiddenModal" aria-hidden="true">
+<div class="modal fade" id="delete-post" tabindex="-1" role="dialog" aria-labelledby="delete-post" aria-hidden="true">
     
     <div class="modal-dialog">
         <!--Content-->
-        <div class="modal-content">
+        <div class="modal-dialog" role="document">
 
             <!--Header-->
-            <div class="modal-header modal-danger">
-                <p class="heading lead modal-title-activate">Delete Post</p>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header-danger">
+                <p class="heading lead modal-title-delete-post m-4">Delete Post</p>
+                <button type="button" class="btn-close btn-close-white m-4" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             
             <!--Body-->
             <div class="modal-body d-flex justify-content-center align-items-center flex-column">
-
-                <div class="modal-body d-flex justify-content-center align-items-center flex-column">
-                    <span><i class="fa-solid fa-trash-can fa-3x icon-red"></i></span>
+                <div class="row">
+                    <i class="fa-solid fa-trash-can fa-3x icon-red"></i>
                     <p class="pt-3 pr-2">Are you sure to want to delete this post?</p>
                 </div>
 
-                <div class="mt-3">
-                    <img src="https://images.pexels.com/photos/1435903/pexels-photo-1435903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="#" class="delete-post-img img-fluid">
-                    <p class="mt-1 text-muted">description.......................</p>
+                <div class="row">
+                    <p><img src="{{ asset('img/pizza.jpg') }}" alt="pizza" class="d-block mx-auto delete-post-img"></p>
+                    <p class=" text-muted">description.......................</p>
                 </div>
 
             </div>
@@ -128,8 +127,8 @@
             <!--Footer-->
             <div class="modal-footer d-flex justify-content-center border-0"> 
                 <form action="#" method="post">
-                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger btn-lg">Delete</button>
+                    <button type="button" class="btn btn-outline-danger btn-lg " data-bs-dismiss="modal">Cancel</button>
                 </form>
                 
             </div>

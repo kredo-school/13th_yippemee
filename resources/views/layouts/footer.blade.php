@@ -21,25 +21,25 @@
     @else
 
         <li class="footer-nav-item">
-            <a href="#" class="nav-link">Home</a>
+            <a href="{{ route('home') }}" class="nav-link">Home</a>
         </li>
         <li class="footer-nav-item">
-            <a href="#" class="nav-link">Date</a>
+            <a href="{{ route('calendar') }}" class="nav-link">Date</a>
         </li>
         <li class="footer-nav-item">
-            <a href="#" class="nav-link">Place</a>
+            <a href="{{ route('group_list') }}" class="nav-link">Place</a>
         </li>
         <li class="footer-nav-item">
             <a href="#" class="nav-link">User</a>
         </li>
         <li class="footer-nav-item">
-            <a href="#" class="nav-link">Social</a>
+            <a href="{{ route('social.social_home') }}" class="nav-link">Social</a>
         </li>
         <li class="footer-nav-item">
-            <a href="#" class="nav-link">Restaurant</a>
+            <a href="{{ route('restaurantlist') }}" class="nav-link">Restaurant</a>
         </li>
         <li class="footer-nav-item">
-            <a href="#" class="nav-link">Contact</a>
+            <a href="{{ route('contact') }}" class="nav-link">Contact</a>
         </li>
 
     @endguest
@@ -56,8 +56,8 @@
   </div>
 </div>
 
-<div style="background-color: #253C5C">
+<div class="footer-copywrite">
   <div class="container text-white text-center">
-        <p class="copywrite">@ copywrite kredo</p>
+        <p>@ copywrite kredo</p>
   </div>
 </div>

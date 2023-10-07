@@ -6,9 +6,9 @@ aria-hidden="true">
         <div class="modal-content">
 
             <!--Header-->
-            <div class="modal-header modal-danger">
-                <p class="heading lead modal-title-activate">Hide Post</p>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header-danger modal-header-title">
+                <p class="heading lead modal-title-font m-4">Hide Post</p>
+                <button type="button" class="btn-close btn-close-white m-4" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             
             <!--Body-->
@@ -20,7 +20,7 @@ aria-hidden="true">
                 </div>
 
                 <div class="row pt-3 pr-2 d-flex flex-column align-items-center">
-                    <p><i class="fa-solid fa-image icon-large"></i></p>
+                    <p><img src="{{ asset('img/pizza.jpg') }}" alt="pizza" class="d-block mu-auto admin-post-img"></p>
                     <p>owner : Mike Smith</p>
                 </div>
 
@@ -29,8 +29,8 @@ aria-hidden="true">
             <!--Footer-->
             <div class="modal-footer d-flex justify-content-center border-0"> 
                 <form action="#" method="post">
-                    <button type="submit" class="btn btn-danger btn-sm">Hide</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger btn-lg">Hide</button>
+                    <button type="button" class="btn btn-outline-danger btn-lg" data-bs-dismiss="modal">Cancel</button>
                 </form>
                 
             </div>

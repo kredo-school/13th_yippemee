@@ -33,13 +33,14 @@
 
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     <link href="{{ asset('css/social.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
 
 
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md shadow-sm" style="background-color: #253C5C">
+        <nav class="navbar navbar-expand-md shadow-sm fixed-top" style="background-color: #253C5C">
             {{-- <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}

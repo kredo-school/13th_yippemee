@@ -84,6 +84,23 @@ class HomeController extends Controller
         return view('users.restaurant_lists.genre.cafe');
     }
 
+    public function genremore()
+    {
+        return view('users.restaurant_lists.genre.more');
+    }
+
+    public function areamore()
+    {
+        return view('users.restaurant_lists.area.more');
+    }
+
+
+    public function  restaurantcomment()
+    {
+        return view('users.restaurant_lists.comment');
+    }
+   
+
     public function detail()
     {
         return view('users.restaurant_lists.restaurant_detail');

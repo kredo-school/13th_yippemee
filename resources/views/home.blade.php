@@ -2,6 +2,13 @@
 
 @section('content')
 
+<style>
+    body {
+        padding-top: 4rem;
+        overflow: hidden;
+    }
+</style>
+
 <div class="background-image">
  <div class="container display-flex align-items-center">
     <div class="row justify-content-center">
@@ -28,14 +35,14 @@
          </div>
         <div class="row mt-3 mb-4">
          <div class="link-date col">
-           <a href="#" class="link-date-icon">
+           <a href="{{ route('calendar') }}" class="link-date-icon">
             <i class="fa-solid fa-calendar-days fa-5x">
               <p class="main-p2 h4 mt-2">Decide by date</p>
             </i>
            </a>
          </div>
          <div class="link-place col">
-            <a href="#" class="link-place-icon">
+            <a href="{{ route('group_list') }}" class="link-place-icon">
               <i class="fa-solid fa-map-location-dot fa-5x">
                 <p class="main-p2 h4 mt-2">Decide by place</p>
               </i>

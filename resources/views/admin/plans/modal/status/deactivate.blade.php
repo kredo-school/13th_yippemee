@@ -1,14 +1,14 @@
 <div class="modal fade" id="deactivateModal" tabindex="-1" role="dialog" aria-labelledby="deactivateModal"
 aria-hidden="true">
 
-    <div class="modal-dialog">
+    <div class="modal-dialog" role="document">
         <!--Content-->
         <div class="modal-content">
 
             <!--Header-->
-            <div class="modal-header modal-danger">
-                <p class="heading lead modal-title-deactivate">Deactivate Plan</p>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header-danger modal-header-title">
+                <p class="heading lead modal-title-font m-4">Deactivate Plan</p>
+                <button type="button" class="btn-close btn-close-white m-4" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             
             <!--Body-->
@@ -30,8 +30,8 @@ aria-hidden="true">
             <!--Footer-->
             <div class="modal-footer d-flex justify-content-center border-0"> 
                 <form action="#" method="post">
-                    <button type="submit" class="btn btn-danger btn-sm">Deactivate</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger btn-lg">Deactivate</button>
+                    <button type="button" class="btn btn-outline-danger btn-lg" data-bs-dismiss="modal">Cancel</button>
                 </form>
                 
             </div>
