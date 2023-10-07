@@ -3,12 +3,12 @@
 @section('title', 'Restaurant list')
 
 @section('content')
-<div class="w-75 mx-auto restaurant-list bg-white ">
+<div class="w-75 mx-auto restaurant-list bg-white text-start">
    <div class="container">
     <div class="row  mt-4">
     <form action="" >
         <div class="col mx-auto">
-            <input type="text" name="serch" id="serch" class="form-control w-50 mx-auto mt-5" class="mx-auto">
+            <input type="text" name="serch" id="serch" class="form-control w-50  mt-5" class="mx-auto">
             <button type="submit" class="btn mt-3" style="background-color: #E6F2E9;">Serach</button>
         <div >   
         </form>
@@ -21,7 +21,7 @@
     </div>
     <div class="row">
         <div class="col-md-4">
-            <img src="/images/tokyo.jpg" alt="" class="rounded  ">
+            <img src="/images/tokyo.jpg" alt="" class="rounded  " style="width:400px">
         </div>
         <div class="col-md-8 float-left">
             <div class="row">
@@ -52,7 +52,7 @@
 
     <div class="row">
         <div class="col-md-4">
-            <img src="/images/tokyo.jpg" alt="" class="rounded  ">
+            <img src="/images/tokyo.jpg" alt="" class="rounded  " style="width:400px">
         </div>
         <div class="col-md-8 float-left">
             <div class="row">
@@ -82,7 +82,7 @@
 
     <div class="row">
         <div class="col-md-4">
-            <img src="/images/tokyo.jpg" alt="" class="rounded  ">
+            <img src="/images/tokyo.jpg" alt="" class="rounded  " style="width:400px">
         </div>
         <div class="col-md-8 float-left">
             <div class="row">
@@ -112,7 +112,7 @@
 
     <div class="row mb-5">
         <div class="col-md-4">
-            <img src="/images/tokyo.jpg" alt="" class="rounded  ">
+            <img src="/images/tokyo.jpg" alt="" class="rounded  " style="width:400px">
         </div>
         <div class="col-md-8 float-left">
             <div class="row">
