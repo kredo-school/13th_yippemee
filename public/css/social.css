@@ -78,3 +78,21 @@ div.bg-genre {
 .card-body{
     top: 65px;
 }
+
+.modal-title-delete-post {
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
+
+}
+.modal-header-danger {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+.modal-body{
+    color: #253C5C;
+    background-color:#ffffff
+}
+
+.modal-footer{
+    background-color:#ffffff
+}

@@ -7,9 +7,9 @@ aria-hidden="true">
         <div class="modal-content border-warning">
 
             <!--Header-->
-            <div class="modal-header modal-warning">
-                <p class="heading lead modal-title-updateGenre">Edit Genre</p>
-                <button type="button" class="btn-close btn-close-edit" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header-warning modal-header-title">
+                <p class="heading lead modal-title-font m-4">Edit Genre</p>
+                <button type="button" class="btn-close btn-close-edit m-4" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
 
@@ -20,12 +20,11 @@ aria-hidden="true">
                         <input type="text" name="new_name" class="form-control mb-4 text-width" placeholder="Genre name" autofocus value="#" >
                     </div>
                     <div class="d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-warning btn-sm me-2" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-warning btn-sm text">Update</button>
+                        <button type="button" class="btn btn-outline-warning btn-lg" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-warning btn-lg text">Update</button>
                     </div>
                 </form>
             </div>
-
         </div>
     </div>
 </div>
@@ -39,8 +38,8 @@ aria-hidden="true">
         <div class="modal-content">
 
             <!--Header-->
-            <div class="modal-header-danger">
-                <p class="heading lead modal-title-deactivate m-4">Delete Genre</p>
+            <div class="modal-header-danger modal-header-title">
+                <p class="heading lead modal-title-font m-4">Delete Genre</p>
                 <button type="button" class="btn-close btn-close-white m-4" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             
@@ -54,8 +53,8 @@ aria-hidden="true">
             <!--Footer-->
             <div class="modal-footer d-flex justify-content-center border-0"> 
                 <form action="#" method="post">
-                    <button type="submit" class="btn btn-danger btn-sm me-2">Delete</button>
-                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger btn-lg me-2">Delete</button>
+                    <button type="button" class="btn btn-outline-danger btn-lg" data-bs-dismiss="modal">Cancel</button>
                 </form>
                 
             </div>
