@@ -1,3 +1,260 @@
+
+/* Profile */
+.main-font {font-family: 'Marcellus', serif;}
+.second-font {font-family: 'Muli';}
+.icon-lg {font-size: 9rem;}
+.icon-md {font-size: 3.5rem;}
+.icon-sm {font-size: 1.5rem;}
+.main-font {color: #253C5C;}
+.second-font {color: #253C5C;}
+.icon-font {color: #253C5C;}
+.icon-font:hover {color: #617EA8;}
+.icon-font:active {font-weight: bold;}
+.icon-font {font-family: 'Muli';}
+
+/* side bar */
+.title {font-size: 1.5rem;}
+
+a.btn--yellow {
+    color: #253C5C;
+    background-color: #F1DD6C;
+    border-bottom: 5px solid #F1DD6C;
+  }
+
+  a.btn--yellow:hover {
+    margin-top: 3px;
+    color: #253C5C;
+    background: #F2C84B;
+    border-bottom: 2px solid #F1DD6C;
+  }
+
+  a.btn--green {
+    color: #617EA8;
+    background-color: #E6F2E9;
+    border-bottom: 5px solid #E6F2E9;
+  }
+
+  a.btn--green:hover {
+    margin-top: 3px;
+    color: #617EA8;
+    background: #C1E2E0;
+    border-bottom: 2px solid #E6F2E9;
+  }
+
+  /* Visits */
+  td.profile {color: #253C5C;}
+  td.profile {font-family: 'Muli';}
+  .icon-ex {font-size: 15rem;}
+
+  /* pic */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Muli';
+}
+.default-file-input {
+	opacity: 0;
+}
+/* Bucket */
+.drag-file-area {
+    background-color: #617EA8;
+    color: aliceblue;
+	margin: 10px 0 15px;
+	padding: 140px 50px;
+	width: 400px;
+    height: 400px;
+	text-align: center;
+    vertical-align: middle;
+}
+
+/* Visit */
+.show-star {
+    color: #F1A29B;
+    font-size: 20px;
+}
+
+.drag-file-area-visit {
+    background-color: #617EA8;
+    color: aliceblue;
+	margin: 10px 0 15px;
+	padding: 130px 50px;
+	width: 400px;
+    height: 370px;
+	text-align: center;
+    vertical-align: middle;
+}
+.cannot-upload-message {
+	background-color: #ffc6c4;
+	font-size: 17px;
+	display: flex;
+	align-items: center;
+	margin: 5px 0;
+	padding: 5px 10px 5px 30px;
+	border-radius: 5px;
+	color: #BB0000;
+	display: none;
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+.file-block {
+	color: #f7fff7;
+	background-color: #7b2cbf;
+  	transition: all 1s;
+	width: 390px;
+	position: relative;
+	display: none;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px 0 15px;
+	padding: 10px 20px;
+	border-radius: 25px;
+	cursor: pointer;
+}
+.file-info {
+	display: flex;
+	align-items: center;
+	font-size: 15px;
+}
+.file-icon {
+	margin-right: 10px;
+}
+.file-name, .file-size {
+	padding: 0 3px;
+}
+.remove-file-icon {
+	cursor: pointer;
+}
+.progress-bar {
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	left: 4.5%;
+	width: 0;
+	height: 5px;
+	border-radius: 25px;
+	background-color: #4BB543;
+}
+
+.drag-file-area-visit-edit {
+    background-color: #617EA8;
+    color: aliceblue;
+	margin: 0px 0 0px;
+	padding: 50px 0px;
+	width: 400px;
+    height: 200px;
+	text-align: center;
+    vertical-align: middle;
+}
+
+.table td {
+    text-align:left;
+}
+
+.table th {
+    text-align: right;
+    padding-left: 0;
+    padding-bottom: 10px;
+    width: 50px;
+}
+
+.sidebar
+ {
+    padding-top: 10px;
+ }
+
+ /* raiting */
+ .rating input[type="radio"]:not(:nth-of-type(0)) {
+    /* hide visually */
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.raiting {
+    font-size: 20px;
+}
+
+.stars {
+    font-size: 30px;
+}
+
+.rating [type="radio"]:not(:nth-of-type(0)) + label {
+    display: none;
+}
+
+label[for]:hover {
+    cursor: pointer;
+}
+
+.rating .stars label:before {
+    content: "★";
+}
+
+.stars label {
+    color: lightgray;
+}
+
+.stars label:hover {
+    text-shadow: 0 0 1px #000;
+}
+
+.rating [type="radio"]:nth-of-type(1):checked ~ .stars label:nth-of-type(-n+1),
+.rating [type="radio"]:nth-of-type(2):checked ~ .stars label:nth-of-type(-n+2),
+.rating [type="radio"]:nth-of-type(3):checked ~ .stars label:nth-of-type(-n+3),
+.rating [type="radio"]:nth-of-type(4):checked ~ .stars label:nth-of-type(-n+4),
+.rating [type="radio"]:nth-of-type(5):checked ~ .stars label:nth-of-type(-n+5) {
+    color: #F1A29B;
+}
+
+.rating [type="radio"]:nth-of-type(1):focus ~ .stars label:nth-of-type(1),
+.rating [type="radio"]:nth-of-type(2):focus ~ .stars label:nth-of-type(2),
+.rating [type="radio"]:nth-of-type(3):focus ~ .stars label:nth-of-type(3),
+.rating [type="radio"]:nth-of-type(4):focus ~ .stars label:nth-of-type(4),
+.rating [type="radio"]:nth-of-type(5):focus ~ .stars label:nth-of-type(5) {
+    color: #F1A29B;
+}
+
+/* bucket icon */
+table tbody tr th .body {
+    font-size: 17px;
+    padding-top: 5px;
+    color: #253C5C;
+}
+
+table tbody tr td {
+    color: #253C5C;
+}
+
+/* dropdown-item */
+.dropdown-item {
+    color: #253C5C;
+}
+
+.dropdown-item:hover {
+    color: #253C5C;
+    background: #E6F2E9;
+}
+
+.btn {
+    border: none;
+}
+
+.dropdown-menu {
+    margin: 0;
+    padding: 0;
+}
+
+=======
  login-page
 body{
     background-image: url('/images/login-bg.png');
@@ -15,101 +272,33 @@ body{
     background-color:#253C5C ;
     transition-duration: 0.5s;
 
-/* home */
-.background-image {
-    background-image: url('/images/bg-mainpage.png');
-    background-size: cover;
-    height: 600px;
-}
 
-.homecard {
-    margin-top: 150px;
-    background-color: rgba(230,242,233,0.75);
-}
-
-.main-text {
-    font-family: 'Marcellus', serif;
-    color: #253C5C;
-}
-
-.main-p1 {
-    font-family: 'Marcellus', serif;
-    color: #617EA8;
-    font-weight: bold;
-}
-
-.main-p2 {
-    font-family: 'Muli', serif;
-    font-weight: bold;
-}
-
-.link-date:hover {
-    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.3), 1px 1px 1px rgba(0, 0, 0, 0.5);
-    animation: key1 .5s ease infinite alternate;
-}
-
-.link-date-icon {
-    color: #253C5C;
-    text-decoration: none;
-}
-
-.link-date-icon:hover {
-    color: #F1A29B;
-}
-
-.link-place:hover {
-    text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.3), 1px 1px 1px rgba(0, 0, 0, 0.5);
-    animation: key1 .5s ease infinite alternate;
-}
-
-@keyframes key1{
-    0% {transform: perspective(200px)translateZ(0px);}
-    100% {transform: perspective(200px)translateZ(30px);}
-  }
-
-.link-place-icon {
-    color: #253C5C;
-    text-decoration: none;
-}
-
-.link-place-icon:hover {
-    color: #F2C84B;
-}
-
-/* footer */
-.footer-nav {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-
-}
 
 .btn-blue:hover{
     color: white;
     background-color: #4e5c70;
     box-shadow: 5px 5px 20px #777;
 }
-  
-  
+
+
   @media print {
     .table {
       border-collapse: collapse !important; }
     }
-  
+
   body {
     font-size: 16px;
     line-height: 1.8;
     font-weight: normal;
      }
-  
+
   h2
    {
     line-height: 1.5;
     font-weight: 400;
     font-family: 'Marcellus';
     }
-  
+
   .wrap-header {
     position: relative;
  login-page
@@ -138,37 +327,35 @@ body{
       position: absolute;
       top: 0;
       font-size: 18px; }
-     
+
     .button-wrap .pre-button {
       left: 20px; }
     .button-wrap .next-button {
       right: 20px; }
-  
 
-    margin-right: 40px;
-    font-family: 'Muli', serif;
-}
+
+
  main
 
   .calendar-wrap {
     width: 65%;
     background: #fff;
     padding: 40px 20px 20px 20px; }
-    
-  
+
+
   #calendar {
     width: 100%; }
-  
+
   #calendar tr {
     height: 5em; }
-  
+
     .calendar tbody{
         border-radius: 50%;
     }
 
   tbody td {
     width: 14%;
-   
+
     cursor: pointer;
     -webkit-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
@@ -194,7 +381,7 @@ body{
       transition: 0.3s;
       z-index: -1; }
 
-  
+
   tbody td:hover, .selected {
     color: #fff;
     border: none; }
@@ -202,7 +389,7 @@ body{
       background: #2a3246; }
 
  login-page
-  
+
 
 .head-day {
   font-size: 5em;
@@ -225,10 +412,7 @@ body{
     font-family: 'Muli', serif;
 }
 
-/* navbar */
-.navbar-item {
-    font-family: 'Muli', serif;
-}
+
 
 
 .elegant-calencar {
@@ -239,7 +423,7 @@ body{
     overflow: hidden;
     border-radius: 5px;
     }
-  
+
 .wrap-header {
     position: relative;
     width: 35%;
@@ -258,7 +442,7 @@ body{
       .wrap-header {
         width: 100%;
         padding: 20px 0; } }
-  
+
   #header {
     width: 100%;
     position: relative; }
@@ -288,7 +472,7 @@ body{
     color: #fff; }
     #today:after {
       background: #e13a9d; }
-  
+
       #reset {
         display: block;
         position: absolute;
@@ -304,16 +488,16 @@ body{
         transition: all 0.3s ease;
         text-transform: uppercase;
         font-size: 11px; }
-  
+
   #reset:hover {
     color: #fff;
     border-color: #fff; }
-  
+
   #reset:active {
     -webkit-transform: scale(0.8);
     -ms-transform: scale(0.8);
     transform: scale(0.8); }
-  
+
     /* myschedule modal */
 
     .detal-right img{
@@ -383,7 +567,7 @@ body{
 
     /* restaurant-list */
 
-    .restaurant-list img{  
+    .restaurant-list img{
         aspect-ratio: 4 / 3;
         width: 75%;
         object-fit:cover;
@@ -398,20 +582,5 @@ body{
 
 }
 
-/* contact */
-.contact-form {
-    background-color: #E6F2E9;
-    border-radius: 30px;
-}
 
-.btn-contact {
-    background-color: #F2C84B;
-    opacity: .8;
-    color: #253C5C;
-    font-family: 'Marcellus', serif;
-}
 
-.btn-contact:hover {
-    background-color: #F2C84B;
-    opacity: 1.0;
-}

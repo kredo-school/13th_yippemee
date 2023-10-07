@@ -31,21 +31,21 @@
                 </div> 
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 text-start">
                 <label for="description" class="form-label d-block fw-bold">
                     description
                 </label>
                 <textarea name="description" id="description" rows="3" class="form-control"></textarea>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 text-start">
                 <label for="restrante_name" class="form-label d-block fw-bold">
                     restrante name
                 </label>
                 <input type="text" name="restrante_name" id="restrante_name" class="form-control">
             </div>
 
-            <div class="row mb-3">
+            <div class="row mb-3 text-start">
                 <div class="col">
                     <label for="post-image" class="form-label d-block fw-bold">
                         image
@@ -54,8 +54,10 @@
                     <input type="file" name="post_image" class="form-control">
                 </div>
             </div>
-
-            <button type="submit" class="btn btn-post px-5">POST</button>
+            <div class="col text-start">
+                <button type="submit" class="btn btn-post px-5">POST</button>
+            </div>
+            
 
         </form>
     </div>
