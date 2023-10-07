@@ -19,6 +19,7 @@
             </div>
             <h4><p class="d-inline fw-light">{{ "We enjoyed our meals here and our server was very nice and attentive. Prices are good too especially for Chicago. It’s a little noisy but it’s a pub so you have to expect some noise level. We would definitely go back" }}</p></h4>
         </div>
+        
     </div>
 
         {{-- Modal Delete or Edit--}}
