@@ -6,10 +6,10 @@
     <div class="container container-calendar">
         <div class="box title-box">
             <div class="row title-area">
-                <h1 class="title-div my-auto text-center">
+                <h1 class="title-div my-auto">
                     <i class="fa-regular fa-calendar" style="color: #253c5c;"></i> Decide by Date
                 </h1>
-                <p>Let's check what your friends are craving,<br>and add yours too.</p>
+                <p>Let's check what your friends are craving, and add yours too.</p>
             </div>
             <div class="row plan-box">
                 <div class="accordion accordion-flush" id="accordionPlan">
