@@ -56,8 +56,8 @@
   </div>
 </div>
 
-<div style="background-color: #253C5C">
+<div class="footer-copywrite">
   <div class="container text-white text-center">
-        <p class="copywrite">@ copywrite kredo</p>
+        <p>@ copywrite kredo</p>
   </div>
 </div>

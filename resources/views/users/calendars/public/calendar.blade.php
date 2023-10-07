@@ -124,9 +124,8 @@
             </div>
         </div>
     </div>
-</div>
 
-{{--
-    @include('users.modals.create_plan') --}}
+
+    @include('users.modals.create')
     @include('users.modals.detail')
 @endsection
