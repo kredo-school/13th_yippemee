@@ -1,14 +1,14 @@
 <div class="modal fade" id="activateModal" tabindex="-1" role="dialog" aria-labelledby="activateModal"
 aria-hidden="true">
 
-    <div class="modal-dialog">
+    <div class="modal-dialog" role="document">
         <!--Content-->
         <div class="modal-content">
 
             <!--Header-->
-            <div class="modal-header modal-success">
-                <p class="heading lead modal-title-activate">Activate Plan</p>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header-success">
+                <p class="heading lead modal-title-activate m-4">Activate Plan</p>
+                <button type="button" class="btn-close btn-close-white m-4" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             
             <!--Body-->

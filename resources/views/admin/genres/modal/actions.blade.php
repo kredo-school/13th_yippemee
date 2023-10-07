@@ -2,7 +2,7 @@
 <div class="modal fade" id="updateGenre" tabindex="-1" role="dialog" aria-labelledby="updateGenre"
 aria-hidden="true">
 
-    <div class="modal-dialog">
+    <div class="modal-dialog" role="document">
         <!--Content-->
         <div class="modal-content border-warning">
 
@@ -34,14 +34,14 @@ aria-hidden="true">
 <div class="modal fade" id="deleteGenre" tabindex="-1" role="dialog" aria-labelledby="deleteGenre"
 aria-hidden="true">
 
-    <div class="modal-dialog">
+    <div class="modal-dialog" role="document">
         <!--Content-->
         <div class="modal-content">
 
             <!--Header-->
-            <div class="modal-header modal-danger">
-                <p class="heading lead modal-title-deactivate">Delete Genre</p>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header-danger">
+                <p class="heading lead modal-title-deactivate m-4">Delete Genre</p>
+                <button type="button" class="btn-close btn-close-white m-4" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             
             <!--Body-->
