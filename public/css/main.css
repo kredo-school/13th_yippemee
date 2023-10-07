@@ -121,22 +121,35 @@ footer{
 }
 
 /* contact */
+.contact-bg {
+    background-image: url('/images/contact-bg.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
 .contact-form {
-    background-color: #E6F2E9;
+    width: 500px;
     border-radius: 30px;
+    margin-top: 80px;
+    background-color: rgba(230,242,233,0.75);
 }
 
 .btn-contact {
-    background-color: #F2C84B;
-    opacity: .8;
     color: #253C5C;
-    font-family: 'Marcellus', serif;
-}
+    background-color: #F1DD6C;
+  }
 
 .btn-contact:hover {
-    background-color: #F2C84B;
-    opacity: 1.0;
-}
+    color: #253C5C;
+    background: #F2C84B;
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+.btn-contact:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
 
 /* Considering the effect of navbar footer fixed */
 body {

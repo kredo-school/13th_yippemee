@@ -26,22 +26,22 @@
                 @endif
             @else
                 <li class="navbar-item">
-                    <a href="#" class="nav-link text-white">Home</a>
+                    <a href="{{ route('home') }}" class="nav-link text-white">Home</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="#" class="nav-link text-white">Date</a>
+                    <a href="{{ route('calendar') }}" class="nav-link text-white">Date</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="#" class="nav-link text-white">Place</a>
+                    <a href="{{ route('group_list') }}" class="nav-link text-white">Place</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="#" class="nav-link text-white">Social</a>
+                    <a href="{{ route('social.social_home') }}" class="nav-link text-white">Social</a>
                 </li>
                 <li class="navbar-item">
                     <a href="#" class="nav-link text-white">User</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="{{ url('/restaurantlist') }}" class="nav-link text-white">Restaurant</a>
+                    <a href="{{ route('restaurantlist') }}" class="nav-link text-white">Restaurant</a>
                 </li>
                 <li class="navbar-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,7 +50,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item text-warning h5" href="#">You have an event!</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Private calendar</a></li>
+                        <li><a class="dropdown-item" href="#">Public calendar</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Post</a></li>
                         <li><hr class="dropdown-divider"></li>
@@ -62,9 +62,9 @@
                         <i class="fa-solid fa-circle-user fa-2xl"></i>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Admin</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.users.index') }}">Admin</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"
