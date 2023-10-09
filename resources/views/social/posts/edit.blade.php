@@ -9,23 +9,23 @@
             <div class="d-flex flex-column mb-3 align-items-start">
                 <label for="genre" class="form-label fw-bold me-3">Genre</label>
 
-                <div class="d-flex align-items-center">
-                    <div class="form-check form-check-inline d-flex align-items-center me-2">
+                <div class="d-flex align-items-center posts-input">
+                    <div class="form-check form-check-inline d-flex align-items-center">
                         <input type="checkbox" name="genre[]" id="genre_italian" value="Italian" class="form-check-input">
-                        &nbsp;<label for="genre_italian" class="form-check-label ml-2">  Italian</label>
+                        <label for="genre_italian" class="form-check-label">Italian</label>
                     </div>
-                    <div class="form-check form-check-inline d-flex align-items-center me-2">
+                    <div class="form-check form-check-inline d-flex align-items-center">
                         <input type="checkbox" name="genre[]" id="genre_japanese" value="Japanese" class="form-check-input">
-                        &nbsp;<label for="genre_japanese" class="form-check-label ml-2">  Japanese</label>
+                        <label for="genre_japanese" class="form-check-label">Japanese</label>
                     </div>
-                    <div class="form-check form-check-inline d-flex align-items-center me-2">
+                    <div class="form-check form-check-inline d-flex align-items-center">
                         <input type="checkbox" name="genre[]" id="genre_mexican" value="Mexican" class="form-check-input mr-2">
-                        &nbsp;<label for="genre_mexican" class="form-check-label">  Mexican</label>
+                        <label for="genre_mexican" class="form-check-label">Mexican</label>
                     </div>
-                    <div class="form-check form-check-inline d-flex align-items-center me-3">
-                        <input type="checkbox" name="genre[]" id="genre_others" value="" class="form-check-input mr-2">
-                        &nbsp;<label for="genre_others" class="form-check-label ml-2">Others</label>
-                        &nbsp;<input type="text" name="genre" id="genre_others_text" class="form-control me-2" value="" autofocus>
+                    <div class="form-check form-check-inline d-flex align-items-center">
+                        <input type="checkbox" name="genre[]" id="genre_others" value="" class="form-check-input">
+                        <label for="genre_others" class="form-check-label">Others</label>
+                        <input type="text" name="genre" id="genre_others_text" class="form-control" value="" autofocus>
                         <button type="submit" class="btn text-white" style="background-color: #253C5C;"><i class="fa-solid fa-plus"></i></button>
                     </div>
                 </div> 

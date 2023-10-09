@@ -48,7 +48,7 @@
                                         </button>
                         
                                         <div class="dropdown-menu">
-                                            <a href="#" class="dropdown-item">
+                                            <a href="{{ route('social.posts.edit') }}" class="dropdown-item">
                                                 <i class="fa-solid fa-pen-to-square text-post"></i> Edit
                                             </a>
                                             <button class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#delete-post">
