@@ -6,7 +6,7 @@
 
 <div class="container">
 
-    <div class="justify-content-center">
+    <div class="justify-content-center mt-5 mb-5">
 
         <div class="col-10">
         <form action="#" method="post" class="shadow rounded-3 p-5" enctype="multipart/form-data">
@@ -48,7 +48,7 @@
 
             <div class="mb-4 second-font">
                 <label for="additional" class="form-label fw-bold mb-0">Additional</label>
-                <textarea name="additional" id="additional" rows="5" placeholder="Write some information about the restaurant" class="form-control" class="form-control"></textarea>
+                <textarea name="additional" id="additional" rows="5" placeholder="Write some information about the restaurant" class="form-control"></textarea>
 
             {{-- Error --}}
             @error('description')

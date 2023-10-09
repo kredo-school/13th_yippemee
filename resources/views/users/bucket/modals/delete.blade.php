@@ -25,7 +25,6 @@
                         Cancel
                     </button>
                     <input type="button" class="btn btn-danger btn-sm" onclick="delete_visits()" id="delete_bucket" value="delete">
-                    {{-- <button class="btn btn-danger btn-sm" onclick="delete_visits()" id="delete_visits">Delete</button> --}}
                 </form>
             </div>
         </div>
