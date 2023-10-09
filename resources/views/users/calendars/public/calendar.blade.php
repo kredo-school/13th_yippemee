@@ -8,6 +8,7 @@
         padding-top: 20px;
         margin-top: -20px;
         height: 1100px;
+        background-repeat: none;
     }
 </style>
 
@@ -21,6 +22,8 @@
                     </h1>
                     <p>Let's check what your friends are craving,<br>and add yours too.</p>
                 </div>
+            </div>
+        </div>
                 {{-- <div class="row sticky-plan">
                     <div class="accordion accordion-flush" id="accordionPlan">
                         <div class="accordion-item">
@@ -59,8 +62,7 @@
                         </div>
                     </div>
                 </div> --}}
-            </div>
-        </div>
+
 
         <div class="calendar-box">
             <div class="row w-75 top-button">
@@ -108,7 +110,11 @@
                             <td></td>
                             <td></td>
                             <td>
-                                <button type="button" class="btn w-100" data-bs-toggle="modal" data-bs-target="#detail-modal">1</button></td>
+                                {{-- <button type="button" class="btn w-100" data-bs-toggle="modal" data-bs-target="#detail-modal">1</button> --}}
+                                <button type="button" class="btn btn-detail" data-bs-toggle="modal" data-bs-target="#detail-modal">
+                                    1
+                                </button>
+                            </td>
                             <td>2</td>
                         </tr>
                         <tr>
