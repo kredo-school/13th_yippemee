@@ -71,10 +71,6 @@ a.btn--yellow {
     border-bottom: 2px solid #E6F2E9;
   }
 
-
-  /* More button */
-
-
 /* Bucket-edit-modal */
 .bucket-edit-modal {
     height: 950px;
@@ -104,6 +100,10 @@ a.btn--yellow {
     margin-left: 45px;
 }
 
+.bucketlist_body {
+    list-style: none;
+}
+
 
 .title-visit{
     margin-left: 200px;
@@ -116,6 +116,12 @@ a.btn--yellow {
 }
 
   /* Visits */
+  .visit_body_line {
+    border-bottom: 3px solid;
+    border-color: rgba(97,126,168,0.2);
+    height: 250px;
+  }
+
 .card-body-visit {
     background-color: white;
 }

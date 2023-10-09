@@ -29,7 +29,7 @@
                             </div>
                     </div>
                 </div>
-                <ul class="list-group ms-3">
+                <ul class="list-group bucketlist_body ms-3">
                 <li>Mexican</li>
                 <li>Mon–Fri 11:00am–10:00pm</li>
                 <li>Happy Hour,Non-Smoking</li>
@@ -71,7 +71,7 @@
                             </div>
                     </div>
                 </div>
-                <ul class="list-group ms-3">
+                <ul class="list-group bucketlist_body ms-3">
                 <li>Mexican</li>
                 <li>Mon–Fri 11:00am–10:00pm</li>
                 <li>Happy Hour,Non-Smoking</li>
@@ -113,7 +113,7 @@
                             </div>
                     </div>
                 </div>
-                <ul class="list-group ms-3">
+                <ul class="list-group bucketlist_body ms-3">
                 <li>Mexican</li>
                 <li>Mon–Fri 11:00am–10:00pm</li>
                 <li>Happy Hour,Non-Smoking</li>
