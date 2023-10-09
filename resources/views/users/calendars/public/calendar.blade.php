@@ -21,7 +21,7 @@
                     </h1>
                     <p>Let's check what your friends are craving,<br>and add yours too.</p>
                 </div>
-                <div class="row sticky-plan">
+                {{-- <div class="row sticky-plan">
                     <div class="accordion accordion-flush" id="accordionPlan">
                         <div class="accordion-item">
                             <div class="accordion-header" id="headingPlan">
@@ -31,7 +31,7 @@
                             </div>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionPlan">
                                 <div class="accordion-body">
-                                    {{-- @if / foreach --}}
+                                    @if / foreach
                                     <button type="button" class="btn w-100" data-bs-toggle="modal" data-bs-target="#detail-modal">
                                         <div class="row plan-row">
                                             <div class="col-2 time-col">
@@ -58,7 +58,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
 
@@ -107,7 +107,8 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>1</td>
+                            <td>
+                                <button type="button" class="btn w-100" data-bs-toggle="modal" data-bs-target="#detail-modal">1</button></td>
                             <td>2</td>
                         </tr>
                         <tr>
