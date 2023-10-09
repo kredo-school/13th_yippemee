@@ -1,17 +1,13 @@
 {{-- Picture --}}
-    <div class="col-3 ms-3 mb-3 mt-3">
-        <img src="{{ asset('img/image.jpg') }}" alt="logo" class="w-100">
-    </div>
+<div class="col-3 ms-3 mb-3 mt-3">
+    <img src="{{ asset('img/image.jpg') }}" alt="logo" class="w-100">
+</div>
 
-    <div class="visit-show col-5 me-auto">
-        <div class="row">
-            <div class="col-10 mt-3">
-                <h4 class="fw-bold">Bistro Adrian's Restaurant</h4>
-            </div>
-            <h4><p class="d-inline fw-light">{{ "We enjoyed our meals here and our server was very nice and attentive. Prices are good too especially for Chicago. It’s a little noisy but it’s a pub so you have to expect some noise level. We would definitely go back" }}</p></h4>
+<div class="visit-show col-5 me-auto">
+    <div class="row">
+        <div class="col-10 mt-3">
+            <h4 class="fw-bold">Bistro Adrian's Restaurant</h4>
         </div>
-
-    </div>
 
         {{-- Modal Delete or Edit--}}
         <div class="col-2">
@@ -28,28 +24,28 @@
                         <a href="#" class="dropdown-item text-danger">
                             <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#delete-visits"></i> Delete
                         </a>
-
                     </div>
                     {{-- Include Modal here --}}
                     @include('users.visits.modals.delete')
                     {{-- Include Modal --}}
                     @include('users.visits.modals.edit')
-                </div>
             </div>
         </div>
 
-            <div class="mt-0 mb-0">{{ date('M d, Y') }}</div>
-            <div class="show-star mt-0 mb-3">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-            </div>
+        <div class="mt-0 mb-0">{{ date('M d, Y') }}</div>
 
-        <h5><p class="d-inline fw-light">{{ "We enjoyed our meals here and our server was very nice and attentive. Prices are good too especially for Chicago. It’s a little noisy but it’s a pub so you have to expect some noise level. We would definitely go back" }}</p>
-        </div></h5>
+        <div class="show-star mt-0 mb-3">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+        </div>
+
+        <h4><p class="d-inline fw-light">{{ "We enjoyed our meals here and our server was very nice and attentive. Prices are good too especially for Chicago. It’s a little noisy but it’s a pub so you have to expect some noise level. We would definitely go back" }}</p></h4>
+
     </div>
+</div>
 
 
 
