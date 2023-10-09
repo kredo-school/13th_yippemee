@@ -50,12 +50,9 @@ Route::get('/users/calendars/public/weekly',[HomeController::class,'showWeekly']
 
 Route::get('/users/private/group_list', [HomeController::class, 'group_list'])->name('group_list');
 
-// my schedule
 Route::get('/myschedule', [HomeController::class, 'myschedule'])->name('myschedule');
 Route::get('/private/yourplan', [HomeController::class, 'privateyourplan'])->name('privateyourplan');
 Route::get('/public/yourplan', [HomeController::class, 'publicyourplan'])->name('publicyourplan');
-
-// restaurant list
 Route::get('/restaurantlist', [HomeController::class, 'restaurantlist'])->name('restaurantlist');
 Route::get('/genre/japanese', [HomeController::class, 'genrejapanese'])->name('genrejapanese');
 Route::get('/genre/italian', [HomeController::class, 'genreitalian'])->name('genreitalian');
