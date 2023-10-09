@@ -25,8 +25,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 //PROFILE
 Route::get('/profile/show', [ProfileController::class, 'show'])->name('profile.show');
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -55,15 +53,21 @@ Route::get('/users/calendars/public/weekly',[HomeController::class,'showWeekly']
 
 Route::get('/users/private/group_list', [HomeController::class, 'group_list'])->name('group_list');
 
+// my schedule
 Route::get('/myschedule', [HomeController::class, 'myschedule'])->name('myschedule');
 Route::get('/private/yourplan', [HomeController::class, 'privateyourplan'])->name('privateyourplan');
 Route::get('/public/yourplan', [HomeController::class, 'publicyourplan'])->name('publicyourplan');
+
+// restaurant list
 Route::get('/restaurantlist', [HomeController::class, 'restaurantlist'])->name('restaurantlist');
 Route::get('/genre/japanese', [HomeController::class, 'genrejapanese'])->name('genrejapanese');
 Route::get('/genre/italian', [HomeController::class, 'genreitalian'])->name('genreitalian');
 Route::get('/genre/chinese', [HomeController::class, 'genrechinese'])->name('genrechinese');
 Route::get('/genre/cafe', [HomeController::class, 'genrecafe'])->name('genrecafe');
+Route::get('/genre/more', [HomeController::class, 'genremore'])->name('genremore');
+Route::get('/area/more', [HomeController::class, 'areamore'])->name('areamore');
 Route::get('/restaurant/detail', [HomeController::class, 'detail'])->name('detail');
+Route::get('/restaurant/comment', [HomeController::class, 'restaurantcomment'])->name('restaurantcomment');
 
 //admin
 Route::get('/admin/users/index', [HomeController::class, 'admin_users_index'])->name('admin.users.index');

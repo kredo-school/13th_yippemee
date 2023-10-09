@@ -549,15 +549,19 @@ form input[type="file"] {
 .create-body {
     left: 3rem;
 }
+.create-body i {
+    color: #253c5c;
+}
+
 .create-body input,textarea {
-    border: 1px solid #617EA8;
+    border: 1px solid #253c5c;
     border-radius: 5px;
     width: 90%;
 }
-#s-time,
-#e-time {
+#s-time, .s-time,
+#e-time, .e-time {
     width: 10rem;
-    color: #617EA8;
+    color: #253c5c;
     padding-left: 0.5rem;
 
 }
@@ -569,10 +573,15 @@ form input[type="file"] {
     border: 1px solid #253c5c;
     font-size: 16px;
 }
+.checkbox-input label{
+    color: #253c5c;
+}
 .label-title {
+    height: 30px;
     font-size: 20px;
     margin-bottom: 0;
     margin-top: 3px;
+    color: #253c5c;
 }
 .row .genre {
     border-left: 4px solid #253c5c;
@@ -585,9 +594,6 @@ form input[type="file"] {
     border-radius: 5px;
     margin-right: 1rem;
 }
-.label-title {
-    height: 30px;
-}
 .row .time-row {
     height: 50px;
 }
@@ -596,5 +602,3 @@ form input[type="file"] {
     margin: 0;
     padding: 0;
 }
-
-

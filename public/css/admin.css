@@ -1,23 +1,32 @@
 /* admin.css */
-.list-group .list-group-item {
+.admin .list-group .list-group-item {
     background-color: #253C5C;
     color: #ffffff;
     font-family: 'Marcellus', serif;
 }
 
-.list-group-item:hover {
+.admin .list-group .list-group-item {
+    text-align: left;
+}
+
+.admin .list-group-item:hover {
     background-color: #E6F2E9;
     color: #253C5C;
     transition: background-color 0.3s;
 }
 
-.table thead {
+.admin-table th, .admin-table td {
+    padding-left: 10px;
+    text-align: left;
+}
+
+.admin-table .table thead {
     --bs-table-bg: #253C5C !important;
     --bs-table-color: #ffffff;
     font-family: 'Marcellus', serif;
 }
 
-.table tbody {
+.admin-table .table tbody {
     font-family: 'Muli', serif;
 }
 
@@ -27,14 +36,32 @@
     font-family: 'Muli', serif;
 }
 
-.modal-success {
+.admin-post-img {
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+}
+
+.delete-post-img {
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+}
+
+.modal-header-success {
     background-color: #28a745;
     color: #ffffff;
 }
 
-.modal-title-activate {
+.modal-header-title{
+    display: flex;
+    justify-content: space-between;   
+}
+
+.modal-title-font {
     font-family: 'Marcellus', serif;
     font-weight: bold;
+
 }
 
 .icon-green{
@@ -45,14 +72,9 @@
     color: #253C5C;
 }
 
-.modal-danger {
+.modal-header-danger {
     background-color: #dc3545;
     color: #ffffff;
-}
-
-.modal-title-deactivate {
-    font-family: 'Marcellus', serif;
-    font-weight: bold;
 }
 
 .icon-red{
@@ -74,6 +96,11 @@
     ;
 }
 
+.modal-header-primary{
+    background-color: #0074d9;
+    color: #ffffff;
+}
+
 .icon-primary{
     color:#0074d9
 }
@@ -92,7 +119,7 @@
     --bs-table-color:#253C5C;
 }
 
-.modal-warning {
+.modal-header-warning {
     background-color: #ffc107;
     color: #253C5C;
 }
@@ -118,3 +145,25 @@
     font-family: 'Marcellus', serif;
     font-weight: bold;
 }
+
+/* define "no-hover-effect" */
+.no-hover-effect td {
+    cursor: default !important;
+    transition: none !important;
+}
+
+.no-hover-effect td:after {
+    content: none !important;
+}
+
+.no-hover-effect td:hover, 
+.no-hover-effect .selected {
+    color: inherit !important;
+    border: inherit !important;
+}
+
+.no-hover-effect td:hover:after, 
+.no-hover-effect .selected:after {
+    background: none !important;
+}
+
