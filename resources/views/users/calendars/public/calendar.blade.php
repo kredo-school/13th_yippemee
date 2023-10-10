@@ -110,10 +110,7 @@
                             <td></td>
                             <td></td>
                             <td>
-                                {{-- <button type="button" class="btn w-100" data-bs-toggle="modal" data-bs-target="#detail-modal">1</button> --}}
-                                <button type="button" class="btn btn-detail" data-bs-toggle="modal" data-bs-target="#detail-modal">
-                                    1
-                                </button>
+                                <button type="button" class="btn btn-detail" data-bs-toggle="modal" data-bs-target="#detail-modal">1</button>
                             </td>
                             <td>2</td>
                         </tr>
