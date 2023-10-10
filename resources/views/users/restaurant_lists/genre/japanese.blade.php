@@ -3,8 +3,12 @@
 @section('title', 'Restaurant list')
 
 @section('content')
+
 <div class="w-75 mx-auto restaurant-list bg-white  text-start
 ">
+
+
+
    <div class="container">
     <div class="row  mt-4">
     <form action="" >

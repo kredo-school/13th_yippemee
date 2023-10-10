@@ -90,9 +90,37 @@ div.bg-genre {
 }
 .modal-body{
     color: #253C5C;
-    background-color:#ffffff
+    background-color:#ffffff;
 }
 
 .modal-footer{
-    background-color:#ffffff
+    background-color:#ffffff;
 }
+
+.posts-input .form-check-input {
+    margin-right:7px;
+}
+
+.posts-input .form-check-label {
+    margin-right:15px;
+}
+
+.posts-input .btn{
+    margin-left:10px;
+}
+
+.posts-input .form-check-input{
+    width: 15px;
+    height: 15px;
+    margin-top: 0;
+    vertical-align: top;
+}
+
+/* .posts-input .form-check-input#genre_others {
+    width: 15px !important; 
+    height: 15px !important;
+    margin-top: 0 !important;
+    vertical-align: top !important;
+
+} */
+
