@@ -10,7 +10,7 @@
                         <i class="fa-solid fa-location-dot me-3" data-bs-toggle="modal" data-bs-target="#edit-intro"></i><span>Live</span>
                     </a>
                     <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
-                        <i class="fa-solid fa-utensils me-3"></i><span>Best restaurant</span>
+                        <i class="fa-solid fa-utensils me-3" data-bs-toggle="modal" data-bs-target="#edit-intro"></i><span>Best restaurant</span>
                     </a>
                     <a href="#" class="list-group-item list-group-item-action py-2 ripple mb-3"><i
                         class="fa-solid fa-burger me-3" data-bs-toggle="modal" data-bs-target="#edit-intro"></i><span>Favorite Genre</span>
