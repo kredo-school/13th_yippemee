@@ -47,8 +47,8 @@
     text-align: left;
 }
 .modal-content-profile-edit {
-    height: 740px;
-    width: 630px;
+    height: 650px;
+    width: 610px;
 }
 
     /* modal hover button */
@@ -74,10 +74,6 @@ a.btn--yellow {
     background: #C1E2E0;
     border-bottom: 2px solid #E6F2E9;
   }
-
-
-
-
 
 /* Bucket-edit-modal */
 .bucket-edit-modal {
@@ -117,6 +113,10 @@ body {
     margin-left: 45px;
 }
 
+.bucketlist_body {
+    list-style: none;
+}
+
 
 .title-visit{
     margin-left: 200px;
@@ -129,6 +129,12 @@ body {
 }
 
   /* Visits */
+  .visit_body_line {
+    border-bottom: 3px solid;
+    border-color: rgba(97,126,168,0.2);
+    height: 250px;
+  }
+
 .card-body-visit {
     background-color: white;
 }
