@@ -1,9 +1,8 @@
+
   /* pic */
   @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-  
+
 /* Profile */
-.main-font {font-family: 'Marcellus', serif;}
-.second-font {font-family: 'Muli';}
 .icon-lg {font-size: 9rem;}
 .icon-md {font-size: 3.5rem;}
 .icon-sm {font-size: 1.5rem;}
@@ -11,31 +10,64 @@
 .second-font {color: #253C5C;}
 .icon-font {color: #253C5C;}
 .icon-font:hover {color: #617EA8;}
-.icon-font:active {font-weight: bold;}
-.icon-font {font-family: 'Muli';}
+.icon-font:active {font-weight: bold;
+                   font-size:25px;}
+.header-user-name {text-align: left;}
+.header-user-container {
+    box-shadow: 0 0 8px #617EA8;
+    }
 
-/* side bar */
-.title {font-size: 1.5rem;}
+/* sidebar */
+.sidebar-profile {
+    text-align: left;
+    font-size:large;
+}
+.title-line {
+    border-bottom: 1px solid;
+    border-color: #617EA8;
+    width: 200px;
+}
 
+/* modal-profile-edit */
+.modal-header-profile {
+    margin-left: 200px;
+}
+.modal-body-profile {
+    margin-left: 55px;
+    margin-bottom: 50px;
+}
+.modal-footer-profile {
+    border: 0;
+    margin-right: 30px;
+    margin-left: 0px;
+    width: 580px;
+}
+.modal-profile-edit {
+    width: 500px;
+    text-align: left;
+}
+.modal-content-profile-edit {
+    height: 740px;
+    width: 630px;
+}
+
+    /* modal hover button */
 a.btn--yellow {
     color: #253C5C;
     background-color: #F1DD6C;
     border-bottom: 5px solid #F1DD6C;
   }
-
   a.btn--yellow:hover {
     margin-top: 3px;
     color: #253C5C;
     background: #F2C84B;
     border-bottom: 2px solid #F1DD6C;
   }
-
   a.btn--green {
     color: #617EA8;
     background-color: #E6F2E9;
     border-bottom: 5px solid #E6F2E9;
   }
-
   a.btn--green:hover {
     margin-top: 3px;
     color: #617EA8;
@@ -43,10 +75,14 @@ a.btn--yellow {
     border-bottom: 2px solid #E6F2E9;
   }
 
-  /* Visits */
-  td.profile {color: #253C5C;}
-  td.profile {font-family: 'Muli';}
-  .icon-ex {font-size: 15rem;}
+
+
+
+
+/* Bucket-edit-modal */
+.bucket-edit-modal {
+    height: 950px;
+    width: 600px;
 
 
 
@@ -56,9 +92,15 @@ body {
 	box-sizing: border-box;
 	font-family: 'Muli';
 }
-.default-file-input {
-	opacity: 0;
+  
+.modal-footer-bucket {
+    border: 0;
+    padding-left: 0%;
+    margin-right: 30px;
+    margin-left: 0px;
+    width: 580px;
 }
+
 /* Bucket */
 .drag-file-area {
     background-color: #617EA8;
@@ -70,8 +112,62 @@ body {
 	text-align: center;
     vertical-align: middle;
 }
+.form-size-bucket {
+    width: 500px;
+    margin-left: 45px;
+}
+
+
+.title-visit{
+    margin-left: 200px;
+    margin-top: 10px;
+}
+
+.container-text-bucket {
+    margin-left: 0;
+    padding: 0;
+}
+
+  /* Visits */
+.card-body-visit {
+    background-color: white;
+}
+
+  .modal-footer-visit {
+    border: 0;
+    padding-left: 0%;
+    margin-right: 30px;
+    margin-left: 0px;
+    width: 580px;
+}
+
+  /* pic */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Muli';
+}
+.default-file-input {
+	opacity: 0;
+}
 
 /* Visit */
+.visit-edit-modal {
+    height: 850px;
+    width: 600px;
+}
+.form-size-visit {
+    width: 500px;
+    margin-left: 45px;
+}
+.visit-pic {
+    margin-left: 90px;
+}
+.visit-modal-title {
+    margin-left: 230px;
+}
 .show-star {
     color: #F1A29B;
     font-size: 20px;
@@ -81,42 +177,13 @@ body {
     background-color: #617EA8;
     color: aliceblue;
 	margin: 10px 0 15px;
-	padding: 130px 50px;
+	padding: 150px 50px;
 	width: 400px;
-    height: 370px;
+    height: 400px;
 	text-align: center;
     vertical-align: middle;
 }
-.cannot-upload-message {
-	background-color: #ffc6c4;
-	font-size: 17px;
-	display: flex;
-	align-items: center;
-	margin: 5px 0;
-	padding: 5px 10px 5px 30px;
-	border-radius: 5px;
-	color: #BB0000;
-	display: none;
-}
-@keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
-}
-.file-block {
-	color: #f7fff7;
-	background-color: #7b2cbf;
-  	transition: all 1s;
-	width: 390px;
-	position: relative;
-	display: none;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	margin: 10px 0 15px;
-	padding: 10px 20px;
-	border-radius: 25px;
-	cursor: pointer;
-}
+
 .file-info {
 	display: flex;
 	align-items: center;
@@ -131,43 +198,17 @@ body {
 .remove-file-icon {
 	cursor: pointer;
 }
-.progress-bar {
-	display: flex;
-	position: absolute;
-	bottom: 0;
-	left: 4.5%;
-	width: 0;
-	height: 5px;
-	border-radius: 25px;
-	background-color: #4BB543;
-}
 
 .drag-file-area-visit-edit {
     background-color: #617EA8;
     color: aliceblue;
 	margin: 0px 0 0px;
-	padding: 50px 0px;
+	padding: 70px 0px;
 	width: 400px;
     height: 200px;
 	text-align: center;
     vertical-align: middle;
 }
-
-.table td {
-    text-align:left;
-}
-
-.table th {
-    text-align: right;
-    padding-left: 0;
-    padding-bottom: 10px;
-    width: 50px;
-}
-
-.sidebar
- {
-    padding-top: 10px;
- }
 
  /* raiting */
  .rating input[type="radio"]:not(:nth-of-type(0)) {
@@ -181,35 +222,27 @@ body {
     position: absolute;
     width: 1px;
 }
-
 .raiting {
     font-size: 20px;
 }
-
 .stars {
     font-size: 30px;
 }
-
 .rating [type="radio"]:not(:nth-of-type(0)) + label {
     display: none;
 }
-
 label[for]:hover {
     cursor: pointer;
 }
-
 .rating .stars label:before {
     content: "★";
 }
-
 .stars label {
     color: lightgray;
 }
-
 .stars label:hover {
     text-shadow: 0 0 1px #000;
 }
-
 .rating [type="radio"]:nth-of-type(1):checked ~ .stars label:nth-of-type(-n+1),
 .rating [type="radio"]:nth-of-type(2):checked ~ .stars label:nth-of-type(-n+2),
 .rating [type="radio"]:nth-of-type(3):checked ~ .stars label:nth-of-type(-n+3),
@@ -226,14 +259,15 @@ label[for]:hover {
     color: #F1A29B;
 }
 
+.visit-show {
+    text-align: left;
+    margin-left: 10px;
+}
+
 /* bucket icon */
 table tbody tr th .body {
     font-size: 17px;
     padding-top: 5px;
-    color: #253C5C;
-}
-
-table tbody tr td {
     color: #253C5C;
 }
 
@@ -257,9 +291,9 @@ table tbody tr td {
 }
 
 
-
+ login-page
 body{
-    
+
     font: #253C5C;
     font-family: 'Marcellus';
     font-family: 'Mulish';
@@ -398,7 +432,7 @@ body{
   tbody td:hover:after, .selected:after {
       background: #2a3246; }
 
-
+ login-page
 
 
 .head-day {
@@ -577,7 +611,7 @@ body{
 
     /* restaurant-list */
 
-    .restaurant-list-img{
+    .restaurant-list img{
         aspect-ratio: 4 / 3;
         width: 75%;
         object-fit:cover;

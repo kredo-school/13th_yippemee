@@ -1,18 +1,18 @@
 <!-- Set Modal -->
 <div class="modal fade" id="edit-visits" tabindex="-1" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
+        <div class="modal-content visit-edit-modal">
+            <div class="modal-header visit-modal-title">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">
                         <form action="#" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PATCH')
-                            <h2 class="h3 mb-0 fw-light text-center" class="list-group-item">Edit visit</h2></h1>
+                            <h2 class="h3 mb-0 fw-bold" class="list-group-item">Edit visit</h2></h1>
             </div>
 
             <div class="modal-body">
-                <div class="row mb-3 ms-4">
-                    <div class="col-auto text-center">
+                <div class="row mb-4 mt-3 visit-pic">
+                    <div class="col-auto">
                         <div class="drag-file-area-visit-edit">
                             <span class="material-icons-outlined upload-icon"> file_upload </span>
                             <h5 class="dynamic-message"> Drag & drop any file here </h5>
@@ -21,19 +21,21 @@
                     </div>
                 </div>
 
-                <div class="mt-2 mb-3">
-                    <label for="restaurant_name" class="form-label fw-bold mb-0">Restaurant Name</label>
-                    <input type="text" name="restaurant_name" id="restaurant_name" value="" class="form-control" autofocus>
+                <div class="mt-2 mb-4 text-center">
+                    <label for="restaurant_name" class="form-label fw-bold mb-1">Restaurant Name</label>
+                    <input type="text" name="restaurant_name" id="restaurant_name" value="" class="form-control form-size-visit" autofocus>
                 </div>
 
-                <div class="mb-3">
-                    <label for="date" class="form-label fw-bold mb-0">When did you go ?</label>
-                    <input type="date" name="user_name" id="date" value="" class="form-control" autofocus>
+                <div class="mb-4 text-center">
+                    <label for="date_visit" class="form-label fw-bold mb-1">When did you go ?</label>
+                    <input type="date" name="date_visit" id="date_visit" value="" class="form-control form-size-visit" autofocus>
                 </div>
+
+
 
             {{-- raiting --}}
-        <div class="mb-3 second-font">
-            <label for="star" class="form-label fw-bold mb-0">How would you rate your experience ?</label>
+        <div class="mb-4 text-center">
+            <label for="star" class="form-label fw-bold mb-1">How would you rate your experience ?</label>
 
             <fieldset class="rating">
                 <input id="demo-1" type="radio" name="demo" value="1">
@@ -58,9 +60,9 @@
 
                 </div>
 
-                <div class="mb-3 second-font">
-                    <label for="introduction" class="form-label fw-bold mb-0">Sharing your reviews about the restaurant</label>
-                    <textarea name="introduction" id="introduction" rows="5" placeholder="Write some comments about the restaurant" class="form-control" class="form-control">{{ old('introduction') }}</textarea>
+                <div class="mb-4 text-center">
+                    <label for="introduction" class="form-label fw-bold mb-1">Sharing your reviews about the restaurant</label>
+                    <textarea name="introduction" id="introduction" rows="5" placeholder="Write some comments about the restaurant" class="form-control form-size-visit">{{ old('introduction') }}</textarea>
                     {{-- Error --}}
                     @error('description')
                         <div class="text-danger small">{{ $message }}</div>
@@ -68,7 +70,7 @@
                 </div>
             </div>
 
-            <div class="modal-footer">
+            <div class="modal-footer modal-footer-visit">
                 <a href="{{ route('visits.show') }}" class="btn btn--green btn--cubic px-5">Cancel</a>
                 <a href="{{ route('visits.show') }}" class="btn btn--yellow btn--cubic px-5">Save</a>
             </div><!-- /.modal-footer -->

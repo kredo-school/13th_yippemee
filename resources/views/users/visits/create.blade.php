@@ -4,34 +4,34 @@
 
 @section('content')
 
-<div class="container">
+<div class="container mt-5 mb-5">
 
     <div class="justify-content-center">
 
         <div class="col-10">
         <form action="#" method="post" class="shadow rounded-3 p-5" enctype="multipart/form-data">
             @csrf
-            <h1 class="main-font mb-0 fw-light text-center mb-5" class="list-group-item">Make a Visit List</h1>
+            <h1 class="main-font mb-0 fw-light text-center mb-5">Make a Visit List</h1>
 
     {{-- image --}}
     <div class="row">
-            <div class="col-5 ms-auto">
-                <div class="drag-file-area-visit">
-                    <span class="material-icons-outlined upload-icon"> file_upload </span>
-                    <h5 class="dynamic-message"> Drag & drop any file here </h5>
-                    <label class="label"> or browse file from device<span class="browse-files"> <input type="file" class="default-file-input"/></span> </label>
-                </div>
+        <div class="col-5 ms-auto">
+            <div class="drag-file-area-visit mt-4">
+                <span class="material-icons-outlined upload-icon"> file_upload </span>
+                <h5 class="dynamic-message"> Drag & drop any file here </h5>
+                <label class="label"> or browse file from device<span class="browse-files"> <input type="file" class="default-file-input"/></span> </label>
             </div>
+        </div>
 
         {{-- info --}}
         <div class="col-5 ms-auto me-5">
-            <div class="mb-3 second-font">
-                <label for="restaurant_name" class="form-label fw-bold mb-0">Restaurant Name</label>
+            <div class="mb-3">
+                <label for="restaurant_name" class="form-label fw-bold mb-1">Restaurant Name</label>
                 <input type="text" name="restaurant_name" id="restaurant_name" value="" class="form-control" autofocus class="form-control">{{ old('restaurant_name') }}
             </div>
 
             {{-- raiting --}}
-        <div class="mb-3 second-font">
+        <div class="mb-3">
             <label for="star" class="form-label fw-bold mb-0">How would you rate your experience ?</label>
 
             <fieldset class="rating">
@@ -54,17 +54,16 @@
                     <label for="demo-5" aria-label="5 stars" title="5 stars"></label>
                 </div>
             </fieldset>
-
-        <div class="mb-3 mt-2 second-font">
-            <label for="date" class="form-label fw-bold mb-0">When did you go ?</label>
-            <input type="date" name="date" id="date" value="" class="form-control" autofocus>
         </div>
 
+        <div class="mb-3">
+            <label for="date-visit" class="form-label fw-bold mb-1">When did you go ?</label>
+            <input type="date" name="date-visit" id="date-visit" value="" class="form-control" autofocus>
+        </div>
 
-
-        <div class="mb-3 second-font">
-            <label for="introduction" class="form-label fw-bold mb-0">Sharing your reviews about the restaurant</label>
-            <textarea name="introduction" id="introduction" rows="5" placeholder="Write some comments about the restaurant" class="form-control" class="form-control">{{ old('introduction') }}</textarea>
+        <div class="mb-3">
+            <label for="introduction" class="form-label fw-bold mb-1">Sharing your reviews about the restaurant</label>
+            <textarea name="introduction" id="introduction" rows="5" placeholder="Write some comments about the restaurant" class="form-control mb-3">{{ old('introduction') }}</textarea>
             {{-- Error --}}
             @error('description')
                 <div class="text-danger small">{{ $message }}</div>

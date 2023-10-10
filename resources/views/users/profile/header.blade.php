@@ -1,5 +1,5 @@
 {{-- Header --}}
-<div class="row bg-white container ms-auto me-auto mb-3 shadow rounded-3 p-5w">
+<div class="header-user-container row bg-white container ms-auto me-auto mb-3 mt-4 rounded-3 p-5w">
     <div class="col-5 mb-3 mt-3 main-font">
             <i class="fa-regular fa-circle-user icon-md d-block text-end"></i>
     </div>
@@ -19,19 +19,19 @@
             </div>
         </div>
 
-        <div class="row mb-3">
+        <div class="header-user-name row mb-3">
                 <div class="mt-0">{{"@JohnSmith12345678"}}</div>
         </div>
-        <div class="row mb-4"></div>
+        <div class="row mb-2"></div>
     </div>
     <div class="col-12">
         <div class="row justify-content-center me-5">
-            <div class="col-auto"><h4><a href="#"
+            <div class="col-auto me-4 mb-2"><h4><a href="{{ route('posts.show') }}"
                 class="text-decoration-none icon-font">Post</a></h4></div>
-            <div class="col-auto"><h4><a href="{{ route('visits.show') }}" class="text-decoration-none icon-font">Vists</a></h4></div>
-            <div class="col-auto"><h4><a href="{{ route('bucket.show') }}" class="text-decoration-none icon-font">Bucket Lists</a></h4></div>
-            <div class="col-auto"><h4><a href="#" class="text-decoration-none icon-font">Schedule</a></h4></div>
-            <div class="col-auto"><h4><a href="#" class="text-decoration-none icon-font">Groups</a></h4></div>
+            <div class="col-auto me-4"><h4><a href="{{ route('visits.show') }}" class="text-decoration-none icon-font">Vists</a></h4></div>
+            <div class="col-auto me-4"><h4><a href="{{ route('bucket.show') }}" class="text-decoration-none icon-font">Bucket Lists</a></h4></div>
+            <div class="col-auto me-4"><h4><a href="#" class="text-decoration-none icon-font">Schedule</a></h4></div>
+            <div class="col-auto me-4"><h4><a href="#" class="text-decoration-none icon-font">Groups</a></h4></div>
         </div>
     </div>
 </div>

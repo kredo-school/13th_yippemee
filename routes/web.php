@@ -1,7 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\BucketController;
 use App\Http\Controllers\VisitsController;
 use App\Http\Controllers\ProfileController;
@@ -37,7 +39,8 @@ Route::get('/bucket/show', [BucketController::class, 'show'])->name('bucket.show
 Route::get('/bucket/create', [BucketController::class, 'create'])->name('bucket.create');
 // Route::delete('/bucket/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');
 
-
+//POST
+Route::get('/posts/show', [PostController::class, 'show'])->name('posts.show');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
