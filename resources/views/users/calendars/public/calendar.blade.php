@@ -2,41 +2,91 @@
 @section('title', 'Decide by date')
 @section('content')
 <style>
-    body{
-        background-color: white;
+    body {
+        background-image: url('/images/schedule9.jpg');
+        background-size: cover;
+        padding-top: 20px;
+        margin-top: -20px;
+        height: 1100px;
+        background-repeat: none;
     }
 </style>
 
+<div class="calendar-bg-image">
     <div class="container container-calendar">
-        <div class="box title-box">
-            <h1 class="title-div mx-auto text-center mt-5 bg-white rounded"><u>Decide by Date</u></h1>
-            <p class="fw-400">Let's check what your friends are craving,<br>and add yours too.</p>
-        </div>
-        <div class="box calendar-box">
-            <div class="row w-100">
-                <div class="col-8">
-                    {{-- hover button --}}
-                    <div class="hover-button">
-                        <label class="rocker">
-                            <input type="checkbox" class="hover-check">
-                            <span class="switch-left">M</span>
-                            <span class="switch-right">W</span>
-                        </label>
-                    </div>
+        <div class="title-box">
+            <div class="sticky-box">
+                <div class="row sticky-title">
+                    <h1 class="title-div my-auto text-center">
+                        <i class="fa-regular fa-calendar" style="color: #253c5c;"></i> Decide by Date
+                    </h1>
+                    <p>Let's check what your friends are craving,<br>and add yours too.</p>
                 </div>
-                <div class="col-3"></div>
-                <div class="col-1">
+            </div>
+        </div>
+                {{-- <div class="row sticky-plan">
+                    <div class="accordion accordion-flush" id="accordionPlan">
+                        <div class="accordion-item">
+                            <div class="accordion-header" id="headingPlan">
+                                <button class="accordion-button bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <h4 class=accordion-title><span>Created plans</span></h4>
+                                </button>
+                            </div>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionPlan">
+                                <div class="accordion-body">
+                                    @if / foreach
+                                    <button type="button" class="btn w-100" data-bs-toggle="modal" data-bs-target="#detail-modal">
+                                        <div class="row plan-row">
+                                            <div class="col-2 time-col">
+                                                <div class="row">11:30</div>
+                                                <div class="row">12:30</div>
+                                            </div>
+                                            <div class="col-7 name-col">User 1</div>
+                                            <div class="col-1 avatar-col"><i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i></div>
+                                        </div>
+                                    </button>
+
+                                    <button type="button" class="btn w-100" data-bs-toggle="modal" data-bs-target="#detail-modal">
+                                        <div class="row plan-row">
+                                            <div class="col-2 time-col">
+                                                <div class="row">17:00</div>
+                                                <div class="row">20:30</div>
+                                            </div>
+                                            <div class="col-7 name-col">User 4</div>
+                                            <div class="col-1 avatar-col"><i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i></div>
+                                        </div>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+
+
+        <div class="calendar-box">
+            <div class="row w-75 top-button">
+                {{-- hover button --}}
+                <div class="col-10 calender-hover w-25">
+                    <label class="rocker">
+                        <input type="checkbox" class="hover-check">
+                        <span class="switch-left">M</span>
+                        <span class="switch-right">W</span>
+                    </label>
+                </div>
+
+                <div class="col-2">
                     <a href="#" class="btn btn-create-plan mt-2 me-2" data-bs-toggle="modal" data-bs-target="#create-plan"><i class="fa-regular fa-calendar-plus fa-3x"></i></a>
                 </div>
             </div>
 
-            <div class="calendar-wrap">
-                <div class="w-100 button-wrap">
+            <div class="monthly-calendar">
+                <div class="w-100 calendar-button">
                     <div class="pre-button d-flex align-items-center justify-content-center pt-4"><i class="fa fa-chevron-left fw-bold"></i>
                     </div>
-                    <div class="d-flex align-items-center justify-content-center display-4">
+                    <h1 class="d-flex align-items-center justify-content-center display-4">
                         September
-                    </div>
+                    </h1>
                     <div class="next-button d-flex align-items-center justify-content-center pt-4"><i class="fa fa-chevron-right"></i>
                     </div>
                 </div>
@@ -60,9 +110,7 @@
                             <td></td>
                             <td></td>
                             <td>
-                                <button type="button" class="btn btn-day" data-bs-toggle="modal" data-bs-target="#detail-modal">
-                                1
-                                </button>
+                                <button type="button" class="btn btn-detail" data-bs-toggle="modal" data-bs-target="#detail-modal">1</button>
                             </td>
                             <td>2</td>
                         </tr>
@@ -116,8 +164,7 @@
             </div>
         </div>
     </div>
-
-
+</div>
     @include('users.modals.create')
     @include('users.modals.detail')
 @endsection
