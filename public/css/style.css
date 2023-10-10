@@ -75,6 +75,10 @@ a.btn--yellow {
     border-bottom: 2px solid #E6F2E9;
   }
 
+
+  /* More button */
+
+
 /* Bucket-edit-modal */
 .bucket-edit-modal {
     height: 950px;
@@ -88,7 +92,8 @@ body {
 	box-sizing: border-box;
 	font-family: 'Muli';
 }
-  
+
+}
 .modal-footer-bucket {
     border: 0;
     padding-left: 0%;
@@ -296,7 +301,6 @@ table tbody tr th .body {
     padding: 0;
 }
 
-
  login-page
 body{
 
@@ -382,10 +386,6 @@ body{
       left: 20px; }
     .button-wrap .next-button {
       right: 20px; }
-
-
-
-
 
   .calendar-wrap {
     width: 100%;
@@ -582,7 +582,7 @@ body{
 
       .detal-right .slick-track {
         transform: unset !important;/*画面幅サイズ変更に伴うサムネイル固定*/
-      } 
+      }
 
 
 

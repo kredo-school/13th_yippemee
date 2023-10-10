@@ -15,6 +15,7 @@
                             <i class="fa-solid fa-ellipsis"></i>
                         </button>
                         <div class="dropdown-menu">
+
                         {{-- Modal Button --}}
                          <a href="#" class="dropdown-item">
                             <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#edit-visits"></i> Edit
