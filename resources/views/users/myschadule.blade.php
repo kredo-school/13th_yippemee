@@ -3,31 +3,30 @@
 @section('title', 'My Schedule')
 
 @section('content')
+<div class="background pt-5">
     <div class="container">
-        <h2 class="mx-auto text-center mt-5 bg-white w-50 rounded"><u>My Schedule</u></h2>
-        <div class="row w-25">
-            
-            <div class="col text-end">
-                <input type="radio" name="date" value="date">
-                <label for="date" class="fw-bold h4">Date</label>
-                <input type="radio" name="place" value="place" class="ms-3">
-                <label for="place" class="fw-bold h4">Place</label>
+        <h2 class="mx-auto text-center  bg-white w-50 rounded"><u>My Schedule</u></h2>
+    
+            <div class="row mt-5 ">
+                <div class="col-6 float-left" style="width: 400px;">
+                <label for="date" class="fw-bold h4 " ><input type="radio" name="date" value="date">Date</label>  
+                <label for="place" class="fw-bold h4"><input type="radio" name="place" value="place" class="ms-3">Place</label>
+                </div>
+                <div class="col-6"></div>
             </div>
 
-        </div>
-        
-        <div class="row">
+        <div class="row ">
             <div class="col-md-12">
-                        <div class="elegant-calencar d-md-flex">
-                            <div class="wrap-header d-flex align-items-center img" >
+                        <div class="elegant-calencar d-md-flex bg-white ">
+                            <div class="wrap-header d-flex align-items-center img pe-5 " >
                                 <p id="reset">Today</p>
 
-                                    <div class="header w-100" >
-                                        <div class="head-info " >
-                                            <div class="head-month text-center">September</div>
+                                    <div class="header w-100 mt-5 mb-5" style="height:500px;">
+                                        <div class="head-info mt-5 " >
+                                            <div class="head-month text-center ">September</div>
                                             <div class="head-day ">16th</div>
                                         </div>
-                                            <div class="head-month text-start ms-3
+                                            <div class="head-month text-start ms-3 mt-5
                                             "><u>Title :</u></div>
                                             <div class="head-month mt-3 text-start ms-3"><i class="fa-solid fa-map-pin me-2"></i>Location :</div>
                                             <div class="head-month mt-3 text-start ms-3"><i class="fa-regular fa-clock me-2"></i>Time :</div>
@@ -35,13 +34,13 @@
                                             <div class="head-month text-start ms-3">Description:</div>
                                             <hr>
                                     
-                                            <a href="#" class="text-end" data-bs-toggle="modal" data-bs-target="#activate-modal">Show more</a>
+                                            <a href="#" class="text-end mb-5" data-bs-toggle="modal" data-bs-target="#activate-modal">Show more</a>
                                         </div>
                                     
                             </div>
                             
                             <div class="calendar-wrap">
-                                <div class="w-100 button-wrap">
+                                <div class=" button-wrap">
                                     <div class="pre-button d-flex align-items-center justify-content-center pt-4"><i class="fa fa-chevron-left fw-bold"></i>
                                     </div>
                                     <div class=" d-flex align-items-center justify-content-center h2 ">
@@ -51,7 +50,7 @@
                                     </div>
                                 </div>
 
-                                <table id="calendar">
+                                <table id="calendar" class="calendar" style="width:100%; height:75%;">
                                     <thead>
                                         <tr>
                                             <th>Sun</th>
@@ -132,6 +131,6 @@
             </div>
         </div>   
     </div>
-
+</div>
     @include('users.modal.status')
 @endsection
