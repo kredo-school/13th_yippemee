@@ -166,3 +166,14 @@
 .no-hover-effect .selected:after {
     background: none !important;
 }
+
+.admin {
+    width:100%;
+    min-height: 100vh;
+    position: relative;
+
+}
+
+.modal-header-contact{
+    background-color: #E6F2E9;
+}
