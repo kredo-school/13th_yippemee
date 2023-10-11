@@ -3,7 +3,7 @@
         <div class="modal-content">
 
             <div class="modal-header" id="detail-header">
-                <button type="button" class="close-detail border-0 bg-white" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x fa-2x" style="color:#253c5c;"></i></button>
+                <button type="button" class="close-detail border-0 bg-white" data-bs-toggle="modal" data-bs-target="#planList-modal"><i class="fa-solid fa-arrow-left fa-2x" style="color: #253c5c"></i></button>
                 <h4 class="modal-title" id="detailModalLabel">Looking for someone going to Italian with me!</h4>
 
             </div>

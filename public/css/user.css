@@ -400,6 +400,30 @@
 .day__evening:before { content: "evening"; } */
 
 
+/* plan list modal */
+#plan-header {
+    margin-left: -5px;
+    background-color: #617ea8;
+    border-radius: 0%;
+    color: white;
+    height: 60px;
+}
+#planModalLabel {
+    font-size: 35px;
+}
+#plan-body {
+    width: 90%;
+    align-content: center;
+}
+.plan-row {
+    width: 100%;
+    margin-left:30px;
+    color: #253c5c;
+}
+.plan-row .time-col {
+    border-right: 2px solid #617EA8;
+}
+/* end of plan list */
 
 /* detail modal */
 
@@ -416,7 +440,7 @@
 
 .modal.left .modal-content {
 	height: 120%;
-    width: 475px;
+    width: 450%;
     border-radius: 0;
 }
 
@@ -442,9 +466,11 @@
     text-align: center;
     width: 90%;
     border-bottom: none;
+
 }
 #detail-header {
-    border-bottom: 2px solid #f1a29b;
+    height: 60px;
+    border-bottom: 2px solid #253c5c;
 }
 .detail-user {
     display: flex;
