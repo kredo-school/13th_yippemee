@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="background ">
+<div class="background">
     <div class="container text-start" >
         <div class="row justify-content-center mb-3 w-50 mx-auto">                    
                     <img src="/images/logo.png" alt="logo" class="w-50 pt-5 img  mb-3">               

@@ -3,16 +3,16 @@
 @section('title', 'Restaurant list')
 
 @section('content')
-<div class="container restaurant-list bg-white mx-auto">
+<div class="container restaurant-list bg-white justify-content-center mx-auto">
     <div class="row mt-3" style="background-color: #E6F2E9;" class="mt-3 mb-3 m-0 p-0">
         <h2 class="mt-3 text-center" >Where to next, 【 user name 】?</h2>
     </div>
    
-    <div class="row text-center mt-4 mx-auto w-75" style="display:inline-flex">
+    <div class="row  mt-4  w-75 mx-auto" >
         <form action="" >
             <div class="col">
                 <input type="text" name="serch" id="serch" class="form-control " >
-                <button type="submit" class="btn mt-3 a" style="background-color: #E6F2E9;">Serach</button>
+                <button type="submit" class="btn mt-3 text-center" style="background-color: #E6F2E9;">Serach</button>
             </div>
             <div >
         </form>

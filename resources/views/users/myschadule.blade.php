@@ -3,17 +3,21 @@
 @section('title', 'My Schedule')
 
 @section('content')
-<div class="background pt-5">
-    <div class="container">
+<div class="background pt-5 ">
+    <div class="container ">
         <h2 class="mx-auto text-center  bg-white w-50 rounded"><u>My Schedule</u></h2>
     
-            <div class="row mt-5 ">
-                <div class="col-6 float-left" style="width: 400px;">
-                <label for="date" class="fw-bold h4 " ><input type="radio" name="date" value="date">Date</label>  
-                <label for="place" class="fw-bold h4"><input type="radio" name="place" value="place" class="ms-3">Place</label>
-                </div>
-                <div class="col-6"></div>
+        <div class="row mt-5">
+        <div class="col-md-6"></div>   
+            <div class="col-md-6">
+            <input type="radio"  name="date" value="date" class="w-25">
+            <label for="contactChoice1">Date</label>
+
+            <input type="radio" name="date" value="place" class="w-25">
+            <label for="contactChoice2">Place</label>
             </div>
+            
+    </div>
 
         <div class="row ">
             <div class="col-md-12">

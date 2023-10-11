@@ -1,24 +1,27 @@
 <div class="modal fade" id="activate-modal" aria-hidden="true">
-    <div class="modal-dialog modal-xl " >
-        <div class=" rounded " >
-            <div class="modal-header bg-white">
-                <div class="row ">
-                    <div class="col-11">
+    <div class="modal-dialog modal-xl h-100 bg-white rounded" >
+        <div class=" content" >
+            <div class="modal-header ">
+                <div class="row w-100">
+                    <div class="col-md-11">
                         <h2 class="h3"><u>My schedule for " title "</u></h2>
                     </div>
-                    <div class="col-1 text-end ">
+                    <div class="col-md-1 text-end ">
                         <button class="btn  btn-sm " type="button" data-bs-dismiss="modal"><i class="fa-solid fa-x"></i></button> 
                     </div>
                 </div>
             </div>
 
-            <div class="modal-body text-start bg-white">
-                <div class="row ">
-                        <div class="detail-left col-md-6 bg-white">
-                            <h3>Title</h3>
+            <div class="modal-body text-start">
+                <div class="row">
+                    <div class="col-md">
+                    <h3>Title</h3>
                             <hr>
                             <p class="text-end">update_at</p>
-
+                    </div>
+                </div>
+                <div class="row ">
+                        <div class="detail-left col-md-6 ">
                             <h4 class="mt-1">
                                 <u>
                                     <i class="fa-solid fa-map-pin me-2"></i>Location/Restaurant
@@ -39,29 +42,27 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis modi, quam praesentium possimus dolores laboriosam voluptate delectus natus, incidunt excepturi ad labore quidem. Iure velit veritatis accusantium, unde suscipit fugiat!</p>
                         </div>
                         <div class="col-md-6 detal-right ">
-                            <img src="/images/cafe.png" alt="cafe" class="cafe mb-2 rounded" warning>
+                            <img src="/images/cafe.png" alt="cafe" class="cafe mb-2 rounded" >
                             <div class="img-list">
                                 <div class="row">
-                                    <div class="col ">
+                                    <div class="col-md ">
                                         <ul>
                                             <li class="me-1 rounded"><img src="/images/cafe.png" alt="cafe" >
                                                 </li>
                                             <li class="me-1 rounded"><img src="/images/cafe.png" alt="cafe"></li>
                                             <li class="me-1 rounded"><img src="/images/cafe.png" alt="cafe" ></li>
                                             <li class="me-1 rounded"><img src="/images/cafe.png" alt="cafe" ></li>
-                                        </ul>
-                                        
+                                        </ul>                                        
                                     </div>
                                 </div>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d325.2992603680131!2d-123.13999725403623!3d49.287877513057225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673da4c79d291%3A0xc6f9206ece0cda43!2sCaf%C3%A9%20Portrait!5e0!3m2!1sja!2sca!4v1695438027524!5m2!1sja!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mt-2 rounded"></iframe>
                             </div>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d325.2992603680131!2d-123.13999725403623!3d49.287877513057225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673da4c79d291%3A0xc6f9206ece0cda43!2sCaf%C3%A9%20Portrait!5e0!3m2!1sja!2sca!4v1695438027524!5m2!1sja!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mt-4 rounded h-50"></iframe>                           
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 </div>
+
+
+    
