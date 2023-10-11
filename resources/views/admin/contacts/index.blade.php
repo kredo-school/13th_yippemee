@@ -3,7 +3,7 @@
 @section('title', 'Admin: Contact')
 
 @section('content')
-
+<div class="admin">
     <div class="container my-5">
         <div class="row mb-3">
             <div class="col-3 ms-auto mb-auto">
@@ -67,4 +67,6 @@
         </div>
     </div>
     @include('admin.contacts.modal.message')
+</div>
+    
 @endsection
