@@ -461,38 +461,45 @@
 	left: 0;
 }
 #detail-header h4 {
-    font-size: 18;
-    line-height: 1.1;
-    text-align: center;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
     width: 90%;
     border-bottom: none;
-
+    text-align: center;
 }
 #detail-header {
+    margin-left: -5px;
+    background-color: #617ea8;
+    border-radius: 0%;
+    color: white;
     height: 60px;
-    border-bottom: 2px solid #253c5c;
 }
-.detail-user {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
+
 #preference-detail {
-    height: 320px;
-    width: 400px;
+    height: 100%;
+    width: 90%;
+    margin-top: 1rem;
     background-color: #E6F2E9;
 }
 .row .preference-title {
     padding-top: 1rem;
-}
-.preferences {
-    color: #617ea8;
-}
-.preference-title h4 {
     font-size: 20px;
 }
-#preference-detail h5 {
-    font-size: 16px;
+.preference {
+    color: #617ea8;
+}
+.preference h5 {
+    font-size: 18px;
+    height: 15px;
+    margin-bottom: 0;
+}
+.preference-title h4 {
+    margin-top: 5px;
+    margin-bottom: 2px;
+    font-weight: 400;
+    font-size: 24px;
+
 }
 #pre-discription {
     display: flex;
@@ -503,8 +510,8 @@
     border-top: 1px dashed #253c5c;
     border-bottom: 1px dashed #253c5c;
 }
-.input-group .comment {
-    height: 5px;
+input .form-control {
+    height: 1%;
 }
 .btn-comment {
     color: white;
