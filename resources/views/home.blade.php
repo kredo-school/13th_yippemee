@@ -28,7 +28,7 @@
             </div>
         </div> --}}
 
-      <div class="card w-50 text-center homecard">
+      <div class="card w-75 text-center homecard">
          <div class="mt-4">
             <h1 class="main-text display-4">Make a plan</h1>
             <p class="main-p1 h4">Let's have food together!</p>

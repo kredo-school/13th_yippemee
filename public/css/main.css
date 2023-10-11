@@ -6,7 +6,9 @@
 }
 
 .homecard {
-    margin-top: 200px;
+    margin-top: 150px;
+    padding: 65px;
+    padding-top: 30px;
     background-color: rgba(230,242,233,0.75);
 }
 
