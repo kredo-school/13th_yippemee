@@ -22,13 +22,15 @@
                         <input type="checkbox" name="genre[]" id="genre_mexican" value="Mexican" class="form-check-input mr-2">
                         <label for="genre_mexican" class="form-check-label">Mexican</label>
                     </div>
-                    <div class="form-check form-check-inline d-flex align-items-center">
+                    <div class="form-check form-check-inline d-flex align-items-center me-0">
                         <input type="checkbox" name="genre[]" id="genre_others" value="" class="form-check-input">
-                        <label for="genre_others" class="form-check-label">Others</label>
+                        <label for="genre_others" class="form-check-label me-0">Others</label>
+                    </div>
+                    <div class="form-check form-check-inline d-flex align-items-center">
                         <input type="text" name="genre" id="genre_others_text" class="form-control" value="" autofocus>
                         <button type="submit" class="btn text-white" style="background-color: #253C5C;"><i class="fa-solid fa-plus"></i></button>
                     </div>
-                </div> 
+                </div>
             </div>
 
             <div class="mb-3  text-start">
@@ -57,11 +59,11 @@
             <div class="class text-start">
                 <button type="submit" class="btn btn-post px-5">SAVE</button>
             </div>
-            
+
 
         </form>
     </div>
 
-    
+
 
 @endsection
