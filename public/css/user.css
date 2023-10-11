@@ -502,13 +502,16 @@
 
 }
 #pre-discription {
-    display: flex;
     margin-left: 1rem;
     margin-top: 15px;
-    height: 6rem;
+    height: 30%;
     width: 90%;
     border-top: 1px dashed #253c5c;
     border-bottom: 1px dashed #253c5c;
+}
+#pre-discription p {
+    font-size: 14px;
+    line-height: 1;
 }
 input .form-control {
     height: 1%;

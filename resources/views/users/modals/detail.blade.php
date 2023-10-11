@@ -38,6 +38,8 @@
                     </div>
                     <div class="container preference-description" id="pre-discription">
                         <h5>Description</h5>
+                        <p>Looking for someone to go to Italian restaurant with me!</p>
+
                     </div>
                     <div class="row">
                         <div class="col-6 hidden"></div>
@@ -63,6 +65,7 @@
                     </div>
                 </div>
                 <form action="#" method="post" class="float-end">
+                    {{-- could be checkbox...? --}}
                     <button type="submit" class="btn btn-join"><span>JOIN</span> <i class="fa-solid fa-person-walking-arrow-right" style="color: #253c5c;"></i></button>
                 </form>
 
