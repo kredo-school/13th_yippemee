@@ -30,7 +30,7 @@
                 class="text-decoration-none icon-font">Post</a></h4></div>
             <div class="col-auto me-4"><h4><a href="{{ route('visits.show') }}" class="text-decoration-none icon-font">Vists</a></h4></div>
             <div class="col-auto me-4"><h4><a href="{{ route('bucket.show') }}" class="text-decoration-none icon-font">Bucket Lists</a></h4></div>
-            <div class="col-auto me-4"><h4><a href="#" class="text-decoration-none icon-font">Schedule</a></h4></div>
+            <div class="col-auto me-4"><h4><a href="/myschedule" class="text-decoration-none icon-font">Schedule</a></h4></div>
             <div class="col-auto me-4"><h4><a href="#" class="text-decoration-none icon-font">Groups</a></h4></div>
         </div>
     </div>
