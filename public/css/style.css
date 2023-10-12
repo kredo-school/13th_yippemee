@@ -1,3 +1,54 @@
+/* NAVIGATION */
+  nav {
+    margin: 0 auto;
+    background: #fff;
+    padding: 10px 0;
+    box-shadow: 0px 3px 0px #dedede;
+  }
+  nav ul {
+    list-style: none;
+    text-align: center;
+  }
+  nav ul li {
+    display: inline-block;
+  }
+  nav ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #253C5C;
+    font-weight: 800;
+    margin: 0 10px;
+  }
+  nav ul li a,
+  nav ul li a:after,
+  nav ul li a:before {
+    transition: all .5s;
+  }
+  nav ul li a:hover {
+    color: #617EA8;
+  }
+
+  /* stroke */
+  nav.stroke ul li a {
+    position: relative;
+  }
+  nav.stroke ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #617EA8;
+    height: 1px;
+  }
+  nav.stroke ul li a:hover:after {
+    width: 100%;
+  }
+
 
   /* pic */
   @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
@@ -9,13 +60,44 @@
 .main-font {color: #253C5C;}
 .second-font {color: #253C5C;}
 .icon-font {color: #253C5C;}
-.icon-font:hover {color: #617EA8;}
-.icon-font:active {font-weight: bold;
-                   font-size:25px;}
+.icon-font a:hover {animation: alternate;}
 .header-user-name {text-align: left;}
-.header-user-container {
-    box-shadow: 0 0 8px #617EA8;
-    }
+.header-icon a:hover {font-size: large;}
+.icon-size {
+    font-size: 6rem;
+    margin-left: 30px;}
+
+/* bucket */
+.box-1 {
+    margin-left: 15px;
+    margin-right: 70px;
+}
+.box-2 {
+    margin-left: 5px;
+    margin-right: 70px;
+}
+.box-3 {
+    margin-left: 5px;
+    margin-right: 70px;
+}
+
+/* post */
+.post-box-1 {
+    margin-left: 15px;
+    margin-right: 25px;
+    width: 300px;
+    padding: 0;
+}
+.post-box-2 {
+    margin-right: 25px;
+    width: 300px;
+    padding: 0;
+}
+.post-box-3 {
+    margin-right: 25px;
+    width: 300px;
+    padding: 0;
+}
 
 /* sidebar */
 .sidebar-profile {
@@ -28,9 +110,14 @@
     width: 200px;
 }
 
+.sidebarMenu a:hover{
+    background-color: #E6F2E9;
+}
+
 /* modal-profile-edit */
 .modal-header-profile {
     margin-left: 200px;
+    border: none;
 }
 .modal-body-profile {
     margin-left: 55px;
@@ -47,8 +134,8 @@
     text-align: left;
 }
 .modal-content-profile-edit {
-    height: 650px;
-    width: 610px;
+    height: 750px;
+    width: 640px;
 }
 
     /* modal hover button */

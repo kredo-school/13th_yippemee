@@ -1,5 +1,5 @@
 {{-- Header --}}
-<div class="header-user-container row bg-white container ms-auto me-auto mb-3 mt-4 rounded-3 p-5w">
+<div class="row bg-white container shadow ms-auto me-auto mb-3 mt-4 rounded-3 p-5w">
     <div class="col-5 mb-3 mt-3 main-font">
             <i class="fa-regular fa-circle-user icon-md d-block text-end"></i>
     </div>
@@ -10,7 +10,7 @@
                 <div class="display-6 mt-3">{{ "John Smith" }}
                     <!-- Modal Button -->
                     <a href="#" class="btn-sm mb-3 ms-3 icon-font">
-                        <i class="fa-solid fa-pen-clip icon-sm" data-bs-toggle="modal" data-bs-target="#edit-intro"></i>
+                        <i class="fa-solid fa-pen-clip icon-sm link-place" data-bs-toggle="modal" data-bs-target="#edit-intro"></i>
                     </a>
                 </div>
 
@@ -19,21 +19,20 @@
             </div>
         </div>
 
-        <div class="header-user-name row mb-3">
+        <div class="header-user-name row">
                 <div class="mt-0">{{"@JohnSmith12345678"}}</div>
         </div>
-        <div class="row mb-2"></div>
+        {{-- <div class="row mb-2"></div> --}}
     </div>
-    <div class="col-12">
-        <div class="row justify-content-center me-5">
-            <div class="col-auto me-4 mb-2"><h4><a href="{{ route('posts.show') }}"
-                class="text-decoration-none icon-font">Post</a></h4></div>
-            <div class="col-auto me-4"><h4><a href="{{ route('visits.show') }}" class="text-decoration-none icon-font">Vists</a></h4></div>
-            <div class="col-auto me-4"><h4><a href="{{ route('bucket.show') }}" class="text-decoration-none icon-font">Bucket Lists</a></h4></div>
-            <div class="col-auto me-4"><h4><a href="#" class="text-decoration-none icon-font">Schedule</a></h4></div>
-            <div class="col-auto me-4"><h4><a href="#" class="text-decoration-none icon-font">Groups</a></h4></div>
-        </div>
-    </div>
+
+    <nav class="stroke">
+          <ul>
+            <li><a href="{{ route('posts.show') }}">POST</a></li>
+            <li><a href="{{ route('visits.show') }}">VISITS</a></li>
+            <li><a href="{{ route('bucket.show') }}">BUCKET LIST</a></li>
+            <li><a href="#">MY PLAN</a></li>
+          </ul>
+    </nav>
 </div>
 {{-- End of header --}}
 

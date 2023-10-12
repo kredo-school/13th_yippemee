@@ -11,10 +11,9 @@
         </div>
 
         <div class="modal-body modal-body-profile">
-            <div class="row mb-3">
-
+            <div class="row mb-5">
             <div class="col-4">
-                <i class="fa-regular fa-circle-user d-block icon-md"></i>
+                <i class="fa-regular fa-circle-user d-block icon-size"></i>
             </div>
 
             <div class="col-auto align-self-end mb-3">
@@ -42,9 +41,20 @@
             <input type="text" name="genre" id="genre" value="" class="form-control" autofocus>
         </div>
 
-        <div class="modal-profile-edit mb-4">
-            <label for="genre" class="form-label fw-bold mb-0">Favorite Genre</label>
-            <input type="text" name="genre" id="genre" value="" class="form-control" autofocus>
+        <div class="form-label fw-bold mb-3">Favorite Genre</div>
+        <div class="d-flex align-items-center posts-input">
+            <div class="form-check form-check-inline d-flex align-items-center">
+                <input type="checkbox" name="genre[]" id="genre_italian" value="Italian" class="form-check-input">
+                <label for="genre_italian" class="form-check-label">Italian</label>
+            </div>
+            <div class="form-check form-check-inline d-flex align-items-center">
+                <input type="checkbox" name="genre[]" id="genre_japanese" value="Japanese" class="form-check-input">
+                <label for="genre_japanese" class="form-check-label">Japanese</label>
+            </div>
+            <div class="form-check form-check-inline d-flex align-items-center">
+                <input type="checkbox" name="genre[]" id="genre_mexican" value="Mexican" class="form-check-input mr-2">
+                <label for="genre_mexican" class="form-check-label">Mexican</label>
+            </div>
         </div>
         </div>
         <div class="modal-footer modal-footer-profile">
