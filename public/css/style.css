@@ -490,7 +490,7 @@ body{
         border-radius: 50%;
     }
 
-  tbody td {
+  .calendar tbody td {
     width: 14%;
 
     cursor: pointer;
@@ -519,13 +519,13 @@ body{
       z-index: -1; }
 
 
-  tbody td:hover, .selected {
+  .calendar td:hover, .selected {
     color: #fff;
     border: none; }
-  tbody td:hover:after, .selected:after {
+  .calendar td:hover:after, .selected:after {
       background: #2a3246; }
 
- login-page
+
 
 
 .head-day {

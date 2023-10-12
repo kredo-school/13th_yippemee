@@ -22,7 +22,6 @@
         <div class="header-user-name row">
                 <div class="mt-0">{{"@JohnSmith12345678"}}</div>
         </div>
-        {{-- <div class="row mb-2"></div> --}}
     </div>
 
     <nav class="stroke">

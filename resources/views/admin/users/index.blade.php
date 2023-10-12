@@ -3,8 +3,8 @@
 @section('title', 'Admin: Users')
 
 @section('content')
-
-    <div class="container m-5">
+<div class="admin">
+    <div class="container my-5">
         <div class="row mb-3">
             <div class="col-3 ms-auto mb-auto">
                 <form action="#">
@@ -93,4 +93,6 @@
     @include('admin.users.modal.status.activate')
     @include('admin.users.modal.status.deactivate')
 
+</div>
+    
 @endsection
