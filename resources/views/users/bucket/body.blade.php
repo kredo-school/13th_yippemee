@@ -1,6 +1,6 @@
 <div class="col-9">
     <div class="row">
-<div class="col-3 ms-auto mb-3 mt-3">
+<div class="col-3 mt-3 mb-2 box-1">
     <div class="card" style="width: 18rem; text-align: left" >
         <img src="{{ asset('img/mekisikan_1.jpg') }}" alt="">
             <div class="card-body card-body-visit">
@@ -34,15 +34,15 @@
                 <li>Mexican</li>
                 <li>Mon–Fri 11:00am–10:00pm</li>
                 <li>Happy Hour,Non-Smoking</li>
-                <li><button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-square-check"></i></button>
-                    <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-globe"></i></button>
+                <li><button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-square-check link-place"></i></button>
+                    <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-globe link-place"></i></button>
             </div>
     </div>
 </div>
 {{-- end --}}
 
 {{-- post2 --}}
-<div class="col-3 ms-auto mb-3 mt-3">
+<div class="col-3 mt-3 mb-2 box-2">
     <div class="card" style="width: 18rem; text-align: left" >
         <img src="{{ asset('img/mekisikan_1.jpg') }}" alt="">
             <div class="card-body card-body-visit">
@@ -76,15 +76,15 @@
                 <li>Mexican</li>
                 <li>Mon–Fri 11:00am–10:00pm</li>
                 <li>Happy Hour,Non-Smoking</li>
-                <li><button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-square-check"></i></button>
-                    <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-globe"></i></button>
+                <li><button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-square-check link-place"></i></button>
+                    <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-globe link-place"></i></button>
             </div>
     </div>
 </div>
 {{-- end --}}
 
 {{-- post3 --}}
-<div class="col-3 ms-auto mb-3 mt-3">
+<div class="col-3 mt-3 mb-2 box-3">
     <div class="card" style="width: 18rem; text-align: left" >
         <img src="{{ asset('img/mekisikan_1.jpg') }}" alt="">
             <div class="card-body card-body-visit">
@@ -118,8 +118,8 @@
                 <li>Mexican</li>
                 <li>Mon–Fri 11:00am–10:00pm</li>
                 <li>Happy Hour,Non-Smoking</li>
-                <li><button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-square-check"></i></button>
-                    <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-globe"></i></button>
+                <li><button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-square-check link-place"></i></button>
+                    <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-globe link-place"></i></button>
             </div>
     </div>
     </div>
@@ -127,7 +127,7 @@
 
 {{-- 2nd line --}}
 <div class="row">
-    <div class="col-3 ms-auto mb-3 mt-3">
+    <div class="col-3 mt-3 mb-2 box-1">
         <div class="card" style="width: 18rem; text-align: left" >
             <img src="{{ asset('img/mekisikan_1.jpg') }}" alt="">
                 <div class="card-body card-body-visit">
@@ -161,15 +161,15 @@
                     <li>Mexican</li>
                     <li>Mon–Fri 11:00am–10:00pm</li>
                     <li>Happy Hour,Non-Smoking</li>
-                    <li><button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-square-check"></i></button>
-                        <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-globe"></i></button>
+                    <li><button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-square-check link-place"></i></button>
+                        <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-globe link-place"></i></button>
                 </div>
         </div>
     </div>
     {{-- end --}}
 
     {{-- post2 --}}
-    <div class="col-3 ms-auto mb-3 mt-3">
+    <div class="col-3 mt-3 mb-2 box-2">
         <div class="card" style="width: 18rem; text-align: left" >
             <img src="{{ asset('img/mekisikan_1.jpg') }}" alt="">
                 <div class="card-body card-body-visit">
@@ -203,15 +203,15 @@
                     <li>Mexican</li>
                     <li>Mon–Fri 11:00am–10:00pm</li>
                     <li>Happy Hour,Non-Smoking</li>
-                    <li><button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-square-check"></i></button>
-                        <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-globe"></i></button>
+                    <li><button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-square-check link-place"></i></button>
+                        <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-globe link-place"></i></button>
                 </div>
         </div>
     </div>
     {{-- end --}}
 
     {{-- post3 --}}
-    <div class="col-3 ms-auto mb-3 mt-3">
+    <div class="col-3 mt-3 mb-2 box-3">
         <div class="card" style="width: 18rem; text-align: left" >
             <img src="{{ asset('img/mekisikan_1.jpg') }}" alt="">
                 <div class="card-body card-body-visit">
@@ -245,9 +245,11 @@
                     <li>Mexican</li>
                     <li>Mon–Fri 11:00am–10:00pm</li>
                     <li>Happy Hour,Non-Smoking</li>
-                    <li><button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-square-check"></i></button>
-                        <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-globe"></i></button>
+                    <li><button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-square-check link-place"></i></button>
+                        <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-globe link-place"></i></button>
                 </div>
         </div>
         </div>
+    </div>
+
     </div>
