@@ -26,12 +26,23 @@
                     <input type="text" name="restaurant_name" id="restaurant_name" value="" class="form-control form-size-bucket" autofocus>
                 </div>
 
-                <div class="text-center mt-2 mb-4">
-                    <label for="genre" class="form-label fw-bold mb-0">Genre</label>
-                    <input type="text" name="genre" id="genre" value="" class="form-control form-size-bucket" autofocus>
+                <div class="text-center form-label fw-bold mt-2 mb-1">Genre</div>
+            <div class="genre-center d-flex align-items-center posts-input">
+                <div class="form-check form-check-inline d-flex align-items-center">
+                    <input type="checkbox" name="genre[]" id="genre_italian" value="Italian" class="form-check-input">
+                    <label for="genre_italian" class="form-check-label">Italian</label>
                 </div>
+                <div class="form-check form-check-inline d-flex align-items-center">
+                    <input type="checkbox" name="genre[]" id="genre_japanese" value="Japanese" class="form-check-input">
+                    <label for="genre_japanese" class="form-check-label">Japanese</label>
+                </div>
+                <div class="form-check form-check-inline d-flex align-items-center">
+                    <input type="checkbox" name="genre[]" id="genre_mexican" value="Mexican" class="form-check-input mr-2">
+                    <label for="genre_mexican" class="form-check-label">Mexican</label>
+                </div>
+            </div>
 
-                <div class="text-center mt-2 mb-4">
+                <div class="text-center mt-4 mb-4">
                     <label for="genre" class="form-label fw-bold mb-1">Hours of operation</label>
                     <input type="text" name="genre" id="genre" value="" class="form-control form-size-bucket" autofocus>
                 </div>

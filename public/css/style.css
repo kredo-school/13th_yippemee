@@ -168,9 +168,12 @@ a.btn--yellow {
 
 /* Bucket-edit-modal */
 .bucket-edit-modal {
-    height: 950px;
+    height: 980px;
     width: 600px;
 
+    .genre-center {
+        margin-left: 110px;
+    }
 
 
 body {
@@ -253,7 +256,7 @@ body {
 
 /* Visit */
 .visit-edit-modal {
-    height: 850px;
+    height: 880px;
     width: 600px;
 }
 .form-size-visit {
