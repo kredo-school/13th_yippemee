@@ -158,4 +158,10 @@ class HomeController extends Controller
     {
         return view('social.social_home');
     }
+
+    //friends
+    public function friends_list()
+    {
+        return view('friends.friends_list');
+    }
 }
