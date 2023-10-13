@@ -4,15 +4,17 @@
 
 @section('content')
 <div class="admin">
-    <div class="container my-5">
-        <div class="row mb-3">
-
+    <div class="container my-5 margin-container">
+        <div class="row mb-2">
+            <div class="col-3"></div>
+            <div class="col">
+                <h2 class="admin_friends_list_title">Genre</h2>
+            </div>
             <div class="col-3 ms-auto mb-auto">
                 <form action="#" class="d-flex align-items-center">
                     <input type="text" name="genre_name" class="form-control me-2" value="" placeholder="Add a genre..." autofocus>
                     <button type="submit" class="btn text-white" style="background-color: #253C5C;"><i class="fa-solid fa-plus"></i></button>
                 </form>
-                
             </div>
             
             <div class="col-3 ms-auto mb-auto">

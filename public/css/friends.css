@@ -5,8 +5,9 @@
     position: relative;
 }
 
-.friends_list_title {
+.admin_friends_list_title {
     font-family: 'Marcellus', serif;
+    font-weight: bold;
 }
 
 .profile-picture {
@@ -26,8 +27,8 @@
 
 .profile-picture-modal {
     border-radius: 50%;
-    height: 7rem;
-    width: 7rem;
+    height: 9rem;
+    width: 9rem;
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;

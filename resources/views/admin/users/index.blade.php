@@ -4,8 +4,13 @@
 
 @section('content')
 <div class="admin">
-    <div class="container my-5">
-        <div class="row mb-3">
+    <div class="container my-5 margin-container">
+        <div class="row mb-2">
+            <div class="col-3">
+            </div>
+            <div class="col">
+                <h2 class="admin_friends_list_title">Users List</h2>
+            </div>
             <div class="col-3 ms-auto mb-auto">
                 <form action="#">
                     <input type="search" name="search" class="form-control form-control-sm" placeholder="Search for name">
@@ -44,6 +49,7 @@
                             <tr>
                                 <th></th>
                                 <th>Name</th>
+                                <th>Username</th>
                                 <th>Email</th>
                                 <th>Created At</th>
                                 <th>Status</th>
@@ -54,11 +60,12 @@
                         <tbody class="no-hover-effect">
                             <tr>
                                 <td>
-                                    <i class="fa-solid fa-circle-user d-block text-center admin-users-icon"></i>
+                                    <a href="#"><img src="{{ asset('img/woman01.jpg') }}" alt="woman" class="d-block mu-auto profile-picture"></a>
                                 </td>
                                 <td>
-                                    <a href="#" class="text-decoration-none text-dark">  username  </a>
+                                    <a href="#" class="text-decoration-none text-dark">  name  </a>
                                 </td>
+                                <td>Username</td>
                                 <td>  e-mail  </td>
                                 <td>  created at  </td>
                                 <td>                      
