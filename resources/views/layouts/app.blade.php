@@ -100,9 +100,9 @@
             @yield('content')
         </main>
     </div>
-
+    <footer style="background-color: #617EA8;">
+        @include('layouts.footer')
+    </footer>
 </body>
-<footer style="background-color: #617EA8;">
-    @include('layouts.footer')
-</footer>
+
 </html>

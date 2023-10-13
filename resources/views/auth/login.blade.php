@@ -1,18 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+    body {
+        padding-top: 4rem;
+    }
+</style>
+
 <div class="background">
     <div class="container text-start" >
-        <div class="row justify-content-center mb-3 w-50 mx-auto">                    
-                    <img src="/images/logo.png" alt="logo" class="w-50 pt-5 img  mb-3">               
+        <div class="row justify-content-center mb-3 w-50 mx-auto">
+                    <img src="/images/logo-black.png" alt="logo" class="w-50 pt-5 img  mb-3">
                 <div class="card">
                     <div class="card-title text-center mt-5 mb-5 h1 fw-bold">{{ __('Login') }}</div>
 
                     <div class="card-body w-75 mx-auto">
                         <form method="POST" action="{{ route('login') }}">
-                            @csrf   
-                                <div class="email">              
-                                        <label for="email" class="col-md-4 col-form-label " >{{ __('Email Address') }}</label>                          
+                            @csrf
+                                <div class="email">
+                                        <label for="email" class="col-md-4 col-form-label " >{{ __('Email Address') }}</label>
                                     <div class="mb-3">
                                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email Address">
 
@@ -59,7 +66,7 @@
                             <div class="row mb-0 ">
                                 <div class="col-md">
                                         <a class="btn btn-link ps-0 " href="{{ route('register') }}">
-                                            Create a account 
+                                            Create a account
                                         </a>
                                 </div>
                                     @if (Route::has('password.request'))
@@ -68,7 +75,7 @@
                                             {{ __('Forgot Your Password?') }}
                                         </a>
                                     </div>
-                                    @endif                          
+                                    @endif
                             </div>
 
                             <div class="row mt-4">
