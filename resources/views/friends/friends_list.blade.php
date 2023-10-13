@@ -4,10 +4,10 @@
 
 @section('content')
 <div class="friends">
-    <div class="container my-5">
-        <div class="row mb-3">
+    <div class="container my-5 margin-container">
+        <div class="row mb-2">
             <div class="col">
-                <h1 class="friends_list_title">Friends List</h3>
+                <h2 class="admin_friends_list_title">Friends List</h2>
             </div>
             <div class="col-3 ms-auto mb-auto">
                 <form action="#">

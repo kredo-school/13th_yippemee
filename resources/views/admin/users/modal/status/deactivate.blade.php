@@ -13,7 +13,7 @@ aria-hidden="true">
             
             <!--Body-->
             <div class="modal-body d-flex justify-content-center align-items-center flex-column">
-                <span><i class="fa-solid fa-user-slash fa-3x icon-red"></i></span>
+                <span><a href="#"><img src="{{ asset('img/woman01.jpg') }}" alt="woman" class="d-block mu-auto profile-picture-modal"></a></span>
                 <p class="pt-3 pr-2">Are you sure to want to deactivate 'username'?</p>
             </div>
 
