@@ -9,6 +9,14 @@
         padding-top: 4rem;
         overflow: hidden;
     }
+    footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 80px;
+    }
+
 </style>
 
 <div class="contact-bg">
