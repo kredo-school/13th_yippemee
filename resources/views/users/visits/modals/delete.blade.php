@@ -2,30 +2,29 @@
 
 <div class="modal fade" id="delete-visits">
     <div class="modal-dialog">
-        <div class="modal-content border-danger">
+        <div class="modal-content border-danger modal-delete-visit">
             <div class="modal-header border-danger">
                 <div class="h5 modal-title text-danger">
-                    <i class="fa-solid fa-circle-exclamation"></i> Delete the review
+                    <i class="fa-solid fa-circle-exclamation"></i> Delete this review
                 </div>
             </div>
 
             <div class="modal-body">
-                <p>Are you sure you want to delete the review?</p>
+                <p class="fw-bold text-secondary">Are you sure you want to delete this review?</p>
                 <div class="mt-3">
-                    <img src="{{ asset('img/image.jpg') }}" alt="logo" class="w-100">
+                    <img src="{{ asset('img/image.jpg') }}" alt="logo" class="img-size">
                     <p class="mt-1 text-muted"></p>
                 </div>
             </div>
 
-            <div class="modal-footer border-0">
+            <div class="modal-footer border-0 text-center">
                 <form action="#" method="">
                     @csrf
                     @method('DELETE')
-                    <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">
+                    <button type="button" class="btn btn-outline-danger btn-md" data-bs-dismiss="modal">
                         Cancel
                     </button>
-                    <input type="button" class="btn btn-danger btn-sm" onclick="delete_visits()" id="delete_visits" value="delete">
-                    {{-- <button class="btn btn-danger btn-sm" onclick="delete_visits()" id="delete_visits">Delete</button> --}}
+                    <input type="button" class="btn btn-danger btn-md" onclick="delete_visits()" id="delete_visits" value="delete">
                 </form>
             </div>
         </div>
