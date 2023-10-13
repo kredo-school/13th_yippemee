@@ -16,7 +16,7 @@
     <div class="container container-calendar">
         <div class="title-box">
             <div class="sticky-box">
-                <div class="row sticky-title">
+                <div class="row sticky-title text-center">
                     <h1 class="title-div my-auto text-center">
                         <i class="fa-regular fa-calendar" style="color: #253c5c;"></i> Decide by Date
                     </h1>
@@ -24,59 +24,22 @@
                 </div>
             </div>
         </div>
-                {{-- <div class="row sticky-plan">
-                    <div class="accordion accordion-flush" id="accordionPlan">
-                        <div class="accordion-item">
-                            <div class="accordion-header" id="headingPlan">
-                                <button class="accordion-button bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <h4 class=accordion-title><span>Created plans</span></h4>
-                                </button>
-                            </div>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionPlan">
-                                <div class="accordion-body">
-                                    @if / foreach
-                                    <button type="button" class="btn w-100" data-bs-toggle="modal" data-bs-target="#detail-modal">
-                                        <div class="row plan-row">
-                                            <div class="col-2 time-col">
-                                                <div class="row">11:30</div>
-                                                <div class="row">12:30</div>
-                                            </div>
-                                            <div class="col-7 name-col">User 1</div>
-                                            <div class="col-1 avatar-col"><i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i></div>
-                                        </div>
-                                    </button>
-
-                                    <button type="button" class="btn w-100" data-bs-toggle="modal" data-bs-target="#detail-modal">
-                                        <div class="row plan-row">
-                                            <div class="col-2 time-col">
-                                                <div class="row">17:00</div>
-                                                <div class="row">20:30</div>
-                                            </div>
-                                            <div class="col-7 name-col">User 4</div>
-                                            <div class="col-1 avatar-col"><i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i></div>
-                                        </div>
-                                    </button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
-
 
         <div class="calendar-box">
-            <div class="row w-75 top-button">
-                {{-- hover button --}}
-                <div class="col-10 calender-hover w-25">
-                    <label class="rocker">
-                        <input type="checkbox" class="hover-check">
-                        <span class="switch-left">M</span>
-                        <span class="switch-right">W</span>
-                    </label>
-                </div>
+            <div class="top-button">
+                <div class="row">
+                    {{-- hover button --}}
+                    <div class="col-10 calender-hover">
+                        <label class="rocker">
+                            <input type="checkbox" class="hover-check">
+                            <span class="switch-left">M</span>
+                            <span class="switch-right">W</span>
+                        </label>
+                    </div>
 
-                <div class="col-2">
-                    <a href="#" class="btn btn-create-plan mt-2 me-2" data-bs-toggle="modal" data-bs-target="#create-plan"><i class="fa-regular fa-calendar-plus fa-3x"></i></a>
+                    <div class="col-2">
+                        <a href="#" class="btn btn-create-plan mt-2" data-bs-toggle="modal" data-bs-target="#create-plan"><i class="fa-regular fa-calendar-plus fa-3x"></i></a>
+                    </div>
                 </div>
             </div>
 

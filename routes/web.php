@@ -46,12 +46,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-// Route::get('/users/private/group_lilst','group_list')->name('group_list');
+// Calendars
 Route::get('/users/calendars/private/group_list', [HomeController::class, 'group_list'])->name('group_list');
 Route::get('/users/calendars/public/calendar',[HomeController::class,'showCalendar'])->name('calendar');
 Route::get('/users/calendars/public/weekly',[HomeController::class,'showWeekly'])->name('weekly');
+Route::get('/users/calendars/private/calendar',[HomeController::class,'showGroupCalendar'])->name('private_calendar');
 
-Route::get('/users/private/group_list', [HomeController::class, 'group_list'])->name('group_list');
+
+
+
+
 
 Route::get('/myschedule', [HomeController::class, 'myschedule'])->name('myschedule');
 Route::get('/private/yourplan', [HomeController::class, 'privateyourplan'])->name('privateyourplan');
