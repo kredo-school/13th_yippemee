@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <nav class="stroke">
+    <nav class="profile-nav stroke">
           <ul>
             <li><a href="{{ route('posts.show') }}">POST</a></li>
             <li><a href="{{ route('visits.show') }}">VISITS</a></li>
