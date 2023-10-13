@@ -5,9 +5,7 @@
 @section('content')
 
 <div class="container">
-
     <div class="justify-content-center mt-5 mb-5">
-
         <div class="col-10">
         <form action="#" method="post" class="shadow rounded-3 p-5" enctype="multipart/form-data">
             @csrf
@@ -55,12 +53,11 @@
             </div>
             <div class="mb-4 second-font">
                 <label for="additional" class="form-label fw-bold mb-0 mt-3">Additional</label>
-                <textarea name="additional" id="additional" rows="5" placeholder="Write some information about the restaurant" class="form-control"></textarea>
-
-            {{-- Error --}}
-            @error('description')
-            <div class="text-danger small">{{ $message }}</div>
-            @enderror
+                <textarea name="additional" id="additional" rows="3" placeholder="Write some information about the restaurant" class="form-control"></textarea>
+                {{-- Error --}}
+                @error('description')
+                <div class="text-danger small">{{ $message }}</div>
+                @enderror
             </div>
 
             {{-- Button --}}
@@ -69,10 +66,10 @@
                 <a href="{{ route('bucket.show') }}" class="btn btn--yellow btn--cubic px-5">Save</a>
             </div>
             {{-- End Button --}}
+                </div>
+            </form>
         </div>
-        </form>
     </div>
-</div>
 @endsection
 
 
