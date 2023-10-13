@@ -610,6 +610,7 @@ form input[type="file"] {
 }
 
 /* create_plan modal */
+/* preference modal */
 
 .create-content {
     width: 900px;
@@ -679,5 +680,4 @@ form input[type="file"] {
     padding-left: 3rem;
 }
 
-/* preference modal */
 
