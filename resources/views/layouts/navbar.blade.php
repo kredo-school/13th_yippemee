@@ -35,7 +35,7 @@
                     <a href="{{ route('group_list') }}" class="nav-link text-white">Place</a>
                 </li>
                 <li class="navbar-item">
-                    <a href="#" class="nav-link text-white">Friends</a>
+                    <a href="{{ route('friends.friends_list') }}" class="nav-link text-white">Friends</a>
                 </li>
                 <li class="navbar-item">
                     <a href="{{ route('social.social_home') }}" class="nav-link text-white">Social</a>
