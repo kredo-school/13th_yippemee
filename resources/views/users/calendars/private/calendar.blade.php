@@ -11,7 +11,6 @@
         background-repeat: none;
     }
     .bg-layer {
-
         background: rgba(0,0,0,0.3);
         height: 1100px;
         width: 100%;
@@ -47,7 +46,7 @@
                     </div>
 
                     <div class="col-2">
-                        <a href="#" class="btn btn-create-plan mt-2" data-bs-toggle="modal" data-bs-target="#create-plan"><i class="fa-regular fa-calendar-plus fa-3x"></i></a>
+                        <a href="#" class="btn btn-create-plan mt-2" data-bs-toggle="modal" data-bs-target="#preference-modal"><i class="fa-regular fa-calendar-plus fa-3x"></i></a>
                     </div>
                 </div>
             </div>
@@ -137,4 +136,5 @@
         </div>
     </div>
 </div>
+@include('users.modals.preference')
 @endsection

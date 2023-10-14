@@ -566,6 +566,7 @@ input,textarea{
     top: 4rem;
     left: 2rem;
 }
+
 .modal-body{
     height: 350px;
 }
@@ -609,15 +610,14 @@ form input[type="file"] {
 }
 
 /* create_plan modal */
+/* preference modal */
 
 .create-content {
     width: 900px;
     left: 125px;
     text-align: left;
 }
-.create-body {
-    left: 3rem;
-}
+
 .create-body i {
     color: #253c5c;
 }
@@ -652,16 +652,17 @@ form input[type="file"] {
     margin-top: 3px;
     color: #253c5c;
 }
-.row .genre {
+#genre {
     border-left: 4px solid #253c5c;
-    margin-top: 2px;
+    margin-top: 1rem;
     margin-bottom: 4px;
+    margin-left: 1rem;
 }
-.btn-create {
+.create-btn {
     color: #E6F2E9;
     background-color: #617EA8;
     border-radius: 5px;
-    margin-right: 1rem;
+    margin-right: 2rem;
 }
 .row .time-row {
     height: 50px;
@@ -671,3 +672,12 @@ form input[type="file"] {
     margin: 0;
     padding: 0;
 }
+#left-form-group{
+    padding-left: 4.5rem;
+}
+#description-form {
+    margin-left: 0;
+    padding-left: 3rem;
+}
+
+
