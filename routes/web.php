@@ -91,4 +91,3 @@ Route::get('/friends/list',  [HomeController::class, 'friends_list'])->name('fri
 
 
 
-
