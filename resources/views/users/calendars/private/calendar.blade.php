@@ -41,7 +41,7 @@
                         <label class="rocker">
                             <input type="checkbox" class="hover-check">
                             <span class="switch-left">M</span>
-                            <span class="switch-right" id="group-switch">W</span>
+                            <span class="switch-right switch-right-private">W</span>
                         </label>
                     </div>
 
@@ -81,7 +81,7 @@
                             <td></td>
                             <td></td>
                             <td>
-                                <button type="button" class="btn btn-detail" data-bs-toggle="modal" data-bs-target="#planList-modal">1</button>
+                                <button type="button" class="btn btn-detail" data-bs-toggle="modal" data-bs-target="#preferenceList-modal">1</button>
                             </td>
                             <td>2</td>
                         </tr>
@@ -137,4 +137,5 @@
     </div>
 </div>
 @include('users.modals.preference')
+@include('users.modals.preferencelist')
 @endsection
