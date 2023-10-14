@@ -12,14 +12,14 @@
                     <img src="{{ asset('img/italianfood.png') }}" alt="italianfood" class="w-100">
                 </div>
 
-                <div class="col-4 px-0 bg-white post">
+                <div class="col-4 bg-white post">
                     <div class="card border-0">
-                        <div class="card-header bg-white py-3">
+                        <div class="card-header bg-white py-2">
                             <div class="row align-items-center">
                                 <div class="col text-start">
                                     <i class="fa-solid fa-circle-user"></i> <a href="#" class="text-decoration-none text-post"><strong>Mary Johnson</strong></a>
                                 </div>
-                                <div class="col-auto text-end"> Following</div>
+                                <div class="col-auto text-end"><i class="fa-solid fa-users text-success"></i></div>
                             </div>
                         </div>
                         <div class="card-body body-padding bg-white border-0 p-3">
