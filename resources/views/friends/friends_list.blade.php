@@ -1,26 +1,31 @@
 @extends('layouts.app')
 
-@section('title', 'Friends List')
+@section('title', 'Friends list')
 
 @section('content')
 <div class="friends">
-    <div class="container my-5 margin-container">
-        <div class="row mb-2">
-            <div class="col">
-                <h2 class="admin_friends_list_title">Friends List</h2>
+    <div class="container my-4 margin-container bg-white">
+
+        <div class="row">
+            <div class="col  page-title">
+                <h2 class="text-center " >Friends List</h2>
+                <span class="bar bar-short mt-4"></span>
             </div>
-            <div class="col-3 ms-auto mb-auto">
+        </div>
+
+        <div class="row mt-3">
+            
+            <div class="col-3 ms-auto mb-3">
                 <form action="#">
                     <input type="search" name="search" class="form-control form-control-sm" placeholder="Search for friends">
                 </form>
             </div>
         </div>
-
+        
         <div class="row mb-3">
-
             <div class="col mb-3">
                 <div class="admin-table">
-                    <table class="table align-middle border">
+                    <table class="table table-hover align-middle border">
                         <thead class="users-thead">
                             <tr>
                                 <th></th>
@@ -94,12 +99,10 @@
                                     </div>
                                     
                                 </td>
-                            </tr>
-                            
+                            </tr> 
                         </tbody>
                     </table>
                 </div>
-                
             </div>
         </div>
     </div>

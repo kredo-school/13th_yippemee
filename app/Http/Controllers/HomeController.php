@@ -170,4 +170,5 @@ class HomeController extends Controller
     {
         return view('friends.friends_list');
     }
+
 }
