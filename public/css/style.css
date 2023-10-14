@@ -1,3 +1,5 @@
+
+
 .bar-short {
     display: block;
     width: 50px;
@@ -54,8 +56,8 @@
 
 /* Profile */
 .icon-lg {font-size: 8rem;}
-.icon-md {font-size: 6rem;}
-.icon-sm {font-size: 1.5rem;}
+.icon-md {font-size: 5rem;}
+.icon-sm {font-size: 1rem;}
 .main-font {color: #253C5C;}
 .second-font {color: #253C5C;}
 .icon-font {color: #253C5C;}
@@ -235,7 +237,6 @@ body {
   .visit_body_line {
     border-bottom: 3px solid;
     border-color: rgba(97,126,168,0.2);
-    height: 250px;
   }
 
 .card-body-visit {
