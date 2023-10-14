@@ -296,11 +296,10 @@
 
 /* private calendar */
 #private-calendar tbody td:hover:after, .selected:after {
-    background: #F2C84B;
     margin: 0;
 }
-#group-switch{
-    background-color: #F2C84B;
+.switch-right-private {
+    background-color: #f2c84b;
 }
 #sticky-private {
     border-right: 20px solid #F2C84B;
@@ -361,6 +360,7 @@
 
 
 /* plan list modal */
+/* preference list modal */
 #plan-header {
     margin-left: -5px;
     background-color: #617ea8;
@@ -368,7 +368,8 @@
     color: white;
     height: 60px;
 }
-#planModalLabel {
+#planModalLabel,
+#preferenceModalLabel {
     font-size: 35px;
 }
 #plan-body {
@@ -383,6 +384,13 @@
 .plan-row .time-col {
     border-right: 2px solid #617EA8;
 }
+
+/*　↓↓↓↓ only preference list　↓↓↓↓ */
+#preferenceModal {
+    margin-top: 80%;
+}
+
+
 /* end of plan list */
 
 /* detail modal */
