@@ -18,8 +18,11 @@
             </div>
             
             <div class="col-3 ms-auto mb-auto">
-                <form action="#">
-                    <input type="search" name="search" class="form-control form-control-sm" placeholder="Search for genres">
+                <form action="#" class="search-form">
+                    <label class="form-control-sm">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" name="search"  placeholder="Search for genre">
+                    </label>
                 </form>
             </div>
         </div>
