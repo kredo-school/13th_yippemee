@@ -4,7 +4,7 @@
     </div>
 
     <div class="col-3">
-        <div class="display-6 mt-3" style="font-family: 'Marcellus';">John Smith
+        <div class="mt-4" style="font-family: 'Marcellus';"><h2 style="margin-bottom: 0">John Smith</h2>
         </div>
         <div class="header-user-name row">
         <div class="mt-0">{{"@JohnSmith12345678"}}</div>
@@ -21,7 +21,7 @@
 
         <div class="row">
             <div class="col page-title" style="margin-left: 200px">
-                <span class="bar bar-short mt-4"></span>
+                <span class="bar bar-short mt-2"></span>
             </div>
         </div>
 
@@ -31,7 +31,7 @@
             <li><a href="{{ route('posts.show') }}">POST</a></li>
             <li><a href="{{ route('visits.show') }}">VISITS</a></li>
             <li><a href="{{ route('bucket.show') }}">BUCKET LIST</a></li>
-            <li><a href="#">MY PLAN</a></li>
+            <li><a href="{{ route('myplans.show') }}">MY PLANS</a></li>
           </ul>
     </nav>
 </div>
