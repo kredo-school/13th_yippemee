@@ -1,12 +1,13 @@
 <div class="modal fade" id="edit-bucket" tabindex="-1" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog">
         <div class="modal-content bucket-edit-modal">
-            <div class="modal-header">
+            <div class="modal-header border-0">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">
                     <form action="#" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
                     <h3 class="title-visit fw-bold">Edit Bucket List</h3>
+                    <span class="bar bar-short mt-4 me-5"></span>
                 </h1>
             </div>
 

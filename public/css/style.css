@@ -191,6 +191,7 @@ a.btn--yellow {
 .bucket-edit-modal {
     height: 980px;
     width: 600px;
+    border: none;
 
 .genre-center {
         margin-left: 110px;

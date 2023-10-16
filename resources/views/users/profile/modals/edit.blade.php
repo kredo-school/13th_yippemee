@@ -4,10 +4,12 @@
     <div class="modal-content modal-content-profile-edit">
         <div class="modal-header modal-header-profile">
         <h1 class="modal-title fs-5" id="exampleModalLabel">
-                <form action="#" method="post" enctype="multipart/form-data">
-                    @csrf
-                    @method('PATCH')
-                    <h2 class="mb-0 fw-bold" class="list-group-item">Update Profile</h2></h1>
+            <form action="#" method="post" enctype="multipart/form-data">
+            @csrf
+            @method('PATCH')
+            <h2 class="mb-0 fw-bold" class="list-group-item">Update Profile</h2>
+            <span class="bar bar-short mt-4"></span>
+        </h1>
         </div>
 
         <div class="modal-body modal-body-profile">

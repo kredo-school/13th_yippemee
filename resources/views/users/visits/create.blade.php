@@ -11,7 +11,8 @@
         <div class="col-10">
         <form action="#" method="post" class="shadow rounded-3 p-5" enctype="multipart/form-data">
             @csrf
-            <h1 class="main-font mb-0 fw-light text-center mb-5">Make a Visit List</h1>
+            <h1 class="main-font mb-0 fw-light text-center mb-4">Make a Visit List</h1>
+            <span class="bar bar-short mb-5"></span>
 
     {{-- image --}}
     <div class="row">

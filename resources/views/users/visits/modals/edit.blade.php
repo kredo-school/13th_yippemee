@@ -8,6 +8,7 @@
                     @csrf
                     @method('PATCH')
                     <h2 class="h3 mb-0 fw-bold" class="list-group-item">Edit visit</h2>
+                    <span class="bar bar-short mt-4"></span>
                 </h1>
             </div>
 
