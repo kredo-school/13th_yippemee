@@ -520,22 +520,39 @@ h1{
 }
 
 /* group list */
-label {
-    cursor: pointer;
+#decide-by-place {
+    padding-left: 10%;
 }
-
-#menu-toggle {
+#group-card {
+    border:none;
+}
+#group-header {
+    border-bottom: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.group-pic {
+    height: 220px;
+    width: 220px;
+    object-fit: cover;
+}
+#group-body {
+    padding-right: 0%;
+    padding-bottom: 0%;
+    display: flex;
+    justify-content: center;
+}
+.group-div {
+    color: #253c5c;
+    margin-top: -2%;
+}
+.edit-div {
+    padding-top: 2%;
+    margin-right: -3px;
+}
+.btn-group-drop .dropdown-toggle::after {
     display: none;
-}
-
-
-#menu {
-    display: none;
-}
-
-
-#menu-toggle:checked + #menu {
-    display: block;
 }
 
 
