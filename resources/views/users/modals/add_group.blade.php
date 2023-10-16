@@ -1,3 +1,17 @@
+<style>
+input,textarea{
+    border-bottom:2px solid #253c5c;
+    border-right:none;
+    border-left:none;
+    border-top:none;
+    width: 25rem
+}
+form input[type="file"] {
+    display: none;
+    cursor: pointer;
+}
+
+</style>
 <div class="modal fade" id="add-group" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
