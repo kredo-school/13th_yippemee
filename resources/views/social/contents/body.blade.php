@@ -1,6 +1,6 @@
 <div class="container p-0 bg-white">
     <a href="{{ route('social.posts.show') }}">
-        <img src="https://images.pexels.com/photos/1435903/pexels-photo-1435903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="italian" class="w-100">
+        <img src="{{ asset('img/italianfood.png') }}" alt="italian" class="w-100">
     </a>
 
     <div class="card-header border-0 header-padding">
