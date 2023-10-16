@@ -1,6 +1,6 @@
 <div class="container">
 
-    <a class="navbar-brand text-white" href="{{ url('/') }}">
+    <a class="navbar-brand text-white" href="{{ url('/home') }}">
 
         <img src="{{ asset('images/logo.png') }}" height="40px">
     </a>

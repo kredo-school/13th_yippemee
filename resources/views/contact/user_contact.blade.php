@@ -14,7 +14,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    height: 80px;
+    height: 90px;
     }
 
 </style>

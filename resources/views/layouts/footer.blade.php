@@ -1,7 +1,7 @@
-<div class="container text-white">
+<div class="container footer-link text-white">
   <div class="row">
       <div class="col-3">
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand" href="{{ url('/home') }}">
         <img src="{{ asset('images/logo.png') }}" height="40px" class="mt-1 ms-2">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -58,6 +58,6 @@
 
 <div class="footer-copywrite">
   <div class="container text-white text-center">
-        <p>@ copywrite kredo</p>
+        <p class="mt-2">@ copywrite kredo</p>
   </div>
 </div>

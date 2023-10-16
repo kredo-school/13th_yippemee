@@ -64,11 +64,13 @@
 /* footer */
 footer{
     width: 100%;
-    height: 80px;
+    height: 90px;
     margin-top: auto;
 }
 
-
+.footer-link {
+    height: 55px;
+}
 .footer-nav {
     display: flex;
     justify-content: center;
@@ -102,9 +104,10 @@ footer{
 }
 
 .footer-copywrite {
+    margin-top: 0;
     background-color: #253C5C;
     width: 100%;
-    height: 25px;
+    height: 35px;
 }
 
 /* navbar */
