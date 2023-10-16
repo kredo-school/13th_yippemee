@@ -131,6 +131,17 @@
     margin-left: 0px;
     width: 580px;
 }
+
+.modal-footer-myplan{
+    border: 0;
+    margin-right: 30px
+}
+
+.modal-myplan {
+    height: 700px;
+    width: 630px;
+}
+
 .modal-profile-edit {
     width: 500px;
     text-align: left;

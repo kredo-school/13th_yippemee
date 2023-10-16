@@ -25,12 +25,12 @@
         <div class="row mb-3">
             <div class="col mb-3">
                 <div class="admin-table">
-                    <table class="table table-hover align-middle border">
-                        <thead class="users-thead">
+                    <table class="table align-middle border">
+                        <thead class="thead-plans">
                             <tr>
                                 <th class="fw-light"><i class="fa-regular fa-calendar-check icon-sm"></i> Date</th>
                                 <th class="fw-light"><i class="fa-regular fa-clock icon-sm"></i> Time</th>
-                                <th class="fw-light"><i class="fa-solid fa-utensils icon-sm"></i> Restaurant</th>
+                                <th class="fw-light"><i class="fa-solid fa-utensils icon-sm"></i> Place</th>
                                 <th class="fw-light"><i class="fa-solid fa-people-group icon-sm"></i> Group</th>
                                 <th class="fw-light"><i class="fa-regular fa-message icon-sm"></i> Memo</th>
                                 <th class="fw-light"></th>
@@ -42,7 +42,7 @@
                                 <td>{{ date('M d, Y') }}</td>
                                 <td>6pm</td>
                                 <td>Bristol Seafood Grill</td>
-                                <td><a href="#">coworker</td>
+                                <td><a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">coworker</td>
                                 <td>Welcome party</a></td>
                                 <td>
                                     <div class="dropdown">
@@ -52,12 +52,12 @@
 
                                         <div class="dropdown-menu menu-hover">
                                             <a href="#" class="dropdown-item">
-                                                <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#edit-bucket"></i> Edit</a>
+                                                <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#edit_plan"></i> Edit</a>
 
                                             <a href="#" class="dropdown-item text-danger">
                                                 <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#delete-plan"></i> Delete</a>
                                         </div>
-                                        @include('users.myplans.modal.delete')
+                                        @include('users.myplans.modals.delete')
                                     </div>
 
                                 </td>
@@ -66,7 +66,7 @@
                                 <td>{{ date('M d, Y') }}</td>
                                 <td>7:30pm</td>
                                 <td>Happiness Cafe</td>
-                                <td><a href="#">friends</a></td>
+                                <td><a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">friends</a></td>
                                 <td>celebration</td>
                                 <td>
                                     <div class="dropdown">
@@ -75,16 +75,16 @@
                                         </button>
 
                                         <div class="dropdown-menu menu-hover">
-                                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#connectModal">
+                                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_plan">
                                                 <i class="fa-regular fa-pen-to-square"></i> Edit
                                             </a>
 
-                                            <a class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#disconnectModal">
-                                                <i class="fa-regular fa-trash-can"></i> Delete
-                                            </a>
+                                            <a href="#" class="dropdown-item text-danger">
+                                                <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#delete-plan"></i> Delete</a>
                                         </div>
+                                        @include('users.myplans.modals.edit')
+                                        @include('users.myplans.modals.delete')
                                     </div>
-
                                 </td>
                             </tr>
                         </tbody>
@@ -93,7 +93,6 @@
             </div>
         </div>
     </div>
-    @include('friends.modal.connect_modal')
 
 </div>
 
