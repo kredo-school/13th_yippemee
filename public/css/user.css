@@ -539,7 +539,7 @@ label {
 }
 
 
-/* modal form */
+/* add group modal */
 .modal-content{
     background-color: #fff;
     width: 700px;
@@ -574,15 +574,51 @@ input,textarea{
     top: 4rem;
     left: 2rem;
 }
-
 .modal-body{
     height: 350px;
 }
-.btn-create{
+
+.brn-create {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    background: transparent;
+    width: 130px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    border: 2px solid #333;
+    position: relative;
+    z-index: 1;
+    display: block;
+    overflow: hidden;
+    transition: .3s;
+  }
+.btn-create::before {
+    content: "";
+    width: 120%;
+    height: 200%;
+    position: absolute;
+    top: -50%;
+    right: 0;
+    z-index: -1;
+    background: #333;
+    border-radius: 0 100% 100% 0;
+    transform: translateX(-100%);
+    transition: transform ease .3s;
+  }
+.btn-create:hover {
+    color: #fff;
+  }
+.btn-create:hover::before {
+    transform: translateX(10%);
+  }
+
+/* .btn-create{
     margin-right: 2.5rem;
     background-color: #253c5c;
     color: #e6f2e9;
-}
+} */
 .profile-pic {
     border-radius: 50%;
     height: 150px;

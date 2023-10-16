@@ -10,7 +10,7 @@
                         </h1>
                     </div>
                     <div class="col-1">
-                        <button type="button" class="btn-close" aria-label="Close"></button>
+                        <a href="#" class="btn close-button mt-2" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2x" style="color: #253c5c"></i></a>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
             </div>
 
             <div class="modal-footer border-0">
-                <a href="#" class="btn btn-create btn-radius-gradient">Create</a>
+                <a href="#" class="btn-create"><span>Create</span></a>
             </div>
 
         </div>
