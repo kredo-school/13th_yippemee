@@ -37,8 +37,8 @@
         </div>
 
         <div class="modal-profile-edit mb-4">
-            <label for="genre" class="form-label fw-bold mb-1">Best Restaurant</label>
-            <input type="text" name="genre" id="genre" value="" class="form-control" autofocus>
+            <label for="bestRes" class="form-label fw-bold mb-1">Best Restaurant</label>
+            <input type="text" name="bestRes" id="bestRes" value="" class="form-control" autofocus>
         </div>
 
         <div class="form-label fw-bold mb-3">Favorite Genre</div>

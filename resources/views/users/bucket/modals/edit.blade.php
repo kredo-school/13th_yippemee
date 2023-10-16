@@ -43,8 +43,8 @@
                     </div>
 
                 <div class="text-center mt-4 mb-4">
-                    <label for="genre" class="form-label fw-bold mb-1">Hours of operation</label>
-                    <input type="text" name="genre" id="genre" value="" class="form-control form-size-bucket" autofocus>
+                    <label for="hourOpe" class="form-label fw-bold mb-1">Hours of operation</label>
+                    <input type="text" name="hourOpe" id="hourOpe" value="" class="form-control form-size-bucket" autofocus>
                 </div>
 
                 <div class="text-center mb-4">

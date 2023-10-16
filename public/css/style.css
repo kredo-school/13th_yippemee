@@ -127,7 +127,7 @@
 }
 .modal-footer-profile {
     border: 0;
-    margin-right: 30px;
+    margin-right: 20px;
     margin-left: 0px;
     width: 580px;
 }
@@ -147,8 +147,8 @@
     text-align: left;
 }
 .modal-content-profile-edit {
-    height: 800px;
-    width: 640px;
+    height: 820px;
+    width: 630px;
 }
 
     /* modal hover button */
@@ -299,6 +299,7 @@ body {
 }
 .visit-modal-title {
     margin-left: 230px;
+    border: none;
 }
 .show-star {
     color: #F1A29B;

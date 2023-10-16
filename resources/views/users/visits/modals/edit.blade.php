@@ -4,10 +4,11 @@
         <div class="modal-content visit-edit-modal">
             <div class="modal-header visit-modal-title">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">
-                        <form action="#" method="post" enctype="multipart/form-data">
-                            @csrf
-                            @method('PATCH')
-                            <h2 class="h3 mb-0 fw-bold" class="list-group-item">Edit visit</h2></h1>
+                    <form action="#" method="post" enctype="multipart/form-data">
+                    @csrf
+                    @method('PATCH')
+                    <h2 class="h3 mb-0 fw-bold" class="list-group-item">Edit visit</h2>
+                </h1>
             </div>
 
             <div class="modal-body">

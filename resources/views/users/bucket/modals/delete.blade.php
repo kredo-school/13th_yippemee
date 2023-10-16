@@ -5,7 +5,7 @@
         <div class="modal-content border-danger modal-delete-visit">
             <div class="modal-header border-danger">
                 <div class="h5 modal-title text-danger">
-                    <i class="fa-solid fa-circle-exclamation"></i> Delete this Bucket List
+                    <i class="fa-solid fa-circle-exclamation"></i> Delete Bucket List
                 </div>
             </div>
 
@@ -24,7 +24,7 @@
                     <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">
                         Cancel
                     </button>
-                    <input type="button" class="btn btn-danger btn-sm" onclick="delete_visits()" id="delete_bucket" value="delete">
+                    <button type="submit" class="btn btn-danger btn-md">Delete</button>
                 </form>
             </div>
         </div>
