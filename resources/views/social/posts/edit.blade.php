@@ -11,11 +11,14 @@
                 <span class="bar bar-short mt-4"></span>
             </div>
         </div>
-        <div class="row mt-3">
-            <form action="#" method="post" enctype="multipart/form-data">
-                <div class="d-flex flex-column mb-3 align-items-start">
-                    <label for="genre" class="form-label fw-bold me-3">Genre</label>
-    
+
+        <form action="#" method="post" enctype="multipart/form-data">
+        
+            <div class="row">
+                <div class="mb-3  text-start">
+                    <label for="Genre" class="form-label d-block fw-bold">
+                        Genre
+                    </label>
                     <div class="d-flex align-items-center posts-input">
                         <div class="form-check form-check-inline d-flex align-items-center">
                             <input type="checkbox" name="genre[]" id="genre_italian" value="Italian" class="form-check-input">
@@ -39,33 +42,38 @@
                         </div>
                     </div>
                 </div>
-    
+            </div>
+
+            <div class="row">
                 <div class="mb-3  text-start">
                     <label for="description" class="form-label d-block fw-bold">
                         description
                     </label>
                     <textarea name="description" id="description" rows="3" class="form-control"></textarea>
                 </div>
-    
+            </div>
+
+            <div class="row">
                 <div class="mb-3  text-start">
                     <label for="restrante_name" class="form-label d-block fw-bold">
                         restrante name
                     </label>
                     <input type="text" name="restrante_name" id="restrante_name" class="form-control">
                 </div>
-    
+            </div>
+
+            <div class="row">
                 <div class="mb-3">
-                    <label for="post-image" class="form-label text-start d-block fw-bold">image</label>
-                    <input type="file" name="image" class="form-control">
-                    <img src="https://images.pexels.com/photos/2098085/pexels-photo-2098085.jpeg?auto=compress&cs=tinysrgb&w=400" alt="" class="post-image mb-2">
+                    <label for="image" class="form-label text-start d-block fw-bold">Image</label>
+                    <img src="{{ asset('img/italianfood.png')}}" alt="edit_image" class="w-25">
+                    <input type="file" name="post_image" id="post_image" class="form-control mt-1 w-50">
                 </div>
-                
-                <button type="submit" class="btn btn-contact btn-post w-25"><i class="fa-solid fa-pen-to-square"></i> SAVE</button>
-            </form>
-        </div>
-        
+            </div>              
+
+            <button type="submit" class="btn btn-contact btn-post w-25"><i class="fa-solid fa-pen-to-square"></i> SAVE</button> 
+
+        </form>        
     </div>
 
-
-
 @endsection
+
