@@ -40,12 +40,15 @@
                 </div>
 
                 <div class="col-2 ps-5">
-                    <label for="menu-toggle"><i class="fa-solid fa-bars fa-2x" style="color: #253c5c;"></i></label>
-                    <input type="checkbox" id="menu-toggle" />
-                    <ul id="menu">
-                        <li><a href="#">Edit</a></li>
-                        <li><a href="#">Delete</a></li>
-                    </ul>
+                    <div class="btn-group">
+                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-bars fa-2x" style="color: #253c5c;"></i>
+                          </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Edit</a></li>
+                          <li><a href="#" class="dropdown-item">Delete</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <hr>
             </div>
