@@ -4,20 +4,11 @@
 
 <style>
     body {
-        padding-top: 4rem;
-        overflow: hidden;
+        background-image:  url('/images/bg-mainpage.png');
+        background-size: cover;
     }
-    footer{
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 80px;
-    }
-
 </style>
 
-<div class="background-image">
  <div class="container display-flex align-items-center">
     <div class="row justify-content-center">
         {{-- <div class="col-md-8">
