@@ -12,8 +12,8 @@
     </div>
 
     <div class="col-3 mt-4" style="text-align: right">
-         <a href="#" class="btn btn--green btn--cubic px-5">
-        <i class="fa-solid fa-pen-clip icon-sm" data-bs-toggle="modal" data-bs-target="#edit-intro"></i> Edit Profile
+        <a href="#" class="btn btn--green btn--cubic px-5">
+            <i class="fa-solid fa-pen-clip icon-sm" data-bs-toggle="modal" data-bs-target="#edit-intro"> Edit Profile</i>
         </a>
     </div>
         {{-- Include Modal --}}

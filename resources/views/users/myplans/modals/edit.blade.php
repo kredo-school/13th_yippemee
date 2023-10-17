@@ -7,6 +7,7 @@
             @csrf
             @method('PATCH')
             <h2 class="mb-0 fw-bold">Edit Plan</h2>
+            <span class="bar bar-short mt-4"></span>
         </h1>
         </div>
 

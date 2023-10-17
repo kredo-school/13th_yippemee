@@ -7,7 +7,7 @@
                     <form action="#" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
-                    <h2 class="h3 mb-0 fw-bold" class="list-group-item">Edit visit</h2>
+                    <h2 class="h3 mb-0 fw-bold mt-3" class="list-group-item">Edit visit</h2>
                     <span class="bar bar-short mt-4"></span>
                 </h1>
             </div>
@@ -37,7 +37,7 @@
 
             {{-- raiting --}}
         <div class="mb-4 text-center">
-            <label for="star" class="form-label fw-bold mb-1">How would you rate your experience ?</label>
+            <label for="star" class="form-label fw-bold mb-0">How would you rate your experience ?</label>
 
             <fieldset class="rating">
                 <input id="demo-1" type="radio" name="demo" value="1">
