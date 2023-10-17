@@ -18,7 +18,7 @@
 
                 {{-- Post bar--}}
                 <div class="mx-3 mt-4 sidebar-profile">
-                    <div class="title-line"><i class="fa-regular fa-square-plus me-3 "></i><span class="fw-bold">Make your page</span></div>
+                    <div class="title-line"><i class="fa-regular fa-square-plus me-3"></i><span class="fw-bold">Make your page</span></div>
                     <a href="{{ route('social.posts.create') }}" class="list-group-item list-group-item-action py-2 ripple"><i class="fa-regular fa-pen-to-square me-3 link-place"></i><span>Post</span>
                     </a>
                     <a href="{{ route('visits.create') }}" class="list-group-item list-group-item-action py-2 ripple">

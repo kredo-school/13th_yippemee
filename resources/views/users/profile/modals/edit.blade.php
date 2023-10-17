@@ -57,6 +57,10 @@
                     <input type="checkbox" name="genre[]" id="genre_mexican" value="Mexican" class="form-check-input mr-2">
                     <label for="genre_mexican" class="form-check-label">Mexican</label>
                 </div>
+                <div class="form-check form-check-inline d-flex align-items-center">
+                    <input type="checkbox" name="genre[]" id="genre_other" value="Other" class="form-check-input">
+                    <label for="genre_other" class="form-check-label">Other</label>
+                </div>
             </div>
         </div>
         <div class="modal-footer modal-footer-profile">

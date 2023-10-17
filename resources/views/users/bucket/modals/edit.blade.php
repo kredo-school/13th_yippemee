@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="text-center form-label fw-bold mt-2 mb-1">Genre</div>
-                    <div class="genre-center d-flex align-items-center posts-input">
+                    <div class="genre-center d-flex align-items-center posts-input" style="margin-left: 70px">
                         <div class="form-check form-check-inline d-flex align-items-center">
                             <input type="checkbox" name="genre[]" id="genre_italian" value="Italian" class="form-check-input">
                             <label for="genre_italian" class="form-check-label">Italian</label>
@@ -40,6 +40,10 @@
                         <div class="form-check form-check-inline d-flex align-items-center">
                             <input type="checkbox" name="genre[]" id="genre_mexican" value="Mexican" class="form-check-input mr-2">
                             <label for="genre_mexican" class="form-check-label">Mexican</label>
+                        </div>
+                        <div class="form-check form-check-inline d-flex align-items-center">
+                            <input type="checkbox" name="genre[]" id="genre_other" value="Other" class="form-check-input">
+                            <label for="genre_other" class="form-check-label">Other</label>
                         </div>
                     </div>
 
