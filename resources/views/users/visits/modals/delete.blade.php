@@ -5,7 +5,7 @@
         <div class="modal-content border-danger modal-delete-visit">
             <div class="modal-header border-danger">
                 <div class="h5 modal-title text-danger">
-                    <i class="fa-solid fa-circle-exclamation"></i> Delete this review
+                    <i class="fa-solid fa-circle-exclamation"></i> Delete review
                 </div>
             </div>
 
@@ -24,7 +24,7 @@
                     <button type="button" class="btn btn-outline-danger btn-md" data-bs-dismiss="modal">
                         Cancel
                     </button>
-                    <input type="button" class="btn btn-danger btn-md" onclick="delete_visits()" id="delete_visits" value="delete">
+                    <button type="submit" class="btn btn-danger btn-md">Delete</button>
                 </form>
             </div>
         </div>
