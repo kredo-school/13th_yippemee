@@ -6,20 +6,11 @@
 
 <style>
     body {
-        padding-top: 4rem;
-        overflow: hidden;
+        background-image:  url('/images/contact-bg.jpg');
+        background-size: cover;
     }
-    footer{
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 80px;
-    }
-
 </style>
 
-<div class="contact-bg">
     <div class="container display-flex align-items-center">
         <div class="row justify-content-center">
             <div class="card p-5 contact-form">
@@ -36,6 +27,5 @@
             </div>
         </div>
     </div>
-</div>
 
 @endsection
