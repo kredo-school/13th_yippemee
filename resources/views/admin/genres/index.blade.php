@@ -70,9 +70,9 @@
                                 <td>Italian</td>
                                 <td>5</td>
                                 <td>2023-09-01 08:15:10</td>
-                                <td>
-                                    <button class="btn btn-outline-warning btn-sm me-2" data-bs-toggle="modal" data-bs-target="#updateGenre" title="Edit"><i class="fa-solid fa-pen"></i>
-                                    <button class="btn btn-outline-danger btn-sm me-2" data-bs-toggle="modal" data-bs-target="#deleteGenre" title="Delete"><i class="fa-solid fa-trash-can"></i>
+                                <td class="d-flex justify-content-center">
+                                    <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#updateGenre" title="Edit"><i class="fa-solid fa-pen icon-warning"></i>
+                                    <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#deleteGenre" title="Delete"><i class="fa-solid fa-trash-can icon-red"></i>
                                 </td>
                             </tr>
                         </tbody>

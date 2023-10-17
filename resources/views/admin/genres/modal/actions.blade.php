@@ -45,7 +45,7 @@ aria-hidden="true">
             
             <!--Body-->
             <div class="modal-body d-flex justify-content-center align-items-center flex-column">
-                <span><i class="fa-solid fa-trash-can fa-3x icon-red mb-4 "></i></span>
+                <span><i class="fa-solid fa-trash-can fa-3x icon-red mb-4"></i></span>
                 <p class="text-width">Are you sure you want to delete <strong>"Genre-Name"</strong> genre?</p>
                 <p class="text-muted text-width">This action will affect all the posts under this genre. Posts without a genre will fall under Uncategorized.</p>
             </div>
