@@ -520,8 +520,12 @@ h1{
 }
 
 /* group list */
-#decide-by-place {
-    padding-left: 10%;
+#btn-add {
+    border:1px solid #253c5c;
+    background-color: #E6F2E9;
+    color: #253c5c;
+    align-content: center;
+    width: 50%;
 }
 #group-card {
     border:none;

@@ -7,14 +7,16 @@
 <div class="container">
     <div class="container my-4 margin-container bg-white">
         <div class="row grouplist-title">
-            <div class="col-11 text-center" id="decide-by-place">
+            <div class="col d-flex flex-column align-items-start" hidden>
+            </div>
+            <div class="col  page-title">
                 <h2 class="text-center">Decide by place</h2>
                 <span class="bar bar-short mt-4"></span>
                 <h3 class="text-center pt-4 mb-0"><span>Group list</span></h3>
             </div>
-            <div class="col-1 d-flex align-items-end">
-                <button type="button" class="border-0 bg-white" data-bs-toggle="modal" data-bs-target="#add-group">
-                    <i class="fa-solid fa-square-plus fa-3x" style="color: #253c5c;"></i>
+            <div class="col d-flex flex-column align-items-end pe-5">
+                <button type="button" class="btn btn-add" id="btn-add" data-bs-toggle="modal" data-bs-target="#add-group">
+                    <i class="fa-solid fa-square-plus fa-lg" style="color: #253c5c;"></i> New group
                 </button>
             </div>
         </div>
@@ -27,11 +29,16 @@
                 <div class="group">
                     <div class="card" id="group-card">
                         <div class="card-header group-header bg-white" id="group-header">
-                            <img src="/images/people1.jpg" alt="people" class="group-pic">
+                            <a href="{{route('private_calendar')}}">
+                                <img src="/images/people1.jpg" alt="people" class="group-pic">
+                            </a>
+
                         </div>
                         <div class="card-body bg-white d-flex" id="group-body">
                             <div class="group-div">
-                                <h5>Family (group name)</h5>
+                                <a href="{{route('private_calendar')}}" class="text-decoration-none" style="color:#253c5c;">
+                                    <h5>Family (group name)</h5>
+                                </a>
                                 <p><i class="fa-solid fa-location-dot" style="color: #253c5c;"></i> Restaurant's name</p>
                             </div>
                             <div class="edit-div d-flex">
