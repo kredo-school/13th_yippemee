@@ -7,7 +7,7 @@
                     @csrf
                     @method('PATCH')
                     <h3 class="title-visit fw-bold">Edit Bucket List</h3>
-                    <span class="bar bar-short mt-4 me-5"></span>
+                    <span class="bar bar-short mt-4" style="margin-left: 260px"></span>
                 </h1>
             </div>
 
@@ -59,7 +59,7 @@
 
                 <div class="text-center mb-4">
                     <label for="additional" class="form-label fw-bold mb-0">Additional</label>
-                    <textarea name="additional" id="additional" rows="5" placeholder="Write some information about the restaurant" class="form-control  form-size-bucket"></textarea>
+                    <textarea name="additional" id="additional" rows="3" class="form-control  form-size-bucket"></textarea>
                 </div>
             </div>
 

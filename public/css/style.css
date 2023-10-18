@@ -123,7 +123,8 @@
 }
 .modal-body-profile {
     margin-left: 55px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 .modal-footer-profile {
     border: 0;
@@ -147,7 +148,7 @@
     text-align: left;
 }
 .modal-content-profile-edit {
-    height: 820px;
+    height: 780px;
     width: 630px;
 }
 
@@ -189,7 +190,7 @@ a.btn--yellow {
 
 /* Bucket-edit-modal */
 .bucket-edit-modal {
-    height: 980px;
+    height: 960px;
     width: 600px;
     border: none;
 
@@ -288,8 +289,8 @@ body {
 
 /* Visit */
 .visit-edit-modal {
-    height: 920px;
-    width: 600px;
+    height: 950px;
+    width: 620px;
 }
 .form-size-visit {
     width: 500px;
