@@ -55,10 +55,10 @@
 
             <div class="row">
                 <div class="mb-3  text-start">
-                    <label for="restrante_name" class="form-label d-block fw-bold">
-                        restrante name
+                    <label for="restaurant_name" class="form-label d-block fw-bold">
+                        restaurant name
                     </label>
-                    <input type="text" name="restrante_name" id="restrante_name" class="form-control">
+                    <input type="text" name="restaurant_name" id="restaurant_name" class="form-control">
                 </div>
             </div>
 
