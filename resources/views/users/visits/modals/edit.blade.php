@@ -13,7 +13,7 @@
             </div>
 
             <div class="modal-body">
-                <div class="row mb-4 mt-3 visit-pic">
+                <div class="row mb-1 mt-3 visit-pic">
                     <div class="col-auto">
                         <div class="drag-file-area-visit-edit">
                             <span class="material-icons-outlined upload-icon"> file_upload </span>
@@ -62,9 +62,9 @@
 
                 </div>
 
-                <div class="mb-4 text-center">
+                <div class="mb-2 text-center">
                     <label for="introduction" class="form-label fw-bold mb-1">Sharing your reviews about the restaurant</label>
-                    <textarea name="introduction" id="introduction" rows="5" placeholder="Write some comments about the restaurant" class="form-control form-size-visit">{{ old('introduction') }}</textarea>
+                    <textarea name="introduction" id="introduction" rows="7" class="form-control form-size-visit">{{ old('introduction') }}</textarea>
                     {{-- Error --}}
                     @error('description')
                         <div class="text-danger small">{{ $message }}</div>

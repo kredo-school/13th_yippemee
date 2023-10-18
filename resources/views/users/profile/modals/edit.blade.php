@@ -13,7 +13,7 @@
         </div>
 
         <div class="modal-body modal-body-profile">
-            <div class="row mb-5">
+            <div class="row mb-3">
             <div class="col-4">
                 <i class="fa-regular fa-circle-user d-block icon-size"></i>
             </div>
@@ -43,7 +43,7 @@
             <input type="text" name="bestRes" id="bestRes" value="" class="form-control" autofocus>
         </div>
 
-        <div class="form-label fw-bold mb-3">Favorite Genre</div>
+        <div class="form-label fw-bold mb-0">Favorite Genre</div>
             <div class="d-flex align-items-center posts-input">
                 <div class="form-check form-check-inline d-flex align-items-center">
                     <input type="checkbox" name="genre[]" id="genre_italian" value="Italian" class="form-check-input">
