@@ -1,4 +1,4 @@
-<div class="modal left fade" id="detail-modal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel">
+{{-- <div class="modal left fade" id="detail-modal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header" id="plan-header">
@@ -65,14 +65,14 @@
                     </div>
                 </div>
                 <form action="#" method="post" class="float-end">
-                    {{-- could be checkbox...? --}}
+                    could be checkbox...?
                     <button type="submit" class="btn btn-join"><span>JOIN</span> <i class="fa-solid fa-person-walking-arrow-right" style="color: #253c5c;"></i></button>
                 </form>
 
 
             </div>
 
-        </div><!-- modal-content -->
-    </div><!-- modal-dialog -->
-</div><!-- modal -->
+        </div>
+    </div>
+</div> --}}
 

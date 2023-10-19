@@ -1,4 +1,4 @@
-<div class="modal left fade" id="planList-modal" tabindex="-1" role="dialog" aria-labelledby="planModalLabel">
+{{-- <div class="modal left fade" id="planList-modal" tabindex="-1" role="dialog" aria-labelledby="planModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
 
@@ -11,7 +11,7 @@
                 <div class="row plan-list">
                     <h3 class="text-center"><u> 1 September, 2023 </u></h3>
 
-                    {{-- @if / foreach --}}
+                    @if / foreach
                     <button type="button" class="btn btn-detail" style="border-radius:0;" data-bs-toggle="modal" data-bs-target="#detail-modal">
                         <div class="row plan-row">
                             <div class="col-2 time-col">
@@ -49,4 +49,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}

@@ -9,6 +9,7 @@
         <div class="row grouplist-title">
             <div class="col d-flex flex-column align-items-start" hidden>
             </div>
+            {{-- this need to be in a center --}}
             <div class="col  page-title">
                 <h2 class="text-center">Decide by place</h2>
                 <span class="bar bar-short mt-4"></span>
