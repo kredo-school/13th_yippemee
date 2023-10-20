@@ -1,12 +1,5 @@
 /* Calendar page */
 /* public */
-body{
-    background-image: url('/images/schedule9.jpg');
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}
 .calendar-title {
     color: #253c5c;
     width: 100%;
@@ -155,7 +148,8 @@ body{
     display: flex;
     justify-content: center;
 }
-#public-calendar thead th {
+#public-calendar thead th,
+#private-calendar thead th {
     width: 100%;
     padding-top: 5%;
 }
@@ -217,20 +211,48 @@ body{
 }
 
 /* private calendar */
+#private{
+    color: white;
+    width: 100%;
+    height: 160px;
+    padding-top: 30px;
+    text-shadow:
+        1px -1px 9px #253c5c,
+        -1px 1px 9px #253c5c;
+}
+
 #private-calendar tbody td:hover:after, .selected:after {
-    margin: 0;
+    background: #f2c84b;
 }
-.switch-right-private {
-    background-color: #f2c84b;
+
+.chat-area {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding-left: 0;
+    margin-top: 2rem;
+    margin-bottom: 5px;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;;
 }
-#sticky-private {
-    border-right: 20px solid #F2C84B;
-    height: 190px;
-}
-#sticky-private h3 {
-    border-top: 3px dotted #253c5c;
+.chat-screen {
+    margin-left: 12px;
     padding-top: 5px;
+    max-height: 390px;
+    line-height: 1;
+    font-size: 14px;
+    color: black;
+    overflow: scroll;
 }
+.chat-screen {
+    padding-top: 5px;
+    padding-left: 2px;
+}
+.one-chat {
+    padding-left: 2px;
+    margin-bottom: 2em;
+}
+
+
+
 
 /* weekly monthly hover button */
 
@@ -437,10 +459,25 @@ body{
 }
 .btn-join {
     color: #253c5c;
-    background-color: #F2C84B;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #f2c84b;
+    border-radius: 6px;
+    display: inline-block;
     margin-top: 8px;
-    margin-right:20px;
-}
+  }
+  .btn-join span {
+    display:inline-block;
+    transition: 1s;
+  }
+  .btn-join:hover {
+    background-color: #F2C84B;
+  }
+  .btn-join:hover span {
+    color: #253c5c;
+    transform: rotateX(360deg);
+  }
+
 
 *{
     font-family: Muli;
@@ -637,10 +674,26 @@ h1{
 }
 .create-btn {
     color: #E6F2E9;
+    font-size: 16px;
+    font-weight: bold;
     background-color: #617EA8;
-    border-radius: 5px;
     margin-right: 2rem;
-}
+    outline: 2px solid;
+    outline-color: #617EA8;
+    outline-offset: 0px;
+    display: inline-block;
+    transition: .3s;
+  }
+.create-btn:hover {
+    animation: light .8s;
+  }
+  @keyframes light {
+    100% {
+      outline-color: transparent;
+      outline-offset: 12px;
+    }
+  }
+
 .row .time-row {
     height: 50px;
 }

@@ -1,5 +1,4 @@
 <div class="container detail-body" >
-    {{-- id="preference-detail" --}}
     <p class="text-end" style="color:#253c5c;"><i class="fa-regular fa-user-circle"></i> User 1</p>
     <div class="preference">
         <div class="pre-title">
@@ -69,7 +68,7 @@
     </div>
     <form action="#" method="post" class="float-end">
         {{-- could be checkbox...? --}}
-        <button type="submit" class="btn btn-join"><span>JOIN</span> <i class="fa-solid fa-person-walking-arrow-right" style="color: #253c5c;"></i></button>
+        <button type="submit" class="btn btn-join"><span>JOIN <i class="fa-solid fa-person-walking-arrow-right" style="color: #253c5c;"></i></span></button>
         {{-- add undo button --}}
     </form>
 </div>

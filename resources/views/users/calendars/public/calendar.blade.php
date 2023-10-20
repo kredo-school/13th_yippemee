@@ -1,9 +1,15 @@
 @extends('layouts.app')
-@section('title', 'test')
+@section('title', 'public calendar')
 @section('content')
-
-{{-- 画面を細くしたときに、カレンダーだけが残るようにして、サイドはハンバーガー --}}
-
+<style>
+body{
+    background-image: url('/images/schedule9.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+</style>
 
 <div class="container calendar-title">
     <h2 class="text-center">Decide by Date</h2>
