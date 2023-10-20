@@ -211,6 +211,9 @@
 }
 
 /* private calendar */
+#private-div, #private-right-navi {
+    border-left:3px dotted white;
+}
 #private{
     color: white;
     width: 100%;

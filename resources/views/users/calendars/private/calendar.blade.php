@@ -109,7 +109,7 @@ body{
     </div>
 </div>
 
-<div class="main-div">
+<div class="main-div" id="private-div">
     <div class="main-contents">
         <div class="top-button">
             <div class="row">
@@ -204,7 +204,7 @@ body{
 
 </div>
 
-<div class="right-navi">
+<div class="right-navi" id="private-right-navi">
     <div class="container detail-body" >
         {{-- id="preference-detail" --}}
         <p class="text-end" style="color:#253c5c;"><i class="fa-regular fa-user-circle"></i> Group Chat</p>
