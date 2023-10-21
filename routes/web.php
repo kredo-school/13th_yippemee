@@ -65,6 +65,7 @@ Route::get('/myschedule', [HomeController::class, 'myschedule'])->name('myschedu
 Route::get('/private/yourplan', [HomeController::class, 'privateyourplan'])->name('privateyourplan');
 Route::get('/public/yourplan', [HomeController::class, 'publicyourplan'])->name('publicyourplan');
 Route::get('/restaurantlist', [HomeController::class, 'restaurantlist'])->name('restaurantlist');
+Route::get('/restaurantlist/post', [HomeController::class, 'restaurantpost'])->name('restaurantpost');
 Route::get('/genre/japanese', [HomeController::class, 'genrejapanese'])->name('genrejapanese');
 Route::get('/genre/italian', [HomeController::class, 'genreitalian'])->name('genreitalian');
 Route::get('/genre/chinese', [HomeController::class, 'genrechinese'])->name('genrechinese');
@@ -73,6 +74,7 @@ Route::get('/genre/more', [HomeController::class, 'genremore'])->name('genremore
 Route::get('/area/more', [HomeController::class, 'areamore'])->name('areamore');
 Route::get('/restaurant/detail', [HomeController::class, 'detail'])->name('detail');
 Route::get('/restaurant/comment', [HomeController::class, 'restaurantcomment'])->name('restaurantcomment');
+Route::get('/restaurant/comment/form', [HomeController::class, 'postcomment'])->name('postcomment');
 
 //admin
 Route::get('/admin/users/index', [HomeController::class, 'admin_users_index'])->name('admin.users.index');

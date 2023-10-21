@@ -56,6 +56,8 @@ class HomeController extends Controller
         return view('users.myschadule');
     }
 
+  
+
     public function privateyourplan()
     {
         return view('users.private.yourplan');
@@ -69,6 +71,11 @@ class HomeController extends Controller
     public function restaurantlist()
     {
         return view('users.restaurant_lists.index');
+    }
+
+    public function  restaurantpost()
+    {
+        return view('users.restaurant_lists.post_restaurant');
     }
 
 
@@ -100,11 +107,22 @@ class HomeController extends Controller
         return view('users.restaurant_lists.area.more');
     }
 
+    
+
 
     public function  restaurantcomment()
     {
         return view('users.restaurant_lists.comment');
     }
+
+
+    public function  postcomment()
+    {
+        return view('users.restaurant_lists.commentform');
+    }
+
+  
+   
 
 
     public function detail()

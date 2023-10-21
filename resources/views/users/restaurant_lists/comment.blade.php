@@ -13,11 +13,12 @@
         </div>
         <div class="col-md-8 float-left">
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-8">
                     <a href="{{ url('/restaurant/detail') }}" class="h2">restaurant:name</a>
                 </div>
-                <div class="col-md-2">
-                    <i class="fa-solid fa-bookmark ms-4 text-end h2"></i></div>
+                <div class="col-md-4">
+                    Write Comment <a href="{{ url('/restaurant/comment/form') }}"><i class="fa-regular fa-comment-dots h2 ms-2"></i></a>
+                    <i class="fa-solid fa-bookmark ms-4 text-end h2"></i>
                 </div>         
                 <p>[ Tokyo ] </p>
                 <hr>
