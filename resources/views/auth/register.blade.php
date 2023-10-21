@@ -1,12 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+    body {
+        padding-top: 4rem;
+    }
+</style>
+
 <div class="background pt-5 text-start">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
             <div class="img text-center mb-3">
-                    <img src="/images/logo.png" alt="logo" class="w-50 ">
+                    <img src="/images/logo-black.png" alt="logo" class="w-50 ">
                 </div>
                 <div class="card">
                     <div class="card-title text-center mt-5 mb-5 h1 fw-bold">{{ __('Register') }}</div>
@@ -88,7 +95,7 @@
 
                             <div class="row text-center mt-3">
                                 <div class="col-md">Already have an account?<a href="{{ route('login') }}" class="ms-2">Log in</a></div>
-                            
+
                             <div class="row mt-4">
                                 <div class="col"><hr></div>
                                 <div class="col text-center">Or continue with</div>

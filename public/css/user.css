@@ -1,12 +1,3 @@
-/* calendar.blade */
-/* .calendar-bg-image {
-    background-image: url('/images/schedule9.jpg');
-    background-size: cover;
-    padding-top: 20px;
-    margin-top: -20px;
-    height: 1100px;
-} */
-
 .container-calendar {
     display: flex;
     top: 3rem;
@@ -23,8 +14,6 @@
     z-index: 1020;
 }
 .sticky-title {
-
-
     flex-basis: 35%;
     margin-left: -80px;
     padding-top: 7px;
@@ -43,38 +32,6 @@
     font-size: 16px;
     margin-left: 20px;
 }
-/* .sticky-plan {
-    flex-basis: 35%;
-    margin-left: -80px;
-    margin-right: 80px;
-    height: 400px;
-    width: 520px;
-    overflow: hidden;
-}
-.accordion-item {
-    width: 320px;
-    margin-left: 60px;
-    margin-top: 20px;
-    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
-    background-color: rgba(255, 250, 250, 0.9);
-}
-.accordion-title {
-    color: #253c5c;
-    margin-top: -8px;
-    margin-left: 65px;
-    height: 10px;
-}
-      plan box
-.plan-row {
-    align-items: center;
-}
-.time-col {
-    border-right: 2px solid #617EA8;
-    font-size: 12px;
-    margin-left: 1rem;
-} */
-
-
 .calendar-box {
     flex-basis: 70%;
     width:75%;
@@ -86,10 +43,10 @@
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
 }
 .top-button {
-    margin-left: 240px;
+    width: 100%;
+    padding-left: 2%;
 }
 .btn-create-plan {
-    margin-left: 23rem;
     color: #253c5c;
 }
 
@@ -127,15 +84,18 @@
 .monthly-calendar {
     padding: 40px 20px 10px 20px;
 }
-#public-calendar{
+#public-calendar,
+#private-calendar {
     width: 100%;
     height: 500px;
-    margin-left: 50px;
 }
-#public-calendar tr {
+#public-calendar tr,
+#private-calendar tr {
     height: 5em;
+    text-align: center;
 }
-#public-calendar tbody td {
+#public-calendar tbody td,
+#private-calendar tbody td {
     width: 14%;
     border-radius: 50%;
     cursor: pointer;
@@ -144,17 +104,19 @@
     transition: all 0.2s ease-in;
     position: relative;
     z-index: 0;
+    text-align: center;
 }
-#public-calendar tbody td:after {
-    position: absolute;
+#public-calendar tbody td:after,
+#private-calendar tbody td:after {
+    position:absolute;
     top: 50%;
-    left: 0;
+    left: 31%;
     right: 0;
     bottom: 0;
     content: '';
     width: 44px;
     height: 44px;
-    margin: 0 auto;
+    margin:0;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -164,41 +126,14 @@
     transition: 0.3s;
     z-index: -1;
 }
-#public-calendar tbody td:hover, .selected {
+#public-calendar tbody td:hover, .selected,
+#private-calendar tbody td:hover, .selected {
     color: #fff;
     border: none;
 }
 #public-calendar tbody td:hover:after, .selected:after {
     background: #f1a29b;
-    /* hover colour for public*/
 }
-/* #public-calendar tbody td:hover:after, .selected:after {
-    background: #f1a29b;
-    change name for weeily hover colour
-} */
-
-/* .head-day {
-    font-size: 5em;
-    line-height: 1;
-    color: #fff;
-}
-.head-month {
-    font-size: 2em;
-    line-height: 1;
-    color: #fff;
-    font-size: 16px;
-    text-transform: uppercase;
-    font-weight: 150;
-}
-.elegant-calendar {
-    max-width: 1000px;
-    text-align: center;
-    position: relative;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 5px;
-} */
-
 .monthly-calendar
 {
     width: 100%;
@@ -207,6 +142,9 @@
     .public-calendar {
         width: 100%;
     }
+}
+.btn-detail {
+    color:#253c5c;
 }
 
 
@@ -232,13 +170,12 @@
 .rocker {
     display: inline-block;
     position: relative;
-    right: 14rem;
     font-size: 12px;
     font-weight: bold;
     text-align: center;
     width: 7em;
     height: 3.7em;
-    /* overflow: hidden; */
+    overflow: hidden;
     border-bottom: 0px solid #a1aba4;
 
 }
@@ -289,6 +226,7 @@
     background-color: #f1a29b;
     color: #fff;
 }
+
 
 .switch-left::before,
 .switch-right::before {
@@ -356,6 +294,27 @@
     color: #333;
 }
 
+/* private calendar */
+#private-calendar tbody td:hover:after, .selected:after {
+    margin: 0;
+}
+.switch-right-private {
+    background-color: #f2c84b;
+}
+#sticky-private {
+    border-right: 20px solid #F2C84B;
+    height: 190px;
+}
+#sticky-private h3 {
+    border-top: 3px dotted #253c5c;
+    padding-top: 5px;
+}
+
+
+
+
+
+
 
 /* Weekly */
 /* body {
@@ -400,6 +359,39 @@
 .day__evening:before { content: "evening"; } */
 
 
+/* plan list modal */
+/* preference list modal */
+#plan-header {
+    margin-left: -5px;
+    background-color: #617ea8;
+    border-radius: 0%;
+    color: white;
+    height: 60px;
+}
+#planModalLabel,
+#preferenceModalLabel {
+    font-size: 35px;
+}
+#plan-body {
+    width: 90%;
+    align-content: center;
+}
+.plan-row {
+    width: 100%;
+    margin-left:30px;
+    color: #253c5c;
+}
+.plan-row .time-col {
+    border-right: 2px solid #617EA8;
+}
+
+/*　↓↓↓↓ only preference list　↓↓↓↓ */
+#preferenceModal {
+    margin-top: 80%;
+}
+
+
+/* end of plan list */
 
 /* detail modal */
 
@@ -416,7 +408,7 @@
 
 .modal.left .modal-content {
 	height: 120%;
-    width: 475px;
+    width: 450%;
     border-radius: 0;
 }
 
@@ -437,48 +429,60 @@
 	left: 0;
 }
 #detail-header h4 {
-    font-size: 18;
-    line-height: 1.1;
-    text-align: center;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
     width: 90%;
     border-bottom: none;
+    text-align: center;
 }
 #detail-header {
-    border-bottom: 2px solid #f1a29b;
+    margin-left: -5px;
+    background-color: #617ea8;
+    border-radius: 0%;
+    color: white;
+    height: 60px;
 }
-.detail-user {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
+
 #preference-detail {
-    height: 320px;
-    width: 400px;
+    height: 100%;
+    width: 90%;
+    margin-top: 1rem;
     background-color: #E6F2E9;
 }
 .row .preference-title {
     padding-top: 1rem;
-}
-.preferences {
-    color: #617ea8;
-}
-.preference-title h4 {
     font-size: 20px;
 }
-#preference-detail h5 {
-    font-size: 16px;
+.preference {
+    color: #617ea8;
+}
+.preference h5 {
+    font-size: 18px;
+    height: 15px;
+    margin-bottom: 0;
+}
+.preference-title h4 {
+    margin-top: 5px;
+    margin-bottom: 2px;
+    font-weight: 400;
+    font-size: 24px;
+
 }
 #pre-discription {
-    display: flex;
     margin-left: 1rem;
     margin-top: 15px;
-    height: 6rem;
+    height: 30%;
     width: 90%;
     border-top: 1px dashed #253c5c;
     border-bottom: 1px dashed #253c5c;
 }
-.input-group .comment {
-    height: 5px;
+#pre-discription p {
+    font-size: 14px;
+    line-height: 1;
+}
+input .form-control {
+    height: 1%;
 }
 .btn-comment {
     color: white;
@@ -516,67 +520,113 @@ h1{
 }
 
 /* group list */
-label {
-    cursor: pointer;
+#btn-add {
+    border:1px solid #253c5c;
+    background-color: #E6F2E9;
+    color: #253c5c;
+    align-content: center;
+    width: 50%;
 }
-
-#menu-toggle {
+#group-card {
+    border:none;
+}
+#group-header {
+    border-bottom: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.group-pic {
+    height: 220px;
+    width: 220px;
+    object-fit: cover;
+}
+#group-body {
+    padding-right: 0%;
+    padding-bottom: 0%;
+    display: flex;
+    justify-content: center;
+}
+.group-div {
+    color: #253c5c;
+    margin-top: -2%;
+}
+.edit-div {
+    padding-top: 2%;
+    margin-right: -3px;
+}
+.btn-group-drop .dropdown-toggle::after {
     display: none;
 }
 
 
-#menu {
-    display: none;
-}
-
-
-#menu-toggle:checked + #menu {
-    display: block;
-}
-
-/* modal form */
-.modal-content{
+/* add group modal */
+#add-content{
     background-color: #fff;
-    width: 700px;
-    height: 500px;
-    right: 100px;
+    width: 650px;
+    height: 300px;
+    right: 50px;
     top: 100px;
 }
-.btn-close{
-    color: #253c5c;
-    font-size: 25px;
+#add-body {
+    width: 100%;
+    padding: 0;
 }
-
-input,textarea{
+#add-body input {
     border-bottom:2px solid #253c5c;
     border-right:none;
     border-left:none;
     border-top:none;
-    width: 25rem
+    width: 20rem;
 }
-::placeholder {
+#add-body input[type="file"] {
+    display: none;
+    cursor: pointer;
+}
+.btn-close {
+    color: #253c5c;
+    font-size: 25px;
+}
+#form-group-right ::placeholder {
     color: #253c5c;
     font-size: 16px;
 }
-.form-group-right{
-    width: 20rem;
-    position: absolute;
-    left: 15rem;
-    bottom: 1rem;
+#form-group-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
 }
-.form-group-left{
-    position: relative;
-    top: 4rem;
-    left: 2rem;
-}
-.modal-body{
-    height: 350px;
-}
-.btn-create{
+
+.btn-create {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    background: #617ea8;
+    padding: 18px 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+    border: 3px solid #333;
+    box-shadow: 2px 5px 0 #253c5c;
+    border-radius: 6px;
+    display: inline-block;
+    transition: .3s;
+    height: 40px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.btn-create:hover {
+    transform: translateY(5px);
+    box-shadow: 0 0 0 #253c5c;
+  }
+
+/* .btn-create{
     margin-right: 2.5rem;
     background-color: #253c5c;
     color: #e6f2e9;
-}
+} */
 .profile-pic {
     border-radius: 50%;
     height: 150px;
@@ -606,21 +656,15 @@ input,textarea{
     padding-bottom: 4.5em;
 }
 
-form input[type="file"] {
-    display: none;
-    cursor: pointer;
-}
-
 /* create_plan modal */
+/* preference modal */
 
 .create-content {
     width: 900px;
     left: 125px;
     text-align: left;
 }
-.create-body {
-    left: 3rem;
-}
+
 .create-body i {
     color: #253c5c;
 }
@@ -655,16 +699,17 @@ form input[type="file"] {
     margin-top: 3px;
     color: #253c5c;
 }
-.row .genre {
+#genre {
     border-left: 4px solid #253c5c;
-    margin-top: 2px;
+    margin-top: 1rem;
     margin-bottom: 4px;
+    margin-left: 1rem;
 }
-.btn-create {
+.create-btn {
     color: #E6F2E9;
     background-color: #617EA8;
     border-radius: 5px;
-    margin-right: 1rem;
+    margin-right: 2rem;
 }
 .row .time-row {
     height: 50px;
@@ -674,3 +719,12 @@ form input[type="file"] {
     margin: 0;
     padding: 0;
 }
+#left-form-group{
+    padding-left: 4.5rem;
+}
+#description-form {
+    margin-left: 0;
+    padding-left: 3rem;
+}
+
+

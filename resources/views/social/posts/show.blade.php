@@ -12,14 +12,14 @@
                     <img src="{{ asset('img/italianfood.png') }}" alt="italianfood" class="w-100">
                 </div>
 
-                <div class="col-4 px-0 bg-white post">
+                <div class="col-4 bg-white post">
                     <div class="card border-0">
-                        <div class="card-header bg-white py-3">
+                        <div class="card-header bg-white py-2">
                             <div class="row align-items-center">
                                 <div class="col text-start">
                                     <i class="fa-solid fa-circle-user"></i> <a href="#" class="text-decoration-none text-post"><strong>Mary Johnson</strong></a>
                                 </div>
-                                <div class="col-auto text-end"> Following</div>
+                                <div class="col-auto text-end"><i class="fa-solid fa-users text-success"></i></div>
                             </div>
                         </div>
                         <div class="card-body body-padding bg-white border-0 p-3">
@@ -102,22 +102,23 @@
     
     <div class="modal-dialog">
         <!--Content-->
-        <div class="modal-dialog" role="document">
+        <div class="modal-content" role="document">
 
             <!--Header-->
-            <div class="modal-header-danger">
-                <p class="heading lead modal-title-delete-post m-4">Delete Post</p>
+            <div class="modal-header-danger modal-header-title">
+                <p class="hheading lead modal-title-font m-4">Delete Post</p>
                 <button type="button" class="btn-close btn-close-white m-4" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             
             <!--Body-->
             <div class="modal-body d-flex justify-content-center align-items-center flex-column">
-                <div class="row">
-                    <i class="fa-solid fa-trash-can fa-3x icon-red"></i>
+
+                <div class="modal-body d-flex justify-content-center align-items-center flex-column">
+                    <span><i class="fa-solid fa-trash-can fa-3x icon-red"></i></span>
                     <p class="pt-3 pr-2">Are you sure to want to delete this post?</p>
                 </div>
 
-                <div class="row">
+                <div class="row pt-3 pr-2 d-flex flex-column align-items-center">
                     <p><img src="{{ asset('img/pizza.jpg') }}" alt="pizza" class="d-block mx-auto delete-post-img"></p>
                     <p class=" text-muted">description.......................</p>
                 </div>
@@ -128,7 +129,7 @@
             <div class="modal-footer d-flex justify-content-center border-0"> 
                 <form action="#" method="post">
                     <button type="submit" class="btn btn-danger btn-lg">Delete</button>
-                    <button type="button" class="btn btn-outline-danger btn-lg " data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-outline-danger btn-lg" data-bs-dismiss="modal">Cancel</button>
                 </form>
                 
             </div>

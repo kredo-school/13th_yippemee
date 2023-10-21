@@ -110,6 +110,10 @@
     color: #ffffff;
 }
 
+.icon-warning {
+    color:#ffc107
+}
+
 .icon-large {
     font-size: 5rem;
 }
@@ -166,3 +170,25 @@
 .no-hover-effect .selected:after {
     background: none !important;
 }
+
+.admin {
+    width:100%;
+    min-height: 100%;
+    position: relative;
+
+}
+
+.margin-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.modal-header-contact{
+    background-color: #E6F2E9;
+}
+
+.btn-outline-danger {
+    outline: 1px solid #dc3545;
+  }

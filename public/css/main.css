@@ -1,12 +1,8 @@
 /* home */
-.background-image {
-    background-image: url('/images/bg-mainpage.png');
-    background-size: cover;
-    height: 100vh;
-}
-
 .homecard {
-    margin-top: 200px;
+    margin-top: 150px;
+    padding: 65px;
+    padding-top: 30px;
     background-color: rgba(230,242,233,0.75);
 }
 
@@ -61,55 +57,25 @@
 
 /* footer */
 footer{
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 80px;
+    margin-top: auto;
+}
+.footer-link {
+    background-color: #617EA8;
+}
+.footer-item{
+    margin-right: 30px;
 }
 
-.footer-nav {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-}
-
-.footer-nav-item{
-    position: relative;
-    margin-right: 40px;
-    font-family: 'Muli', serif;
-}
-
-.footer-nav-item a:hover{
-    animation: zoom .3s;
-}
-
-.footer-nav-item::before {
-    content: " / ";
-    position: absolute;
-    left: -20px;
-    color: #253C5C;
-}
-
-.footer-nav-item:first-child::before {
-    content: "";
-}
-
-.fa-brands:hover {
-    animation: zoom .3s;
-}
-
-.footer-copywrite {
+.copyright {
     background-color: #253C5C;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 25px;
+    height: 35px;
 }
 
 /* navbar */
+.main-nav {
+    background-color: #253C5C;
+}
+
 .navbar-item a:hover{
     animation: zoom .3s;
 }
@@ -121,12 +87,6 @@ footer{
 }
 
 /* contact */
-.contact-bg {
-    background-image: url('/images/contact-bg.jpg');
-    background-size: cover;
-    height: 100vh;
-}
-
 .contact-form {
     width: 500px;
     border-radius: 30px;
@@ -151,8 +111,17 @@ footer{
     box-shadow: none;
   }
 
-/* Considering the effect of navbar footer fixed */
-body {
-    padding-top: 5rem;
-    padding-bottom: 80px;
-}
+  /* To fix the footer at the bottom. */
+  html {
+    height: 100%;
+  }
+  body {
+    padding-top: 80px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .content {
+    flex: 1;
+  }
+

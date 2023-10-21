@@ -13,20 +13,20 @@
 <div class="modal fade" id="create-plan" aria-hidden="true">
     <div class="modal-dialog create-dialog modal-xl">
         <div class="modal-content create-content">
-            <div class="modal-header create-header w-100" style="color: #F1A29B; background-color: #F1A29B;">
+            <div class="modal-header create-header w-100" style="background-color: #F1A29B;">
                 <div class="row w-100" >
                     <div class="col-11">
                         <h1 class="mt-2 ms-3 text-white"><i class="fa-solid fa-calendar-plus" style="color: #FFFFFF;"></i> Create your plan</h1>
                     </div>
                     <div class="col-1">
-                        <a href="#" class="btn close-button mt-2" data-bs-dismiss="modal"><i class="fa-solid fa-x fa-2x" style="color: white;"></i></a>
+                        <a href="#" class="btn close-button mt-2" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2x" style="color: white;"></i></a>
                     </div>
                 </div>
             </div>
             <div class="modal-body create-body">
                 <form action="#" method="post">
                     <div class="row">
-                        <div class="col-5 form-group left">
+                        <div class="col-6" id="left-form-group">
                             <div class="row">
                                 <label class="label-title" for="date" ><i class="fa-regular fa-calendar"></i> Date</label>
                                 <br>
@@ -49,11 +49,11 @@
                                 <input type="search" id="restaurant">
                             </div>
                         </div>
-                        <div class="col-7 form-group right">
+                        <div class="col-6 form-group right">
                             <div class="row">
-                                <h2 class="label-title"><i class="fa-solid fa-utensils"></i> Genre</h2>
+                                <h2 class="label-title mb-0"><i class="fa-solid fa-utensils"></i> Genre</h2>
                             </div>
-                            <div class="row genre">
+                            <div class="row genre" id="genre">
                                 <div class="col-6 checkbox-left">
                                     <div class="checkbox-input">
                                         <input type="checkbox" name="genre" value="japanese" id="japanese">
@@ -87,16 +87,16 @@
 
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" id="description-form">
                         <label class="label-title" for="create-description"><i class="fa-solid fa-pencil"></i> Description</label>
                         <br>
-                        <textarea name="description" id="create-description" cols="60" rows="3" style="width:800px;"></textarea>
+                        <textarea name="description" id="create-description" cols="60" rows="3" style="width:95%;"></textarea>
                     </div>
                 </form>
             </div>
             <div class="modal-footer create-footer bg-white border-0 mb-2">
                 <form action="#" method="get">
-                    <button type="submit" class="btn-create float-end">Create</button>
+                    <button type="submit" class="create-btn float-end">Create</button>
                 </form>
             </div>
         </div>

@@ -43,6 +43,12 @@ class HomeController extends Controller
     {
         return view ('users.calendars.public.weekly');
     }
+
+        // private calendar
+    public function showGroupCalendar()
+    {
+        return view('users.calendars.private.calendar');
+    }
     // end of calendar pages
 
     public function myschedule()
@@ -109,6 +115,7 @@ class HomeController extends Controller
         return view('users.restaurant_lists.comment');
     }
 
+
     public function  postcomment()
     {
         return view('users.restaurant_lists.commentform');
@@ -116,6 +123,7 @@ class HomeController extends Controller
 
   
    
+
 
     public function detail()
     {
@@ -174,4 +182,11 @@ class HomeController extends Controller
     {
         return view('social.social_home');
     }
+
+    //friends
+    public function friends_list()
+    {
+        return view('friends.friends_list');
+    }
+
 }

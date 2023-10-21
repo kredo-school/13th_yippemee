@@ -1,63 +1,64 @@
-<div class="container text-white">
-  <div class="row">
-      <div class="col-3">
-        <a class="navbar-brand" href="{{ url('/') }}">
-        <img src="{{ asset('images/logo.png') }}" height="40px" class="mt-1 ms-2">
+<nav class="footer-link navbar navbar-expand-md shadow-sm">
+    <div class="container">
+
+        <a class="navbar-brand text-white" href="{{ url('/home') }}">
+
+            <img src="{{ asset('images/logo.png') }}" height="40px">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#footer" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
-      </div>
 
-    <div class="col-7">
-       <ul class="footer-nav mt-3">
+        <div class="collapse navbar-collapse" id="footer">
 
-    @guest
-        @if (Route::has('login'))
-        @endif
+            <ul class="navbar-nav mx-auto">
+                <!-- Authentication Links -->
+                @guest
+                    @if (Route::has('login'))
+                    @endif
 
-        @if (Route::has('register'))
-        @endif
-    @else
-
-        <li class="footer-nav-item">
-            <a href="{{ route('home') }}" class="nav-link">Home</a>
-        </li>
-        <li class="footer-nav-item">
-            <a href="{{ route('calendar') }}" class="nav-link">Date</a>
-        </li>
-        <li class="footer-nav-item">
-            <a href="{{ route('group_list') }}" class="nav-link">Place</a>
-        </li>
-        <li class="footer-nav-item">
-            <a href="#" class="nav-link">User</a>
-        </li>
-        <li class="footer-nav-item">
-            <a href="{{ route('social.social_home') }}" class="nav-link">Social</a>
-        </li>
-        <li class="footer-nav-item">
-            <a href="{{ route('restaurantlist') }}" class="nav-link">Restaurant</a>
-        </li>
-        <li class="footer-nav-item">
-            <a href="{{ route('contact') }}" class="nav-link">Contact</a>
-        </li>
-
-    @endguest
-
-    </ul>
+                    @if (Route::has('register'))
+                    @endif
+                @else
+                    <li class="navbar-item footer-item">
+                        <a href="{{ route('home') }}" class="nav-link text-white">Home</a>
+                    </li>
+                    <li class="navbar-item footer-item">
+                        <a href="{{ route('calendar') }}" class="nav-link text-white">Date</a>
+                    </li>
+                    <li class="navbar-item footer-item">
+                        <a href="{{ route('group_list') }}" class="nav-link text-white">Place</a>
+                    </li>
+                    <li class="navbar-item footer-item">
+                        <a href="{{ route('friends.friends_list') }}" class="nav-link text-white">Friends</a>
+                    </li>
+                    <li class="navbar-item footer-item">
+                        <a href="{{ route('social.social_home') }}" class="nav-link text-white">Social</a>
+                    </li>
+                    <li class="navbar-item footer-item">
+                        <a href="{{ route('restaurantlist') }}" class="nav-link text-white">Restaurant</a>
+                    </li>
+                    <li class="navbar-item footer-item">
+                        <a href="{{ route('contact') }}" class="nav-link text-white">Contact</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="nav-link"><i class="fa-brands fa-instagram fa-2x mx-2 text-white"></i></a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="nav-link"><i class="fa-brands fa-facebook fa-2x mx-2 text-white"></i></a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="nav-link"><i class="fa-brands fa-x-twitter fa-2x mx-2 text-white"></i></a>
+                    </li>
+            </ul>
+            @endguest
+        </div>
     </div>
 
-    <div class="col text-center mt-3">
-        <a href="#"><i class="fa-brands fa-instagram fa-2x me-4 text-white"></i></a>
-        <a href="#"><i class="fa-brands fa-facebook fa-2x me-4 text-white"></i></a>
-        <a href="#"><i class="fa-brands fa-x-twitter fa-2x text-white"></i></a>
+</nav>
+
+<nav class="copyright navbar navbar-expand-md shadow-sm">
+    <div class="container">
+        <p class="text-white m-auto">@ copyright kredo</p>
     </div>
-
-  </div>
-</div>
-
-<div class="footer-copywrite">
-  <div class="container text-white text-center">
-        <p>@ copywrite kredo</p>
-  </div>
-</div>
+</nav>

@@ -3,20 +3,26 @@
 @section('title', 'Admin: Genre')
 
 @section('content')
-    <div class="container m-5">
-        <div class="row mb-3">
-
+<div class="admin">
+    <div class="container my-5 margin-container">
+        <div class="row mb-2">
+            <div class="col-3"></div>
+            <div class="col">
+                <h2 class="admin_friends_list_title">Genre</h2>
+            </div>
             <div class="col-3 ms-auto mb-auto">
                 <form action="#" class="d-flex align-items-center">
                     <input type="text" name="genre_name" class="form-control me-2" value="" placeholder="Add a genre..." autofocus>
                     <button type="submit" class="btn text-white" style="background-color: #253C5C;"><i class="fa-solid fa-plus"></i></button>
                 </form>
-                
             </div>
             
             <div class="col-3 ms-auto mb-auto">
-                <form action="#">
-                    <input type="search" name="search" class="form-control form-control-sm" placeholder="Search for genres">
+                <form action="#" class="search-form">
+                    <label class="form-control-sm">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" name="search"  placeholder="Search for genre">
+                    </label>
                 </form>
             </div>
         </div>
@@ -64,9 +70,9 @@
                                 <td>Italian</td>
                                 <td>5</td>
                                 <td>2023-09-01 08:15:10</td>
-                                <td>
-                                    <button class="btn btn-outline-warning btn-sm me-2" data-bs-toggle="modal" data-bs-target="#updateGenre" title="Edit"><i class="fa-solid fa-pen"></i>
-                                    <button class="btn btn-outline-danger btn-sm me-2" data-bs-toggle="modal" data-bs-target="#deleteGenre" title="Delete"><i class="fa-solid fa-trash-can"></i>
+                                <td class="d-flex justify-content-center">
+                                    <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#updateGenre" title="Edit"><i class="fa-solid fa-pen icon-warning"></i>
+                                    <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#deleteGenre" title="Delete"><i class="fa-solid fa-trash-can icon-red"></i>
                                 </td>
                             </tr>
                         </tbody>
@@ -76,4 +82,6 @@
         </div>
     </div>
     @include('admin.genres.modal.actions')
+</div>
+    
 @endsection

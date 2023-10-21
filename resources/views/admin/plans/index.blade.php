@@ -3,11 +3,20 @@
 @section('title', 'Admin: Plans')
 
 @section('content')
-    <div class="container m-5">
-        <div class="row mb-3">
+<div class="admin">
+    <div class="container my-5 margin-container">
+        <div class="row mb-2">
+            <div class="col-3">
+            </div>
+            <div class="col">
+                <h2 class="admin_friends_list_title">Plans List</h2>
+            </div>
             <div class="col-3 ms-auto mb-auto">
-                <form action="#">
-                    <input type="search" name="search" class="form-control form-control-sm" placeholder="Search for plan">
+                <form action="#" class="search-form">
+                    <label class="form-control-sm">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" name="search"  placeholder="Search for plan">
+                    </label>
                 </form>
             </div>
         </div>
@@ -83,4 +92,6 @@
     </div>
     @include('admin.plans.modal.status.activate')
     @include('admin.plans.modal.status.deactivate')
+</div>
+    
 @endsection

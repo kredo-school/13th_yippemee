@@ -1,13 +1,14 @@
-<!-- Set Modal -->
 <div class="modal fade" id="edit-bucket" tabindex="-1" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog">
         <div class="modal-content bucket-edit-modal">
-            <div class="modal-header">
+            <div class="modal-header border-0">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">
                     <form action="#" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PATCH')
-                    <h3 class="title-visit fw-bold">Edit Bucket List</h3></h1>
+                    <h3 class="title-visit fw-bold">Edit Bucket List</h3>
+                    <span class="bar bar-short mt-4" style="margin-left: 260px"></span>
+                </h1>
             </div>
 
             <div class="modal-body">
@@ -16,7 +17,7 @@
                         <div class="drag-file-area-visit-edit">
                             <span class="material-icons-outlined upload-icon"> file_upload </span>
                             <h5 class="dynamic-message"> Drag & drop any file here </h5>
-                            <label class="label"> or browse file from device<span class="browse-files"> <input type="file" class="default-file-input"/></span> </label>
+                            <label class="label"> or browse file from device<span class="browse-files"> <input type="file" class="default-file-input"/></span></label>
                         </div>
                     </div>
                 </div>
@@ -26,14 +27,29 @@
                     <input type="text" name="restaurant_name" id="restaurant_name" value="" class="form-control form-size-bucket" autofocus>
                 </div>
 
-                <div class="text-center mt-2 mb-4">
-                    <label for="genre" class="form-label fw-bold mb-0">Genre</label>
-                    <input type="text" name="genre" id="genre" value="" class="form-control form-size-bucket" autofocus>
-                </div>
+                <div class="text-center form-label fw-bold mt-2 mb-1">Genre</div>
+                    <div class="genre-center d-flex align-items-center posts-input" style="margin-left: 70px">
+                        <div class="form-check form-check-inline d-flex align-items-center">
+                            <input type="checkbox" name="genre[]" id="genre_italian" value="Italian" class="form-check-input">
+                            <label for="genre_italian" class="form-check-label">Italian</label>
+                        </div>
+                        <div class="form-check form-check-inline d-flex align-items-center">
+                            <input type="checkbox" name="genre[]" id="genre_japanese" value="Japanese" class="form-check-input">
+                            <label for="genre_japanese" class="form-check-label">Japanese</label>
+                        </div>
+                        <div class="form-check form-check-inline d-flex align-items-center">
+                            <input type="checkbox" name="genre[]" id="genre_mexican" value="Mexican" class="form-check-input mr-2">
+                            <label for="genre_mexican" class="form-check-label">Mexican</label>
+                        </div>
+                        <div class="form-check form-check-inline d-flex align-items-center">
+                            <input type="checkbox" name="genre[]" id="genre_other" value="Other" class="form-check-input">
+                            <label for="genre_other" class="form-check-label">Other</label>
+                        </div>
+                    </div>
 
-                <div class="text-center mt-2 mb-4">
-                    <label for="genre" class="form-label fw-bold mb-1">Hours of operation</label>
-                    <input type="text" name="genre" id="genre" value="" class="form-control form-size-bucket" autofocus>
+                <div class="text-center mt-4 mb-4">
+                    <label for="hourOpe" class="form-label fw-bold mb-1">Hours of operation</label>
+                    <input type="text" name="hourOpe" id="hourOpe" value="" class="form-control form-size-bucket" autofocus>
                 </div>
 
                 <div class="text-center mb-4">
@@ -43,7 +59,7 @@
 
                 <div class="text-center mb-4">
                     <label for="additional" class="form-label fw-bold mb-0">Additional</label>
-                    <textarea name="additional" id="additional" rows="5" placeholder="Write some information about the restaurant" class="form-control  form-size-bucket"></textarea>
+                    <textarea name="additional" id="additional" rows="3" class="form-control  form-size-bucket"></textarea>
                 </div>
             </div>
 

@@ -2,7 +2,7 @@
 
 <div class="modal fade" id="delete-bucket">
     <div class="modal-dialog">
-        <div class="modal-content border-danger">
+        <div class="modal-content border-danger modal-delete-visit">
             <div class="modal-header border-danger">
                 <div class="h5 modal-title text-danger">
                     <i class="fa-solid fa-circle-exclamation"></i> Delete Bucket List
@@ -10,9 +10,9 @@
             </div>
 
             <div class="modal-body">
-                <p>Are you sure you want to delete the list?</p>
+                <p class="fw-bold text-secondary">Are you sure you want to delete this list?</p>
                 <div class="mt-3">
-                    <img src="{{ asset('img/R.jpg') }}" alt="logo" class="w-100">
+                    <img src="{{ asset('img/R.jpg') }}" alt="logo" class="img-size">
                     <p class="mt-1 text-muted"></p>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                     <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">
                         Cancel
                     </button>
-                    <input type="button" class="btn btn-danger btn-sm" onclick="delete_visits()" id="delete_bucket" value="delete">
+                    <button type="submit" class="btn btn-danger btn-md">Delete</button>
                 </form>
             </div>
         </div>

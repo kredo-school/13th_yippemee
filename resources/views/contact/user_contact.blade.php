@@ -6,12 +6,11 @@
 
 <style>
     body {
-        padding-top: 4rem;
-        overflow: hidden;
+        background-image:  url('/images/contact-bg.jpg');
+        background-size: cover;
     }
 </style>
 
-<div class="contact-bg">
     <div class="container display-flex align-items-center">
         <div class="row justify-content-center">
             <div class="card p-5 contact-form">
@@ -28,6 +27,5 @@
             </div>
         </div>
     </div>
-</div>
 
 @endsection

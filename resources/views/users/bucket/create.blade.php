@@ -5,13 +5,12 @@
 @section('content')
 
 <div class="container">
-
     <div class="justify-content-center mt-5 mb-5">
-
         <div class="col-10">
         <form action="#" method="post" class="shadow rounded-3 p-5" enctype="multipart/form-data">
             @csrf
-            <h1 class="main-font mb-0 fw-light text-center mb-5" class="list-group-item">Make a Bucket List</h1>
+            <h1 class="main-font mb-0 fw-light text-center mb-4" class="list-group-item">Make a Bucket List</h1>
+            <span class="bar bar-short mb-5"></span>
 
 
     {{-- image --}}
@@ -30,30 +29,36 @@
                 <label for="restaurant_name" class="form-label fw-bold mb-0">Restaurant Name</label>
                 <input type="text" name="restaurant_name" id="restaurant_name" value="" class="form-control" autofocus class="form-control">
             </div>
-
-            <div class="mb-2 second-font">
-                <label for="web" class="form-label fw-bold mb-0">Genre</label>
-                <input type="text" name="Genre" id="Genre" class="form-control" autofocus class="form-control">
+            <div class="form-label fw-bold mb-0 mt-4">Genre</div>
+            <div class="d-flex align-items-center posts-input">
+                <div class="form-check form-check-inline d-flex align-items-center">
+                    <input type="checkbox" name="genre[]" id="genre_italian" value="Italian" class="form-check-input">
+                    <label for="genre_italian" class="form-check-label">Italian</label>
+                </div>
+                <div class="form-check form-check-inline d-flex align-items-center">
+                    <input type="checkbox" name="genre[]" id="genre_japanese" value="Japanese" class="form-check-input">
+                    <label for="genre_japanese" class="form-check-label">Japanese</label>
+                </div>
+                <div class="form-check form-check-inline d-flex align-items-center">
+                    <input type="checkbox" name="genre[]" id="genre_mexican" value="Mexican" class="form-check-input mr-2">
+                    <label for="genre_mexican" class="form-check-label">Mexican</label>
+                </div>
             </div>
-
             <div class="mb-2 second-font">
-                <label for="hour" class="form-label fw-bold mb-0">Hours of operation</label>
+                <label for="hour" class="form-label fw-bold mb-0 mt-3">Hours of operation</label>
                 <input type="text" name="hour" id="hour" class="form-control" autofocus class="form-control">
             </div>
-
             <div class="mb-2 second-font">
-                <label for="web" class="form-label fw-bold mb-0">Web Site</label>
+                <label for="web" class="form-label fw-bold mb-0 mt-3">Web Site</label>
                 <input type="url" name="web" id="web" class="form-control" autofocus class="form-control">
             </div>
-
             <div class="mb-4 second-font">
-                <label for="additional" class="form-label fw-bold mb-0">Additional</label>
-                <textarea name="additional" id="additional" rows="5" placeholder="Write some information about the restaurant" class="form-control"></textarea>
-
-            {{-- Error --}}
-            @error('description')
-            <div class="text-danger small">{{ $message }}</div>
-            @enderror
+                <label for="additional" class="form-label fw-bold mb-0 mt-3">Additional</label>
+                <textarea name="additional" id="additional" rows="3" placeholder="Write some information about the restaurant" class="form-control"></textarea>
+                {{-- Error --}}
+                @error('description')
+                <div class="text-danger small">{{ $message }}</div>
+                @enderror
             </div>
 
             {{-- Button --}}
@@ -62,10 +67,10 @@
                 <a href="{{ route('bucket.show') }}" class="btn btn--yellow btn--cubic px-5">Save</a>
             </div>
             {{-- End Button --}}
+                </div>
+            </form>
         </div>
-        </form>
     </div>
-</div>
 @endsection
 
 

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\BucketController;
+use App\Http\Controllers\MyPlanController;
 use App\Http\Controllers\VisitsController;
 use App\Http\Controllers\ProfileController;
 
@@ -45,13 +46,20 @@ Route::get('/posts/show', [PostController::class, 'show'])->name('posts.show');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//MY PLANS
+Route::get('/myplans/show', [MyPlanController::class, 'show'])->name('myplans.show');
 
-// Route::get('/users/private/group_lilst','group_list')->name('group_list');
+
+// Calendars
 Route::get('/users/calendars/private/group_list', [HomeController::class, 'group_list'])->name('group_list');
 Route::get('/users/calendars/public/calendar',[HomeController::class,'showCalendar'])->name('calendar');
 Route::get('/users/calendars/public/weekly',[HomeController::class,'showWeekly'])->name('weekly');
+Route::get('/users/calendars/private/calendar',[HomeController::class,'showGroupCalendar'])->name('private_calendar');
 
-Route::get('/users/private/group_list', [HomeController::class, 'group_list'])->name('group_list');
+
+
+
+
 
 Route::get('/myschedule', [HomeController::class, 'myschedule'])->name('myschedule');
 Route::get('/private/yourplan', [HomeController::class, 'privateyourplan'])->name('privateyourplan');
@@ -73,6 +81,8 @@ Route::get('/admin/users/index', [HomeController::class, 'admin_users_index'])->
 Route::get('/admin/plans/index', [HomeController::class, 'admin_plans_index'])->name('admin.plans.index');
 Route::get('/admin/posts/index', [HomeController::class, 'admin_posts_index'])->name('admin.posts.index');
 Route::get('/admin/genres/index', [HomeController::class, 'admin_genres_index'])->name('admin.genres.index');
+Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/admin/contacts/index', [HomeController::class, 'admin_contacts_index'])->name('admin.contacts.index');
 
 //social
 Route::get('/social/posts/create', [HomeController::class, 'social_posts_create'])->name('social.posts.create');
@@ -80,7 +90,10 @@ Route::get('/social/posts/edit', [HomeController::class, 'social_posts_edit'])->
 Route::get('/social/posts/show', [HomeController::class, 'social_posts_show'])->name('social.posts.show');
 Route::get('/social/home',  [HomeController::class, 'social_home'])->name('social.social_home');
 
+//friends
+Route::get('/friends/list',  [HomeController::class, 'friends_list'])->name('friends.friends_list');
 
-Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-Route::get('/admin/contacts/index', [HomeController::class, 'admin_contacts_index'])->name('admin.contacts.index');
+
+
+
 

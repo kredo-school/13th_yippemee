@@ -1,9 +1,9 @@
-<div class="col-9 visit_body_line">
-    <div class="row">
-        <div class="col-4 ms-3 mb-3 mt-3">
+<div class="col-9">
+    <div class="row visit_body_line">
+        <div class="col-4 ms-4 mb-3 mt-3">
             <img src="{{ asset('img/image.jpg') }}" alt="logo" class="w-100">
         </div>
-        <div class="visit-show col-7 me-auto">
+        <div class="visit-show col-7">
             <div class="row">
                 <div class="col-10 mt-3">
                     <h4 class="fw-bold">Bistro Adrian's Restaurant</h4>
@@ -45,7 +45,7 @@
 
     {{-- 2nd --}}
     <div class="row">
-        <div class="col-4 ms-3 mb-3 mt-3">
+        <div class="col-4 ms-4 mb-3 mt-3">
             <img src="{{ asset('img/image.jpg') }}" alt="logo" class="w-100">
         </div>
         <div class="visit-show col-7 me-auto">

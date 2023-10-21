@@ -1,39 +1,40 @@
-{{-- Header --}}
-<div class="header-user-container row bg-white container ms-auto me-auto mb-3 mt-4 rounded-3 p-5w">
-    <div class="col-5 mb-3 mt-3 main-font">
-            <i class="fa-regular fa-circle-user icon-md d-block text-end"></i>
+<div class="row bg-white container mx-auto mt-3" style="border-bottom: 3px solid lightgray">
+    <div class="col-6 mb-3 mt-3">
+        <i class="fa-regular fa-circle-user icon-md d-block text-end"></i>
     </div>
 
-    <div class="main-font col-5">
-        <div class="row">
-            <div class="col-auto">
-                <div class="display-6 mt-3">{{ "John Smith" }}
-                    <!-- Modal Button -->
-                    <a href="#" class="btn-sm mb-3 ms-3 icon-font">
-                        <i class="fa-solid fa-pen-clip icon-sm" data-bs-toggle="modal" data-bs-target="#edit-intro"></i>
-                    </a>
-                </div>
+    <div class="col-3">
+        <div class="mt-4" style="font-family: 'Marcellus';"><h2 style="margin-bottom: 0">John Smith</h2>
+        </div>
+        <div class="header-user-name row">
+        <div class="mt-0">{{"@JohnSmith12345678"}}</div>
+        </div>
+    </div>
 
-                {{-- Include Modal --}}
-                @include('users.profile.modals.edit')
+    <div class="col-3 mt-4" style="text-align: right">
+        <a href="#" class="btn btn--green btn--cubic px-5">
+            <i class="fa-solid fa-pen-clip icon-sm" data-bs-toggle="modal" data-bs-target="#edit-intro"></i> Edit Profile
+        </a>
+    </div>
+
+        {{-- Include Modal --}}
+        @include('users.profile.modals.edit')
+
+        <div class="row">
+            <div class="col page-title" style="margin-left: 200px">
+                <span class="bar bar-short mt-2"></span>
             </div>
         </div>
 
-        <div class="header-user-name row mb-3">
-                <div class="mt-0">{{"@JohnSmith12345678"}}</div>
-        </div>
-        <div class="row mb-2"></div>
-    </div>
-    <div class="col-12">
-        <div class="row justify-content-center me-5">
-            <div class="col-auto me-4 mb-2"><h4><a href="{{ route('posts.show') }}"
-                class="text-decoration-none icon-font">Post</a></h4></div>
-            <div class="col-auto me-4"><h4><a href="{{ route('visits.show') }}" class="text-decoration-none icon-font">Vists</a></h4></div>
-            <div class="col-auto me-4"><h4><a href="{{ route('bucket.show') }}" class="text-decoration-none icon-font">Bucket Lists</a></h4></div>
-            <div class="col-auto me-4"><h4><a href="/myschedule" class="text-decoration-none icon-font">Schedule</a></h4></div>
-            <div class="col-auto me-4"><h4><a href="#" class="text-decoration-none icon-font">Groups</a></h4></div>
-        </div>
-    </div>
+
+    <nav class="sidebarMenu profile-nav stroke">
+          <ul>
+            <li><a href="{{ route('posts.show') }}">POST</a></li>
+            <li><a href="{{ route('visits.show') }}">VISITS</a></li>
+            <li><a href="{{ route('bucket.show') }}">BUCKET LIST</a></li>
+            <li><a href="{{ route('myplans.show') }}">MY PLANS</a></li>
+          </ul>
+    </nav>
 </div>
 {{-- End of header --}}
 

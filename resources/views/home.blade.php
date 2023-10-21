@@ -4,12 +4,11 @@
 
 <style>
     body {
-        padding-top: 4rem;
-        overflow: hidden;
+        background-image:  url('/images/bg-mainpage.png');
+        background-size: cover;
     }
 </style>
 
-<div class="background-image">
  <div class="container display-flex align-items-center">
     <div class="row justify-content-center">
         {{-- <div class="col-md-8">
@@ -28,7 +27,7 @@
             </div>
         </div> --}}
 
-      <div class="card w-50 text-center homecard">
+      <div class="card w-75 text-center homecard">
          <div class="mt-4">
             <h1 class="main-text display-4">Make a plan</h1>
             <p class="main-p1 h4">Let's have food together!</p>

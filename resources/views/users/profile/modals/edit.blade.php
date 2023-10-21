@@ -4,17 +4,18 @@
     <div class="modal-content modal-content-profile-edit">
         <div class="modal-header modal-header-profile">
         <h1 class="modal-title fs-5" id="exampleModalLabel">
-                <form action="#" method="post" enctype="multipart/form-data">
-                    @csrf
-                    @method('PATCH')
-                    <h2 class="mb-0 fw-bold" class="list-group-item">Update Profile</h2></h1>
+            <form action="#" method="post" enctype="multipart/form-data">
+            @csrf
+            @method('PATCH')
+            <h2 class="mb-0 fw-bold" class="list-group-item">Update Profile</h2>
+            <span class="bar bar-short mt-4"></span>
+        </h1>
         </div>
 
         <div class="modal-body modal-body-profile">
             <div class="row mb-3">
-
             <div class="col-4">
-                <i class="fa-regular fa-circle-user d-block icon-md"></i>
+                <i class="fa-regular fa-circle-user d-block icon-size"></i>
             </div>
 
             <div class="col-auto align-self-end mb-3">
@@ -38,14 +39,29 @@
         </div>
 
         <div class="modal-profile-edit mb-4">
-            <label for="genre" class="form-label fw-bold mb-1">Best Restaurant</label>
-            <input type="text" name="genre" id="genre" value="" class="form-control" autofocus>
+            <label for="bestRes" class="form-label fw-bold mb-1">Best Restaurant</label>
+            <input type="text" name="bestRes" id="bestRes" value="" class="form-control" autofocus>
         </div>
 
-        <div class="modal-profile-edit mb-4">
-            <label for="genre" class="form-label fw-bold mb-0">Favorite Genre</label>
-            <input type="text" name="genre" id="genre" value="" class="form-control" autofocus>
-        </div>
+        <div class="form-label fw-bold mb-0">Favorite Genre</div>
+            <div class="d-flex align-items-center posts-input">
+                <div class="form-check form-check-inline d-flex align-items-center">
+                    <input type="checkbox" name="genre[]" id="genre_italian" value="Italian" class="form-check-input">
+                    <label for="genre_italian" class="form-check-label">Italian</label>
+                </div>
+                <div class="form-check form-check-inline d-flex align-items-center">
+                    <input type="checkbox" name="genre[]" id="genre_japanese" value="Japanese" class="form-check-input">
+                    <label for="genre_japanese" class="form-check-label">Japanese</label>
+                </div>
+                <div class="form-check form-check-inline d-flex align-items-center">
+                    <input type="checkbox" name="genre[]" id="genre_mexican" value="Mexican" class="form-check-input mr-2">
+                    <label for="genre_mexican" class="form-check-label">Mexican</label>
+                </div>
+                <div class="form-check form-check-inline d-flex align-items-center">
+                    <input type="checkbox" name="genre[]" id="genre_other" value="Other" class="form-check-input">
+                    <label for="genre_other" class="form-check-label">Other</label>
+                </div>
+            </div>
         </div>
         <div class="modal-footer modal-footer-profile">
             <a href="{{ route('posts.show') }}" class="btn btn--green btn--cubic px-5">Cancel</a>
