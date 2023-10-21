@@ -3,7 +3,7 @@
         <div class="modal-content delete-content">
             <div class="modal-header delete-header w-100">
                 <div class="row w-100" >
-                    <h1 class="mt-2 ms-3"><i class="fa-solid fa-trash-can" style="color: #253c5c;"></i> Delete this group</h1>
+                    <h1 class="mt-2 ms-3"><i class="fa-solid fa-trash-can" style="color: #dc3545"></i> Delete this group</h1>
                 </div>
             </div>
             <div class="modal-body delete-body">

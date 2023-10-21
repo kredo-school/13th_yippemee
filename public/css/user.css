@@ -558,6 +558,13 @@ h1{
 .btn-group-drop .dropdown-toggle::after {
     display: none;
 }
+.dropdown-menu .item-edit {
+    border-bottom: 1px solid lightgray;
+  }
+
+.dropdown-menu .item-delete {
+    color: red;
+  }
 
 
 /* add group modal */
@@ -663,7 +670,8 @@ h1{
     top: 100px;
 }
 .delete-header {
-    border-bottom: 3px solid #253c5c;
+    border-bottom: 2px solid #dc3545;
+    color: #dc3545;
     background-color: white;
     height: 70px;
 }
@@ -680,12 +688,12 @@ h1{
     object-fit: cover;
 }
 .delete-footer a {
-    border: 1px solid #253c5c;
+    color: #dc3545;
+    border: 1px solid #dc3545;
     margin-right: 5px;
-    margin-bottom: 5px;
 }
 .g-delete-btn {
-    background-color: #253c5c;
+    background-color: #dc3545;
     color: white;
 }
 
