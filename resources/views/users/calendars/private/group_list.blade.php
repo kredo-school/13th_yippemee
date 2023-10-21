@@ -273,5 +273,7 @@
         </div>
     </div>
 </div>
-@include('users.modals.group-delete')
+@include('users.modals.add_group')
+@include('users.modals.group_delete')
+@include('users.modals.group_edit')
 @endsection

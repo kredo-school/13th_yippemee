@@ -567,13 +567,16 @@ h1{
   }
 
 
-/* add group modal */
+/* add_group modal */
 #add-content{
     background-color: #fff;
     width: 650px;
     height: 300px;
     right: 50px;
     top: 100px;
+}
+.add-header {
+    background-color: #f2c84b;
 }
 #add-body {
     width: 100%;
@@ -604,7 +607,6 @@ h1{
     align-items: center;
     padding-top: 20px;
 }
-
 .btn-create {
     color: #ffffff;
     font-size: 16px;
@@ -635,10 +637,13 @@ h1{
     color: #e6f2e9;
 } */
 .profile-pic {
+    background-image: url(/images/bg-group.png);
+    background-color: #617fa823;
+    background-size: 65%;
+    background-repeat: no-repeat;
     border-radius: 50%;
     height: 150px;
     width: 150px;
-    background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
     vertical-align: middle;
@@ -659,11 +664,72 @@ h1{
 
 .profile-pic span {
     display: inline-block;
-    padding-top: 4.5em;
-    padding-bottom: 4.5em;
+    padding-top: 3.5em;
 }
+/* end add_group */
 
-/* group-delete */
+/* group_edit */
+.edit-content{
+    background-color: #fff;
+    width: 650px;
+    height: 300px;
+    left:250px;
+    top: 100px;
+}
+.edit-header {
+    background-color: white;
+    color: #253c5c;
+    border-bottom:2px solid #253c5c;
+    height: 70px;
+}
+.edit-body input {
+    border-bottom:2px solid #253c5c;
+    border-right:none;
+    border-left:none;
+    border-top:none;
+    width: 20rem;
+}
+.edit-body input[type="file"] {
+    display: none;
+    cursor: pointer;
+}
+.profile-pic-edit {
+    background-size: cover;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    background-position: center;
+    background-blend-mode: multiply;
+    vertical-align: middle;
+    text-align: center;
+    color: transparent;
+    transition: all .3s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+.profile-pic-edit:hover {
+    background-color: rgba(0,0,0,.5);
+    z-index: 10000;
+    color: #fff;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+.profile-pic-edit span {
+    display: inline-block;
+    padding-top: 3.5em;
+}
+.edit-footer a {
+    border: 1px solid #f2c84b;
+    margin-right: 5px;
+}
+.g-save-btn {
+    background-color: #F2C84B;
+    padding: 6px 16px;
+}
+/* end group_edit */
+
+
+/* group_delete */
 .delete-content {
     width: 500px;
     left: 300px;
@@ -696,6 +762,7 @@ h1{
     background-color: #dc3545;
     color: white;
 }
+/* end group_delete */
 
 
 /* create_plan modal */
