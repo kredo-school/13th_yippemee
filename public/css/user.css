@@ -519,7 +519,7 @@ h1{
     font-family: Marcellus;
 }
 
-/* group list */
+/* group_list */
 #btn-add {
     border:1px solid #253c5c;
     background-color: #E6F2E9;
@@ -655,6 +655,40 @@ h1{
     padding-top: 4.5em;
     padding-bottom: 4.5em;
 }
+
+/* group-delete */
+.delete-content {
+    width: 500px;
+    left: 300px;
+    top: 100px;
+}
+.delete-header {
+    border-bottom: 3px solid #253c5c;
+    background-color: white;
+    height: 70px;
+}
+.delete-body .row {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100%;
+}
+.delete-body img {
+    width: 180px;
+    height: 150px;
+    object-fit: cover;
+}
+.delete-footer a {
+    border: 1px solid #253c5c;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.g-delete-btn {
+    background-color: #253c5c;
+    color: white;
+}
+
 
 /* create_plan modal */
 /* preference modal */

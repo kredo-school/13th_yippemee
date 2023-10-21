@@ -49,8 +49,8 @@
                                         </button>
                                         <ul class="dropdown-menu">
                                             <li><a href="#" class="dropdown-item">Details</a></li>
-                                            <li><a href="#" class="dropdown-item bordered border-bottom">Edit</a></li>
-                                            <li><a href="#" class="dropdown-item">Delete</a></li>
+                                            <li><button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#group-edit">Edit </button></li>
+                                            <li><button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#group-delete">Delete</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -79,7 +79,7 @@
                                         </button>
                                         <ul class="dropdown-menu">
                                             <li><a href="#" class="dropdown-item">Details</a></li>
-                                            <li><a href="#" class="dropdown-item bordered border-bottom">Edit</a></li>
+                                            <li><a href="#" class="dropdown-item bordered-0">Edit</a></li>
                                             <li><a href="#" class="dropdown-item">Delete</a></li>
                                         </ul>
                                     </div>
@@ -273,5 +273,5 @@
         </div>
     </div>
 </div>
-@include('users.modals.add_group')
+@include('users.modals.group-delete')
 @endsection
