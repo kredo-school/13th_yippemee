@@ -1,15 +1,7 @@
 @extends('layouts.app')
 @section('title', 'private calendar')
 @section('content')
-<style>
-body{
-    background-image: url('/images/restaurant3.jpg');
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}
-</style>
+<link href="{{ asset('css/private.css') }}" rel="stylesheet">
 
 <div class="container calendar-title" id="private">
     <h2 class="text-center">Decide by Place</h2>

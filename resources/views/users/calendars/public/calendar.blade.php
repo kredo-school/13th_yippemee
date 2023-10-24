@@ -1,15 +1,7 @@
 @extends('layouts.app')
 @section('title', 'public calendar')
 @section('content')
-<style>
-body{
-    background-image: url('/images/schedule9.jpg');
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}
-</style>
+<link href="{{ asset('css/public.css') }}" rel="stylesheet">
 
 <div class="container calendar-title">
     <h2 class="text-center">Decide by Date</h2>
