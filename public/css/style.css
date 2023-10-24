@@ -123,7 +123,8 @@
 }
 .modal-body-profile {
     margin-left: 55px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 .modal-footer-profile {
     border: 0;
@@ -147,7 +148,7 @@
     text-align: left;
 }
 .modal-content-profile-edit {
-    height: 820px;
+    height: 780px;
     width: 630px;
 }
 
@@ -189,7 +190,7 @@ a.btn--yellow {
 
 /* Bucket-edit-modal */
 .bucket-edit-modal {
-    height: 980px;
+    height: 960px;
     width: 600px;
     border: none;
 
@@ -288,8 +289,8 @@ body {
 
 /* Visit */
 .visit-edit-modal {
-    height: 920px;
-    width: 600px;
+    height: 950px;
+    width: 620px;
 }
 .form-size-visit {
     width: 500px;
@@ -694,8 +695,8 @@ body{
         width: 100%;
       }
 
-      .detal-right li img:hover{
-        opacity:1;/*選択されていないものは透過40%*/
+      .detal-right li img{
+        opacity:0.4;/*選択されていないものは透過40%*/
 
       }
 
@@ -756,6 +757,33 @@ body{
         height: 3.5rem;
         object-fit: cover;
 }
+
+/* review */
+
+.rate-form {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+  .rate-form input[type=radio] {
+    display: none;
+  }
+  .rate-form label {
+    position: relative;
+    padding: 0 5px;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 35px;
+  }
+  .rate-form label:hover {
+    color: #ffcc00;
+  }
+  .rate-form label:hover ~ label {
+    color: #ffcc00;
+  }
+  .rate-form input[type=radio]:checked ~ label {
+    color: #ffcc00;
+  }
 
 
 

@@ -1,4 +1,4 @@
-{{-- <div class="modal left fade" id="detail-modal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel">
+<div class="modal left fade" id="detail-modal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header" id="plan-header">
@@ -74,5 +74,5 @@
 
         </div>
     </div>
-</div> --}}
+</div>
 

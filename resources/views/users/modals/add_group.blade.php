@@ -2,7 +2,7 @@
 <div class="modal fade" id="add-group" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content" id="add-content">
-            <div class="modal-header add-header bg-warning">
+            <div class="modal-header add-header">
                 <div class="row w-100 align-items-center">
                     <div class="col-11 mt-2">
                         <h1 style="color: #253c5c;">
@@ -22,9 +22,10 @@
                     <div class="row" id="form-group">
                         <div class="col-5" id="form-group-left">
                             <label for="fileToUpload">
-                                <div class="profile-pic" style="background-image: url('https://randomuser.me/api/portraits/med/men/65.jpg')">
+                                <div class="profile-pic">
+                                    
                                     <i class="fa-solid fa-camera"></i>
-                                    <span>Edit Image</span>
+                                    <span>Add Image</span>
                                 </div>
                             </label>
                             <input type="file" name="fileToUpload" id="fileToUpload">

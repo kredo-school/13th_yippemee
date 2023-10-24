@@ -41,7 +41,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md shadow-sm fixed-top" style="background-color: #253C5C">
+        <nav class="main-nav navbar navbar-expand-md shadow-sm fixed-top">
             {{-- <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -100,7 +100,7 @@
             @yield('content')
         </main>
     </div>
-    <footer style="background-color: #617EA8;">
+    <footer>
         @include('layouts.footer')
     </footer>
 </body>
