@@ -668,12 +668,288 @@ h1{
 }
 /* end add_group */
 
+
+/* group_member */
+.member-content {
+    background-color: #fff;
+    width: 500px;
+    height: 300px;
+    left:300px;
+    top: 100px;
+}
+
+.member-header {
+    height: 70px;
+    border-bottom: 2px solid #253c5c;
+}
+.member-body {
+    padding:15px 25px;
+}
+.table-box {
+    border-left:2px solid #617EA8;
+    max-height: 200px;
+    width: 80%;
+    margin-left: 3rem;
+    padding: 10px 0px;
+}
+.member-table {
+    width: 80%;
+    margin-left: 60px;
+    padding-left: 12px;
+    max-height: 180px;
+    overflow: scroll;
+    /* scrollbar delete */
+    /* IE(Internet Explorer)・Microsoft Edge */
+    -ms-overflow-style: none;
+    /*Firefox*/
+    scrollbar-width: none;
+}
+   /*Google Chrome、Safari*/
+.member-table::-webkit-scrollbar{
+    display: none;
+}
+.member-row {
+    width: 100%;
+    height: 45px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+.member-row .col-2,
+.member-row .col-8 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.member-row .col-8 {
+    font-size: 18px;
+}
+.member-footer {
+    display: flex;
+    justify-content: left;
+    height: 60px;
+    padding: 0;
+}
+.invite-modal-btn {
+    text-align: center;
+    width: 100%;
+    padding-top: 0;
+
+}
+.to-invite {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-left: 20px;
+}
+.to-invite i {
+    color: #253c5c;
+    border: 2px solid #253c5c;
+    padding: 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.to-invite p {
+    font-size: 18px;
+    color: #253c5c;
+    display: inline-flex;
+    float: left;
+    margin-left: 2%;
+    margin-bottom: -5px;
+}
+
+/* end of group_member */
+/* invite friends */
+.invite-content {
+    background-color: #fff;
+    width: 500px;
+    height: 300px;
+    left:300px;
+    top: 100px;
+}
+.invite-header {
+    height: 70px;
+    border-bottom: 2px solid #253c5c;
+}
+.invite-body {
+    padding:15px 25px;
+}
+.invite-footer {
+    display: flex;
+    justify-content: right;
+    height: 60px;
+    padding: 0;
+    padding-right: 2.5rem;
+}
+#friend-search {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+#search-friend {
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid white;
+    background-color: white;
+}
+#btn-friendSearch {
+    border: 1px solid white;
+    color:#253c5c;
+}
+.friend-result {
+    width: 75%;
+    margin: 0px auto;
+    /* border: 1px solid red; */
+    background-color: #E6F2E9;
+    max-height: 200px;
+    overflow: scroll;
+    /* scrollbar delete */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.friend-result::-webkit-scrollbar{
+    display: none;
+}
+.user-result {
+    width: 90%;
+    border-bottom: white 1px solid;
+    margin: 3px auto;
+    padding: 5px 10px;
+    background: #E6F2E9;
+}
+
+  /*Checkboxes styles*/
+.user-result input[type="checkbox"] {
+    display: none;
+
+}
+
+.user-result input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    padding-left: 120px;
+    margin-bottom: 60px;
+    color: #253c5c;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.user-result input[type="checkbox"] + label:last-child {
+    margin-bottom: 0;
+}
+
+.user-result input[type="checkbox"] + label:before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #617EA8;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    left: 45px;
+    top: 12px;
+    opacity: .6;
+    -webkit-transition: all .12s, border-color .08s;
+    transition: all .12s, border-color .08s;
+}
+
+.user-result input[type="checkbox"]:checked + label:before {
+    border: 1px solid #617EA8;
+    width: 10px;
+    top: 8px;
+    left: 50px;
+    border-radius: 0;
+    background-color: #E6F2E9;
+    opacity: 1;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.username img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 2rem;
+}
+.invite-footer {
+    height: 100px;
+}
+.invited-friends {
+    margin-left: 2.5rem;
+    max-height: 110px;
+    max-width: 400px;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+.invited-user {
+    display: inline-block;
+    margin:3px 15px;
+}
+.invited-user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 1px 3px 5px rgb(159, 159, 159);
+}
+.invited-user p {
+    text-align:center;
+    height: 14px;
+    font-size: 10px;
+    overflow: hidden;
+}
+.invite-btn {
+    text-decoration: none;
+    padding-top: 2px;
+    color: #253c5c;
+    font-size: 16px;
+    font-weight: bold;
+    background: transparent;
+    width: 75px;
+    height: 37px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #617EA8;
+    border-radius: 3px;
+    position: relative;
+    z-index: 1;
+    display: block;
+    overflow: hidden;
+    transition: .3s;
+}
+.invite-btn::before {
+    content: "";
+    width: 120%;
+    height: 200%;
+    position: absolute;
+    top: -50%;
+    right: 0;
+    z-index: -1;
+    background: #617EA8;
+    border-radius: 0 100% 100% 0;
+    transform: translateX(-100%);
+    transition: transform ease .3s;
+  }
+.invite-btn:hover {
+    color: #fff;
+  }
+.invite-btn:hover::before {
+    transform: translateX(10%);
+  }
+
+/* end of invite friends */
+
+
 /* group_edit */
 .edit-content{
     background-color: #fff;
-    width: 650px;
+    width: 500px;
     height: 300px;
-    left:250px;
+    left:300px;
     top: 100px;
 }
 .edit-header {
@@ -687,7 +963,7 @@ h1{
     border-right:none;
     border-left:none;
     border-top:none;
-    width: 20rem;
+    width: 15rem;
 }
 .edit-body input[type="file"] {
     display: none;
@@ -749,8 +1025,8 @@ h1{
     height: 100%;
 }
 .delete-body img {
-    width: 180px;
-    height: 150px;
+    width: 130px;
+    height: 100px;
     object-fit: cover;
 }
 .delete-footer a {

@@ -18,15 +18,13 @@
                             </label>
                             <input type="file" name="fileToUpload" id="fileToUpload">
                         </div>
-                        <div class="col-6" id="form-group-right">
+                        <div class="col-6 mt-3" id="form-group-right">
                             <label for="name"></label>
                             <input type="text" placeholder="Name"  require>
                             <br>
                             <label for="restaurant"></label>
                             <input type="text" placeholder="Restaurant">
                             <br>
-                            <label for="members" require></label>
-                            <input type="text" placeholder="Members">
                         </div>
                     </div>
                 </form>
@@ -34,7 +32,7 @@
             <div class="modal-footer edit-footer bg-white border-0 mb-2">
                 <form action="#" method="post">
                     <a href="{{route('group_list')}}" class="btn calncel-btn" data-bs-dismiss="modal">Cancel</a>
-                    <button type="edit" class="btn g-save-btn float-end">Save</button>
+                    <button type="submit" class="btn g-save-btn float-end">Save</button>
                 </form>
             </div>
         </div>
