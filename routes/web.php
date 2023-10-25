@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\BucketController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MyPlanController;
 use App\Http\Controllers\VisitsController;
 use App\Http\Controllers\ProfileController;
@@ -81,7 +82,8 @@ Route::get('/admin/users/index', [HomeController::class, 'admin_users_index'])->
 Route::get('/admin/plans/index', [HomeController::class, 'admin_plans_index'])->name('admin.plans.index');
 Route::get('/admin/posts/index', [HomeController::class, 'admin_posts_index'])->name('admin.posts.index');
 Route::get('/admin/genres/index', [HomeController::class, 'admin_genres_index'])->name('admin.genres.index');
-Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/admin/contacts/index', [HomeController::class, 'admin_contacts_index'])->name('admin.contacts.index');
 
 //social
