@@ -57,7 +57,7 @@ class HomeController extends Controller
         return view('users.myschadule');
     }
 
-  
+
 
     public function privateyourplan()
     {
@@ -108,7 +108,7 @@ class HomeController extends Controller
         return view('users.restaurant_lists.area.more');
     }
 
-    
+
 
 
     public function  restaurantcomment()
@@ -122,20 +122,14 @@ class HomeController extends Controller
         return view('users.restaurant_lists.commentform');
     }
 
-  
-   
+
+
 
 
     public function detail()
     {
         return view('users.restaurant_lists.restaurant_detail');
     }
-
-    public function contact()
-    {
-        return view('contact.user_contact');
-    }
-
 
     public function admin_contacts_index()
     {
