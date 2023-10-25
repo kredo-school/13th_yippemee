@@ -49,6 +49,7 @@ class HomeController extends Controller
     {
         return view('users.calendars.private.calendar');
     }
+
     // end of calendar pages
 
     public function myschedule()
