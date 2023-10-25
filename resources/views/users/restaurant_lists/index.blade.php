@@ -3,16 +3,16 @@
 @section('title', 'Restaurant list')
 
 @section('content')
-<div class="container restaurant-list bg-white justify-content-center mx-auto">
-    <div class="row mt-5">
-        <div class="col text-center">
-            <h1 class="post_title mt-3">Where to next, 【 user name 】?</h1>
-            <span class="bar mt-4 mb-4"></span>
+<div class="container restaurant-list bg-white justify-content-center mx-auto w-50">
+    <div class="row mt-2">
+        <div class="col text-center page-title">
+            <h2 class="post_title mt-3 page-title">Where to next, 【 user name 】?</h1>
+            <span class="bar bar-short mt-4"></span>
         </div>
     </div>
   
     <form action="" >
-    <div class="row  mt-4  w-75 mx-auto" >      
+    <div class="row  mt-4  w-50 mx-auto" >      
             <div class="col ">
                 <input type="text" name="serch" id="serch" class="form-control " > 
                 
