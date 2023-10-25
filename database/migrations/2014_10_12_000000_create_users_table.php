@@ -14,7 +14,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-        
+
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('role_id')
                                 ->default(2)
                                 ->comment('1:admin 2:user');
-    
+
             $table->timestamps();
         });
     }
