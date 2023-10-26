@@ -28,6 +28,7 @@ Auth::routes();
 
 //PROFILE
 Route::get('/profile/show', [ProfileController::class, 'show'])->name('profile.show');
+Route::get('/profile/create', [ProfileController::class, 'create'])->name('profile.create');
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 
 //VISITS
@@ -38,6 +39,8 @@ Route::get('/visits/create', [VisitsController::class, 'create'])->name('visits.
 //BUCKET
 Route::get('/bucket/show', [BucketController::class, 'show'])->name('bucket.show');
 Route::get('/bucket/create', [BucketController::class, 'create'])->name('bucket.create');
+Route::post('/bucket/store', [BucketController::class, 'store'])->name('bucket.store');
+
 // Route::delete('/bucket/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');
 
 //POST
