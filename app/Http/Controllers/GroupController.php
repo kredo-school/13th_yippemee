@@ -19,7 +19,8 @@ class GroupController extends Controller
      */
     public function Group()
     {
-        return view ('users.calendars.private.group_list');
+        $groups = Group::all();
+        return view('users.calendars.private.group_list')->with('groups', $groups);
     }
 
     /**
@@ -66,7 +67,9 @@ class GroupController extends Controller
      */
     public function show(Group $group)
     {
-        //
+        $group = $this->group->findOrFail($id);
+
+        return view('group_list')->with('group', $group);
     }
 
     /**
