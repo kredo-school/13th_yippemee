@@ -68,53 +68,7 @@ class HomeController extends Controller
         return view('users.public.yourplan');
     }
 
-    public function restaurantlist()
-    {
-        return view('users.restaurant_lists.index');
-    }
-
-    public function  restaurantpost()
-    {
-        return view('users.restaurant_lists.post_restaurant');
-    }
-
-
-
-    public function genrejapanese()
-    {
-        return view('users.restaurant_lists.genre.japanese');
-    }
-    public function genreitalian()
-    {
-        return view('users.restaurant_lists.genre.italian');
-    }
-    public function genrechinese()
-    {
-        return view('users.restaurant_lists.genre.chinese');
-    }
-    public function genrecafe()
-    {
-        return view('users.restaurant_lists.genre.cafe');
-    }
-
-    public function genremore()
-    {
-        return view('users.restaurant_lists.genre.more');
-    }
-
-    public function areamore()
-    {
-        return view('users.restaurant_lists.area.more');
-    }
-
     
-
-
-    public function  restaurantcomment()
-    {
-        return view('users.restaurant_lists.comment');
-    }
-
 
     public function  postcomment()
     {

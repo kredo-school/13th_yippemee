@@ -7,64 +7,63 @@
 <div class="container mx-auto w-25">
     <h2 class="text-center mt-5">Post restuarnt</h2>
     <hr class="w-25 mx-auto mb-5">
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form action="{{ route('restaurant.store') }}" method="post" enctype="multipart/form-data">
+        @csrf
         <label for="name">Restaurant Name</label>
-        <input type="text" class="form-control mt-1" required>
+        <input type="text"  name="name" class="form-control mt-1" required>
         <label for="area" class="mt-3">Area</label>
-        <input type="text" class="form-control ">
+        <input type="text"  name="location" class="form-control ">
         <label for="address" class="mt-3">Address</label>
-        <input type="text" class="form-control ">
+        <input type="text"  name="address" class="form-control ">
         <label for="phone" class="mt-3">Tel </label>
-        <input type="number" class="form-control ">
+        <input type="number"   name="tel" class="form-control ">
         <label for="description" class="mt-3">Description</label>
         <textarea name="description" id="description" rows="3" class = "form-control"></textarea>
 
-        
         <div class="row mt-5 mb-3">
             <div class="col-md">
-                <form>
                     <div class="form-group">
                         <label>Open hours</label>
                         <br>
                         <table>
             <tr>
                 <td> <label class="form-check-label me-5">・Monday</label></td>
-                <td><input type="time" id="appt" name="appt"  /></td>
+                <td><input type="time" id="appt" name="monday"  /></td>
             </tr>
             <tr>
                 <td> <label class="form-check-label">・Tuesday</label></td>
-                <td><input type="time" id="appt" name="appt"  /></td>
+                <td><input type="time" id="appt" name="tuesday"  /></td>
             </tr>
             <tr>
                 <td> <label class="form-check-label">・Wednesday</label></td>
-                <td><input type="time" id="appt" name="appt"  /></td>
+                <td><input type="time" id="appt" name="wednesday"  /></td>
             </tr>
             <tr>
                 <td> <label class="form-check-label">・Thursday</label></td>
-                <td><input type="time" id="appt" name="appt"  /></td>
+                <td><input type="time" id="appt" name="thursday"  /></td>
             </tr>
             <tr>
                 <td> <label class="form-check-label">・Friday</label></td>
-                <td><input type="time" id="appt" name="appt"  /></td>
+                <td><input type="time" id="appt" name="friday"  /></td>
             </tr>
             <tr>
                 <td> <label class="form-check-label">・Saturday</label></td>
-                <td><input type="time" id="appt" name="appt"  /></td>
+                <td><input type="time" id="appt" name="saturday"  /></td>
             </tr>
             <tr>
                 <td> <label class="form-check-label">・Sunday</label></td>
-                <td><input type="time" id="appt" name="appt"  /></td>
+                <td><input type="time" id="appt" name="sunday"  /></td>
             </tr>
         </table>
                     </div>
-                </form>
+              
             </div>
         </div>
 
         <label for="url" class="mt-3">URL</label>
-        <input type="text" class="form-control ">
+        <input type="text" name="url" class="form-control ">
         <label for="url" class="mt-3">Google map URL</label>
-        <input type="text" class="form-control ">
+        <input type="text" name="googlemap" class="form-control ">
        
         <label for="image" class=" mt-3 ">Image</label>
         <input type="file" name="image" id="image" class="form-control" aria-describedby="image-info">

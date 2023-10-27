@@ -26,7 +26,7 @@
         <div class="col-md-8 float-left">
             <div class="row">
                 <div class="col-md-10">
-                    <a href="" class="h2">restaurant:name</a>
+                    <a href="" class="h2">{{ $restaurant->name}}</a>
                 </div>
                 <div class="col-md-2">
                     <i class="fa-solid fa-bookmark ms-4 text-end h2"></i></div>
