@@ -27,10 +27,7 @@ class HomeController extends Controller
     }
 
     // all related to calendar pages
-    public function group_list()
-    {
-        return view ('users.calendars.private.group_list');
-    }
+
     public function add_group()
     {
         return view('users.calendars.private.group_list');
@@ -38,10 +35,6 @@ class HomeController extends Controller
     public function showCalendar()
     {
         return view ('users.calendars.public.calendar');
-    }
-    public function showWeekly()
-    {
-        return view ('users.calendars.public.weekly');
     }
 
         // private calendar
@@ -57,7 +50,7 @@ class HomeController extends Controller
         return view('users.myschadule');
     }
 
-  
+
 
     public function privateyourplan()
     {
@@ -108,7 +101,7 @@ class HomeController extends Controller
         return view('users.restaurant_lists.area.more');
     }
 
-    
+
 
 
     public function  restaurantcomment()
@@ -122,8 +115,8 @@ class HomeController extends Controller
         return view('users.restaurant_lists.commentform');
     }
 
-  
-   
+
+
 
 
     public function detail()

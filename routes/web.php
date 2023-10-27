@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\BucketController;
+use App\Http\Controllers\GroupController;
 use App\Http\Controllers\MyPlanController;
 use App\Http\Controllers\VisitsController;
 use App\Http\Controllers\ProfileController;
@@ -51,9 +52,9 @@ Route::get('/myplans/show', [MyPlanController::class, 'show'])->name('myplans.sh
 
 
 // Calendars
-Route::get('/users/calendars/private/group_list', [HomeController::class, 'group_list'])->name('group_list');
+Route::get('/users/calendars/private/group_list', [GroupController::class, 'group'])->name('group_list');
+Route::post('/group_list/store', [GroupController::class, 'store'])->name('group.store');
 Route::get('/users/calendars/public/calendar',[HomeController::class,'showCalendar'])->name('calendar');
-Route::get('/users/calendars/public/weekly',[HomeController::class,'showWeekly'])->name('weekly');
 Route::get('/users/calendars/private/calendar',[HomeController::class,'showGroupCalendar'])->name('private_calendar');
 
 

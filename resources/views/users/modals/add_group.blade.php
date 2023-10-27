@@ -16,38 +16,36 @@
                 </div>
             </div>
 
-
+            <form action="{{ route('group.store') }}" method="post" enctype="multipart/form-data">
+            @csrf
             <div class="modal-body" id="add-body">
-                <form action="#" method="post" enctype="multipart/form-data">
-                    <div class="row" id="form-group">
-                        <div class="col-5" id="form-group-left">
-                            <label for="fileToUpload">
-                                <div class="profile-pic">
-                                    
-                                    <i class="fa-solid fa-camera"></i>
-                                    <span>Add Image</span>
-                                </div>
-                            </label>
-                            <input type="file" name="fileToUpload" id="fileToUpload">
-                        </div>
-                        <div class="col-6" id="form-group-right">
-                            <label for="name"></label>
-                            <input type="text" placeholder="Name"  require>
-                            <br>
-                            <label for="restaurant"></label>
-                            <input type="text" placeholder="Restaurant">
-                            <br>
-                            <label for="members" require></label>
-                            <input type="text" placeholder="Members">
-                        </div>
+                <div class="row" id="form-group">
+                    <div class="col-5" id="form-group-left">
+                        <label for="image">
+                            <div class="profile-pic">
+                                <i class="fa-solid fa-camera"></i>
+                                <span>Add Image</span>
+                            </div>
+                        </label>
+                        <input type="file" name="image" id="image" class="form-control" aria-describedby="image-info">
                     </div>
-                </form>
+                    <div class="col-6" id="form-group-right">
+                        <label for="name" class="form-label"></label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Name">
+                        <br>
+                        <label for="restaurant_id" class="form-label"></label>
+                        <input type="text" name="restaurant_id" id="restaurant_id" class="form-control" placeholder="Restaurant">
+                        <br>
+                        <label for="member_id" class="form-label"></label>
+                        <input type="text" name="member_id" id="member_id" class="form-control" placeholder="Members">
+                    </div>
+                </div>
             </div>
 
             <div class="modal-footer border-0">
-                <a href="#" class="btn btn-create">Create</a>
+                <button type="submit" class="btn btn-create">Create</button>
             </div>
-
+            </form>
         </div>
     </div>
 </div>
