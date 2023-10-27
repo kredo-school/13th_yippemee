@@ -10,6 +10,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MyPlanController;
 use App\Http\Controllers\VisitsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RestaurantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,24 +60,26 @@ Route::get('/users/calendars/public/calendar',[HomeController::class,'showCalend
 Route::get('/users/calendars/private/calendar',[HomeController::class,'showGroupCalendar'])->name('private_calendar');
 
 
-
-
+//Restaurant list
+Route::get('/restaurantlist', [RestaurantController::class, 'restaurantlist'])->name('restaurantlist');
+Route::post('/restaurantlist/store', [RestaurantController::class, 'store'])->name('restaurant.store');
+Route::get('/restaurantlist/post', [RestaurantController::class, 'restaurantpost'])->name('restaurantpost');
+Route::get('/genre/japanese', [RestaurantController::class, 'genrejapanese'])->name('genrejapanese');
+Route::get('/genre/italian', [RestaurantController::class, 'genreitalian'])->name('genreitalian');
+Route::get('/genre/chinese', [RestaurantController::class, 'genrechinese'])->name('genrechinese');
+Route::get('/genrecafe/{id}', [RestaurantController::class, 'genrecafe'])->name('genrecafe');
+Route::get('/genre/more', [RestaurantController::class, 'genremore'])->name('genremore');
+Route::get('/area/more', [RestaurantController::class, 'areamore'])->name('areamore');
+Route::get('/restaurant/detail', [RestaurantController::class, 'detail'])->name('detail');
+Route::get('/restaurant/comment', [RestaurantController::class, 'restaurantcomment'])->name('restaurantcomment');
+Route::get('/restaurant/comment/form', [RestaurantController::class, 'postcomment'])->name('postcomment');
 
 
 Route::get('/myschedule', [HomeController::class, 'myschedule'])->name('myschedule');
 Route::get('/private/yourplan', [HomeController::class, 'privateyourplan'])->name('privateyourplan');
 Route::get('/public/yourplan', [HomeController::class, 'publicyourplan'])->name('publicyourplan');
-Route::get('/restaurantlist', [HomeController::class, 'restaurantlist'])->name('restaurantlist');
-Route::get('/restaurantlist/post', [HomeController::class, 'restaurantpost'])->name('restaurantpost');
-Route::get('/genre/japanese', [HomeController::class, 'genrejapanese'])->name('genrejapanese');
-Route::get('/genre/italian', [HomeController::class, 'genreitalian'])->name('genreitalian');
-Route::get('/genre/chinese', [HomeController::class, 'genrechinese'])->name('genrechinese');
-Route::get('/genre/cafe', [HomeController::class, 'genrecafe'])->name('genrecafe');
-Route::get('/genre/more', [HomeController::class, 'genremore'])->name('genremore');
-Route::get('/area/more', [HomeController::class, 'areamore'])->name('areamore');
-Route::get('/restaurant/detail', [HomeController::class, 'detail'])->name('detail');
-Route::get('/restaurant/comment', [HomeController::class, 'restaurantcomment'])->name('restaurantcomment');
-Route::get('/restaurant/comment/form', [HomeController::class, 'postcomment'])->name('postcomment');
+
+
 
 //admin
 Route::get('/admin/users/index', [HomeController::class, 'admin_users_index'])->name('admin.users.index');

@@ -62,6 +62,7 @@ class HomeController extends Controller
         return view('users.public.yourplan');
     }
 
+
     public function restaurantlist()
     {
         return view('users.restaurant_lists.index');
@@ -102,12 +103,6 @@ class HomeController extends Controller
     }
 
 
-
-
-    public function  restaurantcomment()
-    {
-        return view('users.restaurant_lists.comment');
-    }
 
 
     public function  postcomment()

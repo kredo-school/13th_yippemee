@@ -17,7 +17,7 @@ class CreateRestaurantsTable extends Migration
             $table->id();
             $table->string('name',50);
             $table->string('location',50);
-            $table->string('addresss')->nullable( );
+            $table->string('address')->nullable( );
             $table->string('tel',50)->nullable( );
             $table->text('description')->nullable( );
             $table->string('monday')->nullable( );
@@ -25,7 +25,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('wednesday')->nullable( );
             $table->string('thursday')->nullable( );
             $table->string('friday')->nullable( );
-            $table->string('satruday')->nullable( );
+            $table->string('saturday')->nullable( );
             $table->string('sunday')->nullable( );
             $table->longtext('image')->nullable();
             $table->string('url');
