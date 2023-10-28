@@ -1,4 +1,4 @@
-<div class="modal fade" id="group-delete-{{ $group->id }}" aria-hidden="true">
+<div class="modal fade" id="group-delete-{{ $group->id }}">
     <div class="modal-dialog delete-dialog modal-xl">
         <div class="modal-content delete-content">
             <div class="modal-header delete-header w-100">
@@ -22,7 +22,7 @@
                     @csrf
                     @method('DELETE')
 
-                    <a href="{{route('group_list')}}" class="btn calncel-btn" data-bs-dismiss="modal">Cancel</a>
+                    <a href="{{ route('group_list') }}" class="btn calncel-btn" data-bs-dismiss="modal">Cancel</a>
                     <button type="delete" class="btn g-delete-btn float-end">Delete</button>
                 </form>
             </div>
