@@ -7,15 +7,14 @@
 <div class="container">
     <div class="container my-4 margin-container bg-white">
         <div class="row grouplist-title">
-            <div class="col d-flex flex-column align-items-start" hidden>
+            <div class="col-4 d-flex flex-column align-items-start" hidden>
             </div>
-            {{-- this need to be in a center --}}
-            <div class="col  page-title">
+            <div class="col-4  page-title">
                 <h2 class="text-center">Decide by place</h2>
                 <span class="bar bar-short mt-4"></span>
                 <h3 class="text-center pt-4 mb-0"><span>Group list</span></h3>
             </div>
-            <div class="col d-flex flex-column align-items-end pe-5">
+            <div class="col-4 d-flex flex-column align-items-end pe-5">
                 <button type="button" class="btn btn-add" id="btn-add" data-bs-toggle="modal" data-bs-target="#add-group">
                     <i class="fa-solid fa-square-plus fa-lg" style="color: #253c5c;"></i> New group
                 </button>
@@ -65,7 +64,7 @@
                 @endforeach
             </div>
         @else
-            <h3 class="text-muted text-center">No Groups Yet.</h3>
+            <h4 class="text-muted text-center mt-5">No Groups Yet.</h4>
         @endif
 
 
