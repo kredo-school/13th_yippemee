@@ -37,11 +37,12 @@ Route::get('/visits/create', [VisitsController::class, 'create'])->name('visits.
 // Route::delete('/visits/destroy/{id}', [VisitsController::class, 'destroy'])->name('visits.destroy');
 
 //BUCKET
-Route::get('/bucket/show', [BucketController::class, 'show'])->name('bucket.show');
 Route::get('/bucket/create', [BucketController::class, 'create'])->name('bucket.create');
 Route::post('/bucket/store', [BucketController::class, 'store'])->name('bucket.store');
-
-// Route::delete('/bucket/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');
+Route::get('/bucket/show', [BucketController::class, 'show'])->name('bucket.show');
+Route::get('/bucket/{id}/edit', [BucketController::class, 'edit'])->name('bucket.edit');
+Route::patch('/bucket/{id}/update', [BucketController::class, 'update'])->name('bucket.update');
+Route::delete('/bucket/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');
 
 //POST
 Route::get('/posts/show', [PostController::class, 'show'])->name('posts.show');

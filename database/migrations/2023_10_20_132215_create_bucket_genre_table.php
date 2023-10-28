@@ -18,8 +18,14 @@ class CreateBucketGenreTable extends Migration
             $table->unsignedBigInteger('genre_id');
             $table->timestamps();
 
-            $table->foreign('bucket_id')->references('id')->on('buckets')->onDelete('cascade');
-            $table->foreign('genre_id')->references('id')->on('genres')->onDelete('cascade');
+            $table->foreign('bucket_id')
+                  ->references('id')
+                  ->on('buckets')
+                  ->onDelete('cascade');
+            $table->foreign('genre_id')
+                  ->references('id')
+                  ->on('genres')
+                  ->onDelete('cascade');
         });
     }
 
