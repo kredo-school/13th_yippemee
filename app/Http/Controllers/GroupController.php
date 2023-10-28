@@ -111,10 +111,8 @@ class GroupController extends Controller
      */
     public function destroy($id)
     {
-        $this->group->destroy($id);
-
-        // $group = $this->group->findOrFail($id);
-        // $group->forceDelete();
+        $group = $this->group->findOrFail($id);
+        $group->forceDelete();
         return redirect()->route('group_list');
     }
 }
