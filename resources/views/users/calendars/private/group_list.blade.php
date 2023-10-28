@@ -24,8 +24,8 @@
 
         @if ($groups->isNotEmpty())
             <div class="row mt-5">
-                @foreach ($groups as $group)
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                @foreach ($groups as $index => $group)
+                    <div class="col-md-3">
                         <div class="card" id="group-card">
                             <div class="card-header group-header bg-white" id="group-header">
                                 <a href="{{route('private_calendar')}}">
@@ -33,14 +33,16 @@
                                 </a>
                             </div>
                             <div class="card-body bg-white d-flex" id="group-body">
-                                <div class="group-div">
-                                    <a href="{{route('private_calendar')}}" class="text-decoration-none" style="color:#253c5c;">
-                                        <h5>{{ $group->name }}</h5>
-                                    </a>
-                                    <p><i class="fa-solid fa-location-dot" style="color: #253c5c;"></i> {{ $group->restaurant_id }}</p>
-                                </div>
-                                <div class="edit-div d-flex">
-                                    <div class="col-2 ps-5">
+                                <div class="row w-100">
+                                   <div class="col-10 group-div">
+                                        <a href="{{route('private_calendar')}}" class="text-decoration-none" style="color:#253c5c;">
+                                            <h5>{{ $group->name }}</h5>
+                                        </a>
+                                        <p><i class="fa-solid fa-location-dot ps-2" style="color: #253c5c;"></i> {{ $group->restaurant_id }}</p>
+                                    </div>
+
+
+                                    <div class="col-2 edit-div">
                                         <div class="btn-group-drop">
                                             <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                                 <i class="fa-solid fa-ellipsis-vertical fa-2x" style="color: #253c5c;"></i>
@@ -56,12 +58,14 @@
                             </div>
                         </div>
                     </div>
-
+                    @if(($index + 1) % 4 == 0)
+                        </div>
+                        <div class="row mt-3">
+                    @endif
                 @endforeach
-        @else
-
-                <h3 class="text-muted text-center">No Groups Yet.</h3>
             </div>
+        @else
+            <h3 class="text-muted text-center">No Groups Yet.</h3>
         @endif
 
 

@@ -496,9 +496,11 @@ h1{
     color: #253c5c;
     align-content: center;
     width: 50%;
+    overflow: hidden;
 }
 #group-card {
     border:none;
+    width: 250px;
 }
 #group-header {
     border-bottom: none;
@@ -515,15 +517,15 @@ h1{
     padding-right: 0%;
     padding-bottom: 0%;
     display: flex;
-    justify-content: center;
+    float: left;
 }
 .group-div {
     color: #253c5c;
     margin-top: -2%;
+    padding-left: 2rem;
 }
 .edit-div {
     padding-top: 2%;
-    margin-right: -3px;
 }
 .btn-group-drop .dropdown-toggle::after {
     display: none;
