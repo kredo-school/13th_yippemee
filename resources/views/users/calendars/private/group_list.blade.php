@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container">
+
     <div class="container my-4 margin-container bg-white">
         <div class="row grouplist-title">
             <div class="col-4 d-flex flex-column align-items-start" hidden>
@@ -66,10 +66,9 @@
         @else
             <h4 class="text-muted text-center mt-5">No Groups Yet.</h4>
         @endif
+    </div>
 
 
-
-</div>
 @include('users.modals.add_group')
 @include('users.modals.group_member')
 @include('users.modals.group_edit')
