@@ -119,10 +119,10 @@ class HomeController extends Controller
         return view('users.restaurant_lists.restaurant_detail');
     }
 
-    public function admin_contacts_index()
-    {
-        return view('admin.contacts.index');
-    }
+    // public function admin_contacts_index()
+    // {
+    //     return view('admin.contacts.index');
+    // }
 
     //admin
     public function admin_users_index()

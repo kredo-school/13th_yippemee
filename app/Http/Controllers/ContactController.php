@@ -19,6 +19,14 @@ class ContactController extends Controller
         return view('contact.user_contact');
     }
 
+     public function admin_contacts_index()
+    {
+        // $all_contacts = $this->contact->latest()->get();
+        $contacts = Contact::all();
+
+        return view('admin.contacts.index')->with('contacts',$contacts);
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -34,5 +42,14 @@ class ContactController extends Controller
         $this->contact->save();
 
         return redirect()->route('contact');
+    }
+
+    public function destroy($id)
+    {
+        $contact = $this->contact->findOrFail($id);
+
+        $this->contact->destroy($id);
+
+        return redirect()->route('admin.contacts.index');
     }
 }
