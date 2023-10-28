@@ -56,6 +56,13 @@ class GroupController extends Controller
         $this->group->image         =   'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
         $this->group->save();
 
+        // $newGroup = Group::create([
+        //     'name'        => $request->name,
+        //     'restaurant_id' => $request->restaurant_id,
+        //     'image'          => 'data:image/' . $request->image->extension() . ';base64' . base64_encode(file_get_contents($request->image)),
+        //     'member_id' => $request->member_id,
+        // ]);
+
         return redirect()->route('group_list');
     }
 
@@ -65,11 +72,12 @@ class GroupController extends Controller
      * @param  \App\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function show(Group $group)
+    public function show($id)
     {
         $group = $this->group->findOrFail($id);
 
-        return view('group_list')->with('group', $group);
+        return view('group_list')
+                ->with('group', $group);
     }
 
     /**
@@ -101,8 +109,12 @@ class GroupController extends Controller
      * @param  \App\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Group $group)
+    public function destroy($id)
     {
-        //
+        $this->group->destroy($id);
+
+        // $group = $this->group->findOrFail($id);
+        // $group->forceDelete();
+        return redirect()->route('group_list');
     }
 }

@@ -22,7 +22,6 @@
             </div>
         </div>
 
-
         @if ($groups->isNotEmpty())
             <div class="row mt-5">
                 @foreach ($groups as $group)
@@ -47,9 +46,9 @@
                                                 <i class="fa-solid fa-ellipsis-vertical fa-2x" style="color: #253c5c;"></i>
                                             </button>
                                             <ul class="dropdown-menu">
-                                                <li><button type="button" class="dropdown-item item-member" data-bs-toggle="modal" data-bs-target="#group-member">Members</button></li>
-                                                <li><button type="button" class="dropdown-item item-edit" data-bs-toggle="modal" data-bs-target="#group-edit">Edit </button></li>
-                                                <li><button type="button" class="dropdown-item item-delete" data-bs-toggle="modal" data-bs-target="#group-delete">Delete</button></li>
+                                                <button type="button" class="dropdown-item item-member" data-bs-toggle="modal" data-bs-target="#group-member">Members</button>
+                                                <button type="button" class="dropdown-item item-edit" data-bs-toggle="modal" data-bs-target="#group-edit">Edit </button>
+                                                <button type="button" class="dropdown-item item-delete" data-bs-toggle="modal" data-bs-target="#group-delete-{{ $group->id }}">Delete</button>
                                             </ul>
                                         </div>
                                     </div>
@@ -57,218 +56,16 @@
                             </div>
                         </div>
                     </div>
+
                 @endforeach
-            @else
+        @else
+
                 <h3 class="text-muted text-center">No Groups Yet.</h3>
-
-            @endif
-        </div>
-
-            {{-- <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                    <div class="card" id="group-card">
-                        <div class="card-header group-header bg-white" id="group-header">
-                            <img src="/images/people2.jpg" alt="people" class="group-pic">
-                        </div>
-                        <div class="card-body bg-white d-flex" id="group-body">
-                            <div class="group-div">
-                                <h5>Colleagues</h5>
-                                <p><i class="fa-solid fa-location-dot" style="color: #253c5c;"></i> Restaurant's name</p>
-                            </div>
-                            <div class="edit-div d-flex">
-                                <div class="col-2 ps-5">
-                                    <div class="btn-group-drop">
-                                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis-vertical fa-2x" style="color: #253c5c;"></i>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><button type="button" class="dropdown-item item-member" data-bs-toggle="modal" data-bs-target="#group-member">Members</button></li>
-                                            <li><button type="button" class="dropdown-item item-edit" data-bs-toggle="modal" data-bs-target="#group-edit">Edit </button></li>
-                                            <li><button type="button" class="dropdown-item item-delete" data-bs-toggle="modal" data-bs-target="#group-delete">Delete</button></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
+        @endif
 
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                    <div class="card" id="group-card">
-                        <div class="card-header group-header bg-white" id="group-header">
-                            <img src="/images/people3.jpg" alt="people" class="group-pic">
-                        </div>
-                        <div class="card-body bg-white d-flex" id="group-body">
-                            <div class="group-div">
-                                <h5>Dog lover</h5>
-                                <p><i class="fa-solid fa-location-dot" style="color: #253c5c;"></i> Restaurant's name</p>
-                            </div>
-                            <div class="edit-div d-flex">
-                                <div class="col-2 ps-5">
-                                    <div class="btn-group-drop">
-                                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis-vertical fa-2x" style="color: #253c5c;"></i>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><button type="button" class="dropdown-item item-member" data-bs-toggle="modal" data-bs-target="#group-member">Members</button></li>
-                                            <li><button type="button" class="dropdown-item item-edit" data-bs-toggle="modal" data-bs-target="#group-edit">Edit </button></li>
-                                            <li><button type="button" class="dropdown-item item-delete" data-bs-toggle="modal" data-bs-target="#group-delete">Delete</button></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                    <div class="card" id="group-card">
-                        <div class="card-header group-header bg-white" id="group-header">
-                            <img src="https://randomuser.me/api/portraits/med/men/65.jpg" alt="people" class="group-pic">
-                        </div>
-                        <div class="card-body bg-white d-flex" id="group-body">
-                            <div class="group-div">
-                                <h5>Boys</h5>
-                                <p><i class="fa-solid fa-location-dot" style="color: #253c5c;"></i> Restaurant's name</p>
-                            </div>
-                            <div class="edit-div d-flex">
-                                <div class="col-2 ps-5">
-                                    <div class="btn-group-drop">
-                                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis-vertical fa-2x" style="color: #253c5c;"></i>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><button type="button" class="dropdown-item item-member" data-bs-toggle="modal" data-bs-target="#group-member">Members</button></li>
-                                            <li><button type="button" class="dropdown-item item-edit" data-bs-toggle="modal" data-bs-target="#group-edit">Edit </button></li>
-                                            <li><button type="button" class="dropdown-item item-delete" data-bs-toggle="modal" data-bs-target="#group-delete">Delete</button></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            @foreach
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                    <div class="card" id="group-card">
-                        <div class="card-header group-header bg-white" id="group-header">
-                            <img src="/images/people1.jpg" alt="people" class="group-pic">
-                        </div>
-                        <div class="card-body bg-white d-flex" id="group-body">
-                            <div class="group-div">
-                                <h5>Family (group name)</h5>
-                                <p><i class="fa-solid fa-location-dot" style="color: #253c5c;"></i> Restaurant's name</p>
-                            </div>
-                            <div class="edit-div d-flex">
-                                <div class="col-2 ps-5">
-                                    <div class="btn-group-drop">
-                                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis-vertical fa-2x" style="color: #253c5c;"></i>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><button type="button" class="dropdown-item item-member" data-bs-toggle="modal" data-bs-target="#group-member">Members</button></li>
-                                            <li><button type="button" class="dropdown-item item-edit" data-bs-toggle="modal" data-bs-target="#group-edit">Edit </button></li>
-                                            <li><button type="button" class="dropdown-item item-delete" data-bs-toggle="modal" data-bs-target="#group-delete">Delete</button></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                    <div class="card" id="group-card">
-                        <div class="card-header group-header bg-white" id="group-header">
-                            <img src="/images/people2.jpg" alt="people" class="group-pic">
-                        </div>
-                        <div class="card-body bg-white d-flex" id="group-body">
-                            <div class="group-div">
-                                <h5>Colleagues</h5>
-                                <p><i class="fa-solid fa-location-dot" style="color: #253c5c;"></i> Restaurant's name</p>
-                            </div>
-                            <div class="edit-div d-flex">
-                                <div class="col-2 ps-5">
-                                    <div class="btn-group-drop">
-                                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis-vertical fa-2x" style="color: #253c5c;"></i>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><button type="button" class="dropdown-item item-member" data-bs-toggle="modal" data-bs-target="#group-member">Members</button></li>
-                                            <li><button type="button" class="dropdown-item item-edit" data-bs-toggle="modal" data-bs-target="#group-edit">Edit </button></li>
-                                            <li><button type="button" class="dropdown-item item-delete" data-bs-toggle="modal" data-bs-target="#group-delete">Delete</button></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                    <div class="card" id="group-card">
-                        <div class="card-header group-header bg-white" id="group-header">
-                            <img src="/images/people3.jpg" alt="people" class="group-pic">
-                        </div>
-                        <div class="card-body bg-white d-flex" id="group-body">
-                            <div class="group-div">
-                                <h5>Dog lover</h5>
-                                <p><i class="fa-solid fa-location-dot" style="color: #253c5c;"></i> Restaurant's name</p>
-                            </div>
-                            <div class="edit-div d-flex">
-                                <div class="col-2 ps-5">
-                                    <div class="btn-group-drop">
-                                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis-vertical fa-2x" style="color: #253c5c;"></i>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><button type="button" class="dropdown-item item-member" data-bs-toggle="modal" data-bs-target="#group-member">Members</button></li>
-                                            <li><button type="button" class="dropdown-item item-edit" data-bs-toggle="modal" data-bs-target="#group-edit">Edit </button></li>
-                                            <li><button type="button" class="dropdown-item item-delete" data-bs-toggle="modal" data-bs-target="#group-delete">Delete</button></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                    <div class="card" id="group-card">
-                        <div class="card-header group-header bg-white" id="group-header">
-                            <img src="https://randomuser.me/api/portraits/med/men/65.jpg" alt="people" class="group-pic">
-                        </div>
-                        <div class="card-body bg-white d-flex" id="group-body">
-                            <div class="group-div">
-                                <h5>Boys</h5>
-                                <p><i class="fa-solid fa-location-dot" style="color: #253c5c;"></i> Restaurant's name</p>
-                            </div>
-                            <div class="edit-div d-flex">
-                                <div class="col-2 ps-5">
-                                    <div class="btn-group-drop">
-                                        <button class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-ellipsis-vertical fa-2x" style="color: #253c5c;"></i>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><button type="button" class="dropdown-item item-member" data-bs-toggle="modal" data-bs-target="#group-member">Members</button></li>
-                                            <li><button type="button" class="dropdown-item item-edit" data-bs-toggle="modal" data-bs-target="#group-edit">Edit </button></li>
-                                            <li><button type="button" class="dropdown-item item-delete" data-bs-toggle="modal" data-bs-target="#group-delete">Delete</button></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
 </div>
 @include('users.modals.add_group')
 @include('users.modals.group_member')
