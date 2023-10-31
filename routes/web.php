@@ -10,7 +10,9 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MyPlanController;
 use App\Http\Controllers\VisitsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SocialPostController;
 use App\Http\Controllers\RestaurantController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -60,8 +62,8 @@ Route::get('/myplans/show', [MyPlanController::class, 'show'])->name('myplans.sh
 // Calendars
 Route::get('/users/calendars/private/group_list', [GroupController::class, 'group'])->name('group_list');
 Route::post('/group_list/store', [GroupController::class, 'store'])->name('group.store');
-Route::get('/users/calendars/public/calendar',[HomeController::class,'showCalendar'])->name('calendar');
-Route::get('/users/calendars/private/calendar',[HomeController::class,'showGroupCalendar'])->name('private_calendar');
+Route::get('/users/calendars/public/calendar', [HomeController::class, 'showCalendar'])->name('calendar');
+Route::get('/users/calendars/private/calendar', [HomeController::class, 'showGroupCalendar'])->name('private_calendar');
 
 
 //Restaurant list
@@ -97,15 +99,13 @@ Route::delete('/admin/contacts/{id}/destroy', [ContactController::class, 'destro
 // Route::get('/admin/contacts/index', [HomeController::class, 'admin_contacts_index'])->name('admin.contacts.index');
 
 //social
-Route::get('/social/posts/create', [HomeController::class, 'social_posts_create'])->name('social.posts.create');
-Route::get('/social/posts/edit', [HomeController::class, 'social_posts_edit'])->name('social.posts.edit');
-Route::get('/social/posts/show', [HomeController::class, 'social_posts_show'])->name('social.posts.show');
-Route::get('/social/home',  [HomeController::class, 'social_home'])->name('social.social_home');
+Route::get('/social/home',  [SocialPostController::class, 'social_home'])->name('social.social_home');
+Route::post('/social/posts/store', [SocialPostController::class, 'store'])->name('social.posts.store');
+Route::get('/social/posts/{id}/show', [SocialPostController::class, 'show'])->name('social.posts.show');
+Route::get('/social/posts/create', [SocialPostController::class, 'create'])->name('social.posts.create');
+Route::get('/social/posts/{id}/edit', [SocialPostController::class, 'edit'])->name('social.posts.edit');
+Route::patch('/social/posts/{id}/update', [SocialPostController::class, 'update'])->name('social.posts.update');
+Route::delete('/social/posts/{id}/destroy', [SocialPostController::class, 'destroy'])->name('social.posts.destroy');
 
 //friends
 Route::get('/friends/list',  [HomeController::class, 'friends_list'])->name('friends.friends_list');
-
-
-
-
-
