@@ -55,6 +55,7 @@ Route::get('/myplans/show', [MyPlanController::class, 'show'])->name('myplans.sh
 
 // Calendars
 Route::get('/users/calendars/private/group_list', [GroupController::class, 'group'])->name('group_list');
+Route::get('/group/create', [GroupController::class, 'create'])->name('group.create');
 Route::post('/group/store', [GroupController::class, 'store'])->name('group.store');
 Route::get('group/{id}/show', [GroupController::class, 'show'])->name('group.show');
 Route::delete('group/{id}/destroy', [GroupController::class,'destroy'])->name('group.destroy');

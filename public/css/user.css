@@ -499,8 +499,8 @@ h1{
     overflow: hidden;
 }
 #group-card {
-    border:none;
-    width: 250px;
+    /* border:none; */
+    width: 220px;
 }
 #group-header {
     border-bottom: none;
@@ -555,6 +555,7 @@ h1{
     padding: 0;
 }
 #add-body input {
+    background-color: white;
     border-bottom:2px solid #253c5c;
     border-right:none;
     border-left:none;

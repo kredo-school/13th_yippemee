@@ -5,7 +5,7 @@
 @section('content')
 
 
-    <div class="container my-4 margin-container bg-white">
+    <div class="container my-4 margin-container">
         <div class="row grouplist-title">
             <div class="col-4 d-flex flex-column align-items-start" hidden>
             </div>
@@ -22,9 +22,9 @@
         </div>
 
         @if ($groups->isNotEmpty())
-            <div class="row mt-5">
+            <div class="row mt-5 bg-white">
                 @foreach ($groups as $index => $group)
-                    <div class="col-md-3">
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
                         <div class="card" id="group-card">
                             <div class="card-header group-header bg-white" id="group-header">
                                 <a href="{{route('private_calendar')}}">
@@ -49,7 +49,8 @@
                                             <ul class="dropdown-menu">
                                                 <button type="button" class="dropdown-item item-member" data-bs-toggle="modal" data-bs-target="#group-member">Members</button>
                                                 <button type="button" class="dropdown-item item-edit" data-bs-toggle="modal" data-bs-target="#group-edit">Edit </button>
-                                                <button type="button" class="dropdown-item item-delete" data-bs-toggle="modal" data-bs-target="#group-delete-{{ $group->id }}">Delete</button>
+                                                <button type="button" class="dropdown-item item-delete" data-bs-toggle="modal" data-bs-target="#group-delete-{{ $group['id'] }}">Delete</button>
+
                                             </ul>
                                         </div>
                                     </div>
@@ -57,6 +58,9 @@
                             </div>
                         </div>
                     </div>
+                    @include('users.modals.group_member')
+                    @include('users.modals.group_edit')
+                    @include('users.modals.group_delete')
                     @if(($index + 1) % 4 == 0)
                         </div>
                         <div class="row mt-3">
@@ -70,7 +74,5 @@
 
 
 @include('users.modals.add_group')
-@include('users.modals.group_member')
-@include('users.modals.group_edit')
-@include('users.modals.group_delete')
+
 @endsection

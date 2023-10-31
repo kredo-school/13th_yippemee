@@ -30,7 +30,10 @@ class GroupController extends Controller
      */
     public function create()
     {
-        //
+        $all_groups = $this->group->all();
+
+        return View('users.modals.add_group')
+                ->with('all_groups', $all_groups);
     }
 
     /**
@@ -111,8 +114,17 @@ class GroupController extends Controller
      */
     public function destroy($id)
     {
-        $group = $this->group->findOrFail($id);
-        $group->forceDelete();
+        // $group = $this->group->findOrFail($id);
+        // $group->forceDelete();
+
+
+        // $group = Group::findOrFail($id);
+        // $group->delete();
+
+
+        $group = Group::find($id);
+        $group->delete();
+
         return redirect()->route('group_list');
     }
 }
