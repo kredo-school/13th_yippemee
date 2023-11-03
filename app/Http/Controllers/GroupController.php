@@ -19,7 +19,8 @@ class GroupController extends Controller
      */
     public function Group()
     {
-        return view ('users.calendars.private.group_list');
+        $groups = Group::all();
+        return view('users.calendars.private.group_list')->with('groups', $groups);
     }
 
     /**
@@ -29,7 +30,10 @@ class GroupController extends Controller
      */
     public function create()
     {
-        //
+        $all_groups = $this->group->all();
+
+        return View('users.modals.add_group')
+                ->with('all_groups', $all_groups);
     }
 
     /**
@@ -55,6 +59,13 @@ class GroupController extends Controller
         $this->group->image         =   'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
         $this->group->save();
 
+        // $newGroup = Group::create([
+        //     'name'        => $request->name,
+        //     'restaurant_id' => $request->restaurant_id,
+        //     'image'          => 'data:image/' . $request->image->extension() . ';base64' . base64_encode(file_get_contents($request->image)),
+        //     'member_id' => $request->member_id,
+        // ]);
+
         return redirect()->route('group_list');
     }
 
@@ -64,9 +75,12 @@ class GroupController extends Controller
      * @param  \App\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function show(Group $group)
+    public function show($id)
     {
-        //
+        $group = $this->group->findOrFail($id);
+
+        return view('group_list')
+                ->with('group', $group);
     }
 
     /**
@@ -98,8 +112,19 @@ class GroupController extends Controller
      * @param  \App\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Group $group)
+    public function destroy($id)
     {
-        //
+        // $group = $this->group->findOrFail($id);
+        // $group->forceDelete();
+
+
+        // $group = Group::findOrFail($id);
+        // $group->delete();
+
+
+        $group = Group::find($id);
+        $group->delete();
+
+        return redirect()->route('group_list');
     }
 }
