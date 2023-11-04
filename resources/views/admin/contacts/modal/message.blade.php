@@ -88,25 +88,29 @@ aria-hidden="true">
 </div>
 
 <script>
-    const textToBeCopied = document.querySelector('.textToBeCopied');
-const copyButton = document.querySelector('.copyButton');
+    function initializeModal(contactId) {
+        const textToBeCopied = document.querySelector(`#userMessage-${contactId} .textToBeCopied`);
+        const copyButton = document.querySelector(`#userMessage-${contactId} .copyButton`);
 
-textToBeCopied.addEventListener('blur', function() {
-  copyButton.classList.remove('active');
-  copyButton.innerHTML = "Copy";
-})
+        textToBeCopied.addEventListener('blur', function() {
+            copyButton.classList.remove('active');
+            copyButton.innerHTML = "Copy";
+        });
 
-copyButton.addEventListener('click', function() {
-  copyButton.classList.add('active');
-  textToBeCopied.focus();
-  textToBeCopied.select();
-  document.execCommand('copy');
-  if (this.innerHTML === "Copy") {
-    this.innerHTML = "Copied!";
-  }
-});
+        copyButton.addEventListener('click', function() {
+            copyButton.classList.add('active');
+            textToBeCopied.focus();
+            textToBeCopied.select();
+            document.execCommand('copy');
+            if (this.innerHTML === "Copy") {
+                this.innerHTML = "Copied!";
+            }
+        });
 
-const deleteModal = document.getElementById('deleteMessage-{{ $contact->id }}');
-deleteModal.addEventListener('hidden.bs.modal', function () {
-});
+        const deleteModal = document.getElementById(`deleteMessage-${contactId}`);
+        deleteModal.addEventListener('hidden.bs.modal', function () {
+        });
+    }
+
+    initializeModal({{ $contact->id }});
 </script>
