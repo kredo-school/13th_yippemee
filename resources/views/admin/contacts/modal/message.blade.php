@@ -1,3 +1,4 @@
+
 <!--user's message-->
 <div class="modal fade" id="userMessage-{{ $contact->id }}" tabindex="-1" role="dialog" aria-labelledby="userMessage"
 aria-hidden="true">
@@ -13,20 +14,27 @@ aria-hidden="true">
             </div>
 
 
+
             <!--Body-->
             <div class="modal-body border-0">
-                <form action="#" method="post">
+                <form>
                     <div class="w-100 mb-2">
-                        <textarea name="message" id="message" class="form-control" rows="5">{{ $contact ->message}}</textarea>
+                        <textarea name="message" id="message" class="form-control" rows="5">{{ $contact ->message }}</textarea>
                     </div>
                     <div class="mb-4">
                     <label for="message" class="col-form-label mt-3">Reply</label>
-                    <textarea name="message" id="message" class="form-control" rows="5"></textarea>
+                    <textarea name="message" id="message" class="form-control textToBeCopied" rows="5"></textarea>
                     </div>
                     <div class="d-flex justify-content-center mb-3">
                         <button type="button" class="btn btn-outline-warning me-2" data-bs-dismiss="modal">Cancel</button>
                         <button type="reset" class="btn btn-warning me-2">Reset</button>
-                        <button type="submit" class="btn btn-warning me-2">Send</button>
+                        <button type="button" class="btn btn-warning me-2 copyButton">Copy</button>
+                    </div>
+                    <div class="d-flex justify-content-center mb-1">
+                        <p class="me-5">Send by email</p>
+                    <a href="mailto:{{ $contact->user->email }}">
+                        <p>{{ $contact->user->email }}</p>
+                    </a>
                     </div>
                 </form>
             </div>
@@ -52,7 +60,7 @@ aria-hidden="true">
             <!--Body-->
             <div class="modal-body d-flex justify-content-center align-items-center flex-column">
                 <span><i class="fa-solid fa-trash-can fa-3x icon-red mb-4 "></i></span>
-                <p class="text-width">Are you sure you want to delete <strong>"{{ $contact->username }}"</strong>'s message?</p>
+                <p class="text-width">Are you sure you want to delete <strong>"{{ $contact->user->name }}"</strong>'s message?</p>
             </div>
 
             <!--Footer-->
@@ -78,3 +86,27 @@ aria-hidden="true">
     </div>
 
 </div>
+
+<script>
+    const textToBeCopied = document.querySelector('.textToBeCopied');
+const copyButton = document.querySelector('.copyButton');
+
+textToBeCopied.addEventListener('blur', function() {
+  copyButton.classList.remove('active');
+  copyButton.innerHTML = "Copy";
+})
+
+copyButton.addEventListener('click', function() {
+  copyButton.classList.add('active');
+  textToBeCopied.focus();
+  textToBeCopied.select();
+  document.execCommand('copy');
+  if (this.innerHTML === "Copy") {
+    this.innerHTML = "Copied!";
+  }
+});
+
+const deleteModal = document.getElementById('deleteMessage-{{ $contact->id }}');
+deleteModal.addEventListener('hidden.bs.modal', function () {
+});
+</script>

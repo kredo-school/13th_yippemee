@@ -64,8 +64,8 @@
 
                             <tr>
                                 <td>{{ $contact->id }}</td>
-                                <td>{{ $contact->username }}</td>
-                                <td>{{ $contact->email }}</td>
+                                <td>{{ $contact->user->name }}</td>
+                                <td>{{ $contact->user->email }}</td>
                                 <td>{{ $contact->created_at }}</td>
                                 <td class="d-flex justify-content-center">
                                     <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#userMessage-{{ $contact->id }}" title="Check"><i class="fa-solid fa-comment-dots icon-warning"></i></button>
