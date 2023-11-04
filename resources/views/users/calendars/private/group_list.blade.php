@@ -44,26 +44,41 @@
                                             <i class="fa-solid fa-ellipsis-vertical fa-2x" style="color: #253c5c;"></i>
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <button type="button" class="dropdown-item item-member" data-bs-toggle="modal" data-bs-target="#group-member">Members</button>
-                                            <button type="button" class="dropdown-item item-edit" data-bs-toggle="modal" data-bs-target="#group-edit">Edit </button>
-                                            <button type="button" class="dropdown-item item-delete" data-bs-toggle="modal" data-bs-target="#group-delete-{{ $group['id'] }}">Delete</button>
+                                            <button type="button" class="dropdown-item item-member" data-bs-toggle="modal" data-bs-target="#group-member" data-id={{ $group->restaurant_id}}>Members</button>
+                                            <button type="button" class="dropdown-item item-edit" data-bs-toggle="modal" data-bs-target="#group-edit" data-id={{ $group->restaurant_id }}>Edit </button>
+                                            <button type="button" class="dropdown-item item-delete" data-bs-toggle="modal" data-bs-target="#group-delete" data-restaurant-id={{ $group->restaurant_id }} data-image={{$group->image}}>Delete</button>
+
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    @include('users.modals.group_member')
-                    @include('users.modals.group_edit')
-                    @include('users.modals.group_delete')
                 </div>
-                @endforeach
-            </div>
+            @endforeach
         @else
-            <h4 class="text-muted text-center mt-5">No Groups Yet.</h4>
+                <h4 class="text-muted text-center mt-5">No Groups Yet.</h4>
+            </div>
         @endif
-
     </div>
-    
+
+    <script>
+    $(".item-delete").on("click", function() {
+        var myGroupId = $(this).attr('data-restaurant-id');
+        var image = $(this).attr("data-image");
+        $('.group-name').text(myGroupId);
+        $("#modal-image").attr("src", image);
+    });
+
+
+
+</script>
+
+@include('users.modals.group_member')
+@include('users.modals.group_edit')
+@include('users.modals.group_delete')
 @include('users.modals.add_group')
+
+
+
 @endsection
