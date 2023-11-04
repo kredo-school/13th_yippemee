@@ -47,4 +47,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+
+     # User has many contacts
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
+    }
 }
