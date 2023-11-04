@@ -33,8 +33,8 @@
                     {{ $visit->date }}
                 </div>
 
-                <div class="mt-0 mb-2">
-                    <i class="fa-solid fa-star"></i>{{ $visit->star_rating }}
+                <div class="mt-0 mb-2 rate">
+                    {{ $visit->star_rating }}
                 </div>
 
                 <h5><p class="d-inline fw-light">

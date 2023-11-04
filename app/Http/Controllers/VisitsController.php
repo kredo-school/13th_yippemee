@@ -57,8 +57,8 @@ class VisitsController extends Controller
     {
         $visit = $this->visit->findOrFail($id);
 
-        return view('users.visits.edit')
-            ->with('visits', $visit);
+        return view('users.visits.edit',['visit'=>$visit]);
+            // ->with('visits', $visit);
     }
 
     public function update(Request $request, $id){

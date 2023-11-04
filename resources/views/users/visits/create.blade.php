@@ -20,70 +20,33 @@
                         <input type="text" name="restaurantName" id="restaurantName" value="" class="form-control" autofocus class="form-control">
                     </div>
 
-                    <div class="mb-2">
+                    <div class="mb-4">
                         <label for="visit_date" class="form-label fw-bold mb-0 mt-3">When did you go ?</label>
                         <input type="date" name="date" id="visit_date" class="form-control" autofocus>
                     </div>
 
-                     {{-- star_rating --}}
-                     @if(!empty($visit->star_rating))
-                                <div class="container">
-                                    <div class="row">
-                                       <div class="col mt-4">
-                                             <p class="font-weight-bold ">Review</p>
-                                             <div class="form-group row">
-                                                {{-- <input type="hidden" name="visit_id" value="{{ $visit->id }}"> --}}
-                                                <div class="col">
-                                                   <div class="rated">
-                                                    @for($i=1; $i<=$visit->star_rating; $i++)
-                                                      {{-- <input type="radio" id="star{{$i}}" class="rate" name="rating" value="5"/> --}}
-                                                      <label class="star-rating-complete" title="text">{{$i}} stars</label>
-                                                    @endfor
-                                                    </div>
-                                                </div>
-                                             </div>
-                                             <div class="form-group row mt-4">
-                                                <div class="col">
-                                                    <p>{{ $visit->comments }}</p>
-                                                </div>
-                                             </div>
-                                       </div>
+                    <div class="mb-2">
+                        <div class="row">
+                            @csrf
+                            <p class="font-weight-bold ">Review</p>
+                            <div class="form-group row">
+                                <div class="col">
+                                    <div class="rate">
+                                        <input type="radio" id="star5" class="rate" name=" star_rating" value="5"/>
+                                        <label for="star5" title="text">5 stars</label>
+                                        <input type="radio" checked id="star4" class="rate" name=" star_rating" value="4"/>
+                                        <label for="star4" title="text">4 stars</label>
+                                        <input type="radio" id="star3" class="rate" name=" star_rating" value="3"/>
+                                        <label for="star3" title="text">3 stars</label>
+                                        <input type="radio" id="star2" class="rate" name=" star_rating" value="2">
+                                        <label for="star2" title="text">2 stars</label>
+                                        <input type="radio" id="star1" class="rate" name=" star_rating" value="1"/>
+                                        <label for="star1" title="text">1 star</label>
                                     </div>
-                                 </div>
-                                @else
-                                <div class="container">
-                                    <div class="row">
-                                       <div class="col mt-4">
-                                          {{-- <form class="py-2 px-4" action="/visits/store" style="box-shadow: 0 0 10px 0 #ddd;" method="POST" autocomplete="off"> --}}
-                                             @csrf
-                                             <p class="font-weight-bold ">Review</p>
-                                             <div class="form-group row">
-                                                {{-- <input type="hidden" name="visit->id"> --}}
-                                                <div class="col">
-                                                   <div class="rate">
-                                                      <input type="radio" id="star5" class="rate" name=" star_rating" value="5"/>
-                                                      <label for="star5" title="text">5 stars</label>
-                                                      <input type="radio" checked id="star4" class="rate" name=" star_rating" value="4"/>
-                                                      <label for="star4" title="text">4 stars</label>
-                                                      <input type="radio" id="star3" class="rate" name=" star_rating" value="3"/>
-                                                      <label for="star3" title="text">3 stars</label>
-                                                      <input type="radio" id="star2" class="rate" name=" star_rating" value="2">
-                                                      <label for="star2" title="text">2 stars</label>
-                                                      <input type="radio" id="star1" class="rate" name=" star_rating" value="1"/>
-                                                      <label for="star1" title="text">1 star</label>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             {{-- <div class="mt-3 text-right">
-                                                <button class="btn btn-sm py-2 px-3 btn-info">Submit
-                                                </button>
-                                             </div>
-                                          </form> --}}
-                                       </div>
-                                    </div>
-                                 </div>
-                                 @endif
-
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="mb-2">
                         <label for="url" class="form-label fw-bold mb-0 mt-3">Web Site</label>
@@ -108,7 +71,6 @@
     </div>
 </div>
 @endsection
-
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

@@ -1,7 +1,7 @@
 <div class="col-9">
     <div class="row">
         @forelse ($all_buckets as $bucket)
-        <div class="col-2 mt-3 mb-2">
+        <div class="col-4 mt-3 mb-2">
             <div class="card" style="width: 18rem; text-align: left" >
             <img src="{{ $bucket->image }}" alt="{{ $bucket->id }}" class="img-size-bucket">
                 <div class="card-body card-body-visit">
