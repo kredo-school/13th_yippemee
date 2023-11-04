@@ -43,28 +43,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row align-items-center">
-                                <div class="col text-start">
-                                    <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-heart"></i></button>
-                                    <button type="submit" class="btn btn-lg shadow-none ps-0"><i class="fa-solid fa-utensils"></i></button>
-                                </div>
-                                <div class="col text-end">
-                                    <div class="dropdown">
-                                        <button class="btn btn-sm shadow-none" data-bs-toggle="dropdown">
-                                            <i class="fa-solid fa-ellipsis"></i>
-                                        </button>
-                        
-                                        <div class="dropdown-menu">
-                                            <a href="{{ route('social.posts.edit', $social_post->id) }}" class="dropdown-item">
-                                                <i class="fa-solid fa-pen-to-square text-post"></i> Edit
-                                            </a>
-                                            <button class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#delete-post-{{ $social_post->id }}">
-                                                <i class="fa-solid fa-trash-can"></i> Delete
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                            @include('social.contents.likebutton', ['social_post' => $social_post])
+                            
                             <div class="row">
                                 <div class="col text-start">
                                     {{ $social_post->description }}
