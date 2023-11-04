@@ -4,12 +4,19 @@
     
 @section('content')
 
-<div class="container show-post">
+<div class="row my-4">
+    <div class="col page-title">
+        <h2 class="text-center">Show Post</h2>
+        <span class="bar bar-short mt-4"></span>
+    </div>
+</div>
+
+<div class="container show-post">  
     <div class="row justify-content-center">
         <div class="col-9">
             <div class="row border shodow">
                 <div class="col p-0">
-                    <img src="{{ asset('img/italianfood.png') }}" alt="italianfood" class="w-100">
+                    <img src="{{ $social_post->image }}" alt="{{ $social_post->image }}"  class="w-100">
                 </div>
 
                 <div class="col-4 bg-white post">
@@ -17,7 +24,7 @@
                         <div class="card-header bg-white py-2">
                             <div class="row align-items-center">
                                 <div class="col text-start">
-                                    <i class="fa-solid fa-circle-user"></i> <a href="#" class="text-decoration-none text-post"><strong>Mary Johnson</strong></a>
+                                    <i class="fa-solid fa-circle-user"></i> <a href="#" class="text-decoration-none text-post"><strong>{{ $social_post->user->name }}</strong></a>
                                 </div>
                                 <div class="col-auto text-end"><i class="fa-solid fa-users text-success"></i></div>
                             </div>
@@ -27,7 +34,7 @@
                                 <div class="col text-start text-secondary small" style="opacity: 0.6;">
                                     <strong>at: </strong>
                                     &nbsp;
-                                    <a href="#" class="text-decoration-none text-post">Kitchin ABC</a>
+                                    <a href="#" class="text-decoration-none text-post">{{ $social_post->restaurant_name }}</a>
                                 </div>
                         
                                 <div class="col-auto ms-auto">
@@ -48,10 +55,10 @@
                                         </button>
                         
                                         <div class="dropdown-menu">
-                                            <a href="{{ route('social.posts.edit') }}" class="dropdown-item">
+                                            <a href="{{ route('social.posts.edit', $social_post->id) }}" class="dropdown-item">
                                                 <i class="fa-solid fa-pen-to-square text-post"></i> Edit
                                             </a>
-                                            <button class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#delete-post">
+                                            <button class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#delete-post-{{ $social_post->id }}">
                                                 <i class="fa-solid fa-trash-can"></i> Delete
                                             </button>
                                         </div>
@@ -60,7 +67,7 @@
                             </div>
                             <div class="row">
                                 <div class="col text-start">
-                                    I ate this pizza. It's delisiou!
+                                    {{ $social_post->description }}
                                 </div>
                             </div>
                             <div class="row align-items-center">
@@ -98,7 +105,7 @@
 
 </div>
 
-<div class="modal fade" id="delete-post" tabindex="-1" role="dialog" aria-labelledby="delete-post" aria-hidden="true">
+<div class="modal fade" id="delete-post-{{ $social_post->id }}" tabindex="-1" role="dialog" aria-labelledby="delete-post" aria-hidden="true">
     
     <div class="modal-dialog">
         <!--Content-->
@@ -119,15 +126,17 @@
                 </div>
 
                 <div class="row pt-3 pr-2 d-flex flex-column align-items-center">
-                    <p><img src="{{ asset('img/pizza.jpg') }}" alt="pizza" class="d-block mx-auto delete-post-img"></p>
-                    <p class=" text-muted">description.......................</p>
+                    <p><img src="{{ $social_post->image }}" alt="{{ $social_post->image }}" class="delete-post-img img-fluid"></p>
+                    <p class=" text-muted">{{ $social_post->description }}</p>
                 </div>
 
             </div>
 
             <!--Footer-->
             <div class="modal-footer d-flex justify-content-center border-0"> 
-                <form action="#" method="post">
+                <form action="{{ route('social.posts.destroy', $social_post->id) }}" method="post">
+                    @csrf
+                    @method('DELETE')
                     <button type="submit" class="btn btn-danger btn-lg">Delete</button>
                     <button type="button" class="btn btn-outline-danger btn-lg" data-bs-dismiss="modal">Cancel</button>
                 </form>
