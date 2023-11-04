@@ -89,9 +89,12 @@ class GroupController extends Controller
      * @param  \App\Models\Group  $group
      * @return \Illuminate\Http\Response
      */
-    public function edit(Group $group)
+    public function edit($id)
     {
-        //
+        $group = $this->group->findOrFail($id);
+
+        return view('group_list')
+                ->with('group', $group);
     }
 
     /**
@@ -103,7 +106,24 @@ class GroupController extends Controller
      */
     public function update(Request $request, Group $group)
     {
-        //
+       $request->validate([
+            'name'          =>  'required|min:1|max:30',
+            // restaurant/member_id will be array later
+            'restaurant_id' =>  'required|min:1|max:30',
+            'member_id'     =>  'required|min:1|max:30',
+            'image'         =>  'required|mimes:jpeg,jpg,png,gif|max:1048'
+        ]);
+
+        $group->name            =   $request->name;
+        $group->restaurant_id   =   $request->restaurant_id;
+        $group->member_id       =   $request->member_id;
+
+        if($request->image){
+            $group->image       =   'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));        }
+
+        $group->save();
+
+        return redirect()->route('group.show', $group->id);
     }
 
     /**

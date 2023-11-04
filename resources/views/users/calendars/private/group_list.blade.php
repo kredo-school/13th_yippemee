@@ -46,7 +46,7 @@
                                         <ul class="dropdown-menu">
                                             <button type="button" class="dropdown-item item-member" data-bs-toggle="modal" data-bs-target="#group-member" data-id={{ $group->restaurant_id}}>Members</button>
                                             <button type="button" class="dropdown-item item-edit" data-bs-toggle="modal" data-bs-target="#group-edit" data-id={{ $group->restaurant_id }}>Edit </button>
-                                            <button type="button" class="dropdown-item item-delete" data-bs-toggle="modal" data-bs-target="#group-delete" data-restaurant-id={{ $group->restaurant_id }} data-image={{$group->image}}>Delete</button>
+                                            <button type="button" class="dropdown-item item-delete" data-bs-toggle="modal" data-bs-target="#group-delete" data-group-name={{ $group->name }} data-image={{$group->image}}>Delete</button>
 
                                         </ul>
                                     </div>
@@ -64,7 +64,7 @@
 
     <script>
     $(".item-delete").on("click", function() {
-        var myGroupId = $(this).attr('data-restaurant-id');
+        var myGroupId = $(this).attr('data-group-name');
         var image = $(this).attr("data-image");
         $('.group-name').text(myGroupId);
         $("#modal-image").attr("src", image);

@@ -8,22 +8,69 @@
             </div>
             <div class="modal-body edit-body">
                 <form action="#" method="post" enctype="multipart/form-data">
+                    @csrf
+                    @method('PATCH')
+
                     <div class="row" id="form-group">
-                        <div class="col-5" id="form-group-left">
-                            <label for="fileToUpload">
-                                <div class="profile-pic-edit" style="background-image: url('https://randomuser.me/api/portraits/med/men/65.jpg')">
-                                    <i class="fa-solid fa-camera"></i>
-                                    <span>Edit Image</span>
+                        <div class="col-5" id="form-group-left" style="position: relative;">
+
+                            <div class="group-image-upload">
+                                <div class="image-edit">
+                                    <input type="file" id="imageUpload">
+                                    <label for="imageUpload" class="justify-content-center text-center">
+                                        <i class="fa-solid fa-camera"></i>
+                                    </label>
                                 </div>
+
+                                <div class="image-preview">
+                                    <div id="imagePreview" style="background-image: url('/images/user-icon.png');">
+                                        {{-- @if ($group->image)  !!!!!!!!!!!!!!! I commented threads 4th November
+                                            <img id="pre-image" src="{{ $group->image }}" alt="{{ $group->name }}" class="img-thumbnail rounded-circle" style="border:1px solid red;">
+                                        @else
+                                            <img id="pre-image" src="url('images/user-icon.png')" alt="group-pic">
+                                        @endif --}}
+                                    </div>
+                                </div>
+                            </div>
+                            <script>
+                                function readURL(input) {
+                                    if (input.files && input.files[0]) {
+                                        var reader = new FileReader();
+                                        reader.onload = function(e) {
+                                            $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+                                            $('#imagePreview').hide();
+                                            $('#imagePreview').fadeIn(650);
+                                        }
+                                        reader.readAsDataURL(input.files[0]);
+                                    }
+                                }
+                                $("#imageUpload").change(function() {
+                                    readURL(this);
+                                });
+                            </script>
+
+                            {{-- previous input file --}}
+                            {{-- <label for="fileToUpload" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto;">
+                                <img src="{{ $group->image }}" alt="{{ $group->name }}" class="img-thumbnail">
                             </label>
+                            <div class="profile-pic-edit img-thumbnail rounded-circle" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto;">
+                                <i class="fa-solid fa-camera"></i>
+                                <span>Edit Image</span>
+                            </div>
                             <input type="file" name="fileToUpload" id="fileToUpload">
+                            <script>
+                                document.querySelector('.profile-pic-edit').addEventListener('click', function() {
+                                    document.getElementById('fileToUpload').click();
+                                });
+                            </script> --}}
+
                         </div>
                         <div class="col-6 mt-3" id="form-group-right">
                             <label for="name"></label>
-                            <input type="text" placeholder="Name"  require>
+                            <input type="text" value="{{ old('name', $group->name) }}">
                             <br>
                             <label for="restaurant"></label>
-                            <input type="text" placeholder="Restaurant">
+                            <input type="text" value="{{ old('restaurant_id', $group->restaurant_id) }}">
                             <br>
                         </div>
                     </div>
