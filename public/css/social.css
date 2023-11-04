@@ -174,3 +174,9 @@ div.bg-genre {
     object-fit: contain;  
     max-width: 100%; 
 }
+
+.heart-button {
+    background: none;
+    border: none;
+    padding: 0;
+}
