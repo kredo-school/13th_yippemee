@@ -60,6 +60,14 @@
             </div>
         </div>
 
+        <label for="price">Price</label>
+
+            <select name="price" id="price" class="form-control">
+                <option value="$">$</option>
+                <option value="$$">$$</option>
+                <option value="$$$">$$$</option>          
+            </select>
+
         <label for="url" class="mt-3">URL</label>
         <input type="text" name="url" class="form-control ">
         <label for="url" class="mt-3">Google map URL</label>

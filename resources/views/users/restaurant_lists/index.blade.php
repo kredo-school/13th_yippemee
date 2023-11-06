@@ -12,7 +12,7 @@
     </div>
   
     <form action="" >
-    <div class="row  mt-4  w-50 mx-auto" >      
+    <div class="row  mt-4  w-50 mx-auto text-center" >      
             <div class="col ">
                 <input type="text" name="serch" id="serch" class="form-control " > 
                 

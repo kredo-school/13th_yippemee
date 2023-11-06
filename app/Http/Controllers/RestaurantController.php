@@ -9,8 +9,7 @@ use App\Models\Restaurant;
 
 class RestaurantController extends Controller
 {
-    //
-
+    
     private $restaurant;
 
     public function __construct(Restaurant $restaurant){
@@ -47,6 +46,7 @@ class RestaurantController extends Controller
             'saturday'=>'min:1|max:100',
             'sunday'=>'min:1|max:100',
             'url'=>'min:1|max:100',
+            'price'=>'required',
             'googlemap'=>'min:1|max:100',
         ]);
 
@@ -64,6 +64,7 @@ class RestaurantController extends Controller
             $this->restaurant->saturday = $request->saturday;
             $this->restaurant->sunday = $request->sunday;
             $this->restaurant->url = $request->url;
+            $this->restaurant->price = $request->price;
             $this->restaurant->googlemap = $request->googlemap;
 
             $this->restaurant->save( );
@@ -78,6 +79,27 @@ class RestaurantController extends Controller
         
         return view('users.restaurant_lists.genre.japanese')->with('restaurants', $restaurants);
     }
+
+    public function detail($id)
+    {
+        $restaurant = Restaurant::find($id);
+        return view('users.restaurant_lists.restaurant_detail' , ['restaurant' => $restaurant]);
+    }
+
+    public function  restaurantcomment($id)
+    {
+        $restaurant = Restaurant::find($id);
+        return view('users.restaurant_lists.comment', ['restaurant' => $restaurant]);
+    }
+
+    public function postcomment($id ){
+        $restaurant = Restaurant::find($id);
+        return view('users.restaurant_lists.commentform', ['restaurant' => $restaurant]);
+    }
+
+
+
+
     public function genreitalian()
     {
         return view('users.restaurant_lists.genre.italian');
@@ -103,9 +125,10 @@ class RestaurantController extends Controller
         return view('users.restaurant_lists.area.more');
     }
 
-    public function  restaurantcomment()
-    {
-        return view('users.restaurant_lists.comment');
-    }
+    
+
+  
+
+    
 
 }

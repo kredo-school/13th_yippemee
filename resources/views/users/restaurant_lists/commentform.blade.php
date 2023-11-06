@@ -8,7 +8,8 @@
     <h2 class="text-center mt-5">Review restuarnt</h2>
     <hr class="w-25 mx-auto mb-5">
    
-    <form action="#" method="post" enctype="multipart/form-data"> 
+    <form action="{{ route('comment.store', $restaurant->id) }}" method="POST" enctype="multipart/form-data"> 
+    @csrf
         <div class="rate-form mx-auto justify-content-center">
             <input id="star5" type="radio" name="rate" value="5">
             <label for="star5">★</label>
@@ -22,9 +23,9 @@
             <label for="star1">★</label>
         </div>
         <label for="title">Title</label>
-        <input type="text" class="form-control mt-1" required>
-        <label for="description" class="mt-3">Description</label>
-        <textarea name="description" id="description" rows="3" class = "form-control" plcaeholder="Please write a your experience or impression"></textarea>
+        <input type="text" name="title" class="form-control mt-1" required>
+        <label for="body" class="mt-3">Comment</label>
+        <textarea name="body{{ $restaurant->id }}" id="body" rows="3" class="form-control" placeholder="Please write a your experience or impression"></textarea>
        
         <label for="image" class=" mt-3 ">Image</label>
         <input type="file" name="image" id="image" class="form-control" aria-describedby="image-info">
@@ -37,17 +38,13 @@
     <div>
     <label for="price" class=" mt-3 ">Price</label>
     <br>
-    <div class="form-check form-check-inline mt-3">
-        <input class="form-check-input" type="radio" id="inline_checkbox_1"  checked>
-        <label class="form-check-label" for="inline_checkbox_1">$</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" id="inline_checkbox_2">
-        <label class="form-check-label" for="inline_checkbox_2">$$</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" id="inline_checkbox_2">
-        <label class="form-check-label" for="inline_checkbox_2">$$$</label>
+    
+
+            <select name="price" id="price" class="form-control">
+                <option value="$">$</option>
+                <option value="$$">$$</option>
+                <option value="$$$">$$$</option>          
+            </select>
     </div>
 </div>
 
