@@ -1,5 +1,5 @@
 
-<div class="modal fade" id="add-group" aria-hidden="true">
+<div class="modal fade" id="add-group">
     <div class="modal-dialog">
         <div class="modal-content" id="add-content">
             <div class="modal-header add-header">
@@ -16,41 +16,48 @@
                 </div>
             </div>
 
-
-            <div class="modal-body" id="add-body">
-                <form action="#" method="post" enctype="multipart/form-data">
+            <form action="{{ route('group.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="modal-body" id="add-body">
                     <div class="row" id="form-group">
                         <div class="col-5" id="form-group-left">
-                            <label for="fileToUpload">
+                            <label for="image">
                                 <div class="profile-pic">
-                                    
                                     <i class="fa-solid fa-camera"></i>
                                     <span>Add Image</span>
                                 </div>
                             </label>
-                            <input type="file" name="fileToUpload" id="fileToUpload">
+                            <input type="file" name="image" id="uploadImage" class="form-control" aria-describedby="image-info">
+                            <script>
+                                // If not already using jQuery or similar, this is plain JavaScript to trigger the file input when the label is clicked
+                                document.querySelector('.profile-pic').addEventListener('click', function() {
+                                    document.getElementById('uploadImage').click();
+                                });
+                                // document.query... finds ('class name') .addEvent...('action name'){
+                                    //occurs function() to document.getElement...('id name');
+                            </script>
                         </div>
                         <div class="col-6" id="form-group-right">
-                            <label for="name"></label>
-                            <input type="text" placeholder="Name"  require>
+                            <label for="name" class="form-label"></label>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Name">
                             <br>
-                            <label for="restaurant"></label>
-                            <input type="text" placeholder="Restaurant">
+                            <label for="restaurant_id" class="form-label"></label>
+                            <input type="text" name="restaurant_id" id="restaurant_id" class="form-control" placeholder="Restaurant">
                             <br>
-                            <label for="members" require></label>
-                            <input type="text" placeholder="Members">
+                            <label for="member_id" class="form-label"></label>
+                            <input type="text" name="member_id" id="member_id" class="form-control" placeholder="Members">
                         </div>
                     </div>
-                </form>
-            </div>
-
-            <div class="modal-footer border-0">
-                <a href="#" class="btn btn-create">Create</a>
-            </div>
-
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="submit" class="btn btn-create">Create</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
+
 
 
 

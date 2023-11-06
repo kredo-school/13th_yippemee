@@ -12,7 +12,19 @@
         </div>
     </div>
 
-    <form action="#" method="post" enctype="multipart/form-data">
+    @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <form action="{{ route('social.posts.store') }}" method="post" enctype="multipart/form-data">
+        @csrf
+
     
         <div class="row">
             <div class="mb-3  text-start">
@@ -37,7 +49,7 @@
                         <label for="genre_others" class="form-check-label me-0">Others</label>
                     </div>
                     <div class="form-check form-check-inline d-flex align-items-center">
-                        <input type="text" name="genre" id="genre_others_text" class="form-control" value="" autofocus>
+                        <input type="text" name="genre_add" id="genre_others_text" class="form-control" value="" autofocus>
                         <button type="submit" class="btn text-white" style="background-color: #253C5C;"><i class="fa-solid fa-plus"></i></button>
                     </div>
                 </div>
@@ -47,7 +59,7 @@
         <div class="row">
             <div class="mb-3  text-start">
                 <label for="description" class="form-label d-block fw-bold">
-                    description
+                    Description
                 </label>
                 <textarea name="description" id="description" rows="3" class="form-control"></textarea>
             </div>
@@ -55,17 +67,17 @@
 
         <div class="row">
             <div class="mb-3  text-start">
-                <label for="restrante_name" class="form-label d-block fw-bold">
-                    restrante name
+                <label for="restaurant_name" class="form-label d-block fw-bold">
+                    restaurant name
                 </label>
-                <input type="text" name="restrante_name" id="restrante_name" class="form-control">
+                <input type="text" name="restaurant_name" id="restaurant_name" class="form-control">
             </div>
         </div>
 
         <div class="row">
             <div class="mb-3">
                 <label for="image" class="form-label text-start d-block fw-bold">Image</label>
-                <input type="file" name="post_image" id="post_image" class="form-control w-50">
+                <input type="file" name="image" class="form-control w-50">
             </div>
         </div>              
 
@@ -73,7 +85,5 @@
 
     </form>        
 </div>
-
-    
 
 @endsection

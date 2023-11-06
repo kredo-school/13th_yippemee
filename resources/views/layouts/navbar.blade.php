@@ -62,8 +62,10 @@
                         <i class="fa-solid fa-circle-user fa-2xl"></i>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          @if (Auth::user()->role_id === 1)
                         <li><a class="dropdown-item" href="{{ route('admin.users.index') }}">Admin</a></li>
                         <li><hr class="dropdown-divider"></li>
+                        @endif
                         <li><a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
