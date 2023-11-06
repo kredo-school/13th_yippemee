@@ -27,6 +27,18 @@ class SocialPost extends Model
     {
         return $this->likes()->where('user_id', Auth::user()->id)->exists();
     }
+
+    # A social_post has many wants
+    public function wants()
+    {
+        return $this->hasMany(Want::class);
+    }
+
+    # return true if the post is already wanted
+    public function iswanted()
+    {
+        return $this->wants()->where('user_id', Auth::user()->id)->exists();
+    }
 }
 
 

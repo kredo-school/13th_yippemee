@@ -21,7 +21,7 @@
 
     <div class="card-body body-padding">
 
-        @include('social.contents.likebutton', ['social_post' => $social_post])
+        @include('social.contents.button', ['social_post' => $social_post])
     
         <div class="row align-items-center">
             <div class="col text-start">

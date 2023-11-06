@@ -44,7 +44,7 @@
                                 </div>
                             </div>
 
-                            @include('social.contents.likebutton', ['social_post' => $social_post])
+                            @include('social.contents.button', ['social_post' => $social_post])
                             
                             <div class="row">
                                 <div class="col text-start">
