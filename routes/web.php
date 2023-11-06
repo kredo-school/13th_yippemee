@@ -9,6 +9,7 @@ use App\Http\Controllers\MyPlanController;
 use App\Http\Controllers\VisitsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\ListCommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,15 +63,16 @@ Route::get('/users/calendars/private/calendar',[HomeController::class,'showGroup
 Route::get('/restaurantlist', [RestaurantController::class, 'restaurantlist'])->name('restaurantlist');
 Route::post('/restaurantlist/store', [RestaurantController::class, 'store'])->name('restaurant.store');
 Route::get('/restaurantlist/post', [RestaurantController::class, 'restaurantpost'])->name('restaurantpost');
-Route::get('/genre/japanese', [RestaurantController::class, 'genrejapanese'])->name('genrejapanese');
+Route::get('/genre/japanese/', [RestaurantController::class, 'genrejapanese'])->name('genrejapanese');
 Route::get('/genre/italian', [RestaurantController::class, 'genreitalian'])->name('genreitalian');
 Route::get('/genre/chinese', [RestaurantController::class, 'genrechinese'])->name('genrechinese');
 Route::get('/genrecafe/{id}', [RestaurantController::class, 'genrecafe'])->name('genrecafe');
 Route::get('/genre/more', [RestaurantController::class, 'genremore'])->name('genremore');
 Route::get('/area/more', [RestaurantController::class, 'areamore'])->name('areamore');
-Route::get('/restaurant/detail', [RestaurantController::class, 'detail'])->name('detail');
-Route::get('/restaurant/comment', [RestaurantController::class, 'restaurantcomment'])->name('restaurantcomment');
-Route::get('/restaurant/comment/form', [RestaurantController::class, 'postcomment'])->name('postcomment');
+Route::get('/restaurant/detail/{id}', [RestaurantController::class, 'detail'])->name('detail');
+Route::get('/restaurant/comment/{id}', [RestaurantController::class, 'restaurantcomment'])->name('restaurantcomment');
+Route::get('/restaurant/comment/form/{id}', [RestaurantController::class, 'postcomment'])->name('postcomment');
+Route::post('/restaurant/comment/form/store/{restaurant_id}', [ListCommentController::class, 'commentstore'])->name('comment.store');
 
 
 Route::get('/myschedule', [HomeController::class, 'myschedule'])->name('myschedule');

@@ -79,10 +79,7 @@ class HomeController extends Controller
    
 
 
-    public function detail()
-    {
-        return view('users.restaurant_lists.restaurant_detail');
-    }
+ 
 
     public function contact()
     {
