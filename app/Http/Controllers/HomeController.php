@@ -49,6 +49,7 @@ class HomeController extends Controller
     {
         return view('users.calendars.private.calendar');
     }
+
     // end of calendar pages
 
     public function myschedule()
@@ -56,7 +57,7 @@ class HomeController extends Controller
         return view('users.myschadule');
     }
 
-  
+
 
     public function privateyourplan()
     {
@@ -68,24 +69,59 @@ class HomeController extends Controller
         return view('users.public.yourplan');
     }
 
-    
+
+    public function restaurantlist()
+    {
+        return view('users.restaurant_lists.index');
+    }
+
+    public function  restaurantpost()
+    {
+        return view('users.restaurant_lists.post_restaurant');
+    }
+
+
+
+    public function genrejapanese()
+    {
+        return view('users.restaurant_lists.genre.japanese');
+    }
+    public function genreitalian()
+    {
+        return view('users.restaurant_lists.genre.italian');
+    }
+    public function genrechinese()
+    {
+        return view('users.restaurant_lists.genre.chinese');
+    }
+    public function genrecafe()
+    {
+        return view('users.restaurant_lists.genre.cafe');
+    }
+
+    public function genremore()
+    {
+        return view('users.restaurant_lists.genre.more');
+    }
+
+    public function areamore()
+    {
+        return view('users.restaurant_lists.area.more');
+    }
+
+
+
 
     public function  postcomment()
     {
         return view('users.restaurant_lists.commentform');
     }
 
-  
-   
+
+
 
 
  
-
-    public function contact()
-    {
-        return view('contact.user_contact');
-    }
-
 
     public function admin_contacts_index()
     {
