@@ -1,9 +1,9 @@
 <div class="col-9">
     <div class="row">
         @forelse ($all_buckets as $bucket)
-        <div class="col-3 mt-3 mb-2 box-1">
+        <div class="col-4 mt-3 mb-2">
             <div class="card" style="width: 18rem; text-align: left" >
-            <img src="{{ $bucket->image }}" alt="{{ $bucket->id }}">
+            <img src="{{ $bucket->image }}" alt="{{ $bucket->id }}" class="img-size-bucket">
                 <div class="card-body card-body-visit">
                      <div class="container row container-text-bucket">
                         <div class="col-10">
@@ -45,7 +45,7 @@
         </div>
         @empty
         <div class="text-center">
-            <h2>Make your Bucket Lists</h2>
+            <h2>Make your Bucket List</h2>
         </div>
         @endforelse
     </div>

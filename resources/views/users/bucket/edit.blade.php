@@ -17,7 +17,7 @@
                 <div class="me-5">
                     <div class="mb-2">
                         <label for="restaurantName" class="form-label fw-bold mb-0 mt-3">restaurant Name</label>
-                        <input type="text" name="restaurantName" id="restaurantName" value="{{ old('restaurantName', $bucket->restaurantName) }}" class="form-control" autofocus class="form-control">
+                        <input type="text" name="restaurantName" id="restaurantName" value="{{ old('restaurantName', $bucket->restaurantName) }}" class="form-control" autofocus>
                         @error('restaurantName')
                         <div class="text-danger small">{{ $message }}</div>
                         @enderror
@@ -42,18 +42,18 @@
 
                     <div class="mb-2">
                         <label for="hoursOption" class="form-label fw-bold mb-0 mt-3">Hours of operation</label>
-                        <input type="text" name="hoursOption" id="hoursOption" value="{{ old('hoursOption', $bucket->hoursOption) }}" class="form-control" autofocus class="form-control">
+                        <input type="text" name="hoursOption" id="hoursOption" value="{{ old('hoursOption', $bucket->hoursOption) }}" class="form-control" autofocus>
                     </div>
 
                     <div class="mb-2">
                         <label for="url" class="form-label fw-bold mb-0 mt-3">Web Site</label>
-                        <input type="url" name="url" id="url" value="{{ old('url', $bucket->url) }}" class="form-control" autofocus class="form-control">
+                        <input type="url" name="url" id="url" value="{{ old('url', $bucket->url) }}" class="form-control" autofocus>
                     </div>
 
                     <div class="row mb-2">
                         <div class="col-6">
                         <label for="image" class="form-label fw-bold">Image</label>
-                        <img src="{{ $bucket->image }}" alt="bucket id {{ $bucket->id }}" class="img-thumbnail w-100">
+                        <img src="{{ $bucket->image }}" alt="{{ $bucket->id }}" class="img-thumbnail w-100">
                         <input type="file" name="image" id="image" class="form-control" aria-description="image-info">
                         </div>
                         @error('image')
