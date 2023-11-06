@@ -6,11 +6,11 @@
                     <h1 class="mt-2 ms-3"><i class="fa-regular fa-pen-to-square"></i> Edit the group</h1>
                 </div>
             </div>
-            <div class="modal-body edit-body">
-                <form action="#" method="post" enctype="multipart/form-data">
-                    @csrf
-                    @method('PATCH')
+            <form action="{{route('group.update', $group->id)}}" method="post" enctype="multipart/form-data">
+                @csrf
+                @method('PATCH')
 
+                <div class="modal-body edit-body">
                     <div class="row" id="form-group">
                         <div class="col-5" id="form-group-left" style="position: relative;">
 
@@ -23,13 +23,23 @@
                                 </div>
 
                                 <div class="image-preview">
-                                    <div id="imagePreview" style="background-image: url('/images/user-icon.png');">
-                                        {{-- @if ($group->image)  !!!!!!!!!!!!!!! I commented threads 4th November
-                                            <img id="pre-image" src="{{ $group->image }}" alt="{{ $group->name }}" class="img-thumbnail rounded-circle" style="border:1px solid red;">
-                                        @else
-                                            <img id="pre-image" src="url('images/user-icon.png')" alt="group-pic">
-                                        @endif --}}
-                                    </div>
+
+                                    {{-- First Image --}}
+
+                                    @if ($group->image)
+                                        <img id="imageBackground" src="{{ $group->image }}" alt="{{ $group->name }}" class="rounded-circle">
+                                    @else
+                                        <img id="imageBackground" src="url('images/user-icon.png')" alt="group-image">
+                                    @endif
+
+                                    {{--Uploaded Image --}}
+
+                                    @if ($group->image)
+                                        <div id="imagePreview" style="background-image: url('{{asset($group->image)}}');"></div>
+                                    @endif
+
+
+
                                 </div>
                             </div>
                             <script>
@@ -38,7 +48,7 @@
                                         var reader = new FileReader();
                                         reader.onload = function(e) {
                                             $('#imagePreview').css('background-image', 'url('+e.target.result +')');
-                                            $('#imagePreview').hide();
+                                            $('#imageBackground').hide(); {{--Changed id from imagePreview to imageBackground to hide the first image --}}
                                             $('#imagePreview').fadeIn(650);
                                         }
                                         reader.readAsDataURL(input.files[0]);
@@ -67,21 +77,21 @@
                         </div>
                         <div class="col-6 mt-3" id="form-group-right">
                             <label for="name"></label>
-                            <input type="text" value="{{ old('name', $group->name) }}">
+                            <input class="group-name" type="text" placeholder="Current name: {{ $group->name }}">
                             <br>
                             <label for="restaurant"></label>
-                            <input type="text" value="{{ old('restaurant_id', $group->restaurant_id) }}">
+                            <input class="restaurant-id" type="text" placeholder="Current restaurant: {{ $group->restaurant_id }}">
                             <br>
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer edit-footer bg-white border-0 mb-2">
-                <form action="#" method="post">
+                </div>
+                <div class="modal-footer edit-footer bg-white border-0 mb-2">
+
                     <a href="{{route('group_list')}}" class="btn calncel-btn" data-bs-dismiss="modal">Cancel</a>
                     <button type="submit" class="btn g-save-btn float-end">Save</button>
-                </form>
-            </div>
+
+                </div>
+            </form>
         </div>
     </div>
 </div>

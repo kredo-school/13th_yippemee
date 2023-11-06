@@ -44,10 +44,9 @@
                                             <i class="fa-solid fa-ellipsis-vertical fa-2x" style="color: #253c5c;"></i>
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <button type="button" class="dropdown-item item-member" data-bs-toggle="modal" data-bs-target="#group-member" data-id={{ $group->restaurant_id}}>Members</button>
-                                            <button type="button" class="dropdown-item item-edit" data-bs-toggle="modal" data-bs-target="#group-edit" data-id={{ $group->restaurant_id }}>Edit </button>
+                                            <button type="button" class="dropdown-item item-member" data-bs-toggle="modal" data-bs-target="#group-member" data-member={{ $group->member_id }}>Members</button>
+                                            <button type="button" class="dropdown-item item-edit" data-bs-toggle="modal" data-bs-target="#group-edit" data-group-name={{ $group->name }} data-restaurant={{$group->restaurant_id}} data-image={{$group->image}}>Edit </button>
                                             <button type="button" class="dropdown-item item-delete" data-bs-toggle="modal" data-bs-target="#group-delete" data-group-name={{ $group->name }} data-image={{$group->image}}>Delete</button>
-
                                         </ul>
                                     </div>
                                 </div>
@@ -63,22 +62,33 @@
     </div>
 
     <script>
-    $(".item-delete").on("click", function() {
-        var myGroupId = $(this).attr('data-group-name');
-        var image = $(this).attr("data-image");
-        $('.group-name').text(myGroupId);
-        $("#modal-image").attr("src", image);
-    });
+        // item-member
+        $(".item-member").on("click", function() {
+            var groupMember       = $(this).attr('data-member');
+            $('.classname').text(groupMember);
+        });
 
-
-
-</script>
+        // item-edit
+        $(".item-edit").on("click", function() {
+            var editGroupId       = $(this).attr('data-group-name');
+            var restaurantId    = $(this).attr('data-restaurant');
+            var editImage           = $(this).attr("data-image");
+            $('.group-name').text(editGroupId);
+            $('.restaurant-id').text(restaurantId);
+            $("#modal-image").attr("src", editImage);
+        });
+        // item-delete
+        $(".item-delete").on("click", function() {
+            var deleteGroupId       = $(this).attr('data-group-name');
+            var deleteImage           = $(this).attr("data-image");
+            $('.group-name').text(deleteGroupId);
+            $("#modal-image").attr("src", deleteImage);
+        });
+    </script>
 
 @include('users.modals.group_member')
 @include('users.modals.group_edit')
 @include('users.modals.group_delete')
 @include('users.modals.add_group')
-
-
 
 @endsection
