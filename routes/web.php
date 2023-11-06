@@ -8,7 +8,7 @@ use App\Http\Controllers\BucketController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MyPlanController;
-use App\Http\Controllers\VisitsController;
+use App\Http\Controllers\VisitController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SocialPostController;
 use App\Http\Controllers\RestaurantController;
@@ -40,8 +40,11 @@ Route::get('/profile/create', [ProfileController::class, 'create'])->name('profi
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 
 //VISITS
-Route::get('/visits/show', [VisitsController::class, 'show'])->name('visits.show');
-Route::get('/visits/create', [VisitsController::class, 'create'])->name('visits.create');
+Route::get('/visits/create', [VisitController::class, 'create'])->name('visits.create');
+Route::post('/visits/store', [VisitController::class, 'store'])->name('visits.store');
+Route::get('/visits/show', [VisitController::class, 'show'])->name('visits.show');
+Route::get('/visits/{id}/edit', [VisitController::class, 'edit'])->name('visits.edit');
+Route::patch('/visits/{id}/update', [VisitController::class, 'update'])->name('visits.update');
 // Route::delete('/visits/destroy/{id}', [VisitsController::class, 'destroy'])->name('visits.destroy');
 
 //BUCKET

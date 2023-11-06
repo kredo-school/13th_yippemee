@@ -10,20 +10,23 @@
             <h1 class="main-font mb-0 fw-light text-center mb-4">Edit a Visit List</h1>
             <span class="bar bar-short mb-5"></span>
 
-            <form action="/visits/store" method="post" name="visit" enctype="multipart/form-data">
+            <form action="{{ route('visits.update',$visit->id ) }}" method="post" name="visit" enctype="multipart/form-data">
                 @csrf
-                @method('post')
+                @method('PATCH')
 
                 {{-- info --}}
                 <div class="me-5">
-                    <div class="mb-2">
-                        <label for="restaurantName" class="form-label fw-bold mb-0">Restaurant Name</label>
-                        <input type="text" name="restaurantName" id="restaurantName" value="" class="form-control" autofocus class="form-control">
+                    <div class="mb-3">
+                        <label for="restaurantName" class="form-label fw-bold mb-0 mt-3">restaurant Name</label>
+                        <input type="text" name="restaurantName" id="restaurantName" value="{{ old('restaurantName', $visit->restaurantName) }}" class="form-control" autofocus>
+                        @error('restaurantName')
+                        <div class="text-danger small">{{ $message }}</div>
+                        @enderror
                     </div>
 
-                    <div class="mb-2">
-                        <label for="visit_date" class="form-label fw-bold mb-0 mt-3">When did you go ?</label>
-                        <input type="date" name="date" id="visit_date" class="form-control" autofocus>
+                    <div class="mb-3">
+                        <label for="visit_date" class="form-label fw-bold mb-0 mt-3">When did you go?</label>
+                        <input type="date" name="date" id="visit_date" value="{{ old('date', $visit->date) }}" class="form-control" autofocus>
                     </div>
 
                     {{-- star_rating --}}
@@ -52,19 +55,25 @@
                         </div>
                      </div>
 
-                     <div class="mb-2">
+                    <div class="mb-3">
                         <label for="url" class="form-label fw-bold mb-0 mt-3">Web Site</label>
-                        <input type="url" name="url" id="url" class="form-control" autofocus>
+                        <input type="url" name="url" id="url" value="{{ old('url', $visit->url) }}" class="form-control" autofocus>
                     </div>
 
-                    <div class="mb-2">
+                    <div class="row mb-2">
+                        <div class="col-6">
                         <label for="image" class="form-label fw-bold">Image</label>
+                        <img src="{{ $visit->image }}" alt="{{ $visit->id }}" class="img-thumbnail w-100">
                         <input type="file" name="image" id="image" class="form-control" aria-description="image-info">
+                        </div>
+                        @error('image')
+                        <div class="text-danger small">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-4">
                         <label for="description" class="form-label fw-bold mb-0 mt-3">Sharing your reviews about the restaurant</label>
-                        <textarea name="description" id="description" rows="4" placeholder="Write some information about the restaurant" class="form-control"></textarea>
+                        <textarea name="description" id="description" rows="4" placeholder="Write some information about the restaurant" class="form-control">{{ old('description', $visit->description) }}</textarea>
                     </div>
 
                     <button type="submit btn-warning">Save</button>
@@ -75,7 +84,6 @@
             </form>
         </div>
     </div>
-</div>
 @endsection
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">

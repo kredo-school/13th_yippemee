@@ -18,7 +18,7 @@
                 <div class="me-5">
                     <div class="mb-2">
                         <label for="restaurantName" class="form-label fw-bold mb-0">Restaurant Name</label>
-                        <input type="text" name="restaurantName" id="restaurantName" value="" class="form-control" autofocus class="form-control">
+                        <input type="text" name="restaurantName" id="restaurantName" value="" class="form-control" autofocus>
                     </div>
 
                     {{-- Genre --}}
@@ -36,12 +36,12 @@
 
                     <div class="mb-2">
                         <label for="hoursOption" class="form-label fw-bold mb-0 mt-3">Hours of operation</label>
-                        <input type="text" name="hoursOption" id="hoursOption" class="form-control" autofocus class="form-control">
+                        <input type="text" name="hoursOption" id="hoursOption" class="form-control" autofocus>
                     </div>
 
                     <div class="mb-2">
                         <label for="url" class="form-label fw-bold mb-0 mt-3">Web Site</label>
-                        <input type="url" name="url" id="url" class="form-control" autofocus class="form-control">
+                        <input type="url" name="url" id="url" class="form-control" autofocus>
                     </div>
 
                     <div class="mb-2">
