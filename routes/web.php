@@ -14,6 +14,7 @@ use App\Http\Controllers\SocialPostController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\WantController;
+use App\Http\Controllers\Admin\AdminPostsController;
 
 
 use App\Http\Controllers\ListCommentController;
@@ -101,7 +102,11 @@ Route::get('/public/yourplan', [HomeController::class, 'publicyourplan'])->name(
 //admin
 Route::get('/admin/users/index', [HomeController::class, 'admin_users_index'])->name('admin.users.index');
 Route::get('/admin/plans/index', [HomeController::class, 'admin_plans_index'])->name('admin.plans.index');
-Route::get('/admin/posts/index', [HomeController::class, 'admin_posts_index'])->name('admin.posts.index');
+
+Route::get('/admin/posts/index', [AdminPostsController::class, 'admin_posts_index'])->name('admin.posts.index');
+Route::patch('/admin/posts/{id}/unhide', [AdminPostsController::class, 'unhide'])->name('admin.posts.unhide');
+Route::delete('/admin/posts/{id}/hide', [AdminPostsController::class, 'hide'])->name('admin.posts.hide');
+
 Route::get('/admin/genres/index', [HomeController::class, 'admin_genres_index'])->name('admin.genres.index');
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
