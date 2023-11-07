@@ -570,6 +570,9 @@ h1{
     color: #253c5c;
     font-size: 25px;
 }
+#form-group-right input {
+    border-radius: 0;
+}
 #form-group-right ::placeholder {
     color: #253c5c;
     font-size: 16px;
@@ -611,23 +614,20 @@ h1{
 } */
 .profile-pic {
     background-image: url(/images/bg-group.png);
-    background-color: #617fa823;
-    background-size: 65%;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    background-position: center;
-    background-blend-mode: multiply;
-    vertical-align: middle;
+    /* background-size: contain; */
+    /* background-repeat: no-repeat; */
+    /* border-radius: 50%; */
+    /* background-position: center; */
+    /* background-blend-mode: multiply; */
+    /* vertical-align: middle;
     text-align: center;
     color: transparent;
     transition: all .3s ease;
     text-decoration: none;
-    cursor: pointer;
+    cursor: pointer; */
 }
 
-.profile-pic:hover {
+/* .profile-pic:hover {
     background-color: rgba(0,0,0,.5);
     z-index: 10000;
     color: #fff;
@@ -638,7 +638,7 @@ h1{
 .profile-pic span {
     display: inline-block;
     padding-top: 3.5em;
-}
+} */
 /* end add_group */
 
 
@@ -996,7 +996,7 @@ h1{
     width: 100%;
     height: 100%;
     border-radius: 100%;
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     z-index:3;

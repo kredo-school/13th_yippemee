@@ -32,7 +32,7 @@
                                 <div class="image-preview">
 
                                     {{-- default --}}
-                                    <img id="defaultBackground" src="url('images/user-icon.png')" alt="group-image">
+                                    <div class="profile-pic"></div>
 
                                     {{--Uploaded Image --}}
                                     @if ($group->image)
