@@ -21,7 +21,46 @@
                 <div class="modal-body" id="add-body">
                     <div class="row" id="form-group">
                         <div class="col-5" id="form-group-left">
-                            <label for="image">
+                            <div class="group-image-upload">
+                                <div class="image-edit">
+                                    <input type="file" id="uploadImage">
+                                    <label for="uploadImage" class="justify-content-center text-center">
+                                        <i class="fa-solid fa-camera"></i>
+                                    </label>
+                                </div>
+
+                                <div class="image-preview">
+
+                                    {{-- default --}}
+                                    <img id="defaultBackground" src="url('images/user-icon.png')" alt="group-image">
+
+                                    {{--Uploaded Image --}}
+                                    @if ($group->image)
+                                        <div id="newImage" style="background-image: url('{{asset($group->image)}}');"></div>
+                                    @endif
+
+                                </div>
+                            </div>
+                            <script>
+                                function readURL(input) {
+                                    if (input.files && input.files[0]) {
+                                        var reader = new FileReader();
+                                        reader.onload = function(e) {
+                                            $('#newImage').css('background-image', 'url('+e.target.result +')');
+                                            $('#defaultBackground').hide(); {{--Changed id from newImage to imageBackground to hide the first image --}}
+                                            $('#newImage').fadeIn(650);
+                                        }
+                                        reader.readAsDataURL(input.files[0]);
+                                    }
+                                }
+                                $("#uploadImage").change(function() {
+                                    readURL(this);
+                                });
+                            </script>
+
+
+                            {{-- previous input file --}}
+                            {{-- <label for="image">
                                 <div class="profile-pic">
                                     <i class="fa-solid fa-camera"></i>
                                     <span>Add Image</span>
@@ -34,8 +73,8 @@
                                     document.getElementById('uploadImage').click();
                                 });
                                 // document.query... finds ('class name') .addEvent...('action name'){
-                                    //occurs function() to document.getElement...('id name');
-                            </script>
+                                    // occurs function() to document.getElement...('id name');
+                            </script> --}}
                         </div>
                         <div class="col-6" id="form-group-right">
                             <label for="name" class="form-label"></label>

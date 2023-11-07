@@ -59,21 +59,6 @@
                                 });
                             </script>
 
-                            {{-- previous input file --}}
-                            {{-- <label for="fileToUpload" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto;">
-                                <img src="{{ $group->image }}" alt="{{ $group->name }}" class="img-thumbnail">
-                            </label>
-                            <div class="profile-pic-edit img-thumbnail rounded-circle" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto;">
-                                <i class="fa-solid fa-camera"></i>
-                                <span>Edit Image</span>
-                            </div>
-                            <input type="file" name="fileToUpload" id="fileToUpload">
-                            <script>
-                                document.querySelector('.profile-pic-edit').addEventListener('click', function() {
-                                    document.getElementById('fileToUpload').click();
-                                });
-                            </script> --}}
-
                         </div>
                         <div class="col-6 mt-3" id="form-group-right">
                             <label for="name"></label>
