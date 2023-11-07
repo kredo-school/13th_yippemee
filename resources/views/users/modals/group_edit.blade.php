@@ -24,7 +24,7 @@
 
                                 <div class="image-preview">
 
-                                    {{-- First Image --}}
+                                    {{-- First Image () --}}
 
                                     @if ($group->image)
                                         <img id="imageBackground" src="{{ $group->image }}" alt="{{ $group->name }}" class="rounded-circle">
