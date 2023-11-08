@@ -39,6 +39,12 @@ class SocialPost extends Model
     {
         return $this->wants()->where('user_id', Auth::user()->id)->exists();
     }
+
+    public function comments()
+    {
+        return $this->hasMany(SocialComment::class, 'social_post_id');
+    }
+
 }
 
 

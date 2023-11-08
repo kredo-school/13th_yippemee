@@ -4,6 +4,22 @@
     
 @section('content')
 
+<style>
+    .col-5 {
+        overflow-y: scroll;
+    }
+    .card-body {
+        position: absolute;
+        top: 65px;
+    }
+    .show-post{
+        max-width: 90%;
+    }
+    .card-header, .card-body {
+    width: 100%; 
+    }
+</style>
+
 <div class="row my-4">
     <div class="col page-title">
         <h2 class="text-center">Show Post</h2>
@@ -13,13 +29,13 @@
 
 <div class="container show-post">  
     <div class="row justify-content-center">
-        <div class="col-9">
+        <div class="col-8">
             <div class="row border shodow">
-                <div class="col p-0">
+                <div class="col-7 p-0">
                     <img src="{{ $social_post->image }}" alt="{{ $social_post->image }}"  class="w-100">
                 </div>
 
-                <div class="col-4 bg-white post">
+                <div class="col-5 bg-white post">
                     <div class="card border-0">
                         <div class="card-header bg-white py-2">
                             <div class="row align-items-center">
@@ -29,7 +45,7 @@
                                 <div class="col-auto text-end"><i class="fa-solid fa-users text-success"></i></div>
                             </div>
                         </div>
-                        <div class="card-body body-padding bg-white border-0 p-3">
+                        <div class="card-body body-padding bg-white border-0">
                             <div class="row">
                                 <div class="col text-start text-secondary small" style="opacity: 0.6;">
                                     <strong>at: </strong>
@@ -51,30 +67,11 @@
                                     {{ $social_post->description }}
                                 </div>
                             </div>
+                            
                             <div class="row align-items-center">
                                 <div class="col text-start">
                                     <hr>
-                                    <form action="#" method="post">
-                                        <div class="input-group py-2" >
-                                            <textarea name="comment_body" rows="1" class="form-control form-control-sm" placeholder="Add a comment..."></textarea>
-                                            <button type="submit" class="btn btn-post btn-sm">Post</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="row align-items-center">
-                                <div class="col text-start">
-                                    <a href="#" class="text-decoration-none text-post"><strong>Mike Smith</strong></a>
-                                    &nbsp;
-                                    <p class="d-inline fw-light">I want to go there!</p>
-                                    <form action="#" method="post">
-                                        <span class="small text-muted">Wed, Sep 01 2023</span>
-                                        <button type="submit" class="border-0 bg-transparent text-danger p-0 small">Delete</button>
-                                    </form>
-                                </div>
-                                
-                                <div class="mt-0 text-start">
-                                    <a href="#" class="text-decoration-none small">View all comments</a>
+                                    @include('social.contents.comments', ['id' => $social_post->id])
                                 </div>
                             </div>
                         </div>
@@ -83,50 +80,11 @@
             </div>
         </div>  
     </div>
-
-</div>
-
-<div class="modal fade" id="delete-post-{{ $social_post->id }}" tabindex="-1" role="dialog" aria-labelledby="delete-post" aria-hidden="true">
     
-    <div class="modal-dialog">
-        <!--Content-->
-        <div class="modal-content" role="document">
-
-            <!--Header-->
-            <div class="modal-header-danger modal-header-title">
-                <p class="hheading lead modal-title-font m-4">Delete Post</p>
-                <button type="button" class="btn-close btn-close-white m-4" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            
-            <!--Body-->
-            <div class="modal-body d-flex justify-content-center align-items-center flex-column">
-
-                <div class="modal-body d-flex justify-content-center align-items-center flex-column">
-                    <span><i class="fa-solid fa-trash-can fa-3x icon-red"></i></span>
-                    <p class="pt-3 pr-2">Are you sure to want to delete this post?</p>
-                </div>
-
-                <div class="row pt-3 pr-2 d-flex flex-column align-items-center">
-                    <p><img src="{{ $social_post->image }}" alt="{{ $social_post->image }}" class="delete-post-img img-fluid"></p>
-                    <p class=" text-muted">{{ $social_post->description }}</p>
-                </div>
-
-            </div>
-
-            <!--Footer-->
-            <div class="modal-footer d-flex justify-content-center border-0"> 
-                <form action="{{ route('social.posts.destroy', $social_post->id) }}" method="post">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger btn-lg">Delete</button>
-                    <button type="button" class="btn btn-outline-danger btn-lg" data-bs-dismiss="modal">Cancel</button>
-                </form>
-                
-            </div>
-            
-        </div>
-    </div>
 </div>
+
+@include('social.posts.modal.status')
+
 @endsection
 
 
