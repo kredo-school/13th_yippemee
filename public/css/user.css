@@ -974,16 +974,6 @@ h1{
     background: #f1f1f1;
     border-color: #d6d6d6;
 }
-.group-image-upload .image-edit input + label:after {
-    content: "\f040";
-    color: #757575;
-    position: absolute;
-    top: 10px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    margin: auto;
-}
 .group-image-upload .image-preview {
     width: 192px;
     height: 192px;
@@ -1001,7 +991,7 @@ h1{
     background-position: center;
     z-index:3;
 }
-#imageBackground {
+.imageBackground {
     height:100%;
     width: 100%;
 }

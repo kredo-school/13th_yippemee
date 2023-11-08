@@ -9,7 +9,8 @@ class GroupController extends Controller
 {
     private $group;
 
-    public function __construct(Group $group){
+    public function __construct(Group $group)
+    {
         $this->group = $group;
     }
     /**
@@ -33,7 +34,7 @@ class GroupController extends Controller
         $all_groups = $this->group->all();
 
         return View('users.modals.add_group')
-                ->with('all_groups', $all_groups);
+            ->with('all_groups', $all_groups);
     }
 
     /**
@@ -49,7 +50,7 @@ class GroupController extends Controller
             // restaurant/member_id will be array later
             'restaurant_id' =>  'required|min:1|max:30',
             'member_id'     =>  'required|min:1|max:30',
-            'image'         =>  'required|mimes:jpeg,jpg,png,gif|max:1048'
+            'image'         =>  'mimes:jpeg,jpg,png,gif|max:2048'
         ]);
 
         // save
@@ -58,13 +59,6 @@ class GroupController extends Controller
         $this->group->member_id     =   $request->member_id;
         $this->group->image         =   'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
         $this->group->save();
-
-        // $newGroup = Group::create([
-        //     'name'        => $request->name,
-        //     'restaurant_id' => $request->restaurant_id,
-        //     'image'          => 'data:image/' . $request->image->extension() . ';base64' . base64_encode(file_get_contents($request->image)),
-        //     'member_id' => $request->member_id,
-        // ]);
 
         return redirect()->route('group_list');
     }
@@ -80,7 +74,7 @@ class GroupController extends Controller
         $group = $this->group->findOrFail($id);
 
         return view('group_list')
-                ->with('group', $group);
+            ->with('group', $group);
     }
 
     /**
@@ -95,7 +89,7 @@ class GroupController extends Controller
         $group = $this->group->findOrFail($id);
 
         return view('group_list')
-                ->with('group', $group);
+            ->with('group', $group);
     }
 
     /**
@@ -107,26 +101,29 @@ class GroupController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $request->validate([
-            'name'          =>  'required|min:1|max:30',
-            // restaurant/member_id will be array later
-            'restaurant_id' =>  'required|min:1|max:30',
-            'image'         =>  'mimes:jpeg,jpg,png,gif|max:1048'
+        $request->validate([
+            'name'          => 'sometimes|max:30',
+            'restaurant_id' => 'sometimes|max:30',
+            'image'         => 'sometimes|mimes:jpeg,jpg,png,gif|max:2048' // 'sometimes' indicates the field is not always required
         ]);
 
-        $group                  =   $this->group->findOrFail($id);
-        $group->name            =   $request->name;
-        $group->restaurant_id   =   $request->restaurant_id;
-
-        if($request->image){
-            $group->image       =   'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
+        $group = Group::findOrFail($id); // Directly using Group model
+        if ($request->has('name') && $request->name != null) {
+            $group->name = $request->name;
+        }
+        if ($request->has('restaurant_id') && $request->restaurant_id != null) {
+            $group->restaurant_id = $request->restaurant_id;
+        }
+        if ($request->hasFile('image')) {
+            $imagePath =
+                'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
+            $group->image = $imagePath;
         }
 
         $group->save();
 
-        return redirect()->route('group.show', $id);
+        return redirect()->route('group_list');
     }
-
     /**
      * Remove the specified resource from storage.
      *

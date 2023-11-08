@@ -1,4 +1,4 @@
-<div class="modal fade" id="group-delete">
+<div class="modal fade" id="delete{{ $group['id'] }}">
     <div class="modal-dialog delete-dialog modal-xl">
         <div class="modal-content delete-content">
             <div class="modal-header delete-header w-100">

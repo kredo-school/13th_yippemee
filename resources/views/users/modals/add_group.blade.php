@@ -1,4 +1,3 @@
-
 <div class="modal fade" id="add-group">
     <div class="modal-dialog">
         <div class="modal-content" id="add-content">
@@ -11,7 +10,8 @@
                         </h1>
                     </div>
                     <div class="col-1">
-                        <a href="#" class="btn close-button mt-2" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2x" style="color: #253c5c"></i></a>
+                        <a href="#" class="btn close-button mt-2" data-bs-dismiss="modal"><i
+                                class="fa-solid fa-xmark fa-2x" style="color: #253c5c"></i></a>
                     </div>
                 </div>
             </div>
@@ -23,8 +23,8 @@
                         <div class="col-5" id="form-group-left">
                             <div class="group-image-upload">
                                 <div class="image-edit">
-                                    <input type="file" id="uploadImage">
-                                    <label for="uploadImage" class="justify-content-center text-center">
+                                    <input type="file" name="image" id="imageUpload">
+                                    <label for="imageUpload" class="justify-content-center text-center">
                                         <i class="fa-solid fa-camera"></i>
                                     </label>
                                 </div>
@@ -32,29 +32,29 @@
                                 <div class="image-preview">
 
                                     {{-- default --}}
-                                    <div class="profile-pic"></div>
+                                    <div id="defaultBackground" class="profile-pic"></div>
 
-                                    {{--Uploaded Image --}}
-                                    @if ($group->image)
-                                        <div id="newImage" style="background-image: url('{{asset($group->image)}}');"></div>
-                                    @endif
-
+                                    {{-- Uploaded Image --}}
+                                    <!-- CSS Needs to be background cover, and background centered -->
+                                    <div id="newImage" style="background-size:cover; background-position:center;">
+                                    </div>
                                 </div>
+
                             </div>
                             <script>
-                                function readURL(input) {
+                                function readAddURL(input) {
                                     if (input.files && input.files[0]) {
                                         var reader = new FileReader();
                                         reader.onload = function(e) {
-                                            $('#newImage').css('background-image', 'url('+e.target.result +')');
-                                            $('#defaultBackground').hide(); {{--Changed id from newImage to imageBackground to hide the first image --}}
-                                            $('#newImage').fadeIn(650);
+                                            $('#newImage').css('background-image', 'url(' + e.target.result +
+                                            ')'); // Changed the newImage to the uploaded image
+                                            $('#defaultBackground').hide(); //Hide default background
                                         }
                                         reader.readAsDataURL(input.files[0]);
                                     }
                                 }
-                                $("#uploadImage").change(function() {
-                                    readURL(this);
+                                $("#imageUpload").change(function() {
+                                    readAddURL(this);
                                 });
                             </script>
 
@@ -66,11 +66,11 @@
                                     <span>Add Image</span>
                                 </div>
                             </label>
-                            <input type="file" name="image" id="uploadImage" class="form-control" aria-describedby="image-info">
+                            <input type="file" name="image" id="image" class="form-control" aria-describedby="image-info">
                             <script>
                                 // If not already using jQuery or similar, this is plain JavaScript to trigger the file input when the label is clicked
                                 document.querySelector('.profile-pic').addEventListener('click', function() {
-                                    document.getElementById('uploadImage').click();
+                                    document.getElementById('image').click();
                                 });
                                 // document.query... finds ('class name') .addEvent...('action name'){
                                     // occurs function() to document.getElement...('id name');
@@ -81,10 +81,12 @@
                             <input type="text" name="name" id="name" class="form-control" placeholder="Name">
                             <br>
                             <label for="restaurant_id" class="form-label"></label>
-                            <input type="text" name="restaurant_id" id="restaurant_id" class="form-control" placeholder="Restaurant">
+                            <input type="text" name="restaurant_id" id="restaurant_id" class="form-control"
+                                placeholder="Restaurant">
                             <br>
                             <label for="member_id" class="form-label"></label>
-                            <input type="text" name="member_id" id="member_id" class="form-control" placeholder="Members">
+                            <input type="text" name="member_id" id="member_id" class="form-control"
+                                placeholder="Members">
                         </div>
                     </div>
                 </div>
@@ -95,8 +97,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-
