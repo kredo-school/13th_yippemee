@@ -47,10 +47,12 @@ class VisitController extends Controller
     }
 
     public function show(){
+        dd($this->visit);
         $all_visits = $this->visit->latest()->get();
 
-        return view('users.visits.show')
-                ->with('all_visits', $all_visits);
+        return view("users.visits.show", ["all_visits" => $all_visits]);
+        // return view('users.visits.show')
+        //         ->with('all_visits', $all_visits);
     }
 
     public function edit($id)

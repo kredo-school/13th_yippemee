@@ -59,4 +59,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Contact::class);
     }
+
+    public function visits()
+    {
+        return $this->hasMany(Visit::class)->latest();
+    }
+
+    public function buckets()
+    {
+        return $this->hasMany(Bucket::class)->latest();
+    }
 }
