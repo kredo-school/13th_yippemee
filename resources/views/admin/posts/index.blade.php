@@ -15,7 +15,7 @@
                 <form action="#" class="search-form">
                     <label class="form-control-sm">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" name="search"  placeholder="Search for post">
+                        <input type="text" name="search"  placeholder="Search for post" value="{{ $search }}">
                     </label>
                 </form>
             </div>
@@ -60,43 +60,54 @@
                             </div>
                         </thead>
                         <tbody class="no-hover-effect">
+                            @if($search && $all_social_posts->isEmpty())
+                                <tr>
+                                    <td colspan=6 class="text-muted text-center">No posts match your search.</td>
+                                </tr>
+                            @elseif($all_social_posts->isNotEmpty())
+                                @foreach($all_social_posts as $social_post)
+                                    <tr>
+                                        <td>{{ $social_post->id }}</td>
+                                        <td>
+                                            <a href="{{ route('social.posts.show', $social_post->id) }}"><img src="{{ $social_post->image }}" alt="{{ $social_post->image }}" class="d-block mu-auto admin-post-img"></a>
+                                        </td>
+                                        <td>Italian</td>
+                                        <td>{{ $social_post->user->name }}</td>
+                                        <td>{{ $social_post->created_at }}</td>
+                                        <td><i class="fa-solid fa-eye text-primary"></i>&nbsp; Visible</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button class="btn btn-sm" data-bs-toggle="dropdown">
+                                                    <i class="fa-solid fa-eye text-secondary"></i>
+                                                </button>
+                
+                                                <div class="dropdown-menu menu-hover">
+                                                    <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#visibleModal-{{ $social_post->id }}">
+                                                        <i class="fa-solid fa-eye text-primary"></i>  visible
+                                                    </a>
+                                                    
+                                                    <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hiddenModal-{{ $social_post->id }}">
+                                                        <i class="fa-solid fa-eye-slash text-danger"></i></i>  hidden
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            @include('admin.posts.modal.status.hidden', ['social_post' => $social_post])
+                                            @include('admin.posts.modal.status.visible', ['social_post' => $social_post])
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @elseif($all_social_posts->isEmpty())
                             <tr>
-                                <td>10</td>
-                                <td>
-                                    <a href="{{ route('social.posts.show') }}"><img src="{{ asset('img/pizza.jpg') }}" alt="pizza" class="d-block mu-auto admin-post-img"></a>
-                                </td>
-                                <td>Italian</td>
-                                <td>Mike Smith</td>
-                                <td>2023:08:15</td>
-                                <td><i class="fa-solid fa-eye text-primary"></i>&nbsp; Visible</td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button class="btn btn-sm" data-bs-toggle="dropdown">
-                                            <i class="fa-solid fa-eye text-secondary"></i>
-                                        </button>
-        
-                                        <div class="dropdown-menu menu-hover">
-                                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#visibleModal">
-                                                <i class="fa-solid fa-eye text-primary"></i>  visible
-                                            </a>
-                                            
-                                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hiddenModal">
-                                                <i class="fa-solid fa-eye-slash text-danger"></i></i>  hidden
-                                            </a>
-                                        </div>
-                                    </div>
-                                </td>
+                                <td colspan=6 class="text-muted text-center">No posts yet.</td>
                             </tr>
-                            
+                            @endif
                         </tbody>
                     </table>
                 </div>
-                
             </div>
         </div>
     </div>
-    @include('admin.posts.modal.status.hidden')
-    @include('admin.posts.modal.status.visible')
+   
 </div>
-    
+
 @endsection

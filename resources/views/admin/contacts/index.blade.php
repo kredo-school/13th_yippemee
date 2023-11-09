@@ -41,8 +41,10 @@
                         </a>
                     </div>
                 </div>
-                
+
             </div>
+
+            @if ($contacts->isNotEmpty())
 
             <div class="col-9 mb-3">
                 <div class="admin-table">
@@ -56,25 +58,39 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody class="no-hover-effect">
+                        <tbody>
+
+                            @forelse ($contacts as $contact)
+
                             <tr>
-                                <td>1</td>
-                                <td>name</td>
-                                <td>aaa@email.com</td>
-                                <td>2023-09-01 08:15:10</td>
+                                <td>{{ $contact->id }}</td>
+                                <td>{{ $contact->user->name }}</td>
+                                <td>{{ $contact->user->email }}</td>
+                                <td>{{ $contact->created_at }}</td>
                                 <td class="d-flex justify-content-center">
-                                    <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#userMessage" title="Edit"><i class="fa-solid fa-comment-dots icon-warning"></i>
-                                    <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#deleteGenre" title="Delete"><i class="fa-solid fa-trash-can icon-red"></i>
+                                    <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#userMessage-{{ $contact->id }}" title="Check"><i class="fa-solid fa-comment-dots icon-warning"></i></button>
+                                    <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#deleteMessage-{{ $contact->id }}" title="Delete"><i class="fa-solid fa-trash-can icon-red"></i></button>
                                 </td>
                             </tr>
+
+                            @include('admin.contacts.modal.message')
+
+                            @empty
+                            <li class="list-group-item d-flex align-items-center">
+                                <p class="text-center">No Contact Yet.</p>
+                                </li>
+                            @endforelse
+
                         </tbody>
                     </table>
+
+                    @endif
+
                 </div>
-                
+
             </div>
         </div>
     </div>
-    @include('admin.contacts.modal.message')
 </div>
-    
+
 @endsection

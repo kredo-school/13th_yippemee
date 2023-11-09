@@ -27,6 +27,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('friday')->nullable( );
             $table->string('saturday')->nullable( );
             $table->string('sunday')->nullable( );
+            $table->string('price')->nullable( );
             $table->longtext('image')->nullable();
             $table->string('url');
             $table->string('googlemap');

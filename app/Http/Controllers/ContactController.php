@@ -19,20 +19,37 @@ class ContactController extends Controller
         return view('contact.user_contact');
     }
 
+     public function admin_contacts_index()
+    {
+        $contacts = Contact::all();
+
+        return view('admin.contacts.index')->with('contacts',$contacts);
+    }
+
     public function store(Request $request)
     {
         $request->validate([
-            'username' => 'required|min:1|max:10',
-            'email' => 'required|min:1|max:50',
-            'message' => 'required|min:1|max:50',
+            'message' => 'required|min:1',
         ]);
 
-        $this->contact->username = $request->username;
-        $this->contact->email = $request->email;
+        $user = Auth::user();
+        $name = $user->name;
+        $email = $user->email;
+
+        $this->contact->user()->associate($user);
         $this->contact->message = $request->message;
 
         $this->contact->save();
 
-        return redirect()->route('contact');
+        return redirect()->route('contact')->with('message', 'You succeeded in sending a message.');
+    }
+
+    public function destroy($id)
+    {
+        $contact = $this->contact->findOrFail($id);
+
+        $this->contact->destroy($id);
+
+        return redirect()->route('admin.contacts.index');
     }
 }

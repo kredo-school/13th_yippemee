@@ -25,58 +25,21 @@
                 <a href="{{ route('social.posts.create') }}" class="btn btn-contact btn-post w-50"><i class="fa-solid fa-pen-to-square"></i> Post</a>
             </div>
         </div>
-
-        <div class="row mt-5">
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="post">
-                    <div class="card border-0">
-                        @include('social.contents.body')
+        @if($social_posts->count())
+            <div class="row mt-5">
+                @foreach($social_posts as $social_post)
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                        <div class="post">
+                            <div class="card border-0">
+                                @include('social.contents.body', ['id' => $social_post->id])
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="post">
-                    <div class="card border-0">
-                        @include('social.contents.body')
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="post">
-                    <div class="card border-0">
-                        @include('social.contents.body')
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="post">
-                    <div class="card border-0">
-                        @include('social.contents.body')
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="post">
-                    <div class="card border-0">
-                        @include('social.contents.body')
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="post">
-                    <div class="card border-0">
-                        @include('social.contents.body')
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                <div class="post">
-                    <div class="card border-0">
-                        @include('social.contents.body')
-                    </div>
-                </div>
-            </div>
-        </div>    
+                @endforeach    
+            </div> 
+        @else
+            <p>No posts available.</p>
+        @endif 
     </div>
 
 </div>

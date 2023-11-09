@@ -49,7 +49,7 @@
                                             </button>
                                             <ul class="dropdown-menu">
                                                 <button type="button" class="dropdown-item item-member"
-                                                    data-bs-toggle="modal" data-bs-target="#group-member"
+                                                    data-bs-toggle="modal" data-bs-target="#member{{ $group['id'] }}"
                                                     data-member={{ $group->member_id }}>Members</button>
                                                 <button type="button" class="dropdown-item item-edit"
                                                     data-bs-toggle="modal" data-bs-target="#edit{{ $group['id'] }}"
