@@ -60,7 +60,7 @@
 
 </div>
 
-<style>
+{{-- <style>
     .reviewed {
     float: left;
     padding: 0;
@@ -78,4 +78,4 @@
     .reviewed:not(:checked) > label:before {
     content: '★ ';
     }
-</style>
+</style> --}}
