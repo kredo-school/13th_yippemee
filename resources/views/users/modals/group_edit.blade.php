@@ -25,7 +25,7 @@
                                     {{-- First Image --}}
                                     @if ($group->image)
                                         <img id="imageBackground{{ $group->id }}" src="{{ $group->image }}"
-                                            alt="{{ $group->name }}" class="rounded-circle">
+                                            alt="{{ $group->name }}" class="rounded-circle" style="height: 100%; width:100%;">
                                     @else
                                         <img id="imageBackground{{ $group->id }}" src="url('images/user-icon.png')"
                                             alt="group-image">
