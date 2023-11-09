@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Services\ContentModeratorService;
 class HomeController extends Controller
 {
     /**
@@ -111,18 +111,10 @@ class HomeController extends Controller
     }
 
 
-
-
-
-    public function detail()
-    {
-        return view('users.restaurant_lists.restaurant_detail');
-    }
-
-    public function admin_contacts_index()
-    {
-        return view('admin.contacts.index');
-    }
+    // public function admin_contacts_index()
+    // {
+    //     return view('admin.contacts.index');
+    // }
 
     //admin
     public function admin_users_index()
@@ -135,35 +127,9 @@ class HomeController extends Controller
         return view('admin.plans.index');
     }
 
-    public function admin_posts_index()
-    {
-        return view('admin.posts.index');
-    }
-
     public function admin_genres_index()
     {
         return view('admin.genres.index');
-    }
-
-    //social
-    public function social_posts_create()
-    {
-        return view('social.posts.create');
-    }
-
-    public function social_posts_edit()
-    {
-        return view('social.posts.edit');
-    }
-
-    public function social_posts_show()
-    {
-        return view('social.posts.show');
-    }
-
-    public function social_home()
-    {
-        return view('social.social_home');
     }
 
     //friends
@@ -172,4 +138,6 @@ class HomeController extends Controller
         return view('friends.friends_list');
     }
 
+
 }
+

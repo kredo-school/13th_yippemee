@@ -1,95 +1,83 @@
 @extends('layouts.app')
 
-@section('title', 'Create Bucket Lists')
+@section('title', 'Edit Visit List')
 
 @section('content')
 
-<div class="container mt-5 mb-5">
-
-    <div class="justify-content-center">
-
-        <div class="col-10">
-        <form action="#" method="post" class="shadow rounded-3 p-5" enctype="multipart/form-data">
-            @csrf
-            <h1 class="main-font mb-0 fw-light text-center mb-4">Make a Visit List</h1>
+<div class="container">
+    <div class="justify-content-center mt-5 mb-5">
+        <div class="col-8" style="margin-left: 216px">
+            <h1 class="main-font mb-0 fw-light text-center mb-4">Edit a Visit List</h1>
             <span class="bar bar-short mb-5"></span>
 
-    {{-- image --}}
-    <div class="row">
-        <div class="col-5 ms-auto">
-            <div class="drag-file-area-visit mt-4">
-                <span class="material-icons-outlined upload-icon"> file_upload </span>
-                <h5 class="dynamic-message"> Drag & drop any file here </h5>
-                <label class="label"> or browse file from device<span class="browse-files"> <input type="file" class="default-file-input"/></span> </label>
-            </div>
-        </div>
+            <form action="/visits/store" method="post" name="visit" enctype="multipart/form-data">
+                @csrf
+                @method('post')
 
-        {{-- info --}}
-        <div class="col-5 ms-auto me-5">
-            <div class="mb-3">
-                <label for="restaurant_name" class="form-label fw-bold mb-1">Restaurant Name</label>
-                <input type="text" name="restaurant_name" id="restaurant_name" value="" class="form-control" autofocus class="form-control">{{ old('restaurant_name') }}
-            </div>
+                {{-- info --}}
+                <div class="me-5">
+                    <div class="mb-2">
+                        <label for="restaurantName" class="form-label fw-bold mb-0">Restaurant Name</label>
+                        <input type="text" name="restaurantName" id="restaurantName" value="" class="form-control" autofocus class="form-control">
+                    </div>
 
-            {{-- raiting --}}
-        <div class="mb-3">
-            <label for="star" class="form-label fw-bold mb-0">How would you rate your experience ?</label>
+                    <div class="mb-2">
+                        <label for="visit_date" class="form-label fw-bold mb-0 mt-3">When did you go ?</label>
+                        <input type="date" name="date" id="visit_date" class="form-control" autofocus>
+                    </div>
 
-            <fieldset class="rating">
-                <input id="demo-1" type="radio" name="demo" value="1">
-                <label for="demo-1">1 star</label>
-                <input id="demo-2" type="radio" name="demo" value="2">
-                <label for="demo-2">2 stars</label>
-                <input id="demo-3" type="radio" name="demo" value="3">
-                <label for="demo-3">3 stars</label>
-                <input id="demo-4" type="radio" name="demo" value="4">
-                <label for="demo-4">4 stars</label>
-                <input id="demo-5" type="radio" name="demo" value="5">
-                <label for="demo-5">5 stars</label>
+                    {{-- star_rating --}}
+                    <div class="mb-0">
+                        <div class="row">
+                            <div class="col mt-2">
+                            @csrf
+                            <p class="font-weight-bold mb-0">Review</p>
+                                <div class="form-group row">
+                                    <div class="col">
+                                        <div class="rate">
+                                            <input type="radio" id="star5" class="rate" name=" star_rating" value="5"/>
+                                            <label for="star5" title="text">5 stars</label>
+                                            <input type="radio" checked id="star4" class="rate" name=" star_rating" value="4"/>
+                                            <label for="star4" title="text">4 stars</label>
+                                            <input type="radio" id="star3" class="rate" name=" star_rating" value="3"/>
+                                            <label for="star3" title="text">3 stars</label>
+                                            <input type="radio" id="star2" class="rate" name=" star_rating" value="2">
+                                            <label for="star2" title="text">2 stars</label>
+                                            <input type="radio" id="star1" class="rate" name=" star_rating" value="1"/>
+                                            <label for="star1" title="text">1 star</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     </div>
 
-                <div class="stars">
-                    <label for="demo-1" aria-label="1 star" title="1 star"></label>
-                    <label for="demo-2" aria-label="2 stars" title="2 stars"></label>
-                    <label for="demo-3" aria-label="3 stars" title="3 stars"></label>
-                    <label for="demo-4" aria-label="4 stars" title="4 stars"></label>
-                    <label for="demo-5" aria-label="5 stars" title="5 stars"></label>
+                     <div class="mb-2">
+                        <label for="url" class="form-label fw-bold mb-0 mt-3">Web Site</label>
+                        <input type="url" name="url" id="url" class="form-control" autofocus>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="image" class="form-label fw-bold">Image</label>
+                        <input type="file" name="image" id="image" class="form-control" aria-description="image-info">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="description" class="form-label fw-bold mb-0 mt-3">Sharing your reviews about the restaurant</label>
+                        <textarea name="description" id="description" rows="4" placeholder="Write some information about the restaurant" class="form-control"></textarea>
+                    </div>
+
+                    <button type="submit btn-warning">Save</button>
+                    {{-- <a href="{{ route('visit.show') }}" onclick="document.visit.submit();" class="btn btn--yellow btn--cubic px-5">Save</a>
+                    <a href="{{ route('visit.show') }}" class="btn btn--green btn--cubic px-5">Cancel</a></button> --}}
+
                 </div>
-            </fieldset>
+            </form>
         </div>
-
-        <div class="mb-3">
-            <label for="date-visit" class="form-label fw-bold mb-1">When did you go ?</label>
-            <input type="date" name="date-visit" id="date-visit" value="" class="form-control" autofocus>
-        </div>
-
-        <div class="mb-3">
-            <label for="introduction" class="form-label fw-bold mb-1">Sharing your reviews about the restaurant</label>
-            <textarea name="introduction" id="introduction" rows="5" placeholder="Write some comments about the restaurant" class="form-control mb-3">{{ old('introduction') }}</textarea>
-            {{-- Error --}}
-            @error('description')
-                <div class="text-danger small">{{ $message }}</div>
-            @enderror
-        </div>
-
-        {{-- Button --}}
-        <div class="text-end">
-            <a href="{{ route('visits.show') }}" class="btn btn--green btn--cubic px-5">Cancel</a>
-            <a href="{{ route('visits.show') }}" class="btn btn--yellow btn--cubic px-5">Save</a>
-        </div>
-        {{-- End Button --}}
     </div>
-        </form>
-        </div>
 </div>
 @endsection
 
-
-<script>
-    (function(){
-        var rating = document.querySelector('.rating');
-        var handle = document.getElementById('toggle-rating');
-        handle.onchange = function(event) {
-            rating.classList.toggle('rating', handle.checked);
-        };
-    }());
-</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

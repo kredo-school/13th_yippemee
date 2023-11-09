@@ -4,14 +4,9 @@
 
 @section('content')
 
-@csrf
+<link href="{{ asset('css/contact.css') }}" rel="stylesheet">
 
-<style>
-    body {
-        background-image:  url('/images/contact-bg.jpg');
-        background-size: cover;
-    }
-</style>
+@csrf
 
     <div class="container display-flex align-items-center">
         <div class="row justify-content-center">
@@ -22,10 +17,6 @@
 
                 @csrf
 
-                <label for="name" class="form-label mt-3">Username</label>
-                <input type="text" class="form-control" id="name" name="username">
-                <label for="email" class="form-label mt-3">Email</label>
-                <input type="email" class="form-control" id="email" name="email">
                 <label for="message" class="form-label mt-3">Message</label>
                 <textarea name="message" id="message" class="form-control" rows="5" placeholder="Leave us a message."></textarea>
                 <div class="text-center">
@@ -33,8 +24,13 @@
                 </div>
 
                 </form>
+
+                @if(session('message'))
+                <div class="alert alert-primary mt-2 text-center">{{session('message')}}</div>
+                @endif
+
             </div>
         </div>
-    </div>
+</div>
 
 @endsection

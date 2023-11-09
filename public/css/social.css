@@ -165,3 +165,18 @@ div.bg-genre {
 .search-form input::placeholder {
     color: #bbbcbf;
 }
+
+.delete-post-img {
+    width: 90%;   
+    height: auto; 
+    display: block;
+    margin: 0 auto; 
+    object-fit: contain;  
+    max-width: 100%; 
+}
+
+.like-button, .want-button {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}

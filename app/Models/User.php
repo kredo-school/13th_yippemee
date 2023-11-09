@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -41,4 +42,28 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    # User has many social_posts
+    public function social_posts()
+    {
+        return $this->hasMany(SocialPost::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    public function wants()
+    {
+        return $this->hasMany(Want::class);
+    }
+
+     # User has many contacts
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
+    }
+
+
 }

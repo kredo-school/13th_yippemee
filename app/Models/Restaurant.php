@@ -9,4 +9,12 @@ use Illuminate\Support\Facades\Auth;
 class Restaurant extends Model
 {
     use HasFactory;
+
+    public function user( ){
+        return $this->belongsTo(User::class);
+    }
+
+    public function listComments( ){
+        return $this->hasMany(ListComment::class);
+    }
 }
