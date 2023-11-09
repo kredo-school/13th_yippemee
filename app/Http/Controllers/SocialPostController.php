@@ -209,10 +209,12 @@ class SocialPostController extends Controller
     }
 
     public function social_home()
-{
-    $social_posts = $this->social_post->latest()->get();
-    return view('social.social_home', compact('social_posts'));
-}
+    {
+        $social_posts = $this->social_post->latest()->get();
+        return view('social.social_home', compact('social_posts'));
+    }
+
+
 
 
 }

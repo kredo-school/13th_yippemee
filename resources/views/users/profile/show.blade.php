@@ -5,8 +5,6 @@
 @section('content')
     @include('users.profile.header')
     @include('users.profile.side')
-    @include('users.visits.body')
-
-
+    @include('users.posts.body', ['social_posts' => $social_posts])
 @endsection
 

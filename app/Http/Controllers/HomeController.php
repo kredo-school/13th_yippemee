@@ -111,11 +111,6 @@ class HomeController extends Controller
     }
 
 
-
-
-
- 
-
     // public function admin_contacts_index()
     // {
     //     return view('admin.contacts.index');
@@ -130,11 +125,6 @@ class HomeController extends Controller
     public function admin_plans_index()
     {
         return view('admin.plans.index');
-    }
-
-    public function admin_posts_index()
-    {
-        return view('admin.posts.index');
     }
 
     public function admin_genres_index()
