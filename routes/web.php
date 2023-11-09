@@ -15,9 +15,11 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\WantController;
 use App\Http\Controllers\Admin\AdminPostsController;
+use App\Http\Controllers\SocialCommentController;
 
 
 use App\Http\Controllers\ListCommentController;
+use App\Models\SocialComment;
 
 /*
 |--------------------------------------------------------------------------
@@ -127,6 +129,10 @@ Route::get('/social/posts/create', [SocialPostController::class, 'create'])->nam
 Route::get('/social/posts/{id}/edit', [SocialPostController::class, 'edit'])->name('social.posts.edit');
 Route::patch('/social/posts/{id}/update', [SocialPostController::class, 'update'])->name('social.posts.update');
 Route::delete('/social/posts/{id}/destroy', [SocialPostController::class, 'destroy'])->name('social.posts.destroy');
+
+//social_comment
+Route::post('/social/comment/{social_post_id}/store', [SocialCommentController::class, 'store'])->name('social_comment.store');
+Route::delete('/social/comment/{social_post_id}/destroy', [SocialCommentController::class, 'destroy'])->name('social_comment.destroy');
 
 //friends
 Route::get('/friends/list',  [HomeController::class, 'friends_list'])->name('friends.friends_list');
