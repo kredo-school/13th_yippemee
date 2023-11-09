@@ -54,11 +54,17 @@ class User extends Authenticatable
         return $this->hasMany(Like::class);
     }
 
+    public function wants()
+    {
+        return $this->hasMany(Want::class);
+    }
+
      # User has many contacts
     public function contacts()
     {
         return $this->hasMany(Contact::class);
     }
+
 
     public function visits()
     {
@@ -69,4 +75,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Bucket::class)->latest();
     }
+
+
+
 }

@@ -175,8 +175,8 @@ div.bg-genre {
     max-width: 100%; 
 }
 
-.heart-button {
-    background: none;
+.like-button, .want-button {
     border: none;
-    padding: 0;
+    background: transparent;
+    box-shadow: none;
 }
