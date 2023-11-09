@@ -4,22 +4,6 @@
     
 @section('content')
 
-<style>
-    .col-5 {
-        overflow-y: scroll;
-    }
-    .card-body {
-        position: absolute;
-        top: 65px;
-    }
-    .show-post{
-        max-width: 90%;
-    }
-    .card-header, .card-body {
-    width: 100%; 
-    }
-</style>
-
 <div class="row my-4">
     <div class="col page-title">
         <h2 class="text-center">Show Post</h2>
@@ -35,9 +19,9 @@
                     <img src="{{ $social_post->image }}" alt="{{ $social_post->image }}"  class="w-100">
                 </div>
 
-                <div class="col-5 bg-white post">
+                <div class="col-5 bg-white show-socialpost">
                     <div class="card border-0">
-                        <div class="card-header bg-white py-2">
+                        <div class="card-header bg-white py-2 card_header-post">
                             <div class="row align-items-center">
                                 <div class="col text-start">
                                     <i class="fa-solid fa-circle-user"></i> <a href="#" class="text-decoration-none text-post"><strong>{{ $social_post->user->name }}</strong></a>
@@ -45,7 +29,7 @@
                                 <div class="col-auto text-end"><i class="fa-solid fa-users text-success"></i></div>
                             </div>
                         </div>
-                        <div class="card-body body-padding bg-white border-0">
+                        <div class="card-body body-padding bg-white border-0 card_body-post">
                             <div class="row">
                                 <div class="col text-start text-secondary small" style="opacity: 0.6;">
                                     <strong>at: </strong>
