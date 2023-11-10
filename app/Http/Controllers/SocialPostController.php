@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use GuzzleHttp\Client;
-
+use App\Models\Genre;
 
 class SocialPostController extends Controller
 {
@@ -37,7 +37,9 @@ class SocialPostController extends Controller
      */
     public function create()
     {
-        return view('social.posts.create');
+        $all_genres = Genre::all();
+        return view('social.posts.create', compact('all_genres'));
+
     }
 
     /**
@@ -47,6 +49,7 @@ class SocialPostController extends Controller
      * @return \Illuminate\Http\Response
      */
     
+    # moderate for description
     private function moderateContent($description)
     {
         $client = new Client();
@@ -80,6 +83,7 @@ class SocialPostController extends Controller
 
         $description = $request->input('description');
 
+        # moderate for description
         $moderationResult = $this->moderateContent($description);
         if (!$moderationResult['status']) {
             return back()->withErrors(['description' => $moderationResult['message']]);
@@ -156,6 +160,7 @@ class SocialPostController extends Controller
         $social_post->description = $request->description;
         $social_post->restaurant_name = $request->restaurant_name;
 
+        # moderate for description
         $moderationResult = $this->moderateContent($request->description);
         if (!$moderationResult['status']) {
             return back()->withErrors(['description' => $moderationResult['message']]);

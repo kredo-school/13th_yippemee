@@ -18,7 +18,7 @@ class AdminPostsController extends Controller
 
     public function admin_posts_index(Request $request)
     {
-        $all_social_posts = $this->social_post->latest()->paginate(5);
+        $all_social_posts = $this->social_post->latest()->paginate(20);
 
         if($request->search){
             $all_social_posts = $this->social_post->where('description', 'LIKE', '%'.$request->search.'%');

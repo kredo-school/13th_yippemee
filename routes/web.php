@@ -15,7 +15,9 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\WantController;
 use App\Http\Controllers\Admin\AdminPostsController;
+use App\Http\Controllers\Admin\AdminGenreController;
 use App\Http\Controllers\SocialCommentController;
+use App\Http\Controllers\Genre;
 
 
 use App\Http\Controllers\ListCommentController;
@@ -114,7 +116,11 @@ Route::get('/admin/posts/index', [AdminPostsController::class, 'admin_posts_inde
 Route::patch('/admin/posts/{id}/unhide', [AdminPostsController::class, 'unhide'])->name('admin.posts.unhide');
 Route::delete('/admin/posts/{id}/hide', [AdminPostsController::class, 'hide'])->name('admin.posts.hide');
 
-Route::get('/admin/genres/index', [HomeController::class, 'admin_genres_index'])->name('admin.genres.index');
+Route::get('/admin/genres/index', [AdminGenreController::class, 'admin_genres_index'])->name('admin.genres.index');
+Route::post('admin/genres/store', [AdminGenreController::class, 'store'])->name('admin.genres.store');
+Route::patch('/admin/genres/{id}/update', [AdminGenreController::class, 'update'])->name('admin.genres.update');
+Route::delete('/admin/genres/{id}/destroy', [AdminGenreController::class, 'destroy'])->name('admin.genres.destroy');
+
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/admin/contacts/index', [ContactController::class, 'admin_contacts_index'])->name('admin.contacts.index');
