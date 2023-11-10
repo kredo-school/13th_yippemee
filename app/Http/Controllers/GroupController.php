@@ -57,7 +57,17 @@ class GroupController extends Controller
         $this->group->name          =   $request->name;
         $this->group->restaurant_id =   $request->restaurant_id;
         $this->group->member_id     =   $request->member_id;
-        $this->group->image         =   'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
+
+        // $this->group->image         =   'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
+
+        // save images in a separated directory↓↓
+        // $this->group->image         = $request->file('image');
+        // $this->group->image->move(base_path('\storage\images'), $this->group->image->getClientOriginalName());
+        // dd($request->file('image')->getClientOriginalName());
+        $file = $request->file('image');
+        $file->move('storage/images/', $file->getClientOriginalName()); //move uploaded file to directoy 'storage/images/ before put the path in DB
+        $this->group->image = 'storage/images/' . $file->getClientOriginalName();
+
         $this->group->save();
 
         return redirect()->route('group_list');
@@ -115,8 +125,10 @@ class GroupController extends Controller
             $group->restaurant_id = $request->restaurant_id;
         }
         if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $file->move('storage/images/', $file->getClientOriginalName());
             $imagePath =
-                'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
+                $this->group->image = 'storage/images/' . $file->getClientOriginalName();
             $group->image = $imagePath;
         }
 

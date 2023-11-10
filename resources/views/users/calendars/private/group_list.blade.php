@@ -27,7 +27,7 @@
                         <div class="card" id="group-card">
                             <div class="card-header group-header bg-white" id="group-header">
                                 <a href="{{ route('private_calendar') }}">
-                                    <img src=" {{ $group->image }}" alt=" {{ $group->name }}" class="group-pic"
+                                    <img src="{{ asset($group->image) }}" alt=" {{ $group->name }}" class="group-pic"
                                         name="image" id="image">
                                 </a>
                             </div>
