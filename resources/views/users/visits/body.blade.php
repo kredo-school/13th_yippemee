@@ -10,7 +10,7 @@
         <div class="col-7">
             <div class="row">
                 <div class="col-10 mt-3">
-                    <h4 class="visit-show fw-bold">{{ $visit->restaurantName}}</h4>
+                    <h3 class="visit-show fw-bold">{{ $visit->restaurantName}}</h3>
                 </div>
 
                 <div class="col-2" style="text-align: right">
@@ -33,19 +33,25 @@
                 </div>
             </div>
 
-            <div class="visit-show">
-                {{ $visit->date }}
-            </div>
-
-            <div class="visit-show reviewed">
+            <h3>
+                <div class="visit-show reviewed mb-4">
                 @for($i=1; $i<=$visit->star_rating; $i++)
                     <label class="text">{{$i}} stars</label>
                 @endfor
+                </div>
+            </h3>
+
+            <div class="visit-show mb-3 fw-bold">
+                {{ $visit->date }}
             </div>
 
-            <div class="visit-show">
-                {{ $visit->description }}</p>
-            </div>
+
+
+            <h5>
+                <div class="col-11 visit-show">
+                {{ $visit->description }}
+                </div>
+            </h5>
 
         </div>
 

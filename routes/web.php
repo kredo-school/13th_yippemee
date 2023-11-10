@@ -52,7 +52,7 @@ Route::patch('/visits/{id}/update', [VisitController::class, 'update'])->name('v
 //BUCKET
 Route::get('/bucket/create', [BucketController::class, 'create'])->name('bucket.create');
 Route::post('/bucket/store', [BucketController::class, 'store'])->name('bucket.store');
-Route::get('/bucket/show', [BucketController::class, 'show'])->name('bucket.show');
+Route::get('/bucket/{id}/show', [BucketController::class, 'show'])->name('bucket.show');
 Route::get('/bucket/{id}/edit', [BucketController::class, 'edit'])->name('bucket.edit');
 Route::patch('/bucket/{id}/update', [BucketController::class, 'update'])->name('bucket.update');
 Route::delete('/bucket/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');

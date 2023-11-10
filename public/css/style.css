@@ -1,14 +1,7 @@
-.reviewed {
-    float: left;
-    padding: 0;
-    }
-
-    .reviewed:not(:checked) > label {
-    float:right;
+.reviewed:not(:checked) > label {
     width:1em;
     overflow:hidden;
     white-space:nowrap;
-    cursor:pointer;
     font-size:30px;
     color:#ffc700;
     }
@@ -512,9 +505,9 @@ label[for]:hover {
 
 .visit-show {
     text-align: left;
-    margin-left: 15px;
-    margin-bottom: 0;
-    padding: 0;
+    margin-left: 5px;
+    margin-bottom: 10;
+    padding: 10;
     height: 15px;
 }
 

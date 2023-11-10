@@ -71,7 +71,7 @@ class User extends Authenticatable
         return $this->hasMany(Visit::class)->latest();
     }
 
-    public function buckets()
+    public function bucket()
     {
         return $this->hasMany(Bucket::class)->latest();
     }

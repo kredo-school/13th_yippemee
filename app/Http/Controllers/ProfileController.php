@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Visit;
-use Illuminate\Http\Request;
+use App\Models\Bucket;
 use App\Models\SocialPost;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -23,9 +24,13 @@ class ProfileController extends Controller
         // dd($user);
 
         $all_visits = Visit::latest()->get();
-        return view('users.profile.show')
+        return view('users.visits.show')
         ->with(["user" => $user, "all_visits" => $all_visits]);
-    
+
+        $all_buckets = Bucket::latest()->get();
+        return view('users.bucket.show')
+        ->with(["user" => $user, "all_buckets" => $all_buckets]);
+
 
         $social_posts = SocialPost::where('user_id', Auth::id())->latest()->get();
         return view('users.profile.show', compact('social_posts'));
