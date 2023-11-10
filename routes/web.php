@@ -16,8 +16,7 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\WantController;
 use App\Http\Controllers\Admin\AdminPostsController;
 use App\Http\Controllers\SocialCommentController;
-
-
+use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\ListCommentController;
 use App\Models\SocialComment;
 
@@ -107,7 +106,11 @@ Route::get('/public/yourplan', [HomeController::class, 'publicyourplan'])->name(
 
 
 //admin
-Route::get('/admin/users/index', [HomeController::class, 'admin_users_index'])->name('admin.users.index');
+Route::get('/admin/users/index', [UsersController::class, 'admin_users_index'])->name('admin.users.index');
+Route::delete('/admin/users/{id}/deactivate',[UsersController::class,'deactivate'])->name('users.deactivate');
+Route::post('/admin/users/{id}/activate',[UsersController::class,'activate'])->name('users.activate');
+Route::get('/admin/users/search',[UsersController::class,'search'])->name('users.search');
+
 Route::get('/admin/plans/index', [HomeController::class, 'admin_plans_index'])->name('admin.plans.index');
 
 Route::get('/admin/posts/index', [AdminPostsController::class, 'admin_posts_index'])->name('admin.posts.index');
