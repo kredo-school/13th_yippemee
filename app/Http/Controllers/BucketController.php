@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Genre;
 use App\Models\Bucket;
 use Illuminate\Http\Request;
@@ -61,11 +62,11 @@ class BucketController extends Controller
     }
 
 
-    public function show(){
+    public function show($id)
+    {
         $all_buckets = $this->bucket->latest()->get();
-
-        return view('users.bucket.show')
-                ->with('all_buckets', $all_buckets);
+        $user = User::findOrFail($id);
+        return view('users.bucket.show', ["all_buckets" => $all_buckets, "user" => $user]);
     }
 
     public function edit($id)

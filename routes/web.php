@@ -40,14 +40,14 @@ Route::get('/', function () {
 Auth::routes();
 
 //PROFILE
-Route::get('/profile/show', [ProfileController::class, 'show'])->name('profile.show');
+Route::get('/profile/{id}/show', [ProfileController::class, 'show'])->name('profile.show');
 Route::get('/profile/create', [ProfileController::class, 'create'])->name('profile.create');
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 
 //VISITS
 Route::get('/visits/create', [VisitController::class, 'create'])->name('visits.create');
 Route::post('/visits/store', [VisitController::class, 'store'])->name('visits.store');
-Route::get('/visits/show', [VisitController::class, 'show'])->name('visits.show');
+Route::get('/visits/{id}/show', [VisitController::class, 'show'])->name('visits.show');
 Route::get('/visits/{id}/edit', [VisitController::class, 'edit'])->name('visits.edit');
 Route::patch('/visits/{id}/update', [VisitController::class, 'update'])->name('visits.update');
 // Route::delete('/visits/destroy/{id}', [VisitsController::class, 'destroy'])->name('visits.destroy');
@@ -55,10 +55,10 @@ Route::patch('/visits/{id}/update', [VisitController::class, 'update'])->name('v
 //BUCKET
 Route::get('/bucket/create', [BucketController::class, 'create'])->name('bucket.create');
 Route::post('/bucket/store', [BucketController::class, 'store'])->name('bucket.store');
-Route::get('/bucket/show', [BucketController::class, 'show'])->name('bucket.show');
+Route::get('/bucket/{id}/show', [BucketController::class, 'show'])->name('bucket.show');
 Route::get('/bucket/{id}/edit', [BucketController::class, 'edit'])->name('bucket.edit');
 Route::patch('/bucket/{id}/update', [BucketController::class, 'update'])->name('bucket.update');
-Route::delete('/bucket/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');
+Route::delete('/bucket/{id}/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');
 
 //POST
 Route::get('/posts/show', [PostController::class, 'show'])->name('posts.show');

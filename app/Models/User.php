@@ -67,4 +67,16 @@ class User extends Authenticatable
     }
 
 
+    public function visits()
+    {
+        return $this->hasMany(Visit::class)->latest();
+    }
+
+    public function bucket()
+    {
+        return $this->hasMany(Bucket::class)->latest();
+    }
+
+
+
 }
