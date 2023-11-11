@@ -98,6 +98,11 @@
     }
 /* end */
 
+.bucket-card {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 .img-size-bucket {
 width: 288px;
 height: 190px;
@@ -353,6 +358,7 @@ body {
 .container-text-bucket {
     margin-left: 0;
     padding: 0;
+
 }
 
   /* Visits */

@@ -55,7 +55,7 @@ Route::post('/bucket/store', [BucketController::class, 'store'])->name('bucket.s
 Route::get('/bucket/{id}/show', [BucketController::class, 'show'])->name('bucket.show');
 Route::get('/bucket/{id}/edit', [BucketController::class, 'edit'])->name('bucket.edit');
 Route::patch('/bucket/{id}/update', [BucketController::class, 'update'])->name('bucket.update');
-Route::delete('/bucket/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');
+Route::delete('/bucket/{id}/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');
 
 //POST
 Route::get('/posts/show', [PostController::class, 'show'])->name('posts.show');
