@@ -77,6 +77,11 @@ class User extends Authenticatable
         return $this->hasMany(Bucket::class)->latest();
     }
 
+    public function genreProfile()
+    {
+        return $this->hasMany(GenreProfile::class);
+    }
+
 
 
 }
