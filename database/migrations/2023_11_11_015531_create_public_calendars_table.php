@@ -17,11 +17,11 @@ class CreatePublicCalendarsTable extends Migration
             $table->id();
             $table->string('member_id');
             $table->string('restaurant_id');
-            $table->vachar('title');
-            $table->varchar('description');
+            $table->string('title');
+            $table->string('description');
             $table->dateTime('date')->nullable();
             $table->dateTime('time')->nullable();
-            $table->varchar('available_member')->nullable();
+            $table->string('available_member')->nullable();
 
             $table->timestamps();
         });
