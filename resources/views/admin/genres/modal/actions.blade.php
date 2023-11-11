@@ -1,5 +1,5 @@
 <!--update genre-->
-<div class="modal fade" id="updateGenre" tabindex="-1" role="dialog" aria-labelledby="updateGenre"
+<div class="modal fade" id="updateGenre-{{ $genre->id }}" tabindex="-1" role="dialog" aria-labelledby="updateGenre"
 aria-hidden="true">
 
     <div class="modal-dialog" role="document">
@@ -15,9 +15,12 @@ aria-hidden="true">
 
             <!--Footer-->
             <div class="modal-footer d-flex justify-content-center border-0"> 
-                <form action="#" method="post">
+                <form action="{{ route('admin.genres.update', ['id' => $genre->id]) }}"  method="post">
+                    @csrf
+                    @method('PATCH')
+
                     <div class="w-100 mb-4">
-                        <input type="text" name="new_name" class="form-control mb-4 text-width" placeholder="Genre name" autofocus value="#" >
+                        <input type="text" name="new_name" class="form-control mb-4 text-width" placeholder="Genre name" autofocus value="{{ $genre->name }}" >
                     </div>
                     <div class="d-flex justify-content-center">
                         <button type="button" class="btn btn-outline-warning btn-lg" data-bs-dismiss="modal">Cancel</button>
@@ -30,7 +33,7 @@ aria-hidden="true">
 </div>
 
 <!--delete genre-->
-<div class="modal fade" id="deleteGenre" tabindex="-1" role="dialog" aria-labelledby="deleteGenre"
+<div class="modal fade" id="deleteGenre-{{ $genre->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteGenre"
 aria-hidden="true">
 
     <div class="modal-dialog" role="document">
@@ -46,13 +49,16 @@ aria-hidden="true">
             <!--Body-->
             <div class="modal-body d-flex justify-content-center align-items-center flex-column">
                 <span><i class="fa-solid fa-trash-can fa-3x icon-red mb-4"></i></span>
-                <p class="text-width">Are you sure you want to delete <strong>"Genre-Name"</strong> genre?</p>
+                <p class="text-width">Are you sure you want to delete the genre name <strong>"{{ $genre->name }}"</strong> ?</p>
                 <p class="text-muted text-width">This action will affect all the posts under this genre. Posts without a genre will fall under Uncategorized.</p>
             </div>
 
             <!--Footer-->
             <div class="modal-footer d-flex justify-content-center border-0"> 
-                <form action="#" method="post">
+                <form action="{{ route('admin.genres.destroy', ['id' => $genre->id]) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+
                     <button type="submit" class="btn btn-danger btn-lg me-2">Delete</button>
                     <button type="button" class="btn btn-outline-danger btn-lg" data-bs-dismiss="modal">Cancel</button>
                 </form>
