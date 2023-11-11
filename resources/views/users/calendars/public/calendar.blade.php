@@ -27,7 +27,7 @@
 </div>
 
 <div class="right-navi">
-    @include('users.calendars.detail')
+    @include('users.calendars.public.detail')
 </div>
 
 {{-- modal --}}

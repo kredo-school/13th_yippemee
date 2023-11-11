@@ -110,7 +110,7 @@
 </div>
 
 <div class="right-navi" id="private-right-navi">
-    @include('users.calendars.detail')
+    @include('users.calendars.private.detail')
 </div>
 
 {{-- modal --}}
