@@ -221,10 +221,6 @@
         -1px 1px 9px #253c5c;
 }
 
-#private-calendar tbody td:hover:after, .selected:after {
-    background: #f2c84b;
-}
-
 .chat-area {
     background-color: rgba(255, 255, 255, 0.7);
     padding-left: 0;
