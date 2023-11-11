@@ -15,7 +15,7 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\LikeController;
 
 use App\Http\Controllers\GoogleController;
-
+use App\Http\Controllers\FacebookController;
 
 
 use App\Http\Controllers\WantController;
@@ -171,6 +171,10 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+//Facebook login
+Route::get('auth/facebook',[FacebookController::class,'facebookpage']);
+Route::get('auth/facebook/callback',[FacebookController::class,'facebookredirect']);
 
 //want
 Route::post('social/posts/{social_post}/want', [WantController::class, 'store'])->name('social.contents.want');
