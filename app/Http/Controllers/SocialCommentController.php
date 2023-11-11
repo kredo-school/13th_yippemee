@@ -45,9 +45,4 @@ class SocialCommentController extends Controller
         return redirect()->back();
     }
 
-    public function destroy($id)
-    {
-        $this->social_comment->destroy($id);
-        return redirect()->back();
-    }
 }
