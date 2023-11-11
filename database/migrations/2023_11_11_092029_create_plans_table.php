@@ -18,7 +18,7 @@ class CreatePlansTable extends Migration
             $table->string('date');
             $table->decimal('time')->nullable();
             $table->string('restaurant_id')->nullable();
-            $table->string('member_id');
+            $table->string('member_id')->nullable();
             $table->text('description');
             $table->string('available_member')->nullable();
 

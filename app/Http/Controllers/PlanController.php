@@ -7,14 +7,20 @@ use Illuminate\Http\Request;
 
 class PlanController extends Controller
 {
+    private $plan;
+
+    public function __construct(Plan $plan){
+        $this->plan = $plan;
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function Plan()
     {
-        //
+        $plans      = Plan::all();
+        return view('users.calendars.public.calendar');
     }
 
     /**
@@ -24,7 +30,10 @@ class PlanController extends Controller
      */
     public function create()
     {
-        //
+        $all_plans   = $this->plan->all();
+
+        return View('users.modals.add_group')
+                ->with('all_plans', $all_plans);
     }
 
     /**
@@ -35,7 +44,22 @@ class PlanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'date'          =>  'required|min:1|max:30',
+            'time'          =>  'sometimes',
+            // restaurant/member_id will be array later
+            'restaurant_id' =>  'required|min:1|max:30',
+            'description'   =>  'required|min:1|max:300',
+        ]);
+
+        $this->plan->date           =   $request->name;
+        $this->plan->time           =   $request->time;
+        $this->plan->restaurant_id  =   $request->restaurant_id;
+        $this->plan->description    =   $request->description;
+
+        $this->plan->save();
+
+        return redirect()->route('calendar');
     }
 
     /**
