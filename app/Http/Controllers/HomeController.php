@@ -50,6 +50,11 @@ class HomeController extends Controller
         return view('users.myschadule');
     }
 
+    public function showTest()
+    {
+        return view('users.calendars.public.test-calendar');
+    }
+
 
 
     public function privateyourplan()

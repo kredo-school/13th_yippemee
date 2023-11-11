@@ -84,7 +84,8 @@ Route::delete('group/{id}/destroy', [GroupController::class,'destroy'])->name('g
 Route::get('/users/calendars/private/calendar',[HomeController::class,'showGroupCalendar'])->name('private_calendar');
 // public calendar
 Route::get('/users/calendars/public/calendar',[HomeController::class,'showCalendar'])->name('calendar');
-
+// test
+Route::get('users/calendars/public/test-calendar',[HomeController::class,'showTest'])->name('test');
 
 //Restaurant list
 Route::get('/restaurantlist', [RestaurantController::class, 'restaurantlist'])->name('restaurantlist');
