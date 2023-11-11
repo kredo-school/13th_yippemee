@@ -45,6 +45,11 @@ class SocialPost extends Model
         return $this->hasMany(SocialComment::class, 'social_post_id');
     }
 
+    public function genres()
+    {
+        return $this->belongsToMany(Genre::class, 'genre_social_post');
+    }
+
 }
 
 

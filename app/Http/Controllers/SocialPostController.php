@@ -93,15 +93,24 @@ class SocialPostController extends Controller
         $request->validate([
             'description' => 'max:1000',
             'restaurant_name' => 'min:0|max:50',
-            'image' => 'mimes:jpg,png,jpeg,gif|max:1048'
+            'image' => 'mimes:jpg,png,jpeg,gif|max:1048',
+            'genre' => 'array|max:2'
         ]);
 
         #save the social_post
         $this->social_post->user_id = Auth::user()->id;
         $this->social_post->description = $request->description;
         $this->social_post->restaurant_name = $request->restaurant_name;
-        $this->social_post->image = 'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
+
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $this->social_post->image = 'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
+        }
+
         $this->social_post->save();
+
+        #save the genre, acquisition and association of genre_ID
+        $genreIds = $request->input('genre', []);
+        $this->social_post->genres()->sync($genreIds);
 
         return redirect()->route('social.social_home');
 
@@ -115,8 +124,8 @@ class SocialPostController extends Controller
      */
     public function show($id)
     {
-        $social_post = $this->social_post->findOrFail($id);
-        return view('social.posts.show')->with('social_post', $social_post);
+        $social_post = SocialPost::with('genres')->findOrFail($id);
+        return view('social.posts.show', compact('social_post'));
     }
 
     /**
@@ -128,13 +137,17 @@ class SocialPostController extends Controller
     
     public function edit($id)
     {
-        $social_post = $this->social_post->findOrFail($id);
+        $social_post = SocialPost::with('genres')->findOrFail($id);
+        $all_genres = Genre::all();
+
+        # get array of genre IDs
+        $selected_genres = $social_post->genres->pluck('id')->toArray();
 
         if ($social_post->user_id !== Auth::user()->id){
             return redirect()->route('social.social_home');
         }
 
-        return view('social.posts.edit')->with('social_post', $social_post);
+        return view('social.posts.edit', compact('social_post', 'all_genres','selected_genres'));
 
     }
 
@@ -152,7 +165,8 @@ class SocialPostController extends Controller
         $request->validate([
             'description' => 'required|min:1|max:1000',
             'restaurant_name' => 'min:0|max:50',
-            'image' => 'mimes:jpg,png,jpeg,gif|max:1048'
+            'image' => 'mimes:jpg,png,jpeg,gif|max:1048',
+            'genre' => 'array|max:2'
         ]);
 
         # 2. Update the post
@@ -176,6 +190,10 @@ class SocialPostController extends Controller
         }
 
         $social_post->save();
+
+        # Update genres
+        $genreIds = $request->input('genre', []);
+        $social_post->genres()->sync($genreIds);
 
         return redirect()->route('social.social_home');
 
