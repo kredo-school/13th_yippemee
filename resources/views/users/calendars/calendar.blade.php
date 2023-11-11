@@ -1,14 +1,12 @@
 <div class="monthly-calendar">
     <div class="w-100 calendar-button text-center">
-        <h1 class="text-center">
-            September
-        </h1>
+        <h1 id="monthName" class="text-center"></h1>
         <div class="pre-next-button justify-content-center">
-            <button class="me-4 border-0 bg-white" id="preMonth"><i class="fa fa-chevron-left fw-bold" style="color: #253c5c;"></i></button>
+            <button class="me-4 border-0 bg-white" id="prevMonth"><i class="fa fa-chevron-left fw-bold" style="color: #253c5c;"></i></button>
             <button class="ms-4 border-0 bg-white" id="nextMonth"><i class="fa fa-chevron-right" style="color: #253c5c;"></i></button>
         </div>
     </div>
-    <table id="public-calendar">
+    <table id="weekCalendar">
         <thead>
             <tr>
                 <th>Sun</th>
@@ -21,63 +19,83 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>
-                    <a href="#" class="button-to-list text-decoration-none">1</a>
-                </td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>11</td>
-                <td>12</td>
-                <td>13</td>
-                <td>14</td>
-                <td>15</td>
-                <td>16</td>
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>18</td>
-                <td>19</td>
-                <td>20</td>
-                <td>21</td>
-                <td>22</td>
-                <td>23</td>
-            </tr>
-            <tr>
-                <td>24</td>
-                <td>25</td>
-                <td>26</td>
-                <td>27</td>
-                <td>28</td>
-                <td>29</td>
-                <td>30</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+            <tr id="weekDays">
+                <a href="#" class="button-to-list text-decoration-none"></a>
             </tr>
         </tbody>
     </table>
+
+    <script>
+        const calendarEl = document.getElementById('weekCalendar');
+        const date = new Date();
+        let currentYear = date.getFullYear();
+        let currentMonth = date.getMonth();
+
+        let prevMonthBtn = document.getElementById('prevMonth');
+        let nextMonthBtn = document.getElementById('nextMonth');
+
+        function generateCalendar(year, month) {
+            const monthNames = [
+                'January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'
+            ];
+            const monthName = monthNames[month];
+
+            const firstDayOfMonth = new Date(year, month, 1);
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const startingDayOfWeek = firstDayOfMonth.getDay();
+
+            let calendarHtml = '<table><thead><tr>';
+            for (let i = 0; i < 7; i++) {
+                calendarHtml += `<th>${['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][i]}</th>`;
+            }
+            calendarHtml += '</tr></thead><tbody><tr>';
+
+            for (let i = 1; i <= daysInMonth + startingDayOfWeek; i++) {
+                if (i > startingDayOfWeek) {
+                    const day = i - startingDayOfWeek;
+                    calendarHtml += `<td>${day}</td>`;
+                } else {
+                    calendarHtml += '<td></td>';
+                }
+
+                if (i % 7 === 0) {
+                    calendarHtml += '</tr>';
+                    if (i < daysInMonth + startingDayOfWeek) {
+                        calendarHtml += '<tr>';
+                    }
+                }
+            }
+            calendarHtml += '</tbody></table>';
+
+            const monthNameElement = document.getElementById('monthName');
+            monthNameElement.textContent = monthName;
+
+            calendarEl.innerHTML = calendarHtml;
+        }
+
+        prevMonthBtn.addEventListener('click', () => {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            generateCalendar(currentYear, currentMonth);
+        });
+
+        nextMonthBtn.addEventListener('click', () => {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            generateCalendar(currentYear, currentMonth);
+        });
+
+        generateCalendar(currentYear, currentMonth);
+    </script>
 </div>
+
+
+
 

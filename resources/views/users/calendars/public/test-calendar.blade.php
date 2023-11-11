@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -22,26 +22,10 @@
   </style>
 </head>
 <body>
-<button id="prevMonth">前の月</button>
-<button id="nextMonth">次の月</button>
-<div id="calendar">
-</div>
-<table id="weekCalendar">
-    <thead>
-        <tr>
-            <th>日</th>
-            <th>月</th>
-            <th>火</th>
-            <th>水</th>
-            <th>木</th>
-            <th>金</th>
-            <th>土</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr id="weekDays"></tr>
-    </tbody>
-</table>
+    <button id="prevMonth">前の月</button>
+    <button id="nextMonth">次の月</button>
+    <div id="calendar">
+    </div>
 
 
 
@@ -84,12 +68,6 @@
         calendarHtml += '</tbody></table>';
         calendarEl.innerHTML = calendarHtml;
 
-        events.forEach(event => {
-            if (event.date.getFullYear() === year && event.date.getMonth() === month) {
-            const dayCell = calendarEl.querySelector(`td[data-date="${event.date.getDate()}"]`);
-            dayCell.innerHTML += `<div>${event.title}</div>`;
-            }
-        });
     }
 
     prevMonthBtn.addEventListener('click', () => {
@@ -110,19 +88,9 @@
         generateCalendar(currentYear, currentMonth);
     });
 
-    const events = [
-    {
-        date: new Date(currentYear, currentMonth, 5),
-        title: 'イベント1',
-    },
-    {
-        date: new Date(currentYear, currentMonth, 15),
-        title: 'イベント2',
-    },
-    ];
 
 </script>
 
 </body>
-</html> --}}
+</html>
 

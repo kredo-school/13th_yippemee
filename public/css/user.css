@@ -135,27 +135,23 @@
 .monthly-calendar h1{
     font-size: 40px;
 }
-#public-calendar,
-#private-calendar {
+#weekCalendar {
     width: 100%;
     height: 100%;
 
 }
-#public-calendar tr,
-#private-calendar tr {
+#weekCalendar tr{
     height: 4.5em;
     text-align: center;
     display: flex;
     justify-content: center;
 }
-#public-calendar thead th,
-#private-calendar thead th {
+#weekCalendar thead th{
     width: 100%;
     padding-top: 5%;
 }
 
-#public-calendar tbody td,
-#private-calendar tbody td {
+#weekCalendar tbody td {
     width: 100%;
     border-radius: 50%;
     cursor: pointer;
@@ -168,8 +164,7 @@
     justify-content: center;
     align-items: center;
 }
-#public-calendar tbody td:after,
-#private-calendar tbody td:after {
+#weekCalendar tbody td:after{
     position:absolute;
     top: 50%;
     left: 50%;
@@ -192,13 +187,9 @@
     transition: 0.3s;
     z-index: -1;
 }
-#public-calendar tbody td:hover, .selected,
-#private-calendar tbody td:hover, .selected {
+#weekCalendar tbody td:hover, .selected {
     color: #fff;
     border: none;
-}
-#public-calendar tbody td:hover:after, .selected:after {
-    background: #f1a29b;
 }
 
 @media (max-width: 767.98px) {

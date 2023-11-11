@@ -33,7 +33,7 @@
                     <a href="#" class="text-decoration-none ms-4"><i class="fa fa-chevron-right" style="color: #253c5c;"></i></a>
                 </div>
             </div>
-            <table id="private-calendar">
+            <table id="weekCalendar">
                 <thead>
                     <tr>
                         <th>Sun</th>
