@@ -11,11 +11,8 @@
                 <a href="#" class="text-decoration-none text-post">{{ $social_post->restaurant_name }}</a>
             </div>
     
-            <div class="col-auto ms-auto">
-                <div class="badge bg-genre text-wrap">
-                    Italian
-                </div>
-            </div>
+            @include('social.contents.genre', ['id' => $social_post->id])
+            
         </div>
     </div>
 
