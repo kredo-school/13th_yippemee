@@ -13,6 +13,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SocialPostController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\GoogleController;
 
 
 use App\Http\Controllers\ListCommentController;
@@ -123,3 +124,18 @@ Route::get('/friends/list',  [HomeController::class, 'friends_list'])->name('fri
 //like
 Route::post('social/posts/{social_post}/like', [LikeController::class, 'store'])->name('social.posts.like');
 Route::delete('social/posts/{social_post}/unlike', [LikeController::class, 'destroy'])->name('social.posts.unlike');
+
+//google login
+
+Route::get('auth/google',[GoogleController::class,'googlepage']);
+Route::get('auth/google/callback',[GoogleController::class,'googlecallback']);
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});

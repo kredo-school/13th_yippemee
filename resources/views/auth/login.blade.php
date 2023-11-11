@@ -85,7 +85,7 @@
                             </div>
 
                             <div class="row text-center mb-5">
-                                <div class="col-md"><a href="#"><img src="/resources/images/google-icon.png" alt=""><img src="/images/google-icon.png" alt="" class="w-25"></a></div>
+                                <div class="col-md"><a href="{{ url('auth/google') }}"><img src="/resources/images/google-icon.png" alt=""><img src="/images/google-icon.png" alt="" class="w-25"></a></div>
                                 <div class="col-md"><a href="#"><i class="fa-brands fa-apple text-dark h2"></i></a></div>
                                 <div class="col-md"><a href="#"><i class="fa-brands fa-facebook text-primary h2"></i></a></div>
                             </div>
