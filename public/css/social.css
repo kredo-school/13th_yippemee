@@ -175,8 +175,25 @@ div.bg-genre {
     max-width: 100%; 
 }
 
-.heart-button {
-    background: none;
+.like-button, .want-button {
     border: none;
-    padding: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.show-socialpost{
+    overflow-y: scroll;
+}
+
+.card_body-post{
+    position: absolute;
+    top: 65px;
+}
+
+.show-post{
+    max-width: 90%;
+}
+
+.card_header-post, .card_body-post{
+    width: 100%; 
 }

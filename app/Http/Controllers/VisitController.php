@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 class VisitController extends Controller
 {
     private $visit;
+    private $user;
 
     public function __construct(Visit $visit)
     {
@@ -46,19 +47,17 @@ class VisitController extends Controller
         return redirect()->route('visits.show');
     }
 
-    public function show(){
+    public function show($id)
+    {
         $all_visits = $this->visit->latest()->get();
-
-        return view('users.visits.show')
-                ->with('all_visits', $all_visits);
+        $user = User::findOrFail($id);
+        return view("users.visits.show", ["all_visits" => $all_visits,"user" => $user]);
     }
 
     public function edit($id)
     {
         $visit = $this->visit->findOrFail($id);
-
         return view('users.visits.edit',['visit'=>$visit]);
-            // ->with('visits', $visit);
     }
 
     public function update(Request $request, $id){

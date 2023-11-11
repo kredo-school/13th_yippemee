@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -12,11 +13,15 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+
     use HasApiTokens;
     use HasFactory;
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+
+    use HasApiTokens, HasFactory, Notifiable, SoftDeletes;
+
 
     /**
      * The attributes that are mass assignable.
@@ -50,6 +55,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
     /**
      * The accessors to append to the model's array form.
      *
@@ -58,4 +64,41 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    # User has many social_posts
+    public function social_posts()
+    {
+        return $this->hasMany(SocialPost::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    public function wants()
+    {
+        return $this->hasMany(Want::class);
+    }
+
+     # User has many contacts
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
+    }
+
+
+    public function visits()
+    {
+        return $this->hasMany(Visit::class)->latest();
+    }
+
+    public function bucket()
+    {
+        return $this->hasMany(Bucket::class)->latest();
+    }
+
+
+
+
 }

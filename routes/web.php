@@ -13,10 +13,20 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SocialPostController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\LikeController;
+
 use App\Http\Controllers\GoogleController;
 
 
+
+use App\Http\Controllers\WantController;
+use App\Http\Controllers\Admin\AdminPostsController;
+use App\Http\Controllers\Admin\AdminGenreController;
+use App\Http\Controllers\SocialCommentController;
+use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Genre;
+
 use App\Http\Controllers\ListCommentController;
+use App\Models\SocialComment;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,14 +46,14 @@ Route::get('/', function () {
 Auth::routes();
 
 //PROFILE
-Route::get('/profile/show', [ProfileController::class, 'show'])->name('profile.show');
+Route::get('/profile/{id}/show', [ProfileController::class, 'show'])->name('profile.show');
 Route::get('/profile/create', [ProfileController::class, 'create'])->name('profile.create');
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
 
 //VISITS
 Route::get('/visits/create', [VisitController::class, 'create'])->name('visits.create');
 Route::post('/visits/store', [VisitController::class, 'store'])->name('visits.store');
-Route::get('/visits/show', [VisitController::class, 'show'])->name('visits.show');
+Route::get('/visits/{id}/show', [VisitController::class, 'show'])->name('visits.show');
 Route::get('/visits/{id}/edit', [VisitController::class, 'edit'])->name('visits.edit');
 Route::patch('/visits/{id}/update', [VisitController::class, 'update'])->name('visits.update');
 // Route::delete('/visits/destroy/{id}', [VisitsController::class, 'destroy'])->name('visits.destroy');
@@ -51,10 +61,10 @@ Route::patch('/visits/{id}/update', [VisitController::class, 'update'])->name('v
 //BUCKET
 Route::get('/bucket/create', [BucketController::class, 'create'])->name('bucket.create');
 Route::post('/bucket/store', [BucketController::class, 'store'])->name('bucket.store');
-Route::get('/bucket/show', [BucketController::class, 'show'])->name('bucket.show');
+Route::get('/bucket/{id}/show', [BucketController::class, 'show'])->name('bucket.show');
 Route::get('/bucket/{id}/edit', [BucketController::class, 'edit'])->name('bucket.edit');
 Route::patch('/bucket/{id}/update', [BucketController::class, 'update'])->name('bucket.update');
-Route::delete('/bucket/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');
+Route::delete('/bucket/{id}/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');
 
 //POST
 Route::get('/posts/show', [PostController::class, 'show'])->name('posts.show');
@@ -67,13 +77,18 @@ Route::get('/myplans/show', [MyPlanController::class, 'show'])->name('myplans.sh
 
 
 // Calendars
+// group list
 Route::get('/users/calendars/private/group_list', [GroupController::class, 'group'])->name('group_list');
 Route::get('/group/create', [GroupController::class, 'create'])->name('group.create');
 Route::post('/group/store', [GroupController::class, 'store'])->name('group.store');
 Route::get('group/{id}/show', [GroupController::class, 'show'])->name('group.show');
+Route::get('group/{id}/edit', [GroupController::class, 'edit'])->name('group.edit');
+Route::patch('group/{id}/update', [GroupController::class], 'update')->name('group.update');
 Route::delete('group/{id}/destroy', [GroupController::class,'destroy'])->name('group.destroy');
-Route::get('/users/calendars/public/calendar',[HomeController::class,'showCalendar'])->name('calendar');
+// private calendar
 Route::get('/users/calendars/private/calendar',[HomeController::class,'showGroupCalendar'])->name('private_calendar');
+// public calendar
+Route::get('/users/calendars/public/calendar',[HomeController::class,'showCalendar'])->name('calendar');
 
 
 //Restaurant list
@@ -99,10 +114,22 @@ Route::get('/public/yourplan', [HomeController::class, 'publicyourplan'])->name(
 
 
 //admin
-Route::get('/admin/users/index', [HomeController::class, 'admin_users_index'])->name('admin.users.index');
+Route::get('/admin/users/index', [UsersController::class, 'admin_users_index'])->name('admin.users.index');
+Route::delete('/admin/users/{id}/deactivate',[UsersController::class,'deactivate'])->name('users.deactivate');
+Route::post('/admin/users/{id}/activate',[UsersController::class,'activate'])->name('users.activate');
+Route::get('/admin/users/search',[UsersController::class,'search'])->name('users.search');
+
 Route::get('/admin/plans/index', [HomeController::class, 'admin_plans_index'])->name('admin.plans.index');
-Route::get('/admin/posts/index', [HomeController::class, 'admin_posts_index'])->name('admin.posts.index');
-Route::get('/admin/genres/index', [HomeController::class, 'admin_genres_index'])->name('admin.genres.index');
+
+Route::get('/admin/posts/index', [AdminPostsController::class, 'admin_posts_index'])->name('admin.posts.index');
+Route::patch('/admin/posts/{id}/unhide', [AdminPostsController::class, 'unhide'])->name('admin.posts.unhide');
+Route::delete('/admin/posts/{id}/hide', [AdminPostsController::class, 'hide'])->name('admin.posts.hide');
+
+Route::get('/admin/genres/index', [AdminGenreController::class, 'admin_genres_index'])->name('admin.genres.index');
+Route::post('admin/genres/store', [AdminGenreController::class, 'store'])->name('admin.genres.store');
+Route::patch('/admin/genres/{id}/update', [AdminGenreController::class, 'update'])->name('admin.genres.update');
+Route::delete('/admin/genres/{id}/destroy', [AdminGenreController::class, 'destroy'])->name('admin.genres.destroy');
+
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/admin/contacts/index', [ContactController::class, 'admin_contacts_index'])->name('admin.contacts.index');
@@ -118,12 +145,17 @@ Route::get('/social/posts/{id}/edit', [SocialPostController::class, 'edit'])->na
 Route::patch('/social/posts/{id}/update', [SocialPostController::class, 'update'])->name('social.posts.update');
 Route::delete('/social/posts/{id}/destroy', [SocialPostController::class, 'destroy'])->name('social.posts.destroy');
 
+//social_comment
+Route::post('/social/comment/{social_post_id}/store', [SocialCommentController::class, 'store'])->name('social_comment.store');
+Route::delete('/social/comment/{social_post_id}/destroy', [SocialCommentController::class, 'destroy'])->name('social_comment.destroy');
+
 //friends
 Route::get('/friends/list',  [HomeController::class, 'friends_list'])->name('friends.friends_list');
 
 //like
 Route::post('social/posts/{social_post}/like', [LikeController::class, 'store'])->name('social.posts.like');
 Route::delete('social/posts/{social_post}/unlike', [LikeController::class, 'destroy'])->name('social.posts.unlike');
+
 
 //google login
 
@@ -139,3 +171,8 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+//want
+Route::post('social/posts/{social_post}/want', [WantController::class, 'store'])->name('social.contents.want');
+Route::delete('social/posts/{social_post}/want/destroy', [WantController::class, 'destroy'])->name('social.contents.want.destroy');
+

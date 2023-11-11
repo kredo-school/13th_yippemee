@@ -4,10 +4,10 @@
     </div>
 
     <div class="col-3">
-        <div class="mt-4" style="font-family: 'Marcellus';"><h2 style="margin-bottom: 0">John Smith</h2>
+        <div class="mt-4" style="font-family: 'Marcellus';"><h2 style="margin-bottom: 0">{{ $user->name }}</h2>
         </div>
         <div class="header-user-name row">
-        <div class="mt-0">{{"@JohnSmith12345678"}}</div>
+        <div class="mt-0">{{ $user->username }}</div>
         </div>
     </div>
 
@@ -30,8 +30,8 @@
     <nav class="sidebarMenu profile-nav stroke">
           <ul>
             <li><a href="{{ route('posts.show') }}">POST</a></li>
-            <li><a href="{{ route('visits.show') }}">VISITS</a></li>
-            <li><a href="{{ route('bucket.show') }}">BUCKET LIST</a></li>
+            <li><a href="{{ route('visits.show',$user->id) }}">VISITS</a></li>
+            <li><a href="{{ route('bucket.show',$user->id) }}">BUCKET LIST</a></li>
             <li><a href="{{ route('myplans.show') }}">MY PLANS</a></li>
           </ul>
     </nav>

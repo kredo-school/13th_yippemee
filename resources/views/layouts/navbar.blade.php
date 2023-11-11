@@ -66,7 +66,7 @@
                         <li><a class="dropdown-item" href="{{ route('admin.users.index') }}">Admin</a></li>
                         <li><hr class="dropdown-divider"></li>
                         @endif
-                        <li><a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a></li>
+                        <li><a class="dropdown-item" href="{{ route('profile.show',  Auth::user()->id) }}">Profile</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"
