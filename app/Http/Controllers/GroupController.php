@@ -64,9 +64,14 @@ class GroupController extends Controller
         // $this->group->image         = $request->file('image');
         // $this->group->image->move(base_path('\storage\images'), $this->group->image->getClientOriginalName());
         // dd($request->file('image')->getClientOriginalName());
+        // $file = $request->file('image');
+        // $file->move('storage/images/', $file->getClientOriginalName()); move uploaded file to directoy 'storage/images/ before put the path in DB
+        // $this->group->image = 'storage/images/' . $file->getClientOriginalName();
+
         $file = $request->file('image');
-        $file->move('storage/images/', $file->getClientOriginalName()); //move uploaded file to directoy 'storage/images/ before put the path in DB
-        $this->group->image = 'storage/images/' . $file->getClientOriginalName();
+        $this->group->image = time() . '_' . $file->getClientOriginalName();
+        $file->move(public_path('storage/images/'), $this->group->image);
+        $upload = Group::create(['filename' => $this->group->image]);
 
         $this->group->save();
 
@@ -126,10 +131,9 @@ class GroupController extends Controller
         }
         if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $file->move('storage/images/', $file->getClientOriginalName());
-            $imagePath =
-                $this->group->image = 'storage/images/' . $file->getClientOriginalName();
-            $group->image = $imagePath;
+            $this->group->image = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('uploads'), $this->group->image);
+            $upload = Group::create(['filename' => $this->group->image]);
         }
 
         $group->save();
