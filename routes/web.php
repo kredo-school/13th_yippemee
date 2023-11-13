@@ -126,12 +126,14 @@ Route::get('/admin/genres/index', [AdminGenreController::class, 'admin_genres_in
 Route::post('admin/genres/store', [AdminGenreController::class, 'store'])->name('admin.genres.store');
 Route::patch('/admin/genres/{id}/update', [AdminGenreController::class, 'update'])->name('admin.genres.update');
 Route::delete('/admin/genres/{id}/destroy', [AdminGenreController::class, 'destroy'])->name('admin.genres.destroy');
+Route::get('/admin/genres/search',[AdminGenreController::class,'search'])->name('genres.search');
 
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/admin/contacts/index', [ContactController::class, 'admin_contacts_index'])->name('admin.contacts.index');
 Route::delete('/admin/contacts/{id}/destroy', [ContactController::class, 'destroy'])->name('admin.contacts.destroy');
-// Route::get('/admin/contacts/index', [HomeController::class, 'admin_contacts_index'])->name('admin.contacts.index');
+Route::get('/admin/contacts/search',[ContactController::class,'search'])->name('contacts.search');
+
 
 //social
 Route::get('/social/home',  [SocialPostController::class, 'social_home'])->name('social.social_home');
