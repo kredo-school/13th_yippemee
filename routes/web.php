@@ -62,7 +62,7 @@ Route::patch('/bucket/{id}/update', [BucketController::class, 'update'])->name('
 Route::delete('/bucket/{id}/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');
 
 //POST
-Route::get('/posts/show', [PostController::class, 'show'])->name('posts.show');
+Route::get('/posts/{id}/show', [PostController::class, 'show'])->name('posts.show');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
