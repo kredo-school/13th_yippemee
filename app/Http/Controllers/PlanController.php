@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Plan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PlanController extends Controller
 {
@@ -32,7 +33,7 @@ class PlanController extends Controller
     {
         $all_plans   = $this->plan->all();
 
-        return View('users.modals.add_group')
+        return View('users.modals.create')
                 ->with('all_plans', $all_plans);
     }
 
@@ -51,7 +52,7 @@ class PlanController extends Controller
             'restaurant_id' =>  'required|min:1|max:30',
             'description'   =>  'required|min:1|max:300',
         ]);
-
+        $this->plan->user_id        =   Auth::user()->id;
         $this->plan->date           =   $request->name;
         $this->plan->time           =   $request->time;
         $this->plan->restaurant_id  =   $request->restaurant_id;
@@ -68,9 +69,12 @@ class PlanController extends Controller
      * @param  \App\Models\Plan  $plan
      * @return \Illuminate\Http\Response
      */
-    public function show(Plan $plan)
+    public function show($id)
     {
-        //
+        $plan = $this->plan->findOrFail($id);
+
+        return view('calendar')
+                ->with('plan', $plan);
     }
 
     /**

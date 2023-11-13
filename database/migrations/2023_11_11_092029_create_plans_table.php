@@ -15,6 +15,7 @@ class CreatePlansTable extends Migration
     {
         Schema::create('plans', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('date');
             $table->decimal('time')->nullable();
             $table->string('restaurant_id')->nullable();
@@ -23,6 +24,7 @@ class CreatePlansTable extends Migration
             $table->string('available_member')->nullable();
 
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
