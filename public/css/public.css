@@ -5,3 +5,7 @@ body{
     background-attachment: fixed;
     background-position: center;
 }
+
+#weekCalendar tbody td:hover:after, .selected:after {
+    background: #f1a29b;
+}

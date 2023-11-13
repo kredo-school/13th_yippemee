@@ -25,34 +25,20 @@
     <form action="{{ route('social.posts.store') }}" method="post" enctype="multipart/form-data">
         @csrf
 
-    
         <div class="row">
-            <div class="mb-3  text-start">
-                <label for="Genre" class="form-label d-block fw-bold">
-                    Genre
+            <div class="mb-3 text-start">
+                <label for="genre" class="form-label d-block fw-bold">
+                    Genre<span class="text-muted fw-normal">(up to 2)</span>
                 </label>
-                <div class="d-flex align-items-center posts-input">
-                    <div class="form-check form-check-inline d-flex align-items-center">
-                        <input type="checkbox" name="genre[]" id="genre_italian" value="Italian" class="form-check-input">
-                        <label for="genre_italian" class="form-check-label">Italian</label>
-                    </div>
-                    <div class="form-check form-check-inline d-flex align-items-center">
-                        <input type="checkbox" name="genre[]" id="genre_japanese" value="Japanese" class="form-check-input">
-                        <label for="genre_japanese" class="form-check-label">Japanese</label>
-                    </div>
-                    <div class="form-check form-check-inline d-flex align-items-center">
-                        <input type="checkbox" name="genre[]" id="genre_mexican" value="Mexican" class="form-check-input mr-2">
-                        <label for="genre_mexican" class="form-check-label">Mexican</label>
-                    </div>
-                    <div class="form-check form-check-inline d-flex align-items-center me-0">
-                        <input type="checkbox" name="genre[]" id="genre_others" value="" class="form-check-input">
-                        <label for="genre_others" class="form-check-label me-0">Others</label>
-                    </div>
-                    <div class="form-check form-check-inline d-flex align-items-center">
-                        <input type="text" name="genre_add" id="genre_others_text" class="form-control" value="" autofocus>
-                        <button type="submit" class="btn text-white" style="background-color: #253C5C;"><i class="fa-solid fa-plus"></i></button>
-                    </div>
+
+                <!-- display all genres-->
+                @foreach ($all_genres as $genre)
+                <div class="form-check form-check-inline">
+                    <input type="checkbox" name="genre[]" id="{{ $genre->name }}" value="{{ $genre->id }}" class="form-check-input">
+                    <label for="{{ $genre->name }}" class="form-check-label">{{ $genre->name }}</label>
                 </div>
+                    
+                @endforeach
             </div>
         </div>
 
