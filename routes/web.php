@@ -118,8 +118,9 @@ Route::get('/admin/users/search',[UsersController::class,'search'])->name('users
 Route::get('/admin/plans/index', [HomeController::class, 'admin_plans_index'])->name('admin.plans.index');
 
 Route::get('/admin/posts/index', [AdminPostsController::class, 'admin_posts_index'])->name('admin.posts.index');
-Route::patch('/admin/posts/{id}/unhide', [AdminPostsController::class, 'unhide'])->name('admin.posts.unhide');
+Route::post('/admin/posts/{id}/unhide', [AdminPostsController::class, 'unhide'])->name('admin.posts.unhide');
 Route::delete('/admin/posts/{id}/hide', [AdminPostsController::class, 'hide'])->name('admin.posts.hide');
+Route::get('/admin/posts/search',[AdminPostsController::class,'search'])->name('posts.search');
 
 Route::get('/admin/genres/index', [AdminGenreController::class, 'admin_genres_index'])->name('admin.genres.index');
 Route::post('admin/genres/store', [AdminGenreController::class, 'store'])->name('admin.genres.store');
