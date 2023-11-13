@@ -24,7 +24,7 @@
                                 <div class="image-preview">
                                     {{-- First Image --}}
                                     @if ($group->image)
-                                        <img id="imageBackground{{ $group->id }}" src="{{ asset($group->image) }}"
+                                        <img id="imageBackground{{ $group->id }}" src="{{ asset('storage/images/' . $group->image) }}"
                                             alt="{{ $group->name }}" class="rounded-circle" style="height: 100%; width:100%;">
                                     @else
                                         <img id="imageBackground{{ $group->id }}" src="url('images/user-icon.png')"

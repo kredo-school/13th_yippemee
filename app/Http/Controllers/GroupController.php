@@ -71,7 +71,6 @@ class GroupController extends Controller
         $file = $request->file('image');
         $this->group->image = time() . '_' . $file->getClientOriginalName();
         $file->move(public_path('storage/images/'), $this->group->image);
-        $upload = Group::create(['filename' => $this->group->image]);
 
         $this->group->save();
 
@@ -133,7 +132,6 @@ class GroupController extends Controller
             $file = $request->file('image');
             $this->group->image = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path('uploads'), $this->group->image);
-            $upload = Group::create(['filename' => $this->group->image]);
         }
 
         $group->save();

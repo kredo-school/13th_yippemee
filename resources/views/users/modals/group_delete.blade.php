@@ -11,7 +11,7 @@
                     <p>Are you sure you want to delete this group?</p>
                 </div>
                 <div class="row">
-                    <img src="{{ $group->image }}" alt="{{ $group->name }}" id="modal-image">
+                    <img src="{{ asset('storage/images/' . $group->image) }}" alt="{{ $group->name }}" id="modal-image">
                 </div>
                 <div class="row name">
                     <div class="group-name">{{ $group->name }}</div>
