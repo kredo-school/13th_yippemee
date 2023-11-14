@@ -28,10 +28,13 @@ class CreateRestaurantsTable extends Migration
             $table->string('saturday')->nullable( );
             $table->string('sunday')->nullable( );
             $table->string('price')->nullable( );
+            $table->unsignedBigInteger('genre_id')->nullable( );
             $table->longtext('image')->nullable();
             $table->string('url');
             $table->string('googlemap');
             $table->timestamps();
+
+            $table->foreign('genre_id')->references('id')->on('genres');
 
         });
     }

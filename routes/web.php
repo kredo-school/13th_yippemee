@@ -95,7 +95,7 @@ Route::get('/users/calendars/public/calendar',[HomeController::class,'showCalend
 Route::get('/restaurantlist', [RestaurantController::class, 'restaurantlist'])->name('restaurantlist');
 Route::post('/restaurantlist/store', [RestaurantController::class, 'store'])->name('restaurant.store');
 Route::get('/restaurantlist/post', [RestaurantController::class, 'restaurantpost'])->name('restaurantpost');
-Route::get('/genre/japanese/', [RestaurantController::class, 'genrejapanese'])->name('genrejapanese');
+Route::get('/genre/{genre}/restaurants', [RestaurantController::class, 'restaurantsByGenre']);
 Route::get('/genre/italian', [RestaurantController::class, 'genreitalian'])->name('genreitalian');
 Route::get('/genre/chinese', [RestaurantController::class, 'genrechinese'])->name('genrechinese');
 Route::get('/genrecafe/{id}', [RestaurantController::class, 'genrecafe'])->name('genrecafe');
