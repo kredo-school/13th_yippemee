@@ -50,6 +50,11 @@ class HomeController extends Controller
         return view('users.myschadule');
     }
 
+    public function showTest()
+    {
+        return view('users.calendars.public.test-calendar');
+    }
+
 
 
     public function privateyourplan()
@@ -125,11 +130,6 @@ class HomeController extends Controller
     public function admin_plans_index()
     {
         return view('admin.plans.index');
-    }
-
-    public function admin_genres_index()
-    {
-        return view('admin.genres.index');
     }
 
     //friends

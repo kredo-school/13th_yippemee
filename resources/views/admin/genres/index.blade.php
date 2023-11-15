@@ -11,17 +11,23 @@
                 <h2 class="admin_friends_list_title">Genre</h2>
             </div>
             <div class="col-3 ms-auto mb-auto">
-                <form action="#" class="d-flex align-items-center">
-                    <input type="text" name="genre_name" class="form-control me-2" value="" placeholder="Add a genre..." autofocus>
+                <form action="{{ route('admin.genres.store') }}" method="post" class="d-flex align-items-center">
+                    @csrf
+
+                    <input type="text" name="name" class="form-control me-2" value="{{ old('name') }}" placeholder="Add a genre..." autofocus>
                     <button type="submit" class="btn text-white" style="background-color: #253C5C;"><i class="fa-solid fa-plus"></i></button>
+                    @error('name')
+                        <p class="text-danger small">{{ $message }}</p>
+                    @enderror
                 </form>
             </div>
             
             <div class="col-3 ms-auto mb-auto">
                 <form action="#" class="search-form">
+ 
                     <label class="form-control-sm">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" name="search"  placeholder="Search for genre">
+                        <input type="search" name="search"  placeholder="Search for genre" value="#">
                     </label>
                 </form>
             </div>
@@ -65,23 +71,31 @@
                         </thead>
 
                         <tbody class="no-hover-effect">
+                            @if ($all_genres->isEmpty())
                             <tr>
-                                <td>10</td>
-                                <td>Italian</td>
-                                <td>5</td>
-                                <td>2023-09-01 08:15:10</td>
-                                <td class="d-flex justify-content-center">
-                                    <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#updateGenre" title="Edit"><i class="fa-solid fa-pen icon-warning"></i>
-                                    <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#deleteGenre" title="Delete"><i class="fa-solid fa-trash-can icon-red"></i>
-                                </td>
+                                <td colspan=6 class="text-muted text-center">No genres match your search.</td>
                             </tr>
+                            @elseif($all_genres->isNotEmpty())
+                                @foreach ($all_genres as $genre)
+                                <tr>
+                                    <td>{{ $genre->id }}</td>
+                                    <td>{{ $genre->name }}</td>
+                                    <td>#</td>
+                                    <td>{{ $genre->updated_at }}</td>
+                                    <td class="d-flex justify-content-center">
+                                        <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#updateGenre-{{ $genre->id }}" title="Edit"><i class="fa-solid fa-pen icon-warning"></i>
+                                        <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#deleteGenre-{{ $genre->id }}" title="Delete"><i class="fa-solid fa-trash-can icon-red"></i>
+                                    </td>
+                                </tr> 
+                                @include('admin.genres.modal.actions', ['genre' => $genre])
+                                @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-    </div>
-    @include('admin.genres.modal.actions')
+    </div>   
 </div>
     
 @endsection
