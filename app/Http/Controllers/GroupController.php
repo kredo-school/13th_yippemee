@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Group;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GroupController extends Controller
 {
@@ -75,6 +76,7 @@ class GroupController extends Controller
         $this->group->save();
 
         return redirect()->route('group_list');
+
     }
 
     /**
@@ -153,9 +155,14 @@ class GroupController extends Controller
         // $group = Group::findOrFail($id);
         // $group->delete();
 
+        // $this->group->image = $file->getClientOriginalName();
+        // $file->delete(public_path('storage/images/'), $this->group->image);
 
         $group = Group::find($id);
+        // Storage::delete(public_path('storage/images/1700046843_giphy.gif'));
+        unlink(public_path('storage/images/' . $group->image));
         $group->delete();
+
 
         return redirect()->route('group_list');
     }
