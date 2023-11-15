@@ -37,12 +37,12 @@
                             <h2 class="label-title mt-2"><i class="fa-regular fa-clock"></i> Time</h2>
                             <div class="row time-row">
                                 <div class="col-auto">
-                                    <label class="s-time" name="s-time" for="s-time">Start Time</label><br>
-                                    <input type="time" class="s-time me-3" name="s-time" id="s-time">
+                                    <label class="s-time" name="s_time" for="s-time">Start Time</label><br>
+                                    <input type="time" class="s-time me-3" name="s_time" id="s-time">
                                 </div>
                                 <div class="col-auto">
-                                    <label class="e-time" name="e-time" for="e-time">End Time</label><br>
-                                    <input type="time" class="e-time" name="e-time" id="e-time">
+                                    <label class="e-time" name="e_time" for="e-time">End Time</label><br>
+                                    <input type="time" class="e-time" name="e_time" id="e-time">
                                 </div>
                             </div>
                             <div class="row">
@@ -57,10 +57,13 @@
                             </div>
                             <div class="row genre" id="genre">
                                 <div class="col-6 checkbox-left">
-                                    <div class="checkbox-input">
-                                        <input type="checkbox" name="genre" value="{{$genres->name}}" id="{{$genres->name}}">
-                                        <label for="{{$genres->name}}">{{ $genres->name }}</label>
-                                    </div>
+                                    @foreach($genres as $genre)
+                                        <div class="checkbox-input">
+                                            <input type="checkbox" name="genre[]" value="{{ $genre['id'] }}" id="{{ $genre['id'] }}">
+                                            <label for="{{ $genre['name'] }}">{{ $genre['name'] }}</label>
+                                        </div>
+                                    @endforeach
+                                    {{--
                                     <div class="checkbox-input mt-3">
                                         <input type="checkbox" name="genre" value="chinese" id="chinese">
                                         <label for="chinese">Chinese</label>
@@ -68,22 +71,7 @@
                                     <div class="checkbox-input mt-3">
                                         <input type="checkbox" name="genre" value="indian" id="indian">
                                         <label for="indian">Indian</label>
-                                    </div>
-                                </div>
-
-                                <div class="col-6 checkbox-right">
-                                    <div class="checkbox-input">
-                                        <input type="checkbox" name="genre" value="italian" id="italian">
-                                        <label for="italian">Italian</label>
-                                    </div>
-                                    <div class="checkbox-input mt-3">
-                                        <input type="checkbox" name="genre" value="french" id="french">
-                                        <label for="french">French</label>
-                                    </div>
-                                    <div class="checkbox-input mt-3">
-                                        <input type="checkbox" name="genre" value="other" id="other">
-                                        <label for="other">Other</label>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
 

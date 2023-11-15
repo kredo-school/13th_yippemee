@@ -1,27 +1,29 @@
 <?php
 
+use App\Models\SocialComment;
+use App\Http\Controllers\Genre;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\BucketController;
-use App\Http\Controllers\GroupController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\MyPlanController;
-use App\Http\Controllers\PlanController;
-use App\Http\Controllers\VisitController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SocialPostController;
-use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\PlanController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\WantController;
-use App\Http\Controllers\Admin\AdminPostsController;
-use App\Http\Controllers\Admin\AdminGenreController;
-use App\Http\Controllers\SocialCommentController;
+use App\Http\Controllers\GroupController;
+use App\Http\Controllers\VisitController;
+use App\Http\Controllers\BucketController;
+use App\Http\Controllers\MyPlanController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\SocialPostController;
 use App\Http\Controllers\Admin\UsersController;
-use App\Http\Controllers\Genre;
 use App\Http\Controllers\ListCommentController;
-use App\Models\SocialComment;
+use App\Http\Controllers\SocialCommentController;
+use App\Http\Controllers\PublicCalendarController;
+use App\Http\Controllers\PrivateCalendarController;
+use App\Http\Controllers\Admin\AdminGenreController;
+use App\Http\Controllers\Admin\AdminPostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,9 +84,9 @@ Route::get('/group/{id}/edit', [GroupController::class, 'edit'])->name('group.ed
 Route::patch('/group/{id}/update', [GroupController::class], 'update')->name('group.update');
 Route::delete('/group/{id}/destroy', [GroupController::class,'destroy'])->name('group.destroy');
 // private calendar
-Route::get('/users/calendars/private/calendar',[HomeController::class,'showGroupCalendar'])->name('private_calendar');
+Route::get('/users/calendars/private/calendar',[PrivateCalendarController::class,'showGroupCalendar'])->name('private_calendar');
 // Public calendar
-Route::get('/users/calendars/public/calendar',[HomeController::class,'showCalendar'])->name('calendar');
+Route::get('/users/calendars/public/calendar',[PublicCalendarController::class,'showCalendar'])->name('calendar');
 // Plan
 Route::get('/plan/create', [PlanController::class, 'create'])->name('plan.create');
 Route::post('/plan/store', [PlanController::class, 'store'])->name('plan.store');

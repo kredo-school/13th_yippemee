@@ -17,17 +17,17 @@ class CreatePlansTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('date');
-            $table->decimal('s_time');
-            $table->decimal('e_time')->nullable();
+            $table->string('s_time');
+            $table->string('e_time')->nullable();
             $table->string('restaurant_id')->nullable();
             $table->string('member_id')->nullable();
-            $table->unsignedBigInteger('genre_id');
+            $table->json('genres');
             $table->text('description');
             $table->string('available_member')->nullable();
 
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('genre_id')->references('id')->on('genres')
+            $table->foreign('genres')->references('id')->on('genres')
                   ->onDelete('cascade');
         });
     }

@@ -12,9 +12,15 @@ class PrivateCalendarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function add_group()
     {
-        //
+        return view('users.calendars.private.group_list');
+    }
+
+        // private calendar
+    public function showGroupCalendar()
+    {
+        return view('users.calendars.private.calendar');
     }
 
     /**

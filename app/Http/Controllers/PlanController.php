@@ -45,30 +45,33 @@ class PlanController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
             'date'          =>  'required|min:1|max:30',
-            'time'          =>  'sometimes',
+            's_time'          =>  'sometimes',
+            'e_time'          =>  'sometimes',
             // restaurant/member_id will be array later
-            'restaurant_id' =>  'required|min:1|max:30',
-            'genre_id'      =>  'array',
+            'restaurant' =>  'required|min:1|max:30',
+            'genre'      =>  'array',
             'description'   =>  'required|min:1|max:500',
         ]);
 
+        // $plan_genres = [];
+        // foreach ($request->input('genre') as $genre_id) {
+        //     $plan_genres[] = ['genre_id' => $genre_id,
+        //     'plan_id' => $plan->id,
+        //     ];
+        // }
+        // dd($request->input('genre'));
         $plan = Plan::create([
             'user_id'        =>   Auth::user()->id,
-            'date'           =>  $request->name,
-            'time'           =>   $request->time,
+            'date'           =>   $request->date,
+            's_time'        =>    $request->s_time,
+            'e_time'        =>    $request->e_time,
+            'genre_id'      =>    $request->input('genre'),
             'restaurant_id'  =>   $request->restaurant_id,
             'description'    =>   $request->description,
         ]);
-
-        $plan_genres = [];
-        foreach ($request->genre as $genre_id) {
-            $plan_genres[] = ['genre_id' => $genre_id,
-            'plan_id' => $plan->id,
-            ];
-        }
-        $plan->bucketGenre()->createMany($plan_genres);
 
         return redirect()->route('calendar');
     }
