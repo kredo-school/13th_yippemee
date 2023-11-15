@@ -237,6 +237,30 @@ class SocialPostController extends Controller
         return view('social.social_home', compact('social_posts'));
     }
 
+    public function search(Request $request)
+    {
+        $searchWord = $request->search;
+
+        $social_posts = SocialPost::where(function ($query) use ($searchWord){
+            #search from user
+            $query->whereHas('user', function ($subQuery) use ($searchWord) {
+                $subQuery->where('name', 'like', '%' . $searchWord . '%');
+            })
+            #search from description
+            ->orWhere('description', 'like', '%' . $searchWord . '%')
+            #search from genres
+            ->orWhereHas('genres', function ($subQuery) use ($searchWord) {
+                $subQuery->where('name', 'like', '%' . $searchWord . '%');
+            })
+            #search from comments
+            ->orWhereHas('comments', function ($subQuery) use ($searchWord) {
+                $subQuery->where('body', 'like', '%' . $searchWord . '%');
+            });
+            })->get();
+
+            return view('social.social_home', compact('social_posts'));
+    }
+
 
 
 

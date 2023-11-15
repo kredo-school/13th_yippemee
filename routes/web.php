@@ -142,6 +142,7 @@ Route::get('/social/posts/create', [SocialPostController::class, 'create'])->nam
 Route::get('/social/posts/{id}/edit', [SocialPostController::class, 'edit'])->name('social.posts.edit');
 Route::patch('/social/posts/{id}/update', [SocialPostController::class, 'update'])->name('social.posts.update');
 Route::delete('/social/posts/{id}/destroy', [SocialPostController::class, 'destroy'])->name('social.posts.destroy');
+Route::get('/social/posts/search',[SocialPostController::class,'search'])->name('social.posts.search');
 
 //social_comment
 Route::post('/social/comment/{social_post_id}/store', [SocialCommentController::class, 'store'])->name('social_comment.store');
@@ -151,10 +152,7 @@ Route::delete('/social/comment/{social_post_id}/destroy', [SocialCommentControll
 Route::get('/friends/list',  [FriendController::class, 'friends_list'])->name('friends.friends_list');
 Route::get('friends/search', [FriendController::class, 'search'])->name('friends.search');
 Route::post('/friends/add', [FriendController::class, 'addFriends'])->name('friends.add');
-// Route::post('/friends/remove/{friend_id}', [FriendController::class, 'removeFriend'])->name('friends.remove');
 Route::delete('/friends/remove/{friend_id}', [FriendController::class, 'removeFriend'])->name('friends.remove');
-
-
 
 //like
 Route::post('social/posts/{social_post}/like', [LikeController::class, 'store'])->name('social.posts.like');
