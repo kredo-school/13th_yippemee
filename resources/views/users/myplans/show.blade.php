@@ -13,6 +13,7 @@
             </div>
         </div>
 
+        @forelse ($all_myplans as $myplan)
         <div class="row mt-3">
 
             <div class="col-3 ms-auto mb-3">
@@ -39,11 +40,16 @@
 
                         <tbody>
                             <tr>
-                                <td>{{ date('M d, Y') }}</td>
-                                <td>6pm</td>
-                                <td>Bristol Seafood Grill</td>
-                                <td><a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">coworker</td>
-                                <td>Welcome party</a></td>
+                                <td>{{ $myplan->groupMyplan->date }}</td>
+
+                                <td>{{ $myplan->groupMyplan->time }}</td>
+
+                                <td>#</td>
+
+                                <td><a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">#</a></td>
+
+                                <td>{{ $myplan->description }}</td>
+
                                 <td>
                                     <div class="dropdown">
                                         <button class="btn btn-sm" data-bs-toggle="dropdown">
@@ -59,38 +65,19 @@
                                         </div>
                                         @include('users.myplans.modals.delete')
                                     </div>
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>{{ date('M d, Y') }}</td>
-                                <td>7:30pm</td>
-                                <td>Happiness Cafe</td>
-                                <td><a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">friends</a></td>
-                                <td>celebration</td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button class="btn btn-sm" data-bs-toggle="dropdown">
-                                            <i class="fa-solid fa-bars"></i>
-                                        </button>
-
-                                        <div class="dropdown-menu menu-hover">
-                                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_plan">
-                                                <i class="fa-regular fa-pen-to-square"></i> Edit
-                                            </a>
-
-                                            <a href="#" class="dropdown-item text-danger">
-                                                <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#delete-plan"></i> Delete</a>
-                                        </div>
-                                        @include('users.myplans.modals.edit')
-                                        @include('users.myplans.modals.delete')
-                                    </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+        </div>
+
+        @empty
+
+        @endforelse
+        <div class="text-center mt-5">
+            <h4>No your plan yet.</h4>
         </div>
     </div>
 

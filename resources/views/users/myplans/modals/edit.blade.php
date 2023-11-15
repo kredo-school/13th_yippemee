@@ -39,8 +39,8 @@
         </div>
 
         <div class="modal-footer modal-footer-myplan">
-            <a href="{{ route('myplans.show') }}" class="btn btn--green btn--cubic px-5">Cancel</a>
-            <a href="{{ route('myplans.show') }}" class="btn btn--yellow btn--cubic px-5">Save</a>
+            <a href="{{ route('myplans.show', $user->id) }}" class="btn btn--green btn--cubic px-5">Cancel</a>
+            <a href="{{ route('myplans.show', $user->id) }}" class="btn btn--yellow btn--cubic px-5">Save</a>
         </div><!-- /.modal-footer -->
     </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

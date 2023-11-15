@@ -10,7 +10,6 @@ use App\Http\Controllers\Controller;
 class VisitController extends Controller
 {
     private $visit;
-    private $user;
 
     public function __construct(Visit $visit)
     {

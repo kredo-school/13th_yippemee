@@ -44,9 +44,7 @@
             </div>
         </div>
         @empty
-        <div class="text-center">
-            <h2>Make your Bucket List</h2>
-        </div>
+        <h4>Make your Bucket List</h4>
         @endforelse
     </div>
 </div>

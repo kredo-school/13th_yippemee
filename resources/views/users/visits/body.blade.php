@@ -58,30 +58,7 @@
     </div>
 
         @empty
-            <div class="text-center">
-                <h2>Make your Visit List</h2>
-            </div>
-        </div>
+            <h4>Make your Visit List</h4>
+    </div>
         @endforelse
-
 </div>
-
-{{-- <style>
-    .reviewed {
-    float: left;
-    padding: 0;
-    }
-
-    .reviewed:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:30px;
-    color:#ffc700;
-    }
-    .reviewed:not(:checked) > label:before {
-    content: '★ ';
-    }
-</style> --}}
