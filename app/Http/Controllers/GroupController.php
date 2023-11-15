@@ -133,7 +133,7 @@ class GroupController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $this->group->image = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads'), $this->group->image);
+            $file->move(public_path('storage/images/'), $group->image);
         }
 
         $group->save();
