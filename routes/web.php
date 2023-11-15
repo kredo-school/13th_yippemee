@@ -8,6 +8,7 @@ use App\Http\Controllers\BucketController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MyPlanController;
+use App\Http\Controllers\PlanController;
 use App\Http\Controllers\VisitController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SocialPostController;
@@ -72,20 +73,25 @@ Route::get('/myplans/show', [MyPlanController::class, 'show'])->name('myplans.sh
 
 
 // Calendars
-// group list
+// Group
 Route::get('/users/calendars/private/group_list', [GroupController::class, 'group'])->name('group_list');
 Route::get('/group/create', [GroupController::class, 'create'])->name('group.create');
 Route::post('/group/store', [GroupController::class, 'store'])->name('group.store');
-Route::get('group/{id}/show', [GroupController::class, 'show'])->name('group.show');
-Route::get('group/{id}/edit', [GroupController::class, 'edit'])->name('group.edit');
-Route::patch('group/{id}/update', [GroupController::class], 'update')->name('group.update');
-Route::delete('group/{id}/destroy', [GroupController::class,'destroy'])->name('group.destroy');
+Route::get('/group/{id}/show', [GroupController::class, 'show'])->name('group.show');
+Route::get('/group/{id}/edit', [GroupController::class, 'edit'])->name('group.edit');
+Route::patch('/group/{id}/update', [GroupController::class], 'update')->name('group.update');
+Route::delete('/group/{id}/destroy', [GroupController::class,'destroy'])->name('group.destroy');
 // private calendar
 Route::get('/users/calendars/private/calendar',[HomeController::class,'showGroupCalendar'])->name('private_calendar');
-// public calendar
+// Public calendar
 Route::get('/users/calendars/public/calendar',[HomeController::class,'showCalendar'])->name('calendar');
-// test
-Route::get('users/calendars/public/test-calendar',[HomeController::class,'showTest'])->name('test');
+// Plan
+Route::get('/plan/create', [PlanController::class, 'create'])->name('plan.create');
+Route::post('/plan/store', [PlanController::class, 'store'])->name('plan.store');
+Route::get('/plan/{id}/show', [PlanController::class, 'show'])->name('plan.show');
+
+
+
 
 //Restaurant list
 Route::get('/restaurantlist', [RestaurantController::class, 'restaurantlist'])->name('restaurantlist');

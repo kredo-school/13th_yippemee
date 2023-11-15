@@ -23,30 +23,32 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-body create-body">
-                <form action="#" method="post">
+            <form action="{{route('plan.store')}}" method="POST">
+                @csrf
+                <div class="modal-body create-body">
+
                     <div class="row">
                         <div class="col-6" id="left-form-group">
                             <div class="row">
                                 <label class="label-title" for="date" ><i class="fa-regular fa-calendar"></i> Date</label>
                                 <br>
-                                <input type="date" id="date" required>
+                                <input type="date" name="date" id="date">
                             </div>
                             <h2 class="label-title mt-2"><i class="fa-regular fa-clock"></i> Time</h2>
                             <div class="row time-row">
                                 <div class="col-auto">
-                                    <label class="s-time" for="s-time">Start Time</label><br>
-                                    <input type="time" class="s-time me-3" id="s-time">
+                                    <label class="s-time" name="s-time" for="s-time">Start Time</label><br>
+                                    <input type="time" class="s-time me-3" name="s-time" id="s-time">
                                 </div>
                                 <div class="col-auto">
-                                    <label class="e-time" for="e-time">End Time</label><br>
-                                    <input type="time" class="e-time" id="e-time">
+                                    <label class="e-time" name="e-time" for="e-time">End Time</label><br>
+                                    <input type="time" class="e-time" name="e-time" id="e-time">
                                 </div>
                             </div>
                             <div class="row">
-                                <label class="label-title" for="restaurant"><i class="fa-solid fa-shop"></i> Restaurant</label>
+                                <label class="label-title" name="restaurant" for="restaurant"><i class="fa-solid fa-shop"></i> Restaurant</label>
                                 <br>
-                                <input type="search" id="restaurant">
+                                <input type="search" name="restaurant" id="restaurant">
                             </div>
                         </div>
                         <div class="col-6 form-group right">
@@ -56,8 +58,8 @@
                             <div class="row genre" id="genre">
                                 <div class="col-6 checkbox-left">
                                     <div class="checkbox-input">
-                                        <input type="checkbox" name="genre" value="japanese" id="japanese">
-                                        <label for="japanese">Japanese</label>
+                                        <input type="checkbox" name="genre" value="{{$genres->name}}" id="{{$genres->name}}">
+                                        <label for="{{$genres->name}}">{{ $genres->name }}</label>
                                     </div>
                                     <div class="checkbox-input mt-3">
                                         <input type="checkbox" name="genre" value="chinese" id="chinese">
@@ -92,13 +94,11 @@
                         <br>
                         <textarea name="description" id="create-description" cols="60" rows="3" style="width:95%;"></textarea>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer create-footer bg-white border-0 mb-2">
-                <form action="#" method="get">
+                </div>
+                <div class="modal-footer create-footer bg-white border-0 mb-2">
                     <button type="submit" class="create-btn float-end">Create</button>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

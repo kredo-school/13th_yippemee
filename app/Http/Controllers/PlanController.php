@@ -50,15 +50,25 @@ class PlanController extends Controller
             'time'          =>  'sometimes',
             // restaurant/member_id will be array later
             'restaurant_id' =>  'required|min:1|max:30',
-            'description'   =>  'required|min:1|max:300',
+            'genre_id'      =>  'array',
+            'description'   =>  'required|min:1|max:500',
         ]);
-        $this->plan->user_id        =   Auth::user()->id;
-        $this->plan->date           =   $request->name;
-        $this->plan->time           =   $request->time;
-        $this->plan->restaurant_id  =   $request->restaurant_id;
-        $this->plan->description    =   $request->description;
 
-        $this->plan->save();
+        $plan = Plan::create([
+            'user_id'        =>   Auth::user()->id,
+            'date'           =>  $request->name,
+            'time'           =>   $request->time,
+            'restaurant_id'  =>   $request->restaurant_id,
+            'description'    =>   $request->description,
+        ]);
+
+        $plan_genres = [];
+        foreach ($request->genre as $genre_id) {
+            $plan_genres[] = ['genre_id' => $genre_id,
+            'plan_id' => $plan->id,
+            ];
+        }
+        $plan->bucketGenre()->createMany($plan_genres);
 
         return redirect()->route('calendar');
     }
