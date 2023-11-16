@@ -10,8 +10,10 @@ class PlanController extends Controller
 {
     private $plan;
 
-    public function __construct(Plan $plan){
+    public function __construct(Plan $plan)
+    {
         $this->plan = $plan;
+        
     }
     /**
      * Display a listing of the resource.
@@ -34,7 +36,7 @@ class PlanController extends Controller
         $all_plans   = $this->plan->all();
 
         return View('users.modals.create')
-                ->with('all_plans', $all_plans);
+            ->with('all_plans', $all_plans);
     }
 
     /**
@@ -51,10 +53,11 @@ class PlanController extends Controller
             's_time'          =>  'sometimes',
             'e_time'          =>  'sometimes',
             // restaurant/member_id will be array later
-            'restaurant' =>  'required|min:1|max:30',
-            'genre'      =>  'array',
+            'restaurant'       =>  'required|min:1|max:30',
+            'genre'         =>  'array',
             'description'   =>  'required|min:1|max:500',
         ]);
+
 
         // $plan_genres = [];
         // foreach ($request->input('genre') as $genre_id) {
@@ -65,13 +68,22 @@ class PlanController extends Controller
         // dd($request->input('genre'));
         $plan = Plan::create([
             'user_id'        =>   Auth::user()->id,
-            'date'           =>   $request->date,
-            's_time'        =>    $request->s_time,
-            'e_time'        =>    $request->e_time,
-            'genre_id'      =>    $request->input('genre'),
-            'restaurant_id'  =>   $request->restaurant_id,
-            'description'    =>   $request->description,
+            'date'                  =>   $request->date,
+            's_time'        =>                $request->s_time,
+            'e_time'         =>    $request->e_time,
+            'restaurant_id'     =>   $request->restaurant_id,
+            'description'                    =>   $request->description,
         ]);
+
+        $plan_genres = [];
+        foreach ($request->genre as $genre_id) {
+            $plan_genres[] = [
+                'genre_id' => $genre_id,
+                'plan_id' => $plan->id,
+            ];
+        }
+
+        $plan->planGenre()->createMany($plan_genres);
 
         return redirect()->route('calendar');
     }
@@ -87,7 +99,7 @@ class PlanController extends Controller
         $plan = $this->plan->findOrFail($id);
 
         return view('calendar')
-                ->with('plan', $plan);
+            ->with('plan', $plan);
     }
 
     /**

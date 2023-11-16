@@ -21,14 +21,11 @@ class CreatePlansTable extends Migration
             $table->string('e_time')->nullable();
             $table->string('restaurant_id')->nullable();
             $table->string('member_id')->nullable();
-            $table->json('genres');
             $table->text('description');
             $table->string('available_member')->nullable();
 
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('genres')->references('id')->on('genres')
-                  ->onDelete('cascade');
         });
     }
 

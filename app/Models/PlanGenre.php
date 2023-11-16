@@ -14,7 +14,7 @@ class PlanGenre extends Model
     # To get the name of the genre
     public function genre()
     {
-        return $this->belongsTo(Genre::class);
+        return $this->belongsTo(Genre::class, 'genre_id');
     }
 
     public function plan()

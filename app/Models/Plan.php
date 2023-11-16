@@ -17,4 +17,9 @@ class Plan extends Model
         'restaurant_id',
         'description',
     ];
+
+    public function planGenre()
+    {
+        return $this->hasMany(PlanGenre::class);
+    }
 }
