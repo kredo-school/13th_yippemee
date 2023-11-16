@@ -5,8 +5,10 @@
             <h1 id="yearName" class="text-center"></h1>
         </div>
         <div class="prev-next-button justify-content-center">
-            <button class="me-4 border-0 bg-white" id="prevMonth"><i class="fa fa-chevron-left fw-bold" style="color: #253c5c;"></i></button>
-            <button class="ms-4 border-0 bg-white" id="nextMonth"><i class="fa fa-chevron-right" style="color: #253c5c;"></i></button>
+            <button class="me-4 border-0 bg-white" id="prevMonth"><i class="fa fa-chevron-left fw-bold"
+                    style="color: #253c5c;"></i></button>
+            <button class="ms-4 border-0 bg-white" id="nextMonth"><i class="fa fa-chevron-right"
+                    style="color: #253c5c;"></i></button>
         </div>
     </div>
     <table id="weekCalendar">
@@ -82,7 +84,7 @@
             calendarHtml += '</tbody></table>';
 
             // To dynamically generate a calendar on the page,
-                // allowing the user to navigate to the previous or next month.
+            // allowing the user to navigate to the previous or next month.
             const monthNameElement = document.getElementById('monthName');
             monthNameElement.textContent = monthName;
             calendarEl.innerHTML = calendarHtml;
@@ -114,7 +116,3 @@
         generateCalendar(currentYear, currentMonth);
     </script>
 </div>
-
-
-
-
