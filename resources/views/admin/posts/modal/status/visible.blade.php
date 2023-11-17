@@ -10,7 +10,7 @@ aria-hidden="true">
                 <p class="heading lead modal-title-font m-4">Unhide Post</p>
                 <button type="button" class="btn-close btn-close-white m-4" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            
+
             <!--Body-->
             <div class="modal-body d-flex justify-content-center align-items-center flex-column">
 
@@ -27,17 +27,16 @@ aria-hidden="true">
             </div>
 
             <!--Footer-->
-            <div class="modal-footer d-flex justify-content-center border-0"> 
+            <div class="modal-footer d-flex justify-content-center border-0">
                 <form action="{{ route('admin.posts.unhide', $social_post->id) }}" method="post">
                     @csrf
-                    @method('PATCH')
 
                     <button type="submit" class="btn btn-primary btn-lg">Unhide</button>
                     <button type="button" class="btn btn-outline-primary btn-lg" data-bs-dismiss="modal">Cancel</button>
                 </form>
-                
+
             </div>
-            
+
         </div>
 
         <!--/.Content-->
