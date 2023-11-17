@@ -9,7 +9,8 @@ class GroupController extends Controller
 {
     private $group;
 
-    public function __construct(Group $group){
+    public function __construct(Group $group)
+    {
         $this->group = $group;
     }
     /**
@@ -33,7 +34,7 @@ class GroupController extends Controller
         $all_groups = $this->group->all();
 
         return View('users.modals.add_group')
-                ->with('all_groups', $all_groups);
+            ->with('all_groups', $all_groups);
     }
 
     /**
@@ -80,7 +81,7 @@ class GroupController extends Controller
         $group = $this->group->findOrFail($id);
 
         return view('group_list')
-                ->with('group', $group);
+            ->with('group', $group);
     }
 
     /**
@@ -95,7 +96,7 @@ class GroupController extends Controller
         $group = $this->group->findOrFail($id);
 
         return view('group_list')
-                ->with('group', $group);
+            ->with('group', $group);
     }
 
     /**
@@ -107,7 +108,7 @@ class GroupController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $request->validate([
+        $request->validate([
             'name'          =>  'required|min:1|max:30',
             // restaurant/member_id will be array later
             'restaurant_id' =>  'required|min:1|max:30',
@@ -118,7 +119,7 @@ class GroupController extends Controller
         $group->name            =   $request->name;
         $group->restaurant_id   =   $request->restaurant_id;
 
-        if($request->image){
+        if ($request->image) {
             $group->image       =   'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
         }
 

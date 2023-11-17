@@ -26,28 +26,17 @@ class HomeController extends Controller
         return view('home');
     }
 
-    // all related to calendar pages
-
-    public function add_group()
-    {
-        return view('users.calendars.private.group_list');
-    }
-    public function showCalendar()
-    {
-        return view ('users.calendars.public.calendar');
-    }
-
-        // private calendar
-    public function showGroupCalendar()
-    {
-        return view('users.calendars.private.calendar');
-    }
 
     // end of calendar pages
 
     public function myschedule()
     {
         return view('users.myschadule');
+    }
+
+    public function showTest()
+    {
+        return view('users.calendars.public.test-calendar');
     }
 
 
@@ -125,12 +114,6 @@ class HomeController extends Controller
     public function admin_plans_index()
     {
         return view('admin.plans.index');
-    }
-
-    //friends
-    public function friends_list()
-    {
-        return view('friends.friends_list');
     }
 
 

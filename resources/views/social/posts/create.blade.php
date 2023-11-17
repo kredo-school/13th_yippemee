@@ -28,7 +28,7 @@
         <div class="row">
             <div class="mb-3 text-start">
                 <label for="genre" class="form-label d-block fw-bold">
-                    Genre
+                    Genre<span class="text-muted fw-normal">(up to 2)</span>
                 </label>
 
                 <!-- display all genres-->

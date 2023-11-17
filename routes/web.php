@@ -1,26 +1,33 @@
 <?php
 
+use App\Models\SocialComment;
+use App\Http\Controllers\Genre;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LikeController;
+use App\Http\Controllers\PlanController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\BucketController;
+use App\Http\Controllers\WantController;
 use App\Http\Controllers\GroupController;
+
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MyplanController;
+
 use App\Http\Controllers\VisitController;
+use App\Http\Controllers\BucketController;
+use App\Http\Controllers\MyPlanController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SocialPostController;
 use App\Http\Controllers\RestaurantController;
-use App\Http\Controllers\LikeController;
-use App\Http\Controllers\WantController;
-use App\Http\Controllers\Admin\AdminPostsController;
-use App\Http\Controllers\Admin\AdminGenreController;
-use App\Http\Controllers\SocialCommentController;
+use App\Http\Controllers\SocialPostController;
 use App\Http\Controllers\Admin\UsersController;
-use App\Http\Controllers\Genre;
 use App\Http\Controllers\ListCommentController;
-use App\Models\SocialComment;
+use App\Http\Controllers\SocialCommentController;
+use App\Http\Controllers\PublicCalendarController;
+use App\Http\Controllers\PrivateCalendarController;
+use App\Http\Controllers\Admin\AdminGenreController;
+use App\Http\Controllers\Admin\AdminPostsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,18 +79,24 @@ Route::get('/myplans/{id}/show', [MyplanController::class, 'show'])->name('mypla
 
 
 // Calendars
-// group list
+// Group
 Route::get('/users/calendars/private/group_list', [GroupController::class, 'group'])->name('group_list');
 Route::get('/group/create', [GroupController::class, 'create'])->name('group.create');
 Route::post('/group/store', [GroupController::class, 'store'])->name('group.store');
-Route::get('group/{id}/show', [GroupController::class, 'show'])->name('group.show');
-Route::get('group/{id}/edit', [GroupController::class, 'edit'])->name('group.edit');
-Route::patch('group/{id}/update', [GroupController::class], 'update')->name('group.update');
-Route::delete('group/{id}/destroy', [GroupController::class,'destroy'])->name('group.destroy');
+Route::get('/group/{id}/show', [GroupController::class, 'show'])->name('group.show');
+Route::get('/group/{id}/edit', [GroupController::class, 'edit'])->name('group.edit');
+Route::patch('/group/{id}/update', [GroupController::class], 'update')->name('group.update');
+Route::delete('/group/{id}/destroy', [GroupController::class,'destroy'])->name('group.destroy');
 // private calendar
-Route::get('/users/calendars/private/calendar',[HomeController::class,'showGroupCalendar'])->name('private_calendar');
-// public calendar
-Route::get('/users/calendars/public/calendar',[HomeController::class,'showCalendar'])->name('calendar');
+Route::get('/users/calendars/private/calendar',[PrivateCalendarController::class,'showGroupCalendar'])->name('private_calendar');
+// Public calendar
+Route::get('/users/calendars/public/calendar',[PublicCalendarController::class,'showCalendar'])->name('calendar');
+// Plan
+Route::get('/plan/create', [PlanController::class, 'create'])->name('plan.create');
+Route::post('/plan/store', [PlanController::class, 'store'])->name('plan.store');
+Route::get('/plan/{id}/show', [PlanController::class, 'show'])->name('plan.show');
+
+
 
 
 //Restaurant list
@@ -117,19 +130,22 @@ Route::get('/admin/users/search',[UsersController::class,'search'])->name('users
 Route::get('/admin/plans/index', [HomeController::class, 'admin_plans_index'])->name('admin.plans.index');
 
 Route::get('/admin/posts/index', [AdminPostsController::class, 'admin_posts_index'])->name('admin.posts.index');
-Route::patch('/admin/posts/{id}/unhide', [AdminPostsController::class, 'unhide'])->name('admin.posts.unhide');
+Route::post('/admin/posts/{id}/unhide', [AdminPostsController::class, 'unhide'])->name('admin.posts.unhide');
 Route::delete('/admin/posts/{id}/hide', [AdminPostsController::class, 'hide'])->name('admin.posts.hide');
+Route::get('/admin/posts/search',[AdminPostsController::class,'search'])->name('posts.search');
 
 Route::get('/admin/genres/index', [AdminGenreController::class, 'admin_genres_index'])->name('admin.genres.index');
 Route::post('admin/genres/store', [AdminGenreController::class, 'store'])->name('admin.genres.store');
 Route::patch('/admin/genres/{id}/update', [AdminGenreController::class, 'update'])->name('admin.genres.update');
 Route::delete('/admin/genres/{id}/destroy', [AdminGenreController::class, 'destroy'])->name('admin.genres.destroy');
+Route::get('/admin/genres/search',[AdminGenreController::class,'search'])->name('genres.search');
 
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/admin/contacts/index', [ContactController::class, 'admin_contacts_index'])->name('admin.contacts.index');
 Route::delete('/admin/contacts/{id}/destroy', [ContactController::class, 'destroy'])->name('admin.contacts.destroy');
-// Route::get('/admin/contacts/index', [HomeController::class, 'admin_contacts_index'])->name('admin.contacts.index');
+Route::get('/admin/contacts/search',[ContactController::class,'search'])->name('contacts.search');
+
 
 //social
 Route::get('/social/home',  [SocialPostController::class, 'social_home'])->name('social.social_home');
@@ -145,7 +161,13 @@ Route::post('/social/comment/{social_post_id}/store', [SocialCommentController::
 Route::delete('/social/comment/{social_post_id}/destroy', [SocialCommentController::class, 'destroy'])->name('social_comment.destroy');
 
 //friends
-Route::get('/friends/list',  [HomeController::class, 'friends_list'])->name('friends.friends_list');
+Route::get('/friends/list',  [FriendController::class, 'friends_list'])->name('friends.friends_list');
+Route::get('friends/search', [FriendController::class, 'search'])->name('friends.search');
+Route::post('/friends/add', [FriendController::class, 'addFriends'])->name('friends.add');
+// Route::post('/friends/remove/{friend_id}', [FriendController::class, 'removeFriend'])->name('friends.remove');
+Route::delete('/friends/remove/{friend_id}', [FriendController::class, 'removeFriend'])->name('friends.remove');
+
+
 
 //like
 Route::post('social/posts/{social_post}/like', [LikeController::class, 'store'])->name('social.posts.like');
