@@ -64,8 +64,8 @@
             </div>
         </div>
         <div class="modal-footer modal-footer-profile">
-            <a href="{{ route('posts.show') }}" class="btn btn--green btn--cubic px-5">Cancel</a>
-            <a href="{{ route('posts.show') }}" class="btn btn--yellow btn--cubic px-5">Save</a>
+            <a href="{{ route('posts.show', $user->id) }}" class="btn btn--green btn--cubic px-5">Cancel</a>
+            <a href="{{ route('posts.show', $user->id) }}" class="btn btn--yellow btn--cubic px-5">Save</a>
         </div><!-- /.modal-footer -->
     </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

@@ -32,7 +32,7 @@
 
     <nav class="sidebarMenu profile-nav stroke">
           <ul>
-            <li><a href="{{ route('posts.show') }}">POST</a></li>
+            <li><a href="{{ route('posts.show',$user->id) }}">POST</a></li>
             <li><a href="{{ route('visits.show',$user->id) }}">VISITS</a></li>
             <li><a href="{{ route('bucket.show',$user->id) }}">BUCKET LIST</a></li>
             <li><a href="{{ route('myplans.show') }}">MY PLANS</a></li>

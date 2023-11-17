@@ -116,12 +116,6 @@ class HomeController extends Controller
         return view('admin.plans.index');
     }
 
-    //friends
-    public function friends_list()
-    {
-        return view('friends.friends_list');
-    }
-
 
 }
 

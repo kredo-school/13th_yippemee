@@ -65,7 +65,7 @@ Route::patch('/bucket/{id}/update', [BucketController::class, 'update'])->name('
 Route::delete('/bucket/{id}/destroy', [BucketController::class, 'destroy'])->name('bucket.destroy');
 
 //POST
-Route::get('/posts/show', [PostController::class, 'show'])->name('posts.show');
+Route::get('/posts/{id}/show', [PostController::class, 'show'])->name('posts.show');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -126,19 +126,22 @@ Route::get('/admin/users/search',[UsersController::class,'search'])->name('users
 Route::get('/admin/plans/index', [HomeController::class, 'admin_plans_index'])->name('admin.plans.index');
 
 Route::get('/admin/posts/index', [AdminPostsController::class, 'admin_posts_index'])->name('admin.posts.index');
-Route::patch('/admin/posts/{id}/unhide', [AdminPostsController::class, 'unhide'])->name('admin.posts.unhide');
+Route::post('/admin/posts/{id}/unhide', [AdminPostsController::class, 'unhide'])->name('admin.posts.unhide');
 Route::delete('/admin/posts/{id}/hide', [AdminPostsController::class, 'hide'])->name('admin.posts.hide');
+Route::get('/admin/posts/search',[AdminPostsController::class,'search'])->name('posts.search');
 
 Route::get('/admin/genres/index', [AdminGenreController::class, 'admin_genres_index'])->name('admin.genres.index');
 Route::post('admin/genres/store', [AdminGenreController::class, 'store'])->name('admin.genres.store');
 Route::patch('/admin/genres/{id}/update', [AdminGenreController::class, 'update'])->name('admin.genres.update');
 Route::delete('/admin/genres/{id}/destroy', [AdminGenreController::class, 'destroy'])->name('admin.genres.destroy');
+Route::get('/admin/genres/search',[AdminGenreController::class,'search'])->name('genres.search');
 
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/admin/contacts/index', [ContactController::class, 'admin_contacts_index'])->name('admin.contacts.index');
 Route::delete('/admin/contacts/{id}/destroy', [ContactController::class, 'destroy'])->name('admin.contacts.destroy');
-// Route::get('/admin/contacts/index', [HomeController::class, 'admin_contacts_index'])->name('admin.contacts.index');
+Route::get('/admin/contacts/search',[ContactController::class,'search'])->name('contacts.search');
+
 
 //social
 Route::get('/social/home',  [SocialPostController::class, 'social_home'])->name('social.social_home');
@@ -154,7 +157,13 @@ Route::post('/social/comment/{social_post_id}/store', [SocialCommentController::
 Route::delete('/social/comment/{social_post_id}/destroy', [SocialCommentController::class, 'destroy'])->name('social_comment.destroy');
 
 //friends
-Route::get('/friends/list',  [HomeController::class, 'friends_list'])->name('friends.friends_list');
+Route::get('/friends/list',  [FriendController::class, 'friends_list'])->name('friends.friends_list');
+Route::get('friends/search', [FriendController::class, 'search'])->name('friends.search');
+Route::post('/friends/add', [FriendController::class, 'addFriends'])->name('friends.add');
+// Route::post('/friends/remove/{friend_id}', [FriendController::class, 'removeFriend'])->name('friends.remove');
+Route::delete('/friends/remove/{friend_id}', [FriendController::class, 'removeFriend'])->name('friends.remove');
+
+
 
 //like
 Route::post('social/posts/{social_post}/like', [LikeController::class, 'store'])->name('social.posts.like');

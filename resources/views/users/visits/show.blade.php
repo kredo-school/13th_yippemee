@@ -5,12 +5,6 @@
 @section('content')
     @include('users.profile.header')
     @include('users.profile.side')
-
-{{-- Visits --}}
-
-        @include('users.visits.body')
-
-{{-- End of Visits --}}
-
+    @include('users.visits.body')
 @endsection
 
