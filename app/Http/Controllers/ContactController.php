@@ -52,4 +52,13 @@ class ContactController extends Controller
 
         return redirect()->route('admin.contacts.index');
     }
+
+    public function search(Request $request)
+    {
+         $contacts = Contact::whereHas('user', function ($query) use ($request) {
+            $query->where('name','like','%' .$request->search. '%');
+         })->get();
+
+        return view('admin.contacts.search')->with('contacts',$contacts)->with('search',$request->search);
+    }
 }
