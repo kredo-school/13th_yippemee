@@ -13,7 +13,7 @@ class PlanController extends Controller
     public function __construct(Plan $plan)
     {
         $this->plan = $plan;
-        
+
     }
     /**
      * Display a listing of the resource.
@@ -22,7 +22,7 @@ class PlanController extends Controller
      */
     public function Plan()
     {
-        $plans      = Plan::all();
+        $plan      = Plan::all();
         return view('users.calendars.public.calendar');
     }
 
