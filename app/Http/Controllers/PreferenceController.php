@@ -2,25 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\privateCalendar;
+use App\Models\Preference;
 use Illuminate\Http\Request;
 
-class PrivateCalendarController extends Controller
+class PreferenceController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function add_group()
+    public function index()
     {
-        return view('users.calendars.private.group_list');
-    }
-
-        // private calendar
-    public function showGroupCalendar()
-    {
-        return view('users.calendars.private.calendar');
+        //
     }
 
     /**
@@ -47,10 +41,10 @@ class PrivateCalendarController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\privateCalendar  $privateCalendar
+     * @param  \App\Models\Preference  $preference
      * @return \Illuminate\Http\Response
      */
-    public function show(privateCalendar $privateCalendar)
+    public function show(Preference $preference)
     {
         //
     }
@@ -58,10 +52,10 @@ class PrivateCalendarController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\privateCalendar  $privateCalendar
+     * @param  \App\Models\Preference  $preference
      * @return \Illuminate\Http\Response
      */
-    public function edit(privateCalendar $privateCalendar)
+    public function edit(Preference $preference)
     {
         //
     }
@@ -70,10 +64,10 @@ class PrivateCalendarController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\privateCalendar  $privateCalendar
+     * @param  \App\Models\Preference  $preference
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, privateCalendar $privateCalendar)
+    public function update(Request $request, Preference $preference)
     {
         //
     }
@@ -81,10 +75,10 @@ class PrivateCalendarController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\privateCalendar  $privateCalendar
+     * @param  \App\Models\Preference  $preference
      * @return \Illuminate\Http\Response
      */
-    public function destroy(privateCalendar $privateCalendar)
+    public function destroy(Preference $preference)
     {
         //
     }

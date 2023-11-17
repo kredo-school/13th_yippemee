@@ -18,7 +18,7 @@
         <div class="top-button">
             <div class="row">
                 <div class="col text-end">
-                    <a href="#" class="btn btn-create-plan mt-2" data-bs-toggle="modal" data-bs-target="#create-plan"><i class="fa-regular fa-calendar-plus fa-3x"></i></a>
+                    <button type="button" class="btn btn-create-plan mt-2" data-bs-toggle="modal" data-bs-target="#create-plan"><i class="fa-regular fa-calendar-plus fa-3x"></i></button>
                 </div>
             </div>
         </div>

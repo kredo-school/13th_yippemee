@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\publicCalendar;
+use App\Models\Genre;
 use Illuminate\Http\Request;
+use App\Models\publicCalendar;
 
 class PublicCalendarController extends Controller
 {
@@ -12,9 +13,10 @@ class PublicCalendarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function showCalendar()
     {
-        //
+        $genres = Genre::all()->toArray();
+        return view ('users.calendars.public.calendar',['genres' => $genres]);
     }
 
     /**
