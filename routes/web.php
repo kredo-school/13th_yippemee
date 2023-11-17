@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\AdminPostsController;
 use App\Http\Controllers\Admin\AdminGenreController;
 use App\Http\Controllers\SocialCommentController;
 use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\FriendController;
 use App\Http\Controllers\Genre;
 use App\Http\Controllers\ListCommentController;
 use App\Models\SocialComment;
@@ -149,7 +150,13 @@ Route::post('/social/comment/{social_post_id}/store', [SocialCommentController::
 Route::delete('/social/comment/{social_post_id}/destroy', [SocialCommentController::class, 'destroy'])->name('social_comment.destroy');
 
 //friends
-Route::get('/friends/list',  [HomeController::class, 'friends_list'])->name('friends.friends_list');
+Route::get('/friends/list',  [FriendController::class, 'friends_list'])->name('friends.friends_list');
+Route::get('friends/search', [FriendController::class, 'search'])->name('friends.search');
+Route::post('/friends/add', [FriendController::class, 'addFriends'])->name('friends.add');
+// Route::post('/friends/remove/{friend_id}', [FriendController::class, 'removeFriend'])->name('friends.remove');
+Route::delete('/friends/remove/{friend_id}', [FriendController::class, 'removeFriend'])->name('friends.remove');
+
+
 
 //like
 Route::post('social/posts/{social_post}/like', [LikeController::class, 'store'])->name('social.posts.like');
