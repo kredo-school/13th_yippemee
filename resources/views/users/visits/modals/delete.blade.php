@@ -1,6 +1,4 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-<div class="modal fade" id="delete-visits">
+<div class="modal fade" id="delete-visits-{{ $visit->id }}">
     <div class="modal-dialog">
         <div class="modal-content border-danger modal-delete-visit">
             <div class="modal-header border-danger">
@@ -12,15 +10,15 @@
             <div class="modal-body">
                 <p class="fw-bold text-secondary">Are you sure you want to delete this review?</p>
                 <div class="mt-3">
-                    <img src="{{ asset('img/image.jpg') }}" alt="logo" class="img-size">
+                    <img src="{{ $visit->image }}" alt="{{ $visit->id }}" class="img-size">
                     <p class="mt-1 text-muted"></p>
                 </div>
             </div>
 
             <div class="modal-footer border-0 text-center">
-                <form action="#" method="">
+                <form action="{{ route('visits.destroy', $visit->id) }}" method="post">
                     @csrf
-                    @method('DELETE')
+                    @method('delete')
                     <button type="button" class="btn btn-outline-danger btn-md" data-bs-dismiss="modal">
                         Cancel
                     </button>
@@ -30,9 +28,3 @@
         </div>
     </div>
 </div>
-
-<script>
-function delete_visits() {
-  alert("I am an alert box!");
-}
-</script>

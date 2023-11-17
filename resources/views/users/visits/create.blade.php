@@ -67,7 +67,7 @@
                         <textarea name="description" id="description" rows="4" placeholder="Write some information about the restaurant" class="form-control"></textarea>
                     </div>
 
-                    <button type="submit btn-warning">Save</button>
+                    <button type="submit" name="btn_send" class="btn btn-contact w-25 mt-3">Save</button>
                     {{-- <a href="{{ route('visit.show') }}" onclick="document.visit.submit();" class="btn btn--yellow btn--cubic px-5">Save</a>
                     <a href="{{ route('visit.show') }}" class="btn btn--green btn--cubic px-5">Cancel</a></button> --}}
 
