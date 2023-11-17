@@ -48,30 +48,26 @@ class FriendController extends Controller
         $user = Auth::user();
         $query = $request->input('search');
 
-        # get the id of a user who is already a friend
         $friends_ids = $user->friends->pluck('id')->toArray();
 
         $users = User::where(function ($q) use ($query) {
             $q->where('name', 'LIKE', '%' . $query . '%')
-              ->orWhere('username', 'LIKE', '%' . $query . '%');
+            ->orWhere('username', 'LIKE', '%' . $query . '%');
         })
-        # exclude users who are already friends
         ->whereNotIn('id', $friends_ids)
         ->get();
 
-        # get details of already added friends
-        $addedFriends = $user->friends;
+        # view search results
+        return view('friends.partial.search_results', compact('users'));
+    }
 
-        return view('friends.friends_list', compact('users', 'addedFriends'));
-        }
-
+    # add user to friends list selected user from search results
     public function addFriends(Request $request)
     {
-        $selected_user_ids = $request->input('name');
-        $user = Auth::user(); 
+        $user = Auth::user();
+        $selected_friend_ids = $request->input('friend_ids', []);
 
-        foreach ($selected_user_ids as $friend_id) {
-            # confirm they are not already friends
+        foreach ($selected_friend_ids as $friend_id) {
             if (!$user->friends()->where('friend_id', $friend_id)->exists()) {
                 $user->friends()->attach($friend_id);
             }

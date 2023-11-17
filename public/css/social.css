@@ -197,3 +197,7 @@ div.bg-genre {
 .card_header-post, .card_body-post{
     width: 100%; 
 }
+
+.btn-outline-success {
+    outline: 1px solid #28a745;
+}
