@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Admin: Genre')
+@section('title', 'Admin: Search Genre')
 
 @section('content')
 <div class="admin">
@@ -71,12 +71,12 @@
                         </thead>
 
                         <tbody class="no-hover-effect">
-                            @if ($all_genres->isEmpty())
+                            @if ($genres->isEmpty())
                             <tr>
                                 <td colspan=6 class="text-muted text-center">No genres match your search.</td>
                             </tr>
-                            @elseif($all_genres->isNotEmpty())
-                                @foreach ($all_genres as $genre)
+                            @elseif($genres->isNotEmpty())
+                                @foreach ($genres as $genre)
                                 <tr>
                                     <td>{{ $genre->id }}</td>
                                     <td>{{ $genre->name }}</td>
