@@ -19,11 +19,11 @@ class AdminGenreController extends Controller
         $this->social_post = $social_post;
     }
 
-    
+
     public function admin_genres_index(Request $request)
     {
         $all_genres = $this->genre->orderBy('updated_at', 'desc')->paginate(15);
-        
+
         return view('admin.genres.index')
                 ->with('all_genres', $all_genres);
     }
@@ -60,6 +60,13 @@ class AdminGenreController extends Controller
         $genre->delete();
         return redirect()->back();
 
+    }
+
+    public function search(Request $request)
+    {
+         $genres = Genre::where('name','like','%' .$request->search. '%')->get();
+
+        return view('admin.genres.search')->with('genres',$genres)->with('search',$request->search);
     }
 
 

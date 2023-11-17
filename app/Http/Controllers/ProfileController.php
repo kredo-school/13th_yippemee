@@ -21,10 +21,11 @@ class ProfileController extends Controller
         $this->genre = $genre;
     }
 
-    public function store(Request $request){
-        // dd($request);
+     public function store(Request $request){
+
         $request->validate([
                 'name'          => 'required|min:1|max:50',
+                'username'      => 'min:1|max:50',
                 'email'         => 'required|email|max:50|unique:users,email,' . Auth::user()->id,
                 'avatar'        => 'mimes:jpg,jpeg,gif,png|max:1048',
                 'location'      => 'max:100',
@@ -34,11 +35,13 @@ class ProfileController extends Controller
 
     $user = User::create([
         'user_id'        => auth()->user()->id,
+
         'avatar'          =>  'data:image/' . $request->avatar->extension() . ';base64,' . base64_encode(file_get_contents($request->image)),
-        'name' => $request->restaurantName,
-        'username'    => $request->hoursOption,
-        'location'            => $request->url,
-        'introduction'    => $request->description,
+        'name'            => $request->name,
+        'username'        => $request->username,
+        'email'           => $request->email,
+        'location'        => $request->location,
+        'introduction'    => $request->introduction,
     ]);
 
     $genre_profile = [];
@@ -59,6 +62,10 @@ public function show($id){
     $user = $this->user->findOrFail($id);
     return view('users.profile.show')
          ->with('user', $user);
+
+    $genre_profile = $this->user->get();
+    $user = User::findOrFail($id);
+    return view('users.profile.show', ["genre_profile" => $genre_profile, "user" => $user]);
 
     $all_visits = Visit::latest()->get();
     return view('users.visits.show')
@@ -91,6 +98,7 @@ public function  edit(){
 
     public function update(Request $request)
     {
+        
         $request->validate([
         'name'          => 'required|min:1|max:50',
         'email'         => 'required|email|max:50|unique:users,email,' . Auth::user()->id,
