@@ -18,7 +18,7 @@
             <div class="modal-footer border-0">
                 <form action="{{ route('bucket.destroy', $bucket->id) }}" method="post">
                     @csrf
-                    @method('DELETE')
+                    @method('delte')
                     <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">
                         Cancel
                     </button>

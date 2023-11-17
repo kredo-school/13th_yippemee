@@ -517,6 +517,44 @@ label[for]:hover {
     height: 15px;
 }
 
+.visit-show-scroll{
+    height: 100px;
+    overflow: scroll;
+}
+
+.visit-show-scroll::-webkit-scrollbar{
+    display: none;
+}
+
+.bucketScroll{
+    height: 100px;
+    overflow: scroll;
+}
+
+.bucketScroll::-webkit-scrollbar{
+    display: none;
+}
+
+.only-background {
+    background: #617EA8;
+    color: #E6F2E9;
+    width: 100px;
+    height: 27px;
+    text-align: center;
+    opacity: 80%;
+    border-radius: 10%;
+    font-size: 15px;
+    padding: 3px;
+    text-decoration: none;
+    }
+
+    .only-background:hover {
+        background: #617EA8;
+    color: #E6F2E9;
+    opacity: 50%;
+    letter-spacing: 0.07em;
+    }
+
 /* bucket icon */
 table tbody tr th .body {
     font-size: 17px;
