@@ -21,13 +21,13 @@
                     @enderror
                 </form>
             </div>
-            
+
             <div class="col-3 ms-auto mb-auto">
-                <form action="#" class="search-form">
- 
+                <form action="{{ route('genres.search')}}" class="search-form">
+
                     <label class="form-control-sm">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="search" name="search"  placeholder="Search for genre" value="#">
+                        <input type="search" name="search"  placeholder="Search for genre">
                     </label>
                 </form>
             </div>
@@ -54,7 +54,7 @@
                         </a>
                     </div>
                 </div>
-                
+
             </div>
 
             <div class="col-9 mb-3">
@@ -86,7 +86,7 @@
                                         <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#updateGenre-{{ $genre->id }}" title="Edit"><i class="fa-solid fa-pen icon-warning"></i>
                                         <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#deleteGenre-{{ $genre->id }}" title="Delete"><i class="fa-solid fa-trash-can icon-red"></i>
                                     </td>
-                                </tr> 
+                                </tr>
                                 @include('admin.genres.modal.actions', ['genre' => $genre])
                                 @endforeach
                             @endif
@@ -95,7 +95,7 @@
                 </div>
             </div>
         </div>
-    </div>   
+    </div>
 </div>
-    
+
 @endsection

@@ -870,11 +870,15 @@ body{
         object-fit:cover;
     }
 
-    .avatar-md{
+    .avatar-md {
         width: 3.5rem;
         height: 3.5rem;
         object-fit: cover;
-}
+    }
+
+    .avatar-lg {
+        width: 6rem;
+    }
 
 /* review */
 

@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 
 class SocialPost extends Model
 {
-    use HasFactory;
+     use HasFactory, SoftDeletes;
 
     #SocialPost belongs to a user
     public function user()
@@ -43,6 +44,11 @@ class SocialPost extends Model
     public function comments()
     {
         return $this->hasMany(SocialComment::class, 'social_post_id');
+    }
+
+    public function genres()
+    {
+        return $this->belongsToMany(Genre::class, 'genre_social_post');
     }
 
 }

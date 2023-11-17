@@ -12,10 +12,10 @@
                 <h2 class="admin_friends_list_title">Contact List</h2>
             </div>
             <div class="col-3 ms-auto mb-auto">
-                <form action="#" class="search-form">
+                <form action="{{ route('contacts.search')}}" class="search-form">
                     <label class="form-control-sm">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" name="search"  placeholder="Search">
+                        <input type="search" name="search"  placeholder="Search name">
                     </label>
                 </form>
             </div>
