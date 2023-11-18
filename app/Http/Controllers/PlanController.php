@@ -21,7 +21,6 @@ class PlanController extends Controller
     {
         $genres = Genre::all()->toArray();
         $plans = Plan::with('user')->get();
-        // dd($plans);
         return view ('users.calendars.public.calendar',['genres' => $genres, 'plans' => $plans]);
     }
     public function showPrivateCalendar()
@@ -146,5 +145,13 @@ class PlanController extends Controller
     public function destroy(Plan $plan)
     {
         //
+    }
+
+    public function showDetail($id)
+    {
+        $plan_detail = $this->plan->findOrFail($id);
+
+        return view('users.calendars.planlist')
+            ->with('plan', $plan);
     }
 }
