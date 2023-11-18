@@ -22,7 +22,8 @@ class GroupController extends Controller
     public function Group()
     {
         $groups = Group::all();
-        return view('users.calendars.private.group_list')->with('groups', $groups);
+        return view('users.calendars.private.group_list')
+                ->with('groups', $groups);
     }
 
     /**
@@ -34,7 +35,7 @@ class GroupController extends Controller
     {
         $all_groups = $this->group->all();
 
-        return View('users.modals.add_group')
+        return view('users.modals.add_group')
             ->with('all_groups', $all_groups);
     }
 

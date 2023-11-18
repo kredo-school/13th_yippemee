@@ -84,9 +84,9 @@ Route::get('/group/{id}/edit', [GroupController::class, 'edit'])->name('group.ed
 Route::patch('/group/{id}/update', [GroupController::class], 'update')->name('group.update');
 Route::delete('/group/{id}/destroy', [GroupController::class,'destroy'])->name('group.destroy');
 // private calendar
-Route::get('/users/calendars/private/calendar',[PrivateCalendarController::class,'showGroupCalendar'])->name('private_calendar');
+Route::get('/users/calendars/private/calendar',[PlanController::class,'showPrivateCalendar'])->name('private_calendar'); //make it PlanController
 // Public calendar
-Route::get('/users/calendars/public/calendar',[PublicCalendarController::class,'showCalendar'])->name('calendar');
+Route::get('/users/calendars/public/calendar',[PlanController::class,'showPublicCalendar'])->name('calendar');
 // Plan
 Route::get('/plan/create', [PlanController::class, 'create'])->name('plan.create');
 Route::post('/plan/store', [PlanController::class, 'store'])->name('plan.store');

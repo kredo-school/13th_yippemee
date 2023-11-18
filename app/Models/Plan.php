@@ -22,4 +22,9 @@ class Plan extends Model
     {
         return $this->hasMany(PlanGenre::class);
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

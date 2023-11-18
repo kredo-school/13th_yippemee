@@ -76,7 +76,7 @@
     margin-bottom: 8%;
 }
 .list-group {
-    height: 400px;
+    /* height: 50px; */
     overflow: scroll;
 }
 .list-group a {

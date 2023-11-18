@@ -1,88 +1,29 @@
 <div class="container plan-body" id="planList">
     <p class="text-center" style="color:#253c5c;"><i class="fa-regular fa-clipboard"></i> Created Plan List</p>
 
-    <div class="planlist-date">{{ $plan->date }}</div>
-    {{-- @if / foreach --}}
+
+    @if ($plans->isNotEmpty())
+    <div class="planlist-date">{{--date('F d Y', strtotime($plan->date))--}} 1 November 2023</div>
     <div class="list-group">
+        @foreach ($plans as $plan)
         <a href="#" class="btn-detail text-decoration-none">
             <div class="col-auto time-col">
                 {{ $plan->s_time }}
                 {{ $plan->e_time }}
             </div>
-            <div class="col-7 name-col">User 1</div>
-            <div class="col-auto avatar-col"><i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i></div>
-        </a>
-
-        {{-- <a href="#" class="btn-detail text-decoration-none">
-            <div class="col-auto time-col">
-                15:00
-                16:30
+            <div class="col-7 name-col">{{ $plan->user->name }}</div>
+            <div class="col-auto avatar-col">
+            {{-- @if ($user->avatar)
+                <img id="#" src="#"
+                alt="{{ $user->name }}" class="rounded-circle" style="height: 100%; width:100%;">
+            @else --}}
+                <i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i>
+            {{-- @endif --}}
             </div>
-            <div class="col-7 name-col">User 4</div>
-            <div class="col-auto avatar-col"><i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i></div>
         </a>
-
-        <a href="#" class="btn-detail text-decoration-none">
-            <div class="col-auto time-col">
-                19:30
-                22:00
-            </div>
-            <div class="col-7 name-col">User 2</div>
-            <div class="col-auto avatar-col"><i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i></div>
-        </a>
-
-        <a href="#" class="btn-detail text-decoration-none">
-            <div class="col-auto time-col">
-                11:30
-                17:30
-            </div>
-            <div class="col-7 name-col">User 1</div>
-            <div class="col-auto avatar-col"><i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i></div>
-        </a>
-
-        <a href="#" class="btn-detail text-decoration-none">
-            <div class="col-auto time-col">
-                15:00
-                16:30
-            </div>
-            <div class="col-7 name-col">User 4</div>
-            <div class="col-auto avatar-col"><i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i></div>
-        </a>
-
-        <a href="#" class="btn-detail text-decoration-none">
-            <div class="col-auto time-col">
-                19:30
-                22:00
-            </div>
-            <div class="col-7 name-col">User 2</div>
-            <div class="col-auto avatar-col"><i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i></div>
-        </a>
-
-        <a href="#" class="btn-detail text-decoration-none">
-            <div class="col-auto time-col">
-                11:30
-                17:30
-            </div>
-            <div class="col-7 name-col">User 1</div>
-            <div class="col-auto avatar-col"><i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i></div>
-        </a>
-
-        <a href="#" class="btn-detail text-decoration-none">
-            <div class="col-auto time-col">
-                15:00
-                16:30
-            </div>
-            <div class="col-7 name-col">User 4</div>
-            <div class="col-auto avatar-col"><i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i></div>
-        </a>
-
-        <a href="#" class="btn-detail text-decoration-none">
-            <div class="col-auto time-col">
-                19:30
-                22:00
-            </div>
-            <div class="col-7 name-col">User 2</div>
-            <div class="col-auto avatar-col"><i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i></div>
-        </a> --}}
+        @endforeach
     </div>
+    @else
+        <p>No plans added yet</p>
+    @endif
 </div>
