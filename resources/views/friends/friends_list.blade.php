@@ -1,8 +1,11 @@
+<!-- views/friends/friends_list.blade.php -->
+
 @extends('layouts.app')
 
 @section('title', 'Friends list')
 
 @section('content')
+
 <div class="friends">
     <div class="container my-4 margin-container bg-white">
 
@@ -16,10 +19,11 @@
         <div class="row mt-3">
             
             <div class="col-3 ms-auto mb-3">
-                <form action="#">
-                    <input type="search" name="search" class="form-control form-control-sm" placeholder="Search for friends">
+                <form action="{{ route('friends.search') }}" method="get" id="search-form">
+                    <input type="search" name="search" class="form-control form-control-sm" placeholder="Search for friends" data-bs-toggle="modal" data-bs-target="#showlist-modal">
                 </form>
             </div>
+            @include('friends.modal.show_list')
         </div>
         
         <div class="row mb-3">
@@ -32,82 +36,46 @@
                                 <th>Name</th>
                                 <th>Username</th>
                                 <th>Email</th>
-                                <th>Connection</th>
                                 <th></th>
                             </tr>
                         </thead>
-    
-                        <tbody class="no-hover-effect">
-                            <tr>
-                                <td>
-                                    <a href="#"><img src="{{ asset('img/woman01.jpg') }}" alt="woman" class="d-block mu-auto profile-picture"></a>
-                                </td>
-                                <td>
-                                    <a href="#" class="text-decoration-none text-dark">Mary Smith</a>
-                                </td>
-                                <td>john</td>
-                                <td>abc@email.com</td>
-                                <td>                      
-                                    <i class="fa-solid fa-user-group text-success"></i>
-                                </td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button class="btn btn-sm" data-bs-toggle="dropdown">
-                                            <i class="fa-solid fa-bars"></i>
-                                        </button>
-    
-                                        <div class="dropdown-menu menu-hover">
-                                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#connectModal">
-                                                <i class="fa-solid fa-users text-success"></i> Connect
-                                            </a>
-                                            
-                                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#disconnectModal">
-                                                <i class="fa-solid fa-users-slash text-danger"></i> Disconnect
-                                            </a>
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <i class="fa-solid fa-circle-user d-block admin-users-icon"></i>
-                                </td>
-                                <td>
-                                    <a href="#" class="text-decoration-none text-dark">  Name  </a>
-                                </td>
-                                <td>  Username  </td>
-                                <td>  e-mail  </td>
-                                <td>                      
-                                    {{-- <i class="fa-solid fa-user-group text-success"></i> --}}
-                                </td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button class="btn btn-sm" data-bs-toggle="dropdown">
-                                            <i class="fa-solid fa-bars"></i>
-                                        </button>
-                                        
-                                        <div class="dropdown-menu menu-hover">
-                                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#connectModal">
-                                                <i class="fa-solid fa-users text-success"></i> Connect
-                                            </a>
-                                            
-                                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#disconnectModal">
-                                                <i class="fa-solid fa-users-slash text-danger"></i> Disconnect
-                                            </a>
-                                        </div>
-                                    </div>
-                                    
-                                </td>
-                            </tr> 
-                        </tbody>
+                        @foreach($addedFriends as $friend)
+                            <tbody class="no-hover-effect">
+                                <tr>
+                                    <td>
+                                        <a href="#">
+                                            @if($friend->avatar)
+                                                <img src="#" alt="#" class="rounded-circle user-avatar">
+                                            @else
+                                                <i class="fa-solid fa-circle-user text-secondary user-icon"></i>
+                                            @endif
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="text-decoration-none text-dark">{{ $friend->name }}</a>
+                                    </td>
+                                    <td>{{ $friend->username }}</td>
+                                    <td>{{ $friend->email }}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#removeModal-{{ $friend->id }}">Remove</button>
+                                        @include('friends.modal.remove_friend', ['friend_id' => $friend->id])
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        @endforeach
                     </table>
                 </div>
             </div>
         </div>
-    </div>
-    @include('friends.modal.connect_modal')
+        
 
-</div>
+    </div>
+
     
+    
+</div>
+
+
 @endsection
+

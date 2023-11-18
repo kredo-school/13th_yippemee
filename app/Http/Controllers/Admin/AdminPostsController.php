@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\SocialPost;
 use Illuminate\Http\Request;
 
+
 class AdminPostsController extends Controller
 {
     const LOCAL_STORAGE_FOLDER = 'public/images/';
@@ -16,28 +17,33 @@ class AdminPostsController extends Controller
         $this->social_post = $social_post;
     }
 
-    public function admin_posts_index(Request $request)
+    public function admin_posts_index()
     {
-        $all_social_posts = $this->social_post->latest()->paginate(20);
-
-        if($request->search){
-            $all_social_posts = $this->social_post->where('description', 'LIKE', '%'.$request->search.'%');
-        }
-
-        return view('admin.posts.index')
-                ->with('all_social_posts',  $all_social_posts)
-                ->with('search', $request->search);
+        $social_posts = SocialPost::withTrashed()->get();
+        return view('admin.posts.index')->with('social_posts', $social_posts);
     }
 
-    // public function hide($id)
-    // {
-    //     $this->social_post->destroy($id);
-    //     return redirect()->back();
-    // }
+    public function hide($id)
+    {
+        $this->social_post->destroy($id);
+        return redirect()->back();
+    }
 
-    // public function unhide($id)
-    // {
-    //     $this->social_post->findOrFail($id)->restore();
-    //     return redirect()->back();
-    // }
+    public function unhide($id)
+    {
+        $this->social_post->withTrashed()->findOrFail($id)->restore();
+        return redirect()->back();
+    }
+
+    public function search(Request $request)
+    {
+         $social_posts = SocialPost::whereHas('user', function ($query) use ($request) {
+            $query->where('name','like','%' .$request->search. '%');
+         })->get();
+
+        return view('admin.posts.search')->with('social_posts',$social_posts)->with('search',$request->search);
+    }
+
 }
+
+
