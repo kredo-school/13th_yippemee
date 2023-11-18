@@ -9,6 +9,7 @@ use App\Models\Bucket;
 use App\Models\SocialPost;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\MyPlan;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
@@ -75,6 +76,10 @@ public function show($id){
     $all_buckets = Bucket::latest()->get();
     return view('users.bucket.show')
          ->with(["user" => $user, "all_buckets" => $all_buckets]);
+
+    $all_myplans = Myplan::latest()->get();
+    return view('users.myplans.show')
+         ->with(["user" => $user, "all_myplans" => $all_myplans]);
 
     $social_posts = SocialPost::where('user_id', Auth::id())->latest()->get();
     return view('users.profile.show', compact('social_posts'));

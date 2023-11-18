@@ -10,6 +10,10 @@ use App\Http\Controllers\PlanController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\WantController;
 use App\Http\Controllers\GroupController;
+
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\MyplanController;
+
 use App\Http\Controllers\VisitController;
 use App\Http\Controllers\BucketController;
 use App\Http\Controllers\MyPlanController;
@@ -71,7 +75,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //MY PLANS
-Route::get('/myplans/show', [MyPlanController::class, 'show'])->name('myplans.show');
+Route::get('/myplans/{id}/show', [MyplanController::class, 'show'])->name('myplans.show');
 
 
 // Calendars

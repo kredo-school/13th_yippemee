@@ -82,6 +82,13 @@ class User extends Authenticatable
         return $this->hasMany(GenreProfile::class);
     }
 
+
+    public function myplans()
+    {
+        return $this->hasmany(MyPlan::class);
+    }
+
+
     public function friends()
     {
         return $this->belongsToMany(User::class, 'friends', 'user_id', 'friend_id');
