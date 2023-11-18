@@ -5,15 +5,12 @@ use App\Http\Controllers\Genre;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FriendController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\WantController;
 use App\Http\Controllers\GroupController;
-
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\MyplanController;
-
 use App\Http\Controllers\VisitController;
 use App\Http\Controllers\BucketController;
 use App\Http\Controllers\MyPlanController;
@@ -95,7 +92,7 @@ Route::get('/users/calendars/public/calendar',[PlanController::class,'showPublic
 // Plan
 Route::get('/plan/create', [PlanController::class, 'create'])->name('plan.create');
 Route::post('/plan/store', [PlanController::class, 'store'])->name('plan.store');
-Route::get('/plan/{id}/show', [PlanController::class, 'show'])->name('plan.show');
+Route::get('/plan/{id}/show', [PlanController::class, 'showPlanDetail'])->name('plan.detail.show');
 
 
 

@@ -17,20 +17,6 @@ class PlanController extends Controller
         $this->plan = $plan;
 
     }
-    public function showPublicCalendar()
-    {
-        $genres = Genre::all()->toArray();
-        $plans = Plan::with('user')->get();
-        // dd($plans);
-        return view ('users.calendars.public.calendar',['genres' => $genres, 'plans' => $plans]);
-    }
-    public function showPrivateCalendar()
-    {
-        // $private_genres = Genre::all()->toArray();
-        // $private_preference = Plan::with('user')->get();
-
-        // return view ('users.calendars.private.calendar',['genres' => $genres, 'preference' => $preference]);
-    }
 
     /**
      * Display a listing of the resource.
@@ -95,7 +81,7 @@ class PlanController extends Controller
             ];
         }
 
-        $plan->planGenre()->createMany($plan_genres);
+        $plan->genres()->attach($request->genre);
 
         return redirect(route('calendar'));
     }
@@ -106,12 +92,26 @@ class PlanController extends Controller
      * @param  \App\Models\Plan  $plan
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $plan = $this->plan->findOrFail($id);
 
-        return view('users.calendars.planlist')
-            ->with('plan', $plan);
+    public function showPublicCalendar()
+    {
+        $genres = Genre::all()->toArray();
+        $plans = Plan::with('user')->get();
+        // dd($plans);
+        return view ('users.calendars.public.calendar',['genres' => $genres, 'plans' => $plans]);
+    }
+    public function showPlanDetail($id)
+    {
+        $plan = Plan::with('genres')->findOrFail($id);
+        return view('users.calendars.public.detail', compact('plan'));
+    }
+
+    public function showPrivateCalendar()
+    {
+        // $private_genres = Genre::all()->toArray();
+        // $private_preference = Plan::with('user')->get();
+
+        // return view ('users.calendars.private.calendar',['genres' => $genres, 'preference' => $preference]);
     }
 
     /**

@@ -18,9 +18,9 @@ class Plan extends Model
         'description',
     ];
 
-    public function planGenre()
+    public function genres()
     {
-        return $this->hasMany(PlanGenre::class);
+        return $this->belongsToMany(Genre::class, 'plan_genre', 'plan_id', 'genre_id');
     }
 
     public function user()
