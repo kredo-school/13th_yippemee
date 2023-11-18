@@ -20,15 +20,15 @@
                             </button>
 
                             <div class="dropdown-menu">
-                                <form action="{{ route('visits.edit', $visit->id) }}" method="post">
-                                    <a href="#" class="dropdown-item">
+                                <form action="#" method="post">
+                                    <a href="{{ route('visits.edit', $visit->id) }}" class="dropdown-item">
                                         <i class="fa-regular fa-pen-to-square"></i> Edit
                                     </a>
                                 </form>
 
-                                    <a href="#" class="dropdown-item text-danger">
+                                <button class="dropdown-item text-danger">
                                         <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#delete-visits-{{ $visit->id }}"></i> Delete
-                                    </a>
+                                </button>
                             </div>
                             @include('users.visits.modals.delete')
                         </div>
@@ -54,7 +54,7 @@
                 </h5>
             </div>
         </div>
-        
+
         @empty
             <h4>Make your Visit List</h4>
     </div>

@@ -99,6 +99,7 @@ class BucketController extends Controller
         ]);
 
         $bucket                 = $this   ->bucket->findOrFail($id);
+        $user_id                = auth()  ->user()->id;
         $bucket->restaurantName = $request->restaurantName;
         $bucket->hoursOption    = $request->hoursOption;
         $bucket->url            = $request->url;
@@ -120,7 +121,7 @@ class BucketController extends Controller
 
         $bucket->bucketGenre()->createMany($bucket_genres);
 
-        return redirect()->route('bucket.show', $id);
+        return redirect()->route('bucket.show', $user_id);
     }
 
     public function destroy($id)
@@ -130,5 +131,4 @@ class BucketController extends Controller
         $bucket->forceDelete();
         return redirect()->route('bucket.show',$user_id);
     }
-
 }
