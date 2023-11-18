@@ -7,7 +7,7 @@
 <div class="container">
     <div class="justify-content-center mt-5 mb-5">
         <div class="col-8" style="margin-left: 216px">
-            <h1 class="main-font mb-0 fw-light text-center mb-4">Edit a Visit List</h1>
+            <h1 class="main-font mb-0 fw-light text-center mb-4">Make a Visit List</h1>
             <span class="bar bar-short mb-5"></span>
 
             <form action="/visits/store" method="post" name="visit" enctype="multipart/form-data">

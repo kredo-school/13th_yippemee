@@ -43,6 +43,10 @@ class UsersController extends Controller
         return view('admin.users.search')->with('users',$users)->with('search',$request->search);
     }
 
+    public function friends()
+    {
+        return $this->belongsToMany(User::class, 'friends', 'user_id', 'friend_id');
+    }
 
 
 }

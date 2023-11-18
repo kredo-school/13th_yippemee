@@ -5,16 +5,5 @@
 @section('content')
     @include('users.profile.header')
     @include('users.profile.side')
-
-{{-- Bucket Lists --}}
-
-        @include('users.posts.body')
-
-{{-- End of Bucket Lists --}}
-
-
-
-
-
-
+    @include('users.posts.body')
 @endsection
