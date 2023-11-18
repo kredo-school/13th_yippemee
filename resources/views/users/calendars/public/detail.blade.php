@@ -1,13 +1,13 @@
 <div class="container detail-body" >
-    <p class="text-end" style="color:#253c5c;"><i class="fa-regular fa-user-circle"></i> User 1</p>
+    <p class="text-end" style="color:#253c5c;"><i class="fa-regular fa-user-circle"></i> </p>
     <div class="preference">
         <div class="pre-title">
-            【Preferences】
+            【Plan】
         </div>
         <div class="pre-detail">
             <div class="row">
                 <div class="col-auto"><i class="fa-regular fa-clock"></i></div>
-                <div class="col-auto ps-2">11:00-17:30</div>
+                <div class="col-auto ps-2">{{$plan->s_time}} - {{$plan->e_time}}</div>
             </div>
             <div class="row">
                 <div class="col-auto"><i class="fa-solid fa-shop"></i></div>

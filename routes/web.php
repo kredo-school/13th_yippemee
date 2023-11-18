@@ -75,6 +75,14 @@ Route::get('/myplans/show', [MyPlanController::class, 'show'])->name('myplans.sh
 
 
 // Calendars
+// Public calendar
+Route::get('/users/calendars/public/calendar',[PlanController::class,'showPublicCalendar'])->name('calendar');
+    // Plan
+Route::get('/plan/create', [PlanController::class, 'create'])->name('plan.create');
+Route::post('/plan/store', [PlanController::class, 'store'])->name('plan.store');
+Route::get('/plan/{id}/show', [PlanController::class, 'show'])->name('plan.show');
+// Route::get('/plan/{id}/showDetail', [PlanController::class, 'showDetail'])->name('show.public.detail');
+
 // Group
 Route::get('/users/calendars/private/group_list', [GroupController::class, 'group'])->name('group_list');
 Route::get('/group/create', [GroupController::class, 'create'])->name('group.create');
@@ -83,14 +91,9 @@ Route::get('/group/{id}/show', [GroupController::class, 'show'])->name('group.sh
 Route::get('/group/{id}/edit', [GroupController::class, 'edit'])->name('group.edit');
 Route::patch('/group/{id}/update', [GroupController::class], 'update')->name('group.update');
 Route::delete('/group/{id}/destroy', [GroupController::class,'destroy'])->name('group.destroy');
-// private calendar
-Route::get('/users/calendars/private/calendar',[PlanController::class,'showPrivateCalendar'])->name('private_calendar'); //make it PlanController
-// Public calendar
-Route::get('/users/calendars/public/calendar',[PlanController::class,'showPublicCalendar'])->name('calendar');
-// Plan
-Route::get('/plan/create', [PlanController::class, 'create'])->name('plan.create');
-Route::post('/plan/store', [PlanController::class, 'store'])->name('plan.store');
-Route::get('/plan/{id}/show', [PlanController::class, 'show'])->name('plan.show');
+// Private calendar
+Route::get('/users/calendars/private/calendar',[PlanController::class,'showPrivateCalendar'])->name('private_calendar');
+
 
 
 

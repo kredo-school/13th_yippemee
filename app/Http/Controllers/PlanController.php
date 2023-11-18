@@ -147,11 +147,10 @@ class PlanController extends Controller
         //
     }
 
-    public function showDetail($id)
-    {
-        $plan_detail = $this->plan->findOrFail($id);
+    // public function showDetail($id)
+    // {
+    //     $plan_detail = Plan::with('genres')->findOrFail($id);
 
-        return view('users.calendars.planlist')
-            ->with('plan', $plan);
-    }
+    //     return view('users.calendars.public.detail', compact('plan_detail'));
+    // }
 }
