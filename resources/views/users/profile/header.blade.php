@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="col-3 mt-4" style="text-align: right">
+    <div class="col-3 mt-4 btn-3" style="text-align: right">
         <a href="{{ route('profile.edit') }}"><i class="fa-solid fa-pen-clip icon-sm" data-bs-toggle="modal" data-bs-target="#edit-intro"></i> Edit Profile
         </a>
     </div>

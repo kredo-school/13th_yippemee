@@ -85,21 +85,14 @@
                         <label for="{{ $genre->name }}" class="form-check-label">{{ $genre->name }}</label>
                     </div>
                     @endforeach
+                    @error('genre')
+                    <p class="text-danger small">{{ $message }}</p>
+                    @enderror
                 </div>
             </div>
 
-            {{-- <div class="mb-3">
-                <label for="introduction" class="form-label fw-bold mb-0">About you</label>
-                <textarea name="introduction" id="introduction" rows="5" placeholder="Write some details about yourself" class="form-control"></textarea>
-            </div> --}}
-
-            {{-- Button --}}
             <button type="submit" class="btn btn-warning px-5"  style="margin-left: 170px">Save</button>
-            {{-- <div class="text-end">
-            <a href="#" class="btn btn--green btn--cubic px-5">Cancel</a>
-            <a href="#" class="btn btn--yellow btn--cubic px-5">Save</a>
-            </div> --}}
-            {{-- End Button --}}
+            
         </form>
     </div>
 </div>

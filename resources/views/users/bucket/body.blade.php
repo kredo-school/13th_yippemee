@@ -1,7 +1,8 @@
 <div class="col-9">
     <div class="row">
 
-        @forelse ($all_buckets as $bucket)
+        @if ($user->bucket->isNotEmpty())
+        @foreach ($user->bucket as $bucket)
         <div class="col-4 mt-3 mb-2">
             <div class="card" style="width: 18rem; text-align: left" >
                 <img src="{{ $bucket->image }}" alt="{{ $bucket->id }}" class="img-size-bucket">
@@ -25,10 +26,12 @@
                                         </a>
                                     </form>
 
-                                    <form action="#" method="post">
-                                        <a href="{{ route('bucket.destroy', $bucket->id) }}" class="dropdown-item text-danger">
+                                    <form action="{{ route('bucket.destroy', $bucket->id) }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="dropdown-item text-danger">
                                             <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#delete-bucket-{{ $bucket->id }}"></i> Delete
-                                        </a>
+                                        </button>
                                     </form>
 
                                     {{-- <button class="dropdown-item text-danger">
@@ -63,12 +66,14 @@
                 </div>
             </div>
         </div>
-
-        @empty
-            <h4>Make your Bucket List</h4>
+        @endforeach
+        @else
+            <h4>
+                <a href="{{ route('bucket.create') }}" class="list-group-item list-group-item-action py-2 ripple">
+                Make your Bucket List
+                <span><i class="fa-solid fa-bucket me-3 link-place" style="font-size: 20px"></i></span></a>
+            </h4>
     </div>
-         @endforelse
+        @endif
 </div>
-
-
 

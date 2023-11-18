@@ -66,7 +66,7 @@ class VisitController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'image'           => 'required|mimes:jpeg,jpg,png,gif|max:2048',
+            'image'           => 'mimes:jpeg,jpg,png,gif|max:2048',
             'restaurantName'  => 'required|min:1|max:10000',
             'star_rating'     => 'required',
             'date'            => 'max:10000',

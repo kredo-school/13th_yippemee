@@ -90,7 +90,7 @@ class BucketController extends Controller
     public function update(Request $request, $id){
         //dd($request);
         $request->validate([
-            'image'           => 'required|mimes:jpeg,jpg,png,gif|max:2048',
+            'image'           => 'mimes:jpeg,jpg,png,gif|max:2048',
             'restaurantName'  => 'required|min:1|max:10000',
             'genre'           => 'array',
             'hoursOption'     => 'max:10000',
@@ -129,6 +129,6 @@ class BucketController extends Controller
         $bucket = $this->bucket->findOrFail($id);
         $user_id = auth()->user()->id;
         $bucket->forceDelete();
-        return redirect()->route('bucket.show',$user_id);
+        return redirect()->back();
     }
 }
