@@ -60,8 +60,9 @@ class ProfileController extends Controller
 public function show($id){
 
     $user = $this->user->findOrFail($id);
-    return view('users.profile.show')
-         ->with('user', $user);
+    $social_posts = $user->social_posts;
+
+    return view('users.profile.show', compact('user', 'social_posts'));
 
     $genre_profile = $this->user->get();
     $user = User::findOrFail($id);
@@ -98,7 +99,7 @@ public function  edit(){
 
     public function update(Request $request)
     {
-        
+
         $request->validate([
         'name'          => 'required|min:1|max:50',
         'email'         => 'required|email|max:50|unique:users,email,' . Auth::user()->id,
