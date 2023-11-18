@@ -1,4 +1,4 @@
-<div class="modal fade" id="group-delete">
+<div class="modal fade" id="delete{{ $group['id'] }}">
     <div class="modal-dialog delete-dialog modal-xl">
         <div class="modal-content delete-content">
             <div class="modal-header delete-header w-100">
@@ -11,7 +11,7 @@
                     <p>Are you sure you want to delete this group?</p>
                 </div>
                 <div class="row">
-                    <img src="{{ $group->image }}" alt="{{ $group->name }}" id="modal-image">
+                    <img src="{{ asset('storage/images/' . $group->image) }}" alt="{{ $group->name }}" id="modal-image">
                 </div>
                 <div class="row name">
                     <div class="group-name">{{ $group->name }}</div>

@@ -114,5 +114,6 @@
         });
 
         generateCalendar(currentYear, currentMonth);
+
     </script>
 </div>

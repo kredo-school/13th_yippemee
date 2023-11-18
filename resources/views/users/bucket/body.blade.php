@@ -1,6 +1,5 @@
 <div class="col-9">
     <div class="row">
-
         @forelse ($all_buckets as $bucket)
         <div class="col-4 mt-3 mb-2">
             <div class="card" style="width: 18rem; text-align: left" >
@@ -19,6 +18,7 @@
                                 </button>
 
                                 <div class="dropdown-menu">
+
                                     <form action="#" method="post">
                                         <a href="{{ route('bucket.edit', $bucket->id) }}" class="dropdown-item">
                                             <i class="fa-regular fa-pen-to-square"></i> Edit
@@ -34,6 +34,7 @@
                                     {{-- <button class="dropdown-item text-danger">
                                             <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#delete-bucket-{{ $bucket->id }}"></i> Delete
                                     </button> --}}
+                                   
                                 </div>
                                 @include('users.bucket.modals.delete')
                             </div>

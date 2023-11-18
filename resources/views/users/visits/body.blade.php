@@ -26,6 +26,7 @@
                                     </a>
                                 </form>
 
+
                                 <button class="dropdown-item text-danger">
                                         <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#delete-visits-{{ $visit->id }}"></i> Delete
                                 </button>
@@ -54,7 +55,7 @@
                 </h5>
             </div>
         </div>
-
+        
         @empty
             <h4>Make your Visit List</h4>
     </div>

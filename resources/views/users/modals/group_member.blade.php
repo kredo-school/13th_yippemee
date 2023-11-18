@@ -1,9 +1,9 @@
-<div class="modal fade" id="group-member" aria-hidden="true">
+<div class="modal fade" id="member{{ $group['id'] }}" aria-hidden="true">
     <div class="modal-dialog member-dialog modal-xl">
         <div class="modal-content member-content">
             <div class="modal-header member-header w-100">
                 <div class="row w-100" >
-                    <h1 class="mt-2 ms-3">Family (group name)</h1>
+                    <h1 class="mt-2 ms-3">{{ $group->name }}</h1>
                 </div>
             </div>
             <div class="modal-body member-body">

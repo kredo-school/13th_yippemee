@@ -74,6 +74,7 @@ class VisitController extends Controller
             'description'     => 'max:10000'
         ]);
 
+
         $visit                 = $this   ->visit->findOrFail($id);
         $user_id               = auth()  ->user()->id;
         $visit->restaurantName = $request->restaurantName;

@@ -37,6 +37,12 @@ div.bg-genre {
     font-weight: bold;
 }
 
+div.bg-genre-uncategorized {
+    background-color: #dcdcdc !important;
+    color: #253C5C;
+    font-weight: bold;
+}
+
 .text-post{
     color: #253C5C; 
 }

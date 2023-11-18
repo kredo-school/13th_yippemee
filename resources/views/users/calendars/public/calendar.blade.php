@@ -32,4 +32,19 @@
 
 {{-- modal --}}
 @include('users.modals.create')
+
+<script>
+    // array filter()
+    const date = [];
+
+    function checkDate(date) {
+        return date > document.getElementById("dateToCheck").value;
+    }
+
+    function myFunction() {
+        document.getElementById("planList").innerHTML = ages.filter(checkDate);
+    }
+</script>
+
+
 @endsection

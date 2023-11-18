@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Group;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class GroupController extends Controller
 {
@@ -21,7 +22,8 @@ class GroupController extends Controller
     public function Group()
     {
         $groups = Group::all();
-        return view('users.calendars.private.group_list')->with('groups', $groups);
+        return view('users.calendars.private.group_list')
+                ->with('groups', $groups);
     }
 
     /**
@@ -33,7 +35,7 @@ class GroupController extends Controller
     {
         $all_groups = $this->group->all();
 
-        return View('users.modals.add_group')
+        return view('users.modals.add_group')
             ->with('all_groups', $all_groups);
     }
 
@@ -50,24 +52,32 @@ class GroupController extends Controller
             // restaurant/member_id will be array later
             'restaurant_id' =>  'required|min:1|max:30',
             'member_id'     =>  'required|min:1|max:30',
-            'image'         =>  'required|mimes:jpeg,jpg,png,gif|max:1048'
+            'image'         =>  'mimes:jpeg,jpg,png,gif|max:2048'
         ]);
 
         // save
         $this->group->name          =   $request->name;
         $this->group->restaurant_id =   $request->restaurant_id;
         $this->group->member_id     =   $request->member_id;
-        $this->group->image         =   'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
+
+        // $this->group->image         =   'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
+
+        // save images in a separated directory↓↓
+        // $this->group->image         = $request->file('image');
+        // $this->group->image->move(base_path('\storage\images'), $this->group->image->getClientOriginalName());
+        // dd($request->file('image')->getClientOriginalName());
+        // $file = $request->file('image');
+        // $file->move('storage/images/', $file->getClientOriginalName()); move uploaded file to directoy 'storage/images/ before put the path in DB
+        // $this->group->image = 'storage/images/' . $file->getClientOriginalName();
+
+        $file = $request->file('image');
+        $this->group->image = time() . '_' . $file->getClientOriginalName();
+        $file->move(public_path('storage/images/'), $this->group->image);
+
         $this->group->save();
 
-        // $newGroup = Group::create([
-        //     'name'        => $request->name,
-        //     'restaurant_id' => $request->restaurant_id,
-        //     'image'          => 'data:image/' . $request->image->extension() . ';base64' . base64_encode(file_get_contents($request->image)),
-        //     'member_id' => $request->member_id,
-        // ]);
-
         return redirect()->route('group_list');
+
     }
 
     /**
@@ -109,25 +119,28 @@ class GroupController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name'          =>  'required|min:1|max:30',
-            // restaurant/member_id will be array later
-            'restaurant_id' =>  'required|min:1|max:30',
-            'image'         =>  'mimes:jpeg,jpg,png,gif|max:1048'
+            'name'          => 'sometimes|max:30',
+            'restaurant_id' => 'sometimes|max:30',
+            'image'         => 'sometimes|mimes:jpeg,jpg,png,gif|max:2048' // 'sometimes' indicates the field is not always required
         ]);
 
-        $group                  =   $this->group->findOrFail($id);
-        $group->name            =   $request->name;
-        $group->restaurant_id   =   $request->restaurant_id;
-
-        if ($request->image) {
-            $group->image       =   'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
+        $group = Group::findOrFail($id); // Directly using Group model
+        if ($request->has('name') && $request->name != null) {
+            $group->name = $request->name;
+        }
+        if ($request->has('restaurant_id') && $request->restaurant_id != null) {
+            $group->restaurant_id = $request->restaurant_id;
+        }
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $this->group->image = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('storage/images/'), $group->image);
         }
 
         $group->save();
 
-        return redirect()->route('group.show', $id);
+        return redirect()->route('group_list');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -143,9 +156,14 @@ class GroupController extends Controller
         // $group = Group::findOrFail($id);
         // $group->delete();
 
+        // $this->group->image = $file->getClientOriginalName();
+        // $file->delete(public_path('storage/images/'), $this->group->image);
 
         $group = Group::find($id);
+        // Storage::delete(public_path('storage/images/1700046843_giphy.gif'));
+        unlink(public_path('storage/images/' . $group->image));
         $group->delete();
+
 
         return redirect()->route('group_list');
     }

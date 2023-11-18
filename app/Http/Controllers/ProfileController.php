@@ -61,8 +61,9 @@ class ProfileController extends Controller
 public function show($id){
 
     $user = $this->user->findOrFail($id);
-    return view('users.profile.show')
-         ->with('user', $user);
+    $social_posts = $user->social_posts;
+
+    return view('users.profile.show', compact('user', 'social_posts'));
 
     $genre_profile = $this->user->get();
     $user = User::findOrFail($id);

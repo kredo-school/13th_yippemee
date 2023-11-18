@@ -24,8 +24,9 @@ class PostController extends Controller
 
     public function show($id)
     {
-        $social_post = $this->social_post->latest()->get();
         $user = User::findOrFail($id);
-        return view('users.posts.show', ["social_post" => $social_post, "user" => $user]);
+        $social_posts = $user->social_posts;
+
+        return view('users.profile.show', compact('user', 'social_posts'));
     }
 }
