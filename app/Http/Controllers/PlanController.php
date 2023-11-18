@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Plan;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 
 class PlanController extends Controller
 {
@@ -13,18 +15,28 @@ class PlanController extends Controller
     public function __construct(Plan $plan)
     {
         $this->plan = $plan;
-        
+
     }
+    public function showPublicCalendar()
+    {
+        $genres = Genre::all()->toArray();
+        $plans = Plan::with('user')->get();
+        // dd($plans);
+        return view ('users.calendars.public.calendar',['genres' => $genres, 'plans' => $plans]);
+    }
+    public function showPrivateCalendar()
+    {
+        // $private_genres = Genre::all()->toArray();
+        // $private_preference = Plan::with('user')->get();
+
+        // return view ('users.calendars.private.calendar',['genres' => $genres, 'preference' => $preference]);
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function Plan()
-    {
-        $plans      = Plan::all();
-        return view('users.calendars.public.calendar');
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -33,9 +45,9 @@ class PlanController extends Controller
      */
     public function create()
     {
-        $all_plans   = $this->plan->all();
+        $all_plans = Plan::all();
 
-        return View('users.modals.create')
+        return view('users.modals.create')
             ->with('all_plans', $all_plans);
     }
 
@@ -50,10 +62,10 @@ class PlanController extends Controller
         // dd($request);
         $request->validate([
             'date'          =>  'required|min:1|max:30',
-            's_time'          =>  'sometimes',
-            'e_time'          =>  'sometimes',
+            's_time'        =>  'sometimes',
+            'e_time'        =>  'sometimes',
             // restaurant/member_id will be array later
-            'restaurant'       =>  'required|min:1|max:30',
+            'restaurant'    =>  'required|min:1|max:30',
             'genre'         =>  'array',
             'description'   =>  'required|min:1|max:500',
         ]);
@@ -67,25 +79,25 @@ class PlanController extends Controller
         // }
         // dd($request->input('genre'));
         $plan = Plan::create([
-            'user_id'        =>   Auth::user()->id,
-            'date'                  =>   $request->date,
-            's_time'        =>                $request->s_time,
-            'e_time'         =>    $request->e_time,
+            'user_id'           =>   Auth::user()->id,
+            'date'              =>   $request->date,
+            's_time'            =>  $request->s_time,
+            'e_time'            =>    $request->e_time,
             'restaurant_id'     =>   $request->restaurant_id,
-            'description'                    =>   $request->description,
+            'description'       =>   $request->description,
         ]);
 
         $plan_genres = [];
         foreach ($request->genre as $genre_id) {
             $plan_genres[] = [
-                'genre_id' => $genre_id,
-                'plan_id' => $plan->id,
+                'genre_id'      => $genre_id,
+                'plan_id'       => $plan->id,
             ];
         }
 
         $plan->planGenre()->createMany($plan_genres);
 
-        return redirect()->route('calendar');
+        return redirect(route('calendar'));
     }
 
     /**
@@ -98,7 +110,7 @@ class PlanController extends Controller
     {
         $plan = $this->plan->findOrFail($id);
 
-        return view('calendar')
+        return view('users.calendars.planlist')
             ->with('plan', $plan);
     }
 
