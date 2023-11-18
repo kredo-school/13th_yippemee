@@ -1,6 +1,6 @@
 <div class="col text-end">
     @if($social_post->genres->isEmpty())
-        <div class="badge bg-genre text-wrap mr-3">
+        <div class="badge bg-genre-uncategorized text-wrap mr-3">
             Uncategorized
         </div>
     @else
