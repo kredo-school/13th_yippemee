@@ -17,11 +17,13 @@ class VisitController extends Controller
         $this->visit  = $visit;
     }
 
-    public function create(){
+    public function create()
+    {
         return view('users.visits.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
         $request->validate([
             'image'           => 'required|mimes:jpeg,jpg,png,gif|max:2048',
@@ -33,8 +35,9 @@ class VisitController extends Controller
         ]);
 
 
+        $user_id = auth()->user()->id;
         $visit = Visit::create([
-            'user_id'        => auth()->user()->id,
+            'user_id'        => $user_id,
             'image'          =>  'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image)),
             'restaurantName' => $request->restaurantName,
             'star_rating'    => $request->star_rating,
@@ -43,23 +46,25 @@ class VisitController extends Controller
             'description'    => $request->description,
         ]);
 
-        return redirect()->route('visits.show');
+
+        return redirect()->route('visits.show', $user_id);
     }
 
     public function show($id)
     {
         $all_visits = $this->visit->latest()->get();
         $user = User::findOrFail($id);
-        return view("users.visits.show", ["all_visits" => $all_visits,"user" => $user]);
+        return view("users.visits.show", ["all_visits" => $all_visits, "user" => $user]);
     }
 
     public function edit($id)
     {
         $visit = $this->visit->findOrFail($id);
-        return view('users.visits.edit',['visit'=>$visit]);
+        return view('users.visits.edit', ['visit' => $visit]);
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
         $request->validate([
             'image'           => 'required|mimes:jpeg,jpg,png,gif|max:2048',
             'restaurantName'  => 'required|min:1|max:10000',
@@ -69,14 +74,14 @@ class VisitController extends Controller
             'description'     => 'max:10000'
         ]);
 
-        $visit                 = $this   ->visit->findOrFail($id);
+        $visit                 = $this->visit->findOrFail($id);
         $visit->restaurantName = $request->restaurantName;
         $visit->star_rating    = $request->star_rating;
         $visit->date           = $request->date;
         $visit->url            = $request->url;
         $visit->description    = $request->description;
 
-        if($request->image){
+        if ($request->image) {
             $visit->image = 'data:image/' . ';base64,' . base64_encode(file_get_contents($request->image));
         }
 
@@ -85,8 +90,11 @@ class VisitController extends Controller
         return redirect()->route('visits.show', $id);
     }
 
-    public function destroy(User $user){
-        print($user);
-        return redirect()->route('visits.show');
+    public function destroy($id)
+    {
+        $visit = $this->visit->findOrFail($id);
+        $user_id = auth()->user()->id;
+        $visit->forceDelete();
+        return redirect()->route('visits.show', $user_id);
     }
 }

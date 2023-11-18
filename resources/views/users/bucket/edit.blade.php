@@ -66,9 +66,7 @@
                         <textarea name="description" id="description" rows="4" placeholder="Write some information about the restaurant" class="form-control">{{ old('description', $bucket->description) }}</textarea>
                     </div>
 
-                    <button type="submit btn-warning">Save</button>
-                    {{-- <a href="{{ route('bucket.show') }}" onclick="document.bucket.submit();" class="btn btn--yellow btn--cubic px-5">Save</a>
-                    <a href="{{ route('bucket.show') }}" class="btn btn--green btn--cubic px-5">Cancel</a></button> --}}
+                    <button type="submit" name="btn_send" class="btn btn-contact w-25 mt-3">Save</button>
 
                 </div>
             </form>
