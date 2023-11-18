@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Genre;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\SocialPostController;
+use App\Models\SocialPost;
 
 class AdminGenreController extends Controller
 {
@@ -22,10 +23,11 @@ class AdminGenreController extends Controller
 
     public function admin_genres_index(Request $request)
     {
-        $all_genres = $this->genre->orderBy('updated_at', 'desc')->paginate(15);
+        $all_genres = Genre::with('social_posts')->orderBy('updated_at', 'desc')->paginate(20);
+        
+        $uncategorized_count = SocialPost::doesntHave('genres')->count();
 
-        return view('admin.genres.index')
-                ->with('all_genres', $all_genres);
+        return view('admin.genres.index', compact('all_genres', 'uncategorized_count'));
     }
 
     public function store(Request $request)

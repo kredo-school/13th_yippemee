@@ -10,6 +10,10 @@ use App\Http\Controllers\PlanController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\WantController;
 use App\Http\Controllers\GroupController;
+
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\MyplanController;
+
 use App\Http\Controllers\VisitController;
 use App\Http\Controllers\BucketController;
 use App\Http\Controllers\MyPlanController;
@@ -54,7 +58,8 @@ Route::post('/visits/store', [VisitController::class, 'store'])->name('visits.st
 Route::get('/visits/{id}/show', [VisitController::class, 'show'])->name('visits.show');
 Route::get('/visits/{id}/edit', [VisitController::class, 'edit'])->name('visits.edit');
 Route::patch('/visits/{id}/update', [VisitController::class, 'update'])->name('visits.update');
-Route::delete('/visits/destroy/{id}', [VisitsController::class, 'destroy'])->name('visits.destroy');
+Route::delete('/visits/{id}/destroy', [VisitController::class, 'destroy'])->name('visits.destroy');
+
 
 //BUCKET
 Route::get('/bucket/create', [BucketController::class, 'create'])->name('bucket.create');
@@ -71,7 +76,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //MY PLANS
-Route::get('/myplans/show', [MyPlanController::class, 'show'])->name('myplans.show');
+Route::get('/myplans/{id}/show', [MyplanController::class, 'show'])->name('myplans.show');
 
 
 // Calendars

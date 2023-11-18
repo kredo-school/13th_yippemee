@@ -5,19 +5,34 @@
             <nav id="sidebarMenu" class="sidebarMenu collapse d-lg-block sidebar collapse bg-white shadow ps-3 pt-2" style="padding-bottom: 20px">
                 <div class="mx-3 sidebar-profile">
                     <div class="title-line"><i class="fa-regular fa-face-meh me-3 mt-3"></i><span class="fw-bold">Intro</span></div>
+                    @if ($user->location)
+                        <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                        <i class="fa-solid fa-location-dot me-3 link-place"></i><span>{{ $user->location }}</span></a>
+                    @else
+                        <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                        <i class="fa-solid fa-plus me-3 link-place"></i><span>Add your current city</span></a>
+                    @endif
+
+                    @if ($user->introduction)
                     <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
-                    <i class="fa-solid fa-location-dot me-3 link-place" data-bs-toggle="modal" data-bs-target="#edit-intro"></i><span>{{ $user->location }}</span>
-                    </a>
-                    <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple active">
-                    <i class="fa-solid fa-utensils me-3 link-place" data-bs-toggle="modal" data-bs-target="#edit-intro"></i><span>{{ $user->introduction }}</span>
-                    </a>
-                    <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple mb-3"><i class="fa-solid fa-burger me-3 link-place" data-bs-toggle="modal" data-bs-target="#edit-intro"></i>
+                        <i class="fa-solid fa-utensils me-3 link-place"></i><span>{{ $user->introduction }}</span></a>
+                    @else
+                    <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                        <i class="fa-solid fa-plus me-3 link-place"></i><span>Add your Best restaurant</span></a>
+                    @endif
+
+                    @if ($user->genreProfile)
+                    <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple mb-3"><i class="fa-solid fa-burger me-3 link-place"></i>
                         <span>
                             @foreach ($user->genreProfile as $genre_profile)
                             {{ $genre_profile->genre->name }}
                             @endforeach
                         </span>
                     </a>
+                    @else
+                    <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                        <i class="fa-solid fa-plus me-3 link-place"></i><span>Add your Favorite genre</span></a>
+                    @endif
                 </div>
 
                 {{-- Post bar--}}
