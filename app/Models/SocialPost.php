@@ -51,6 +51,7 @@ class SocialPost extends Model
         return $this->belongsToMany(Genre::class, 'genre_social_post');
     }
 
+
 }
 
 
