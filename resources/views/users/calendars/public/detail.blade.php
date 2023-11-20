@@ -1,28 +1,36 @@
-<div class="container detail-body" >
-    <p class="text-end" style="color:#253c5c;"><i class="fa-regular fa-user-circle"></i> User 1</p>
+<div class="container detail-body">
+    @if (isset($plan) && $plan->id)
+    <p class="text-end" style="color:#253c5c;"><i class="fa-regular fa-user-circle"></i>{{ $plan->user->username }}</p>
     <div class="preference">
-        <div class="pre-title">
-            【Preferences】
-        </div>
+        <div class="pre-title">【Details】</div>
         <div class="pre-detail">
             <div class="row">
                 <div class="col-auto"><i class="fa-regular fa-clock"></i></div>
-                <div class="col-auto ps-2">11:00-17:30</div>
+                <div class="col-auto ps-2">{{ $plan->s_time}} - {{ $plan->e_time }}</div>
             </div>
             <div class="row">
                 <div class="col-auto"><i class="fa-solid fa-shop"></i></div>
-                <div class="col-auto ps-2">Location/ restaurant's name</div>
+                <div class="col-auto ps-2">{{ $plan->restaurant_id }}</div>
             </div>
             <div class="row">
                 <div class="col-auto"><i class="fa-solid fa-utensils"></i></div>
-                <div class="col-auto ps-2">Italian</div>
+                <div class="col-auto ps-2">
+                    @if ($plan->genres)
+                        @foreach($plan->genres as $genre)
+                            {{ $genre->name }}
+                        @endforeach
+                    @else
+                        No genres selected
+                    @endif
+
+                </div>
             </div>
         </div>
 
         <div class="pre-border"></div>
 
         <div class="pre-description">【Description】</div>
-        <div class="pre-comment">I'm looking for someone to go to an Italian restaurant with me! <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente illo dicta voluptatem culpa esse harum natus tempore perferendis excepturi non, iste repudiandae commodi quis iure est. Animi expedita, incidunt praesentium ipsam suscipit odio ipsum, fugiat impedit quos omnis ullam saepe?</div>
+        <div class="pre-comment">{{ $plan->description }}</div>
     </div>
     <div class="row">
         <div class="col-5 hidden"></div>
@@ -71,5 +79,9 @@
         <button type="submit" class="btn btn-join"><span>JOIN <i class="fa-solid fa-person-walking-arrow-right" style="color: #253c5c;"></i></span></button>
         {{-- add undo button --}}
     </form>
+    @else
+    <p class="text-end" style="color:#253c5c;">Plan Detail</p>
+    <h5 class="text-center pt-5" style="color:gray;">Select from Plan List</h5>
+    @endif
 </div>
 

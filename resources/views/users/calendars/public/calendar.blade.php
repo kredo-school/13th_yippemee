@@ -10,7 +10,7 @@
 </div>
 
 <div class="left-navi">
-    @include('users.calendars.planlist')
+    @include('users.calendars.public.planlist')
 </div>
 
 <div class="main-div">
