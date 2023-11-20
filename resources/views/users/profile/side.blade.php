@@ -22,6 +22,10 @@
                     @endif
 
                     @if ($user->genreProfile)
+                    <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                        <i class="fa-solid fa-plus me-3 link-place"></i><span>Add your Favorite genre</span></a>
+
+                    @else
                     <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple mb-3"><i class="fa-solid fa-burger me-3 link-place"></i>
                         <span>
                             @foreach ($user->genreProfile as $genre_profile)
@@ -29,9 +33,6 @@
                             @endforeach
                         </span>
                     </a>
-                    @else
-                    <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
-                        <i class="fa-solid fa-plus me-3 link-place"></i><span>Add your Favorite genre</span></a>
                     @endif
                 </div>
 

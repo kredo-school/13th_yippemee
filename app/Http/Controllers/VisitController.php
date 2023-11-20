@@ -66,7 +66,7 @@ class VisitController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'image'           => 'required|mimes:jpeg,jpg,png,gif|max:2048',
+            'image'           => 'mimes:jpeg,jpg,png,gif|max:2048',
             'restaurantName'  => 'required|min:1|max:10000',
             'star_rating'     => 'required',
             'date'            => 'max:10000',
@@ -74,7 +74,8 @@ class VisitController extends Controller
             'description'     => 'max:10000'
         ]);
 
-        $visit                 = $this->visit->findOrFail($id);
+        $visit                 = $this   ->visit->findOrFail($id);
+        $user_id               = auth()  ->user()->id;
         $visit->restaurantName = $request->restaurantName;
         $visit->star_rating    = $request->star_rating;
         $visit->date           = $request->date;
@@ -87,7 +88,7 @@ class VisitController extends Controller
 
         $visit->save();
 
-        return redirect()->route('visits.show', $id);
+        return redirect()->route('visits.show',$user_id);
     }
 
     public function destroy($id)
