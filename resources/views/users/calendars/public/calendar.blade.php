@@ -28,23 +28,17 @@
 
 <div class="right-navi">
     @include('users.calendars.public.detail')
+    {{-- @if(isset($selectedPlan))
+        @include('users.calendars.public.detail', compact('selectedPlan'))
+    @else
+        @include('users.calendars.public.detail')
+    @endif --}}
 </div>
 
 {{-- modal --}}
 @include('users.modals.create')
 
-<script>
-    // array filter()
-    const date = [];
 
-    function checkDate(date) {
-        return date > document.getElementById("dateToCheck").value;
-    }
-
-    function myFunction() {
-        document.getElementById("planList").innerHTML = ages.filter(checkDate);
-    }
-</script>
 
 
 @endsection

@@ -1,12 +1,12 @@
 <div class="container plan-body" id="planList">
     <p class="text-center" style="color:#253c5c;"><i class="fa-regular fa-clipboard"></i> Created Plan List</p>
 
+    <div class="planlist-date" id="displayDate">【{{$selected_date}}</div>
 
     @if ($plans->isNotEmpty())
-    <div class="planlist-date">{{--date('F d Y', strtotime($plan->date))--}} 1 November 2023</div>
     <div class="list-group">
         @foreach ($plans as $plan)
-        <a href="{{ route('plan.detail.show', $plan->id) }}" class="btn-detail text-decoration-none">
+        <a href="{{ route('plan.show', ['date' => date('Ymd'), 'id' => $plan->id ]) }}" class="btn-detail text-decoration-none">
             <div class="col-auto time-col">
                 {{ $plan->s_time }}
                 {{ $plan->e_time }}
@@ -27,3 +27,4 @@
         <h5 class="pt-3 ps-3" style="color: gray">No plans added yet</h5>
     @endif
 </div>
+
