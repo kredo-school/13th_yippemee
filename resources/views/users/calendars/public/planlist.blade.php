@@ -6,7 +6,8 @@
     @if ($plans->isNotEmpty())
     <div class="list-group">
         @foreach ($plans as $plan)
-        <a href="{{ route('plan.show', ['date' => date('Ymd'), 'id' => $plan->id ]) }}" class="btn-detail text-decoration-none">
+        <a href="{{ route('plan.show', ['date' => date('Ymd', strtotime($selected_date)), 'id' => $plan->id ]) }}" class="btn-detail text-decoration-none">
+        {{-- <a href="{{ route('plan.show', ['date' => date('Ymd'), 'id' => $plan->id ]) }}" class="btn-detail text-decoration-none"> --}}
             <div class="col-auto time-col">
                 {{ $plan->s_time }}
                 {{ $plan->e_time }}
@@ -15,7 +16,7 @@
             <div class="col-auto avatar-col">
             @if ($plan->user->avatar)
                 <img id="#" src="{{ $plan->user->avatar }}"
-                alt="{{ $plan->user->username }}" class="rounded-circle" style="height: 100%; width:100%;">
+                alt="{{ $plan->user->username }}" class="rounded-circle" style="height: 45px; width:45px;">
             @else
                 <i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i>
             @endif

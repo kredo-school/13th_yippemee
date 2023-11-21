@@ -1,6 +1,13 @@
 <div class="container detail-body">
     @if (!is_null($selected_plan))
-        <p class="text-end" style="color:#253c5c;"><i class="fa-regular fa-user-circle"></i>{{ $selected_plan ->user->username }}</p>
+        <p class="text-end" style="color:#253c5c;">
+            @if ($selected_plan->avatar)
+                <img id="#" src="{{ $selected_plan->avatar }}"
+                alt="{{ $plan->user->username }}" class="rounded-circle" style="height: 45px; width:45px;">
+            @else
+                <i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i>
+            @endif
+        </p>
         <div class="preference">
             <div class="pre-title">【Details】</div>
             <div class="pre-detail">
