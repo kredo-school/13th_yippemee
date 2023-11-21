@@ -42,46 +42,13 @@ class PlanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    // public function store(Request $request)
-    // {
-    //     // dd($request);
-    //     $request->validate([
-    //         'date'          =>  'required|min:1|max:30',
-    //         's_time'        =>  'sometimes',
-    //         'e_time'        =>  'sometimes',
-    //         'restaurant'    =>  'required|min:1|max:30',
-    //         'genre'         =>  'array',
-    //         'description'   =>  'required|min:1|max:500',
-    //     ]);
-
-    //     $plan = Plan::create([
-    //         'user_id'           =>   Auth::user()->id,
-    //         'date'              =>   $request->date,
-    //         's_time'            =>     $request->s_time,
-    //         'e_time'            =>   $request->e_time,
-    //         'restaurant_id'     =>   $request->restaurant_id,
-    //         'description'       =>   $request->description,
-    //     ]);
-
-    //     $plan_genres = [];
-    //     foreach ($request->genre as $genre_id) {
-    //         $plan_genres[] = [
-    //             'genre_id'      => $genre_id,
-    //             'plan_id'       => $plan->id,
-    //         ];
-    //     }
-
-    //     $plan->genres()->attach($request->genre);
-
-    //     return view('users.calendars.public.calendar');
-    // }
     public function store(Request $request)
     {
         $request->validate([
             'date'          =>  'required|min:1|max:30',
             's_time'        =>  'sometimes',
             'e_time'        =>  'sometimes',
-            'restaurant'    =>  'required|min:1|max:30',
+            'restaurant'    =>  'sometimes|min:1|max:30',
             'genre'         =>  'array',
             'description'   =>  'required|min:1|max:500',
         ]);
@@ -91,7 +58,7 @@ class PlanController extends Controller
             'date'          =>  $request->date,
             's_time'        =>  $request->s_time,
             'e_time'        =>  $request->e_time,
-            'restaurant_id' =>  $request->restaurant_id,
+            'restaurant' =>  $request->restaurant,
             'description'   =>  $request->description,
         ]);
 
@@ -109,6 +76,8 @@ class PlanController extends Controller
         //     'selected_date' => date('F d Y', strtotime($request->date)),
         //     'selected_plan' => $selected_plan
         // ]);
+        
+        // dd($request->all());
         return redirect()->route('plan.show', ['date' => date('Ymd')]);    }
 
 

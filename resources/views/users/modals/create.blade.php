@@ -49,8 +49,8 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <label class="label-title" name="restaurant" for="restaurant"><i
-                                        class="fa-solid fa-shop"></i> Restaurant</label>
+                                <label class="label-title" name="restaurant" for="restaurant">
+                                    <i class="fa-solid fa-shop"></i> Restaurant</label>
                                 <br>
                                 <input type="text" name="restaurant" id="restaurant">
                             </div>
