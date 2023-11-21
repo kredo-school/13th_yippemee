@@ -31,7 +31,7 @@ class ProfileController extends Controller
                 'avatar'        => 'mimes:jpg,jpeg,gif,png|max:1048',
                 'location'      => 'max:100',
                 'introduction'  => 'max:100',
-                'genre'         => 'array|between:1,1'
+                'genre'         => 'required|array|max:1'
                 ]);
 
     $user = User::create([
@@ -111,7 +111,7 @@ public function  edit(){
         'avatar'        => 'mimes:jpg,jpeg,gif,png|max:1048',
         'location'      => 'max:100',
         'introduction'  => 'max:100',
-        'genre'         => 'array|between:1,1'
+        'genre'         => 'required|array|max:1'
         ]);
 
         $user               = $this->user->findOrFail(Auth::user()->id);

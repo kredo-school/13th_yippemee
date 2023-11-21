@@ -1,3 +1,21 @@
+.btn-3 {
+    background: #617EA8;
+    width: 140px;
+    height: 30px;
+    text-align: center;
+    border-radius: 5%;
+}
+.btn-3:hover {
+    background: #617EA8;
+    opacity: 70%;
+    letter-spacing: 0.04em;
+}
+.btn-3 a{
+    color: white;
+    text-decoration: none;
+}
+/* end */
+
 .reviewed:not(:checked) > label {
     width:1em;
     overflow:hidden;
@@ -541,8 +559,8 @@ label[for]:hover {
     width: 100px;
     height: 27px;
     text-align: center;
-    opacity: 80%;
-    border-radius: 10%;
+    opacity: 90%;
+    border-radius: 5%;
     font-size: 15px;
     padding: 3px;
     text-decoration: none;
@@ -554,6 +572,11 @@ label[for]:hover {
     opacity: 50%;
     letter-spacing: 0.07em;
     }
+
+    .only-background a{
+        text-decoration: none;
+    }
+
 
 /* bucket icon */
 table tbody tr th .body {
