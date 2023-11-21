@@ -52,7 +52,7 @@
                                 <label class="label-title" name="restaurant" for="restaurant"><i
                                         class="fa-solid fa-shop"></i> Restaurant</label>
                                 <br>
-                                <input type="search" name="restaurant" id="restaurant">
+                                <input type="text" name="restaurant" id="restaurant">
                             </div>
                         </div>
                         <div class="col-6 form-group right">
