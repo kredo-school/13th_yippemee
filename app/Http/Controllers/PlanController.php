@@ -15,7 +15,6 @@ class PlanController extends Controller
     public function __construct(Plan $plan)
     {
         $this->plan = $plan;
-
     }
 
     /**
@@ -67,8 +66,8 @@ class PlanController extends Controller
         $plan = Plan::create([
             'user_id'           =>   Auth::user()->id,
             'date'              =>   $request->date,
-            's_time'            =>  $request->s_time,
-            'e_time'            =>    $request->e_time,
+            's_time'            =>     $request->s_time,
+            'e_time'            =>   $request->e_time,
             'restaurant_id'     =>   $request->restaurant_id,
             'description'       =>   $request->description,
         ]);
@@ -83,7 +82,7 @@ class PlanController extends Controller
 
         $plan->genres()->attach($request->genre);
 
-        return redirect(route('calendar'));
+        return view('users.calendars.public.calendar');
     }
 
     /**
@@ -98,12 +97,23 @@ class PlanController extends Controller
         $genres = Genre::all()->toArray();
         $plans = Plan::with('user')->get();
         // dd($plans);
-        return view ('users.calendars.public.calendar',['genres' => $genres, 'plans' => $plans]);
+        return view('users.calendars.public.calendar', ['genres' => $genres, 'plans' => $plans]);
     }
-    public function showPlanDetail($id)
+    public function show($date, Request $request)
     {
-        $plan = Plan::with('genres')->findOrFail($id);
-        return view('users.calendars.public.detail', compact('plan'));
+        // $date = $request->input('date');
+        $formattedDate = substr($date, 0, 4) . '-' . substr($date, 4, 2) . '-' . substr($date, 6, 2);
+        $plans = Plan::with('genres')->whereDate('date', $formattedDate)->get();
+        $genres = Genre::all()->toArray();
+        if (count($plans) > 0) {
+            $plan_id = $request->input('id') ?: $plans[0]->id;
+            // get the plan with $plan->id
+            $selected_plan  = Plan::with('genres')->findOrFail($plan_id);
+            return view('users.calendars.public.calendar', ['genres' => $genres, 'plans' => $plans, 'selected_date' => date('F d Y', strtotime($formattedDate)), 'selected_plan' => $selected_plan]);
+        }
+        else {
+            return view('users.calendars.public.calendar', ['genres' => $genres, 'plans' => $plans, 'selected_date' => date('F d Y', strtotime($formattedDate)), 'selected_plan' => null]);
+        }
     }
 
     public function showPrivateCalendar()
@@ -112,6 +122,7 @@ class PlanController extends Controller
         // $private_preference = Plan::with('user')->get();
 
         // return view ('users.calendars.private.calendar',['genres' => $genres, 'preference' => $preference]);
+        return view('users.calendars.private.calendar');
     }
 
     /**

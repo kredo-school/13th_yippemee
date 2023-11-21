@@ -92,7 +92,7 @@ Route::get('/users/calendars/public/calendar',[PlanController::class,'showPublic
 // Plan
 Route::get('/plan/create', [PlanController::class, 'create'])->name('plan.create');
 Route::post('/plan/store', [PlanController::class, 'store'])->name('plan.store');
-Route::get('/plan/{id}/show', [PlanController::class, 'showPlanDetail'])->name('plan.detail.show');
+Route::get('/plan/public/{date}/show', [PlanController::class, 'show'])->name('plan.show'); //display planlist and the detail for each
 
 
 
