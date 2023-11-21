@@ -1,9 +1,9 @@
 <div class="row bg-white container mx-auto mt-3" style="border-bottom: 3px solid lightgray">
     <div class="col-6 mb-3 mt-3">
         @if ($user->avatar)
-            <img src="{{ $user->avatar }}" alt="{{ $user->name }}" class="img-thumbnail rounded-circle d-block mx-auto avatar-lg">
+            <img src="{{ $user->avatar }}" alt="{{ $user->name }}" class="img-thumbnail rounded-circle d-block avatar-lg">
         @else
-            <i class="fa-solid fa-circle-user text-secondary d-block text-center icon-md"></i>
+            <div class="avatar-lg" style="font-size: 5rem"><i class="fa-solid fa-circle-user"></i></div>
         @endif
     </div>
 
@@ -25,7 +25,7 @@
 
         <div class="row">
             <div class="col page-title" style="margin-left: 200px">
-                <span class="bar bar-short mt-4"></span>
+                <span class="bar bar-short mt-2"></span>
             </div>
         </div>
 
