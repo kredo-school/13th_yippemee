@@ -18,7 +18,7 @@ class CreateVisitsTable extends Migration
             $table->string('restaurantName')->nullable();
             $table->integer('star_rating')->nullable();;
             $table->date('date')->nullable();
-            $table->binary('image')->nullable();
+            $table->longtext('image',500)->nullable();
             $table->string('url')->nullable();
             $table->text('description')->nullable();
             $table->unsignedBigInteger('user_id');
