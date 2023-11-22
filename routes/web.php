@@ -157,6 +157,7 @@ Route::get('/social/posts/create', [SocialPostController::class, 'create'])->nam
 Route::get('/social/posts/{id}/edit', [SocialPostController::class, 'edit'])->name('social.posts.edit');
 Route::patch('/social/posts/{id}/update', [SocialPostController::class, 'update'])->name('social.posts.update');
 Route::delete('/social/posts/{id}/destroy', [SocialPostController::class, 'destroy'])->name('social.posts.destroy');
+Route::get('/social/posts/search',[SocialPostController::class,'search'])->name('social.posts.search');
 
 //social_comment
 Route::post('/social/comment/{social_post_id}/store', [SocialCommentController::class, 'store'])->name('social_comment.store');
