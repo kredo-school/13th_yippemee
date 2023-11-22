@@ -553,7 +553,7 @@ label[for]:hover {
     display: none;
 }
 
-.only-background {
+.only-background a{
     background: #617EA8;
     color: #E6F2E9;
     width: 100px;
@@ -566,17 +566,15 @@ label[for]:hover {
     text-decoration: none;
     }
 
-    .only-background:hover {
+    .only-background:hover a{
         background: #617EA8;
     color: #E6F2E9;
     opacity: 50%;
-    letter-spacing: 0.07em;
     }
 
-    .only-background a{
+    .NoneBorder{
         text-decoration: none;
     }
-
 
 /* bucket icon */
 table tbody tr th .body {
@@ -938,7 +936,14 @@ body{
     }
 
     .avatar-lg {
-        width: 6rem;
+        font-size: 5rem;
+        margin: 0 0 0 500px;
+        height: 90px;
+    }
+
+    .editProfile{
+        width: 580px;
+        margin: -165px;
     }
 
 /* review */

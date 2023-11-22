@@ -107,6 +107,7 @@ public function  edit(){
 
         $request->validate([
         'name'          => 'required|min:1|max:50',
+        'username'      => 'required|min:1|max:50',
         'email'         => 'required|email|max:50|unique:users,email,' . Auth::user()->id,
         'avatar'        => 'mimes:jpg,jpeg,gif,png|max:1048',
         'location'      => 'max:100',
@@ -116,6 +117,7 @@ public function  edit(){
 
         $user               = $this->user->findOrFail(Auth::user()->id);
         $user->name         = $request->name;
+        $user->username     = $request->username;
         $user->email        = $request->email;
         $user->username     = $request->username;
         $user->location     = $request->location;

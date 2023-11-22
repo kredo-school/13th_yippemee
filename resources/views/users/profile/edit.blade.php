@@ -17,12 +17,13 @@
                 @if ($user->avatar)
                     <img src="{{ $user->avatar }}" alt="{{ $user->name }}" class="img-thumbnail rounded-circle d-block mx-auto">
                 @else
-                    <i class="fa-solid fa-circle-user text-secondary d-block text-center icon-md"></i>
+                    <i class="fa-solid fa-circle-user d-block text-center icon-md"></i>
                 @endif
                 </div>
 
-                <div class="col align-self-end">
-                    <input type="file" name="avatar" id="avatar" class="form-control mt-1" aria-describedby="avatar-info">
+                <div class="mb-4 col-5" style="margin-left: 170px">
+                    <label for="name" class="form-label fw-bold mb-0"></label>
+                    <input type="file" name="avatar" id="avatar" class="editProfile form-control mt-1" aria-describedby="avatar-info">
                     @error('avatar')
                         <p class="text-danger small">{{ $message }}</p>
                     @enderror
@@ -92,7 +93,7 @@
             </div>
 
             <button type="submit" class="btn btn-warning px-5"  style="margin-left: 170px">Save</button>
-            
+
         </form>
     </div>
 </div>
