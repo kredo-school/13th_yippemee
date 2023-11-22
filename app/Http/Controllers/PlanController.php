@@ -77,6 +77,7 @@ class PlanController extends Controller
     // }
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
             'date'          =>  'required|min:1|max:30',
             's_time'        =>  'sometimes',
@@ -91,7 +92,7 @@ class PlanController extends Controller
             'date'          =>  $request->date,
             's_time'        =>  $request->s_time,
             'e_time'        =>  $request->e_time,
-            'restaurant_id' =>  $request->restaurant_id,
+            'restaurant_id' =>  $request->restaurant,
             'description'   =>  $request->description,
         ]);
 
