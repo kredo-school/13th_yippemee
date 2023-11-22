@@ -208,3 +208,7 @@ div.bg-genre-uncategorized {
     width: 30px;
     height: 30px;
 }
+
+.btn-outline-success {
+    outline: 1px solid #28a745;
+}
