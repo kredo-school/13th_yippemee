@@ -86,6 +86,7 @@ Route::get('/group/{id}/show', [GroupController::class, 'show'])->name('group.sh
 Route::get('/group/{id}/edit', [GroupController::class, 'edit'])->name('group.edit');
 Route::patch('/group/{id}/update', [GroupController::class], 'update')->name('group.update');
 Route::delete('/group/{id}/destroy', [GroupController::class,'destroy'])->name('group.destroy');
+
 // private calendar
 Route::get('/users/calendars/private/calendar',[PlanController::class,'showPrivateCalendar'])->name('private_calendar'); //make it PlanController
 // Public calendar
