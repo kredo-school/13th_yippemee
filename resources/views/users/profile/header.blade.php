@@ -11,7 +11,7 @@
         <div class="mt-4" style="font-family: 'Marcellus';"><h2 style="margin-bottom: 0">{{ $user->name }}</h2>
         </div>
         <div class="header-user-name row">
-        <div class="mt-0">{{ $user->username }}</div>
+        <div class="mt-0"><i class="fa-solid fa-burger"></i>{{ $user->username }}</div>
         </div>
     </div>
 
