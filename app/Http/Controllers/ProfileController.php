@@ -9,6 +9,7 @@ use App\Models\Bucket;
 use App\Models\SocialPost;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\MyPlan;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
@@ -30,7 +31,7 @@ class ProfileController extends Controller
                 'avatar'        => 'mimes:jpg,jpeg,gif,png|max:1048',
                 'location'      => 'max:100',
                 'introduction'  => 'max:100',
-                'genre'         => 'array|between:1,1'
+                'genre'         => 'required|array|max:1'
                 ]);
 
     $user = User::create([
@@ -60,8 +61,9 @@ class ProfileController extends Controller
 public function show($id){
 
     $user = $this->user->findOrFail($id);
-    return view('users.profile.show')
-         ->with('user', $user);
+    $social_posts = $user->social_posts;
+
+    return view('users.profile.show', compact('user', 'social_posts'));
 
     $genre_profile = $this->user->get();
     $user = User::findOrFail($id);
@@ -74,6 +76,10 @@ public function show($id){
     $all_buckets = Bucket::latest()->get();
     return view('users.bucket.show')
          ->with(["user" => $user, "all_buckets" => $all_buckets]);
+
+    $all_myplans = Myplan::latest()->get();
+    return view('users.myplans.show')
+         ->with(["user" => $user, "all_myplans" => $all_myplans]);
 
     $social_posts = SocialPost::where('user_id', Auth::id())->latest()->get();
     return view('users.profile.show', compact('social_posts'));
@@ -98,18 +104,20 @@ public function  edit(){
 
     public function update(Request $request)
     {
-        
+
         $request->validate([
         'name'          => 'required|min:1|max:50',
+        'username'      => 'required|min:1|max:50',
         'email'         => 'required|email|max:50|unique:users,email,' . Auth::user()->id,
         'avatar'        => 'mimes:jpg,jpeg,gif,png|max:1048',
         'location'      => 'max:100',
         'introduction'  => 'max:100',
-        'genre'         => 'array|between:1,1'
+        'genre'         => 'required|array|max:1'
         ]);
 
         $user               = $this->user->findOrFail(Auth::user()->id);
         $user->name         = $request->name;
+        $user->username     = $request->username;
         $user->email        = $request->email;
         $user->username     = $request->username;
         $user->location     = $request->location;

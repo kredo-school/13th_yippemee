@@ -8,13 +8,11 @@
     <div class="container my-4 margin-container bg-white">
         <div class="row">
             <div class="col d-flex flex-column align-items-start">
-                <form action="#" class="search-form">
-                    <form action="#" class="search-form">
-                        <label class="form-control-sm">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" name="search"  placeholder="Search">
-                        </label>
-                    </form>
+                <form action="{{ route('social.posts.search') }}" method="get" class="search-form">
+                    <label class="form-control-sm">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" name="search"  placeholder="Search">
+                    </label>
                 </form>
             </div>
             <div class="col  page-title">

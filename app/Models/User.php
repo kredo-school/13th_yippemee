@@ -30,6 +30,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
         'facebook_id',
@@ -102,6 +103,14 @@ class User extends Authenticatable
     public function genreProfile()
     {
         return $this->hasMany(GenreProfile::class);
+    }
+    public function plan()
+    {
+        return $this->hasMany(Plan::class);
+    }
+    public function myplans()
+    {
+        return $this->hasmany(MyPlan::class);
     }
 
     public function friends()

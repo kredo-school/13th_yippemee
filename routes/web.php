@@ -5,6 +5,7 @@ use App\Http\Controllers\Genre;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FriendController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\PostController;
@@ -40,6 +41,7 @@ use App\Http\Controllers\PublicCalendarController;
 use App\Http\Controllers\PrivateCalendarController;
 use App\Http\Controllers\Admin\AdminGenreController;
 use App\Http\Controllers\Admin\AdminPostsController;
+use App\Http\Controllers\PublicCommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,7 +72,8 @@ Route::post('/visits/store', [VisitController::class, 'store'])->name('visits.st
 Route::get('/visits/{id}/show', [VisitController::class, 'show'])->name('visits.show');
 Route::get('/visits/{id}/edit', [VisitController::class, 'edit'])->name('visits.edit');
 Route::patch('/visits/{id}/update', [VisitController::class, 'update'])->name('visits.update');
-Route::delete('/visits/destroy/{id}', [VisitsController::class, 'destroy'])->name('visits.destroy');
+Route::delete('/visits/{id}/destroy', [VisitController::class, 'destroy'])->name('visits.destroy');
+
 
 //BUCKET
 Route::get('/bucket/create', [BucketController::class, 'create'])->name('bucket.create');
@@ -87,7 +90,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //MY PLANS
-Route::get('/myplans/show', [MyPlanController::class, 'show'])->name('myplans.show');
+Route::get('/myplans/{id}/show', [MyplanController::class, 'show'])->name('myplans.show');
 
 
 // Calendars
@@ -99,16 +102,19 @@ Route::get('/group/{id}/show', [GroupController::class, 'show'])->name('group.sh
 Route::get('/group/{id}/edit', [GroupController::class, 'edit'])->name('group.edit');
 Route::patch('/group/{id}/update', [GroupController::class], 'update')->name('group.update');
 Route::delete('/group/{id}/destroy', [GroupController::class,'destroy'])->name('group.destroy');
+
 // private calendar
-Route::get('/users/calendars/private/calendar',[PrivateCalendarController::class,'showGroupCalendar'])->name('private_calendar');
+Route::get('/users/calendars/private/calendar',[PlanController::class,'showPrivateCalendar'])->name('private_calendar'); //make it PlanController
 // Public calendar
-Route::get('/users/calendars/public/calendar',[PublicCalendarController::class,'showCalendar'])->name('calendar');
+Route::get('/users/calendars/public/calendar',[PlanController::class,'showPublicCalendar'])->name('calendar');
 // Plan
 Route::get('/plan/create', [PlanController::class, 'create'])->name('plan.create');
 Route::post('/plan/store', [PlanController::class, 'store'])->name('plan.store');
-Route::get('/plan/{id}/show', [PlanController::class, 'show'])->name('plan.show');
+Route::get('/plan/public/{date}/show', [PlanController::class, 'show'])->name('plan.show'); //display planlist and the detail for each
 
-
+//public_comment
+Route::post('/users/calendars/public/comment/{plan_id}/store', [PublicCommentController::class, 'store'])->name('public_comment.store');
+Route::delete('/users/calendars/public/comment/{plan_id}/destroy', [PublicCommentController::class, 'destroy'])->name('public_comment.destroy');
 
 
 //Restaurant list
@@ -167,6 +173,7 @@ Route::get('/social/posts/create', [SocialPostController::class, 'create'])->nam
 Route::get('/social/posts/{id}/edit', [SocialPostController::class, 'edit'])->name('social.posts.edit');
 Route::patch('/social/posts/{id}/update', [SocialPostController::class, 'update'])->name('social.posts.update');
 Route::delete('/social/posts/{id}/destroy', [SocialPostController::class, 'destroy'])->name('social.posts.destroy');
+Route::get('/social/posts/search',[SocialPostController::class,'search'])->name('social.posts.search');
 
 //social_comment
 Route::post('/social/comment/{social_post_id}/store', [SocialCommentController::class, 'store'])->name('social_comment.store');
@@ -176,10 +183,7 @@ Route::delete('/social/comment/{social_post_id}/destroy', [SocialCommentControll
 Route::get('/friends/list',  [FriendController::class, 'friends_list'])->name('friends.friends_list');
 Route::get('friends/search', [FriendController::class, 'search'])->name('friends.search');
 Route::post('/friends/add', [FriendController::class, 'addFriends'])->name('friends.add');
-// Route::post('/friends/remove/{friend_id}', [FriendController::class, 'removeFriend'])->name('friends.remove');
 Route::delete('/friends/remove/{friend_id}', [FriendController::class, 'removeFriend'])->name('friends.remove');
-
-
 
 //like
 Route::post('social/posts/{social_post}/like', [LikeController::class, 'store'])->name('social.posts.like');

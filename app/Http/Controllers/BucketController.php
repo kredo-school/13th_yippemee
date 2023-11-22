@@ -28,8 +28,9 @@ class BucketController extends Controller
     }
 
     // store() -> save the post
-    public function store(Request $request){
-        // dd($request);
+    public function store(Request $request)
+    {
+
         $request->validate([
             'image'           => 'required|mimes:jpeg,jpg,png,gif|max:2048',
             'restaurantName'  => 'required|min:1|max:10000',
@@ -39,9 +40,9 @@ class BucketController extends Controller
             'description'     => 'max:10000'
         ]);
 
-
+        $user_id = auth()->user()->id;
         $bucket = Bucket::create([
-            'user_id'        => auth()->user()->id,
+            'user_id'        => $user_id,
             'image'          =>  'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image)),
             'restaurantName' => $request->restaurantName,
             'hoursOption'    => $request->hoursOption,
@@ -58,7 +59,7 @@ class BucketController extends Controller
 
         $bucket->bucketGenre()->createMany($bucket_genres);
 
-        return redirect()->route('bucket.show');
+        return redirect()->route('bucket.show', $user_id);
     }
 
 
@@ -89,7 +90,7 @@ class BucketController extends Controller
     public function update(Request $request, $id){
         //dd($request);
         $request->validate([
-            'image'           => 'required|mimes:jpeg,jpg,png,gif|max:2048',
+            'image'           => 'mimes:jpeg,jpg,png,gif|max:2048',
             'restaurantName'  => 'required|min:1|max:10000',
             'genre'           => 'array',
             'hoursOption'     => 'max:10000',
@@ -98,6 +99,7 @@ class BucketController extends Controller
         ]);
 
         $bucket                 = $this   ->bucket->findOrFail($id);
+        $user_id                = auth()  ->user()->id;
         $bucket->restaurantName = $request->restaurantName;
         $bucket->hoursOption    = $request->hoursOption;
         $bucket->url            = $request->url;
@@ -114,20 +116,19 @@ class BucketController extends Controller
         $bucket_genres = [];
         foreach($request->genre as $genre_id){
         $bucket_genres[] = ['genre_id' => $genre_id,
-        'bucket_id' => $bucket->id,
-        ];
+        'bucket_id' => $bucket->id,];
         }
 
         $bucket->bucketGenre()->createMany($bucket_genres);
 
-        return redirect()->route('bucket.show', $id);
+        return redirect()->route('bucket.show', $user_id);
     }
 
     public function destroy($id)
     {
         $bucket = $this->bucket->findOrFail($id);
+        $user_id = auth()->user()->id;
         $bucket->forceDelete();
-        return redirect()->route('bucket.show');
+        return redirect()->back();
     }
-
 }

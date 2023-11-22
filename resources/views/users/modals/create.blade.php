@@ -14,25 +14,28 @@
     <div class="modal-dialog create-dialog modal-xl">
         <div class="modal-content create-content">
             <div class="modal-header create-header w-100" style="background-color: #F1A29B;">
-                <div class="row w-100" >
+                <div class="row w-100">
                     <div class="col-11">
-                        <h1 class="mt-2 ms-3 text-white"><i class="fa-solid fa-calendar-plus" style="color: #FFFFFF;"></i> Create your plan</h1>
+                        <h1 class="mt-2 ms-3 text-white"><i class="fa-solid fa-calendar-plus"
+                                style="color: #FFFFFF;"></i> Create your plan</h1>
                     </div>
                     <div class="col-1">
-                        <a href="#" class="btn close-button mt-2" data-bs-dismiss="modal"><i class="fa-solid fa-xmark fa-2x" style="color: white;"></i></a>
+                        <a href="#" class="btn close-button mt-2" data-bs-dismiss="modal"><i
+                                class="fa-solid fa-xmark fa-2x" style="color: white;"></i></a>
                     </div>
                 </div>
             </div>
-            <form action="{{route('plan.store')}}" method="POST">
+            <form action="{{ route('plan.store') }}" method="POST">
                 @csrf
                 <div class="modal-body create-body">
 
                     <div class="row">
                         <div class="col-6" id="left-form-group">
                             <div class="row">
-                                <label class="label-title" for="date" ><i class="fa-regular fa-calendar"></i> Date</label>
+                                <label class="label-title" for="date"><i class="fa-regular fa-calendar"></i>
+                                    Date</label>
                                 <br>
-                                <input type="date" name="date" id="date">
+                                <input type="date" name="date" id="dateToCheck">
                             </div>
                             <h2 class="label-title mt-2"><i class="fa-regular fa-clock"></i> Time</h2>
                             <div class="row time-row">
@@ -46,9 +49,10 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <label class="label-title" name="restaurant" for="restaurant"><i class="fa-solid fa-shop"></i> Restaurant</label>
+                                <label class="label-title" name="restaurant" for="restaurant"><i
+                                        class="fa-solid fa-shop"></i> Restaurant</label>
                                 <br>
-                                <input type="search" name="restaurant" id="restaurant">
+                                <input type="text" name="restaurant" id="restaurant">
                             </div>
                         </div>
                         <div class="col-6 form-group right">
@@ -57,9 +61,10 @@
                             </div>
                             <div class="row genre" id="genre">
                                 <div class="col-6 checkbox-left">
-                                    @foreach($genres as $genre)
+                                    @foreach ($genres as $genre)
                                         <div class="checkbox-input">
-                                            <input type="checkbox" name="genre[]" value="{{ $genre['id'] }}" id="{{ $genre['id'] }}">
+                                            <input type="checkbox" name="genre[]" value="{{ $genre['id'] }}"
+                                                id="{{ $genre['id'] }}">
                                             <label for="{{ $genre['name'] }}">{{ $genre['name'] }}</label>
                                         </div>
                                     @endforeach
@@ -78,7 +83,8 @@
                         </div>
                     </div>
                     <div class="row" id="description-form">
-                        <label class="label-title" for="create-description"><i class="fa-solid fa-pencil"></i> Description</label>
+                        <label class="label-title" for="create-description"><i class="fa-solid fa-pencil"></i>
+                            Description</label>
                         <br>
                         <textarea name="description" id="create-description" cols="60" rows="3" style="width:95%;"></textarea>
                     </div>
@@ -90,3 +96,5 @@
         </div>
     </div>
 </div>
+
+

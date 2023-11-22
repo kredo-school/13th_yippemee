@@ -10,7 +10,7 @@
 </div>
 
 <div class="left-navi">
-    @include('users.calendars.planlist')
+    @include('users.calendars.public.planlist')
 </div>
 
 <div class="main-div">
@@ -28,8 +28,18 @@
 
 <div class="right-navi">
     @include('users.calendars.public.detail')
+    
+    {{-- @if(isset($selectedPlan))
+        @include('users.calendars.public.detail', compact('selectedPlan'))
+    @else
+        @include('users.calendars.public.detail')
+    @endif --}}
 </div>
 
 {{-- modal --}}
 @include('users.modals.create')
+
+
+
+
 @endsection

@@ -37,6 +37,12 @@ div.bg-genre {
     font-weight: bold;
 }
 
+div.bg-genre-uncategorized {
+    background-color: #dcdcdc !important;
+    color: #253C5C;
+    font-weight: bold;
+}
+
 .text-post{
     color: #253C5C; 
 }
@@ -196,4 +202,9 @@ div.bg-genre {
 
 .card_header-post, .card_body-post{
     width: 100%; 
+}
+
+.user-avatar{
+    width: 30px;
+    height: 30px;
 }

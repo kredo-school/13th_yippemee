@@ -43,13 +43,14 @@ class SocialPost extends Model
 
     public function comments()
     {
-        return $this->hasMany(SocialComment::class, 'social_post_id');
+        return $this->hasMany(SocialComment::class)->orderBy('created_at', 'desc');
     }
 
     public function genres()
     {
         return $this->belongsToMany(Genre::class, 'genre_social_post');
     }
+
 
 }
 

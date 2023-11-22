@@ -25,7 +25,7 @@
         </thead>
         <tbody>
             <tr id="weekDays">
-                <a href="#" class="button-to-list text-decoration-none"></a>
+                <a href="#" id="selectedDate" class="button-to-list text-decoration-none"></a>
             </tr>
         </tbody>
     </table>
@@ -58,12 +58,22 @@
             calendarHtml += '</tr></thead><tbody><tr>';
 
             for (let i = 1; i <= daysInMonth + startingDayOfWeek; i++) {
+                // if (i > startingDayOfWeek) {
+                //     const day = i - startingDayOfWeek;
+                //     calendarHtml += `<td>${day}</td>`;
+                // } else {
+                //     calendarHtml += '<td></td>';
+                // }
+                // 1111
                 if (i > startingDayOfWeek) {
                     const day = i - startingDayOfWeek;
-                    calendarHtml += `<td>${day}</td>`;
+
+                    // Add a click event to each day to handle date selection
+                    calendarHtml += `<td><a href="#" class="selectable-date text-decoration-none" style="color:#253c5c;" data-date="${year}-${month + 1}-${day}">${day}</a></td>`;
                 } else {
                     calendarHtml += '<td></td>';
                 }
+                // 11111
 
                 if (i % 7 === 0) {
                     calendarHtml += '</tr>';
@@ -93,6 +103,27 @@
             const yearNameElement = document.getElementById('yearName');
             yearNameElement.textContent = `${currentYear}`;
 
+            //add click event to the anchor 1111
+            const selectableDates = document.querySelectorAll('.selectable-date');
+            selectableDates.forEach((dateElement) => {
+                dateElement.addEventListener('click', handleDateSelection);
+            });
+            //1111
+
+        }
+        function handleDateSelection(event) {
+            event.preventDefault();
+            const selectedDate = event.target.dataset.date;
+            const formattedDate = formatDate(selectedDate);
+            window.location.href = `/plan/public/${formattedDate}/show`;
+        }
+
+        function formatDate(selectedDate) {
+            const dateObj = new Date(selectedDate);
+            const year = dateObj.getFullYear();
+            const month = (dateObj.getMonth() + 1).toString().padStart(2, '0');
+            const day = dateObj.getDate().toString().padStart(2, '0');
+            return `${year}${month}${day}`;
         }
 
         // by click these button, display different month's calendar
@@ -114,5 +145,6 @@
         });
 
         generateCalendar(currentYear, currentMonth);
+
     </script>
 </div>
