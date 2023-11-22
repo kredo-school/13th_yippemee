@@ -203,3 +203,8 @@ div.bg-genre-uncategorized {
 .card_header-post, .card_body-post{
     width: 100%; 
 }
+
+.user-avatar{
+    width: 30px;
+    height: 30px;
+}

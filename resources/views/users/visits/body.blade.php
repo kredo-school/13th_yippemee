@@ -1,7 +1,9 @@
 <div class="col-9">
     <div class="row">
 
-        @forelse($all_visits as $visit)
+        @if ($user->visits->isNotEmpty())
+        @foreach ($user->visits as $visit)
+        {{-- @forelse($all_visits as $visit) --}}
         <div class="row visit_body_line ms-1">
             <div class="col-4 mb-3 mt-3">
                 <img src="{{ $visit->image }}" alt="{{ $visit->id }}" class="img-size-visit">
@@ -20,15 +22,15 @@
                             </button>
 
                             <div class="dropdown-menu">
-                                <form action="{{ route('visits.edit', $visit->id) }}" method="post">
-                                    <a href="#" class="dropdown-item">
+                                <form action="#" method="post">
+                                    <a href="{{ route('visits.edit', $visit->id) }}" class="dropdown-item">
                                         <i class="fa-regular fa-pen-to-square"></i> Edit
                                     </a>
                                 </form>
 
-                                    <a href="#" class="dropdown-item text-danger">
+                                <button class="dropdown-item text-danger">
                                         <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#delete-visits-{{ $visit->id }}"></i> Delete
-                                    </a>
+                                </button>
                             </div>
                             @include('users.visits.modals.delete')
                         </div>
@@ -54,9 +56,14 @@
                 </h5>
             </div>
         </div>
-        
-        @empty
-            <h4>Make your Visit List</h4>
+        @endforeach
+        @else
+            <h4>
+                <a href="{{ route('bucket.create') }}" class="list-group-item list-group-item-action py-2 ripple">
+                Make your Visit List
+                <span><i class="fa-solid fa-file-circle-check me-3 link-place"  style="font-size: 20px"></i></span></a>
+            </h4>
     </div>
-        @endforelse
+        @endif
 </div>
+

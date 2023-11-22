@@ -14,23 +14,23 @@
                     @endif
 
                     @if ($user->introduction)
-                    <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                        <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
                         <i class="fa-solid fa-utensils me-3 link-place"></i><span>{{ $user->introduction }}</span></a>
                     @else
-                    <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                        <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
                         <i class="fa-solid fa-plus me-3 link-place"></i><span>Add your Best restaurant</span></a>
                     @endif
 
-                    @if ($user->genreProfile)
-                    <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple mb-3"><i class="fa-solid fa-burger me-3 link-place"></i>
+                    @if ($user->genreProfile->isNotEmpty())
+                        <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple mb-3"><i class="fa-solid fa-burger me-3 link-place"></i>
                         <span>
                             @foreach ($user->genreProfile as $genre_profile)
                             {{ $genre_profile->genre->name }}
                             @endforeach
                         </span>
-                    </a>
+                        </a>
                     @else
-                    <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                        <a href="{{ route('profile.edit') }}" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
                         <i class="fa-solid fa-plus me-3 link-place"></i><span>Add your Favorite genre</span></a>
                     @endif
                 </div>
