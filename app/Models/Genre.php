@@ -11,7 +11,7 @@ class Genre extends Model
 
     protected $table = 'genres';
     protected $fillable = ['name'];
-    public $timestamps = false;
+    public $timestamps = true;
 
     public function social_posts()
     {

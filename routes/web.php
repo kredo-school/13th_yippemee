@@ -25,6 +25,7 @@ use App\Http\Controllers\PublicCalendarController;
 use App\Http\Controllers\PrivateCalendarController;
 use App\Http\Controllers\Admin\AdminGenreController;
 use App\Http\Controllers\Admin\AdminPostsController;
+use App\Http\Controllers\PublicCommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,6 +86,7 @@ Route::get('/group/{id}/show', [GroupController::class, 'show'])->name('group.sh
 Route::get('/group/{id}/edit', [GroupController::class, 'edit'])->name('group.edit');
 Route::patch('/group/{id}/update', [GroupController::class], 'update')->name('group.update');
 Route::delete('/group/{id}/destroy', [GroupController::class,'destroy'])->name('group.destroy');
+
 // private calendar
 Route::get('/users/calendars/private/calendar',[PlanController::class,'showPrivateCalendar'])->name('private_calendar'); //make it PlanController
 // Public calendar
@@ -94,7 +96,9 @@ Route::get('/plan/create', [PlanController::class, 'create'])->name('plan.create
 Route::post('/plan/store', [PlanController::class, 'store'])->name('plan.store');
 Route::get('/plan/public/{date}/show', [PlanController::class, 'show'])->name('plan.show'); //display planlist and the detail for each
 
-
+//public_comment
+Route::post('/users/calendars/public/comment/{plan_id}/store', [PublicCommentController::class, 'store'])->name('public_comment.store');
+Route::delete('/users/calendars/public/comment/{plan_id}/destroy', [PublicCommentController::class, 'destroy'])->name('public_comment.destroy');
 
 
 //Restaurant list
@@ -162,10 +166,7 @@ Route::delete('/social/comment/{social_post_id}/destroy', [SocialCommentControll
 Route::get('/friends/list',  [FriendController::class, 'friends_list'])->name('friends.friends_list');
 Route::get('friends/search', [FriendController::class, 'search'])->name('friends.search');
 Route::post('/friends/add', [FriendController::class, 'addFriends'])->name('friends.add');
-// Route::post('/friends/remove/{friend_id}', [FriendController::class, 'removeFriend'])->name('friends.remove');
 Route::delete('/friends/remove/{friend_id}', [FriendController::class, 'removeFriend'])->name('friends.remove');
-
-
 
 //like
 Route::post('social/posts/{social_post}/like', [LikeController::class, 'store'])->name('social.posts.like');

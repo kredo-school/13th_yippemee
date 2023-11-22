@@ -125,6 +125,7 @@ class PlanController extends Controller
         $genres = Genre::all()->toArray();
         $plans = Plan::with('user')->get();
         // dd($plans);
+
         return view('users.calendars.public.calendar', ['genres' => $genres, 'plans' => $plans]);
     }
     public function show($date, Request $request)
@@ -154,7 +155,6 @@ class PlanController extends Controller
                 'selected_date' => date('F d Y', strtotime($formattedDate)),
                 'selected_plan' => null,
             ]);
-
         }
     }
 
