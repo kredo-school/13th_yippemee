@@ -97,6 +97,7 @@ class PlanController extends Controller
         $genres = Genre::all()->toArray();
         $plans = Plan::with('user')->get();
         // dd($plans);
+
         return view('users.calendars.public.calendar', ['genres' => $genres, 'plans' => $plans]);
     }
     public function show($date, Request $request)
@@ -108,11 +109,15 @@ class PlanController extends Controller
         if (count($plans) > 0) {
             $plan_id = $request->input('id') ?: $plans[0]->id;
             // get the plan with $plan->id
-            $selected_plan  = Plan::with('genres')->findOrFail($plan_id);
+            $selected_plan  = Plan::with('genres', 'publicComments')->findOrFail($plan_id);
             return view('users.calendars.public.calendar', ['genres' => $genres, 'plans' => $plans, 'selected_date' => date('F d Y', strtotime($formattedDate)), 'selected_plan' => $selected_plan]);
         }
         else {
-            return view('users.calendars.public.calendar', ['genres' => $genres, 'plans' => $plans, 'selected_date' => date('F d Y', strtotime($formattedDate)), 'selected_plan' => null]);
+            return view('users.calendars.public.calendar', [
+                'genres' => $genres, 
+                'plans' => $plans, 
+                'selected_date' => date('F d Y', strtotime($formattedDate)), 
+                'selected_plan' => null]);
         }
     }
 

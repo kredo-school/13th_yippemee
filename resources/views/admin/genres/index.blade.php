@@ -81,12 +81,12 @@
                                         @else
                                             <span>No Image</span>
                                         @endif
-                                        </td>
+                                    </td>
                                     <td>{{ $genre->name }}</td>
                                     <td>{{ $genre->social_posts ? $genre->social_posts->count() : 0 }}</td>
                                     <td>{{ $genre->updated_at }}</td>
                                     
-                                    <td class="d-flex justify-content-center">
+                                    <td class="justify-content-center">
                                         <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#updateGenre-{{ $genre->id }}" title="Edit"><i class="fa-solid fa-pen icon-warning"></i>
                                         <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#deleteGenre-{{ $genre->id }}" title="Delete"><i class="fa-solid fa-trash-can icon-red"></i>
                                     </td>
