@@ -49,7 +49,6 @@ class GroupController extends Controller
     {
         $request->validate([
             'name'          =>  'required|min:1|max:30',
-            // restaurant/member_id will be array later
             'restaurant_id' =>  'required|min:1|max:30',
             'member_id'     =>  'required|min:1|max:30',
             'image'         =>  'mimes:jpeg,jpg,png,gif|max:2048'
