@@ -1,6 +1,7 @@
 <div class="container detail-body">
     @if (!is_null($selected_plan))
         <p class="text-end" style="color:#253c5c;">
+            <h5>{{ $selected_plan->username }}</h5>
             @if ($selected_plan->avatar)
                 <img id="#" src="{{ $selected_plan->avatar }}"
                 alt="{{ $plan->user->username }}" class="rounded-circle" style="height: 45px; width:45px;">

@@ -10,7 +10,7 @@
 </div>
 
 <div class="left-navi">
-    @include('users.calendars.private.preferecelist')
+    @include('users.calendars.private.preferencelist')
 </div>
 
 <div class="main-div" id="private-div">
@@ -32,6 +32,6 @@
 </div>
 
 {{-- modal --}}
-@include('users.modals.preference')
+@include('users.modals.create-pre')
 @endsection
 

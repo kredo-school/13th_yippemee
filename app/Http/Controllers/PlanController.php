@@ -91,7 +91,7 @@ class PlanController extends Controller
             'date'          =>  $request->date,
             's_time'        =>  $request->s_time,
             'e_time'        =>  $request->e_time,
-            'restaurant_id' =>  $request->restaurant_id,
+            'restaurant_id' =>  $request->restaurant,
             'description'   =>  $request->description,
         ]);
 
