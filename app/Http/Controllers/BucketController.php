@@ -34,7 +34,7 @@ class BucketController extends Controller
         $request->validate([
             'image'           => 'required|mimes:jpeg,jpg,png,gif|max:2048',
             'restaurantName'  => 'required|min:1|max:10000',
-            'genre'           => 'array',
+            'genre'           => 'required|array',
             'hoursOption'     => 'max:10000',
             'url'             => 'max:10000',
             'description'     => 'max:10000'
@@ -92,7 +92,7 @@ class BucketController extends Controller
         $request->validate([
             'image'           => 'mimes:jpeg,jpg,png,gif|max:2048',
             'restaurantName'  => 'required|min:1|max:10000',
-            'genre'           => 'array',
+            'genre'           => 'required|array',
             'hoursOption'     => 'max:10000',
             'url'             => 'max:10000',
             'description'     => 'max:10000'
@@ -129,6 +129,7 @@ class BucketController extends Controller
         $bucket = $this->bucket->findOrFail($id);
         $user_id = auth()->user()->id;
         $bucket->forceDelete();
-        return redirect()->back();
+        return redirect()->route('bucket.show', $user_id);
+        // return redirect()->back();
     }
 }

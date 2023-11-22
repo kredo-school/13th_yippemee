@@ -19,11 +19,17 @@
                     <div class="mb-2">
                         <label for="restaurantName" class="form-label fw-bold mb-0">Restaurant Name</label>
                         <input type="text" name="restaurantName" id="restaurantName" value="" class="form-control" autofocus class="form-control">
+                        @error('restaurantName')
+                        <div class="text-danger small">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-2">
                         <label for="visit_date" class="form-label fw-bold mb-0 mt-3">When did you go ?</label>
                         <input type="date" name="date" id="visit_date" class="form-control" autofocus>
+                        @error('visit_date')
+                        <div class="text-danger small">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     {{-- star_rating --}}
@@ -55,16 +61,25 @@
                      <div class="mb-2">
                         <label for="url" class="form-label fw-bold mb-0 mt-3">Web Site</label>
                         <input type="url" name="url" id="url" class="form-control" autofocus>
+                        @error('url')
+                        <div class="text-danger small">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-2">
                         <label for="image" class="form-label fw-bold">Image</label>
                         <input type="file" name="image" id="image" class="form-control" aria-description="image-info">
+                        @error('image')
+                        <div class="text-danger small">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-4">
                         <label for="description" class="form-label fw-bold mb-0 mt-3">Sharing your reviews about the restaurant</label>
                         <textarea name="description" id="description" rows="4" placeholder="Write some information about the restaurant" class="form-control"></textarea>
+                        @error('description')
+                        <div class="text-danger small">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <button type="submit" name="btn_send" class="btn btn-contact w-25 mt-3">Save</button>

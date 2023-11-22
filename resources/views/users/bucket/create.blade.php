@@ -19,8 +19,11 @@
                     <div class="mb-2">
                         <label for="restaurantName" class="form-label fw-bold mb-0">Restaurant Name</label>
                         <input type="text" name="restaurantName" id="restaurantName" value="" class="form-control" autofocus>
+                        @error('restaurantName')
+                        <div class="text-danger small">{{ $message }}</div>
+                        @enderror
                     </div>
-
+                    
                     {{-- Genre --}}
                     <label for="genre" class="form-label fw-bold mb-0 mt-4">Genre</label>
                     <div class="d-flex align-items-center posts-input">
@@ -32,26 +35,41 @@
                             <label for="{{ $genre->name }}" class="form-check-label">{{ $genre->name }}</label>
                         </div>
                     @endforeach
+                    @error('genre')
+                    <div class="text-danger small">{{ $message }}</div>
+                    @enderror
                     </div>
 
                     <div class="mb-2">
                         <label for="hoursOption" class="form-label fw-bold mb-0 mt-3">Hours of operation</label>
                         <input type="text" name="hoursOption" id="hoursOption" class="form-control" autofocus>
+                        @error('hoursOption')
+                        <div class="text-danger small">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-2">
                         <label for="url" class="form-label fw-bold mb-0 mt-3">Web Site</label>
                         <input type="url" name="url" id="url" class="form-control" autofocus>
+                        @error('url')
+                        <div class="text-danger small">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-2">
                         <label for="image" class="form-label fw-bold">Image</label>
                         <input type="file" name="image" id="image" class="form-control" aria-description="image-info">
+                        @error('image')
+                        <div class="text-danger small">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="mb-4">
                         <label for="description" class="form-label fw-bold mb-0 mt-3">Additional</label>
                         <textarea name="description" id="description" rows="4" placeholder="Write some information about the restaurant" class="form-control"></textarea>
+                        @error('description')
+                        <div class="text-danger small">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <button type="submit" name="btn_send" class="btn btn-contact w-25 mt-3">Save</button>
