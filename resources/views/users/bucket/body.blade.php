@@ -4,7 +4,7 @@
         @if ($user->bucket->isNotEmpty())
         @foreach ($user->bucket as $bucket)
         <div class="col-4 mt-3 mb-2">
-            <div class="card" style="width: 18rem; text-align: left" >
+            <div class="card" style="width: 18rem; text-align: left; height:460px" >
                 <img src="{{ $bucket->image }}" alt="{{ $bucket->id }}" class="img-size-bucket">
 
                 <div class="card-body card-body-visit">
@@ -59,8 +59,12 @@
                             <li class="bucketScroll mt-2 mb-3">{{ $bucket->description }}</li>
 
                             <li>
-                                <a href="{{ $bucket->url }}"><div class="only-background"><i class="fa-solid fa-arrow-up-right-from-square"></i> Website</div>
-                                </a>
+                                @if ($bucket->url)
+                                <div class="only-background">
+                                    <a href="{{ $bucket->url }}"><i class="fa-solid fa-arrow-up-right-from-square"></i> Website</a>
+                                </div>
+                                @else
+                                @endif
                             </li>
                         </ul>
                 </div>
