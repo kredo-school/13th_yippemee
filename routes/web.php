@@ -1,11 +1,11 @@
 <?php
 
+use App\Models\Preference;
 use App\Models\SocialComment;
 use App\Http\Controllers\Genre;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\FriendController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\PostController;
@@ -13,9 +13,11 @@ use App\Http\Controllers\WantController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\VisitController;
 use App\Http\Controllers\BucketController;
+use App\Http\Controllers\FriendController;
 use App\Http\Controllers\MyPlanController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PreferenceController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\SocialPostController;
 use App\Http\Controllers\Admin\UsersController;
@@ -86,15 +88,18 @@ Route::get('/group/{id}/edit', [GroupController::class, 'edit'])->name('group.ed
 Route::patch('/group/{id}/update', [GroupController::class], 'update')->name('group.update');
 Route::delete('/group/{id}/destroy', [GroupController::class,'destroy'])->name('group.destroy');
 // private calendar
-Route::get('/users/calendars/private/calendar',[PlanController::class,'showPrivateCalendar'])->name('private_calendar'); //make it PlanController
+Route::get('/users/calendars/private/calendar',[PreferenceController::class,'showPrivateCalendar'])->name('private_calendar');
+// Preference
+Route::get('/preference/create', [PreferenceController::class, 'create'])->name('preference.create');
+Route::post('/preference/store', [PreferenceController::class, 'store'])->name('preference.store');
+Route::get('/preference/private/{date}/show', [PreferenceController::class, 'show'])->name('preference.show');
+
 // Public calendar
 Route::get('/users/calendars/public/calendar',[PlanController::class,'showPublicCalendar'])->name('calendar');
 // Plan
 Route::get('/plan/create', [PlanController::class, 'create'])->name('plan.create');
 Route::post('/plan/store', [PlanController::class, 'store'])->name('plan.store');
 Route::get('/plan/public/{date}/show', [PlanController::class, 'show'])->name('plan.show'); //display planlist and the detail for each
-
-
 
 
 //Restaurant list

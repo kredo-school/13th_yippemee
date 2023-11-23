@@ -65,8 +65,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(Contact::class);
     }
-
-
     public function visits()
     {
         return $this->hasMany(Visit::class)->latest();
@@ -85,6 +83,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Plan::class);
     }
+    public function preference()
+    {
+        return $this->hasMany(Preference::class);
+    }
     public function myplans()
     {
         return $this->hasmany(MyPlan::class);
@@ -94,9 +96,5 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(User::class, 'friends', 'user_id', 'friend_id');
     }
-
-
-
-
 
 }

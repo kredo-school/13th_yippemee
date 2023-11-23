@@ -28,13 +28,13 @@ class PlanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        $all_plans = Plan::all();
+    // public function create()
+    // {
+    //     $all_plans = Plan::all();
 
-        return view('users.modals.create')
-            ->with('all_plans', $all_plans);
-    }
+    //     return view('users.modals.create')
+    //         ->with('all_plans', $all_plans);
+    // }
 
     /**
      * Store a newly created resource in storage.
@@ -109,7 +109,8 @@ class PlanController extends Controller
         //     'selected_date' => date('F d Y', strtotime($request->date)),
         //     'selected_plan' => $selected_plan
         // ]);
-        return redirect()->route('plan.show', ['date' => date('Ymd')]);    }
+        return redirect()->route('plan.show', ['date' => date('Ymd')]);
+    }
 
 
     /**
@@ -157,14 +158,6 @@ class PlanController extends Controller
         }
     }
 
-    public function showPrivateCalendar()
-    {
-        // $private_genres = Genre::all()->toArray();
-        // $private_preference = Plan::with('user')->get();
-
-        // return view ('users.calendars.private.calendar',['genres' => $genres, 'preference' => $preference]);
-        return view('users.calendars.private.calendar');
-    }
 
     /**
      * Show the form for editing the specified resource.

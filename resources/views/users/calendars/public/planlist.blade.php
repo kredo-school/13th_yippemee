@@ -33,7 +33,7 @@
             @endforeach
         </div>
         @else
-            <h5 class="pt-3 ps-3" style="color: gray">No plans added yet</h5>
+            <h5 class="pt-3 ps-3" style="color: gray">Nothing added yet</h5>
         @endif
     @endisset
 </div>

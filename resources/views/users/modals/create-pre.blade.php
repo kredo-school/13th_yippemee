@@ -23,34 +23,35 @@
                     </div>
                 </div>
             </div>
-            <div class="modal-body create-body">
-                <form action="#" method="post">
+            <form action="{{ route('preference.store') }}" method="POST">
+                @csrf
+                <div class="modal-body create-body">
                     <div class="row w-100">
                         <div class="col-6" id="left-form-group">
                             <div class="row">
                                 <label class="label-title" for="date" ><i class="fa-regular fa-calendar"></i> Date</label>
                                 <br>
-                                <input type="date" id="date" required>
+                                <input type="date" id="date">
                             </div>
                             <h2 class="label-title mt-2"><i class="fa-regular fa-clock"></i> Time</h2>
                             <div class="row time-row">
                                 <div class="col-auto">
                                     <label class="s-time" for="s-time">Start Time</label><br>
-                                    <input type="time" class="s-time me-3" id="s-time">
+                                    <input type="time" class="s-time me-3" name="s_time" id="s-time">
                                 </div>
                                 <div class="col-auto">
                                     <label class="e-time" for="e-time">End Time</label><br>
-                                    <input type="time" class="e-time" id="e-time">
+                                    <input type="time" class="e-time" name="e_time" id="e-time">
                                 </div>
                             </div>
                             <div class="row">
                                 <label class="label-title" for="restaurant"><i class="fa-solid fa-shop"></i> Restaurant</label>
                                 <br>
-                                <input type="search" id="restaurant">
+                                <input type="text" name="restaurant" id="restaurant">
                             </div>
                         </div>
                         <div class="col-6 form-group right">
-                            <div class="row">
+                            {{-- <div class="row">
                                 <h2 class="label-title mb-0"><i class="fa-solid fa-utensils"></i> Genre</h2>
                             </div>
                             <div class="row genre" id="genre">
@@ -83,7 +84,7 @@
                                         <label for="other">Other</label>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                         </div>
                     </div>
@@ -92,13 +93,12 @@
                         <br>
                         <textarea name="description" id="create-description" cols="70" rows="3" style="width:95%;"></textarea>
                     </div>
-                </form>
-            </div>
-            <div class="modal-footer create-footer bg-white border-0 mb-2">
-                <form action="#" method="post">
+
+                </div>
+                <div class="modal-footer create-footer bg-white border-0 mb-2">
                     <button type="submit" class="create-btn float-end">Create</button>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
