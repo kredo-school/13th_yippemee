@@ -1,10 +1,10 @@
 <div class="container detail-body">
     @if (!is_null($selected_plan))
         <p class="text-end" style="color:#253c5c;">
-            {{ $selected_plan->username }}
+            {{ $selected_plan->user->name }}
             @if ($selected_plan->avatar)
                 <img id="#" src="{{ $selected_plan->avatar }}"
-                alt="{{ $plan->user->username }}" class="rounded-circle" style="height: 45px; width:45px;">
+                alt="{{ $selected_plan->user->username }}" class="rounded-circle" style="height: 45px; width:45px;">
             @else
                 <i class="fa-regular fa-circle-user fa-2x" style="color: #253c5c;"></i>
             @endif
