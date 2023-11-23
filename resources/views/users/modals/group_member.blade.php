@@ -8,84 +8,31 @@
             </div>
             <div class="modal-body member-body">
                 <div class="group-name">
-                    <h4><span>Members (7) (number):</span></h4>
+                    <h4><span>Members ({{ $group->users->count() }}):</span></h4>
                 </div>
                 <div class="table-box">
                     <div class="member-table">
+
+                        @foreach($group->users as $user)
+
                         <div class="row member-row">
                             <div class="col-2"><i class="fa-regular fa-user-circle fa-xl"></i></div>
-                            <div class="col-8">user name</div>
-                            <div class="col-2">
-                                <form action="#" method="post">
-                                    <a href="#"><i class="fa-solid fa-circle-minus fa-lg" style="color:#dc3545; "></i></a>
-                                </form>
-                            </div>
+                            <div class="col-8">{{ $user->name }}</div>
                         </div>
-                        <div class="row member-row">
-                            <div class="col-2"><i class="fa-regular fa-user-circle fa-xl"></i></div>
-                            <div class="col-8">user name</div>
-                            <div class="col-2">
-                                <form action="#" method="post">
-                                    <a href="#"><i class="fa-solid fa-circle-minus fa-lg" style="color:#dc3545; "></i></a>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="row member-row">
-                            <div class="col-2"><i class="fa-regular fa-user-circle fa-xl"></i></div>
-                            <div class="col-8">user name</div>
-                            <div class="col-2">
-                                <form action="#" method="post">
-                                    <a href="#"><i class="fa-solid fa-circle-minus fa-lg" style="color:#dc3545; "></i></a>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="row member-row">
-                            <div class="col-2"><i class="fa-regular fa-user-circle fa-xl"></i></div>
-                            <div class="col-8">user name</div>
-                            <div class="col-2">
-                                <form action="#" method="post">
-                                    <a href="#"><i class="fa-solid fa-circle-minus fa-lg" style="color:#dc3545; "></i></a>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="row member-row">
-                            <div class="col-2"><i class="fa-regular fa-user-circle fa-xl"></i></div>
-                            <div class="col-8">user name</div>
-                            <div class="col-2">
-                                <form action="#" method="post">
-                                    <a href="#"><i class="fa-solid fa-circle-minus fa-lg" style="color:#dc3545; "></i></a>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="row member-row">
-                            <div class="col-2"><i class="fa-regular fa-user-circle fa-xl"></i></div>
-                            <div class="col-8">user name</div>
-                            <div class="col-2">
-                                <form action="#" method="post">
-                                    <a href="#"><i class="fa-solid fa-circle-minus fa-lg" style="color:#dc3545; "></i></a>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="row member-row">
-                            <div class="col-2"><i class="fa-regular fa-user-circle fa-xl"></i></div>
-                            <div class="col-8">user name</div>
-                            <div class="col-2">
-                                <form action="#" method="post">
-                                    <a href="#"><i class="fa-solid fa-circle-minus fa-lg" style="color:#dc3545; "></i></a>
-                                </form>
-                            </div>
-                        </div>
+
+                        @endforeach
+
                     </div>
                 </div>
             </div>
-            <div class="modal-footer member-footer">
+            {{-- <div class="modal-footer member-footer">
 
                 <button type="button" class="btn invite-modal-btn" data-bs-toggle="modal" data-bs-target="#invite-modal">
                     <div class="to-invite">
                         <i class="fa-regular fa-plus fa-1x"></i> <p>Invite friends</p></button>
                     </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
-@include('users.modals.invite')
+{{-- @include('users.modals.invite') --}}

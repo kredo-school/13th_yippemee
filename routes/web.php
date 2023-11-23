@@ -97,7 +97,7 @@ Route::get('/myplans/{id}/show', [MyplanController::class, 'show'])->name('mypla
 // Group
 Route::get('/users/calendars/private/group_list', [GroupController::class, 'group'])->name('group_list');
 Route::get('/group/create', [GroupController::class, 'create'])->name('group.create');
-Route::post('/group/store', [GroupController::class, 'store'])->name('group.store');
+Route::post('/group/create', [GroupController::class, 'store'])->name('group.store');
 Route::get('/group/{id}/show', [GroupController::class, 'show'])->name('group.show');
 Route::get('/group/{id}/edit', [GroupController::class, 'edit'])->name('group.edit');
 Route::patch('/group/{id}/update', [GroupController::class], 'update')->name('group.update');

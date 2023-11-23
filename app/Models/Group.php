@@ -14,7 +14,13 @@ class Group extends Model
     protected $fillable = [
         'name',
         'restaurant_id',
-        'member_id',
+        'user_id',
         'image'
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'group_user');
+    }
+
 }
