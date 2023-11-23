@@ -14,10 +14,15 @@
                 <h3 class="text-center pt-4 mb-0"><span>Group list</span></h3>
             </div>
             <div class="col-4 d-flex flex-column align-items-end pe-5">
+                <a href="{{ route('group.create') }}" class="btn btn-add">
+                    <i class="fa-solid fa-square-plus fa-lg" style="color: #253c5c;"></i> New group
+                </a>
+            </div>
+            {{-- <div class="col-4 d-flex flex-column align-items-end pe-5">
                 <button type="button" class="btn btn-add" id="btn-add" data-bs-toggle="modal" data-bs-target="#add-group">
                     <i class="fa-solid fa-square-plus fa-lg" style="color: #253c5c;"></i> New group
                 </button>
-            </div>
+            </div> --}}
         </div>
 
         @if ($groups->isNotEmpty())
@@ -120,6 +125,6 @@
         });
     </script> --}}
 
-    @include('users.modals.add_group')
+    {{-- @include('users.modals.add_group') --}}
 
 @endsection
