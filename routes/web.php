@@ -17,8 +17,24 @@ use App\Http\Controllers\MyPlanController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RestaurantController;
+
+use App\Http\Controllers\LikeController;
+
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\FacebookController;
+
+
+use App\Http\Controllers\WantController;
+use App\Http\Controllers\Admin\AdminPostsController;
+use App\Http\Controllers\Admin\AdminGenreController;
+use App\Http\Controllers\SocialCommentController;
+use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Genre;
+
+
 use App\Http\Controllers\SocialPostController;
 use App\Http\Controllers\Admin\UsersController;
+
 use App\Http\Controllers\ListCommentController;
 use App\Http\Controllers\SocialCommentController;
 use App\Http\Controllers\PublicCalendarController;
@@ -105,7 +121,7 @@ Route::delete('/users/calendars/public/comment/{plan_id}/destroy', [PublicCommen
 Route::get('/restaurantlist', [RestaurantController::class, 'restaurantlist'])->name('restaurantlist');
 Route::post('/restaurantlist/store', [RestaurantController::class, 'store'])->name('restaurant.store');
 Route::get('/restaurantlist/post', [RestaurantController::class, 'restaurantpost'])->name('restaurantpost');
-Route::get('/genre/japanese/', [RestaurantController::class, 'genrejapanese'])->name('genrejapanese');
+Route::get('/genre/{genre}/restaurants', [RestaurantController::class, 'restaurantsByGenre']);
 Route::get('/genre/italian', [RestaurantController::class, 'genreitalian'])->name('genreitalian');
 Route::get('/genre/chinese', [RestaurantController::class, 'genrechinese'])->name('genrechinese');
 Route::get('/genrecafe/{id}', [RestaurantController::class, 'genrecafe'])->name('genrecafe');
@@ -173,6 +189,27 @@ Route::delete('/friends/remove/{friend_id}', [FriendController::class, 'removeFr
 Route::post('social/posts/{social_post}/like', [LikeController::class, 'store'])->name('social.posts.like');
 Route::delete('social/posts/{social_post}/unlike', [LikeController::class, 'destroy'])->name('social.posts.unlike');
 
+
+//google login
+
+Route::get('auth/google',[GoogleController::class,'googlepage']);
+Route::get('auth/google/callback',[GoogleController::class,'googlecallback']);
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+//Facebook login
+Route::get('auth/facebook',[FacebookController::class,'facebookpage']);
+Route::get('auth/facebook/callback',[FacebookController::class,'facebookredirect']);
+
 //want
 Route::post('social/posts/{social_post}/want', [WantController::class, 'store'])->name('social.contents.want');
 Route::delete('social/posts/{social_post}/want/destroy', [WantController::class, 'destroy'])->name('social.contents.want.destroy');
+

@@ -34,26 +34,18 @@
     </div>
     <div class="row">
        <div class="row text-center">
+       <div class="row text-center">
+    @foreach($all_genres as $index => $genre)
+        @if($index < 4)
             <div class="col-md">
-                <img src="/images/sushi.jpg" alt="" class="restaurant-list img  rounded" style="width:100%; aspect-ratio: 4 / 3;">
+                <img src="/images/sushi.jpg" alt="" class="restaurant-list img rounded" style="width:100%; aspect-ratio: 4 / 3;">
                 <br>
-                <label for="japanese" class="h4"><a href="{{ url('/genre/japanese') }}" class="text-decoration-none">Japanese</a></label>
+                <label for="{{ $genre->name }}" class="h4"><a href="{{ url('/genre/'.$genre->name.'/restaurants') }}" class="text-decoration-none">{{ $genre->name }}</a></label>
             </div>
-            <div class="col-md">
-                <img src="/images/pasta.jpg" alt="" class="restaurant-list img rounded" style="width:100%; aspect-ratio: 4 / 3;">
-                <br>
-                <label for="japanese" class="h4"><a href="{{ url('/genre/italian') }}" class="text-decoration-none">Italian</a></label>
-            </div>
-            <div class="col-md">               
-                <img src="/images/chinesefood.jpg" alt="" class="restaurant-list img rounded" style="width:100%; aspect-ratio: 4 / 3;">
-                <br>
-                <label for="japanese" class="h4"><a href="{{ url('/genre/chinese') }}" class="text-decoration-none">Chinese</a></label>
-            </div>
-            <div class="col-md">               
-                <img src="/images/coffee.jpg" alt="" class="restaurant-list img rounded" style="width:100%; aspect-ratio: 4 / 3;">
-                <br>
-                <label for="japanese" class="h4"><a href="{{ url('/genre/cafe') }}" class="text-decoration-none">Cafe</a></label>
-            </div>
+        @endif
+    @endforeach
+</div>
+           
        </div>
     </div>
 

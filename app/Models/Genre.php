@@ -9,6 +9,13 @@ class Genre extends Model
 {
     use HasFactory;
 
+
+    public function restaurants()
+{
+    return $this->belongsToMany(Restaurant::class, 'genre_restaurant');
+}
+    
+
     protected $table = 'genres';
     protected $fillable = ['name'];
     public $timestamps = true;
@@ -17,4 +24,5 @@ class Genre extends Model
     {
         return $this->belongsToMany(SocialPost::class, 'genre_social_post');
     }
+
 }

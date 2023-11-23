@@ -20,6 +20,23 @@
         <label for="description" class="mt-3">Description</label>
         <textarea name="description" id="description" rows="3" class = "form-control"></textarea>
 
+        <div class="mb-3">
+        <label for="category" class="form-label d-block mt-3">
+            Genre 
+        </label>
+​
+@foreach($all_genres as $index => $genre)
+    <div class="form-check form-check-inline">
+        <input type="checkbox" value="{{ $genre->id }}" name="genre[]" class="form-check-input" id="{{ $genre->name }}">
+        <label for="{{ $genre->name }}" class="form-check-label">{{ $genre->name }}</label>
+    </div>
+@endforeach
+        {{-- Error --}}
+        @error('category')
+            <div class="text-danger small">{{ $message }}</div>
+        @enderror
+    </div>
+
         <div class="row mt-5 mb-3">
             <div class="col-md">
                     <div class="form-group">
@@ -55,8 +72,7 @@
                 <td><input type="time" id="appt" name="sunday"  /></td>
             </tr>
         </table>
-                    </div>
-              
+                    </div> 
             </div>
         </div>
 
