@@ -16,7 +16,7 @@ class CreatePublicCommentsTable extends Migration
         Schema::create('public_comments', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('plan_id'); // ここを変更
+            $table->unsignedBigInteger('plan_id');
             $table->text('body');
             $table->timestamps();
         

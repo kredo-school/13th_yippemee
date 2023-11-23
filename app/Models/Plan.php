@@ -30,7 +30,6 @@ class Plan extends Model
 
     public function publicComments()
     {
-        return $this->hasMany(PublicComment::class);
+        return $this->hasMany(PublicComment::class)->orderBy('created_at', 'desc');
     }
-
 }
