@@ -68,7 +68,7 @@
     height: 12%;
     overflow: hidden;
 }
-.planlist-date {
+.planlist-date, .preferencelist-date {
     font-size: 19px;
     color: #253c5c;
     padding-left: 3%;

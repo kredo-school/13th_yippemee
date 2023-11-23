@@ -2,6 +2,13 @@
     {{-- id="preference-detail" --}}
     <p class="text-end" style="color:#253c5c;"><i class="fa-regular fa-user-circle"></i> Group Chat</p>
 
+    {{-- @if (!is_null($selected_pre))
+        <p>{{$selected_pre->username}}</p>
+        <p>{{$selected_pre->s_time}}</p>
+        <p>{{$selected_pre->e_time}}</p>
+        <p>{{$selected_pre->description}}</p>
+    @endif --}}
+
 
     <div class="chat-area">
         <div class="chat-screen">

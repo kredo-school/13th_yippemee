@@ -148,12 +148,13 @@ class PlanController extends Controller
         else {
             $plansForToday = Plan::with('genres')->whereDate('date', now())->get();
 
-            return view('users.calendars.public.calendar', [
-                'genres' => $genres,
-                'plans' => $plansForToday,
-                'selected_date' => date('F d Y', strtotime($formattedDate)),
-                'selected_plan' => null,
-            ]);
+            return view('users.calendars.public.calendar',
+                [
+                    'genres' => $genres,
+                    'plans' => $plansForToday,
+                    'selected_date' => date('F d Y', strtotime($formattedDate)),
+                    'selected_plan' => null
+                ]);
 
         }
     }

@@ -31,7 +31,7 @@
                             <div class="row">
                                 <label class="label-title" for="date" ><i class="fa-regular fa-calendar"></i> Date</label>
                                 <br>
-                                <input type="date" id="date">
+                                <input name="date" type="date" id="date">
                             </div>
                             <h2 class="label-title mt-2"><i class="fa-regular fa-clock"></i> Time</h2>
                             <div class="row time-row">
@@ -44,11 +44,11 @@
                                     <input type="time" class="e-time" name="e_time" id="e-time">
                                 </div>
                             </div>
-                            <div class="row">
+                            {{-- <div class="row">
                                 <label class="label-title" for="restaurant"><i class="fa-solid fa-shop"></i> Restaurant</label>
                                 <br>
                                 <input type="text" name="restaurant" id="restaurant">
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="col-6 form-group right">
                             {{-- <div class="row">

@@ -63,34 +63,39 @@ class PreferenceController extends Controller
      */
     public function showPrivateCalendar()
     {
-        $preference = Preference::with('user')->get();
+        $preferences = Preference::with('user')->get();
 
-        return view ('users.calendars.private.calendar',['preference' => $preference]);
+        return view ('users.calendars.private.calendar',['preferences' => $preferences]);
     }
+
     public function show($date, Request $request)
     {
-        // $date = $request->input('date');
+        $date = $request->input('date');
+
         $formattedDate = substr($date, 0, 4) . '-' . substr($date, 4, 2) . '-' . substr($date, 6, 2);
-        $preference = Preference::with('user') ->whereDate('date', $formattedDate)->get();
-        if (count($preference) > 0) {
-            $preference_id = $request->input('id') ?: $preference[0]->id;
+        $selected_date = date('F d Y', strtotime($formattedDate));
+        $preferences = $this->preference->whereDate('date', $formattedDate)->get();
+
+
+        // dd($preferences);
+        if (count($preferences) > 0) {
+            $preference_id = $request->input('id') ?: $preferences[0]->id;
             // get the plan with $plan->id
-            $selected_pre  = Preference::with('user')->findOrFail($preference_id);
-            return view('users.calendars.public.calendar',
+            $selected_pre  = $this->preference->findOrFail($preference_id);
+            return view('users.calendars.private.calendar',
                 [
-                    'plans' => $preference,
-                    'selected_date' => date('F d Y', strtotime($formattedDate)),
-                    'selected_pre' => $selected_pre
+                    'preferences' => $preferences,
+                    'selected_date' => date('F d Y', strtotime($formattedDate))
                 ]);
         }
         else {
-            $preferenceForToday = Preference::with('genres')->whereDate('date', now())->get();
+            $preferencesForToday = $this->preference->whereDate('date', now())->get();
 
-            return view('users.calendars.public.calendar', [
-                'preferences' => $preferenceForToday,
-                'selected_date' => date('F d Y', strtotime($formattedDate)),
-                'selected_pre' => null,
-            ]);
+            return view('users.calendars.private.calendar',
+                [
+                    'preferences' => $preferencesForToday,
+                    'selected_date' => date('F d Y', strtotime($formattedDate))
+                ]);
 
         }
     }

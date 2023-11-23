@@ -1,5 +1,5 @@
 <div class="container plan-body" id="planList">
-    <p class="text-center" style="color:#253c5c;"><i class="fa-regular fa-clipboard"></i> Created Plan List</p>
+    <p class="text-center" style="color:#253c5c;"><i class="fa-regular fa-clipboard"></i> Plan List</p>
 
 
     {{-- <div class="planlist-date" id="displayDate">【{{$selected_date}}】</div> --}}
