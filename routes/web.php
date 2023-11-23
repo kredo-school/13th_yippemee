@@ -17,30 +17,16 @@ use App\Http\Controllers\MyPlanController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RestaurantController;
-
-use App\Http\Controllers\LikeController;
-
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\FacebookController;
-
-
-use App\Http\Controllers\WantController;
 use App\Http\Controllers\Admin\AdminPostsController;
 use App\Http\Controllers\Admin\AdminGenreController;
 use App\Http\Controllers\SocialCommentController;
 use App\Http\Controllers\Admin\UsersController;
-use App\Http\Controllers\Genre;
-
-
 use App\Http\Controllers\SocialPostController;
-use App\Http\Controllers\Admin\UsersController;
-
 use App\Http\Controllers\ListCommentController;
-use App\Http\Controllers\SocialCommentController;
 use App\Http\Controllers\PublicCalendarController;
 use App\Http\Controllers\PrivateCalendarController;
-use App\Http\Controllers\Admin\AdminGenreController;
-use App\Http\Controllers\Admin\AdminPostsController;
 use App\Http\Controllers\PublicCommentController;
 
 /*
