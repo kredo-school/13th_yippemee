@@ -1,4 +1,4 @@
-<div class="modal fade" id="deactivateModal" tabindex="-1" role="dialog" aria-labelledby="deactivateModal"
+<div class="modal fade" id="deactivateModal-{{ $plan->id }}" tabindex="-1" role="dialog" aria-labelledby="deactivateModal"
 aria-hidden="true">
 
     <div class="modal-dialog" role="document">
@@ -10,7 +10,7 @@ aria-hidden="true">
                 <p class="heading lead modal-title-font m-4">Deactivate Plan</p>
                 <button type="button" class="btn-close btn-close-white m-4" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            
+
             <!--Body-->
             <div class="modal-body d-flex justify-content-center align-items-center flex-column">
 
@@ -20,22 +20,24 @@ aria-hidden="true">
                 </div>
 
                 <div class="row pt-3 pr-2 d-flex flex-column align-items-center">
-                    <p>Plan ID : 10</p>
-                    <p>Plan Date : 2023:09:01</p>
-                    <p>owner : Mike Smith</p>
+                    <p>Plan ID: {{ $plan->id }}</p>
+                    <p>Date: {{ $plan->date }}</p>
+                    <p>Owner: {{ $plan->user->name }}</p>
                 </div>
 
             </div>
 
             <!--Footer-->
-            <div class="modal-footer d-flex justify-content-center border-0"> 
-                <form action="#" method="post">
+            <div class="modal-footer d-flex justify-content-center border-0">
+                <form action="{{ route('admin.plans.hide', $plan->id) }}" method="post">
+                    @csrf
+                    @method('delete')
                     <button type="submit" class="btn btn-danger btn-lg">Deactivate</button>
                     <button type="button" class="btn btn-outline-danger btn-lg" data-bs-dismiss="modal">Cancel</button>
                 </form>
-                
+
             </div>
-            
+
         </div>
 
         <!--/.Content-->
