@@ -1,4 +1,4 @@
-<div class="col text-end">
+<div class="col text-end mx-1">
     @if($social_post->genres->isEmpty())
         <div class="badge bg-genre-uncategorized text-wrap mr-3">
             Uncategorized

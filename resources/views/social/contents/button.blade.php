@@ -23,7 +23,7 @@
         @include('social.posts.modal.likes')
     </div>
 
-    <div class="col">
+    <div class="col" style="padding: 0">
         @if($social_post->iswanted())
             <form action="{{ route('social.contents.want.destroy', $social_post->id) }}" method="POST">
                 @csrf
@@ -39,7 +39,7 @@
                 @csrf
                 <button type="submit" class="want-button"><i class="fa-solid fa-utensils text-secondary"></i></button>
                 @if($social_post->wants->count() > 0)
-                    <button type="button" class="btn shadow-none ps-0 want-button" data-bs-toggle="modal" data-bs-target="#wants-modal-{{ $social_post->id }}">{{ $social_post->wants->count() }}</button>
+                    <button type="button" class="btn shadow-none want-button" data-bs-toggle="modal" data-bs-target="#wants-modal-{{ $social_post->id }}">{{ $social_post->wants->count() }}</button>
                 @endif
             </form>
         @endif

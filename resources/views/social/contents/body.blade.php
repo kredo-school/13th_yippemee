@@ -10,22 +10,22 @@
                 &nbsp;
                 <a href="#" class="text-decoration-none text-post">{{ $social_post->restaurant_name }}</a>
             </div>
-    
+
             @include('social.contents.genre', ['id' => $social_post->id])
-            
+
         </div>
     </div>
 
     <div class="card-body body-padding">
 
         @include('social.contents.button', ['social_post' => $social_post])
-    
+
         <div class="row align-items-center">
             <div class="col text-start">
                 <i class="fa-solid fa-circle-user"></i>
                 <a href="#" class="text-decoration-none text-post"><strong>{{ $social_post->user->name }}</strong></a>
                 &nbsp;
-                <p class="d-inline fw-light text-post">{{ $social_post->description }}</p>
+                <div class="bucketScroll"><p class="d-inline fw-light text-post">{{ $social_post->description }}</p></div>
             </div>
         </div>
     </div>
