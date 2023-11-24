@@ -10,7 +10,7 @@
                 <div class="card-body card-body-visit">
                     <div class="container row container-text-bucket">
                         <div class="col-10">
-                            <h4 class="card-title fw-bold ps-0" style="color: #253C5C">{{ $bucket->restaurantName }}</h4>
+                            <h4 class="card-title fw-bold ps-0 mb-0" style="color: #253C5C">{{ $bucket->restaurantName }}</h4>
                         </div>
 
                         <div class="col-2">
@@ -52,11 +52,11 @@
                                 @endforeach
                             </li>
 
-                            <li><i class="fa-regular fa-clock"></i>
-                                {{ $bucket->hoursOption }}
+                            <li><div class="" style="font-family: 'Marcellus';"><i class="fa-regular fa-clock"></i>
+                                {{ $bucket->hoursOption }}</div>
                             </li>
 
-                            <li class="bucketScroll mt-2 mb-3">{{ $bucket->description }}</li>
+                            <li class="bucketScroll mt-1 mb-2">{{ $bucket->description }}</li>
 
                             <li>
                                 @if ($bucket->url)
