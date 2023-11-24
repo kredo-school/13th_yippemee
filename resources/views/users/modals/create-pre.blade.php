@@ -51,40 +51,7 @@
                             </div> --}}
                         </div>
                         <div class="col-6 form-group right">
-                            {{-- <div class="row">
-                                <h2 class="label-title mb-0"><i class="fa-solid fa-utensils"></i> Genre</h2>
-                            </div>
-                            <div class="row genre" id="genre">
-                                <div class="col-6 checkbox-left">
-                                    <div class="checkbox-input">
-                                        <input type="checkbox" name="genre" value="japanese" id="japanese">
-                                        <label for="japanese">Japanese</label>
-                                    </div>
-                                    <div class="checkbox-input mt-3">
-                                        <input type="checkbox" name="genre" value="chinese" id="chinese">
-                                        <label for="chinese">Chinese</label>
-                                    </div>
-                                    <div class="checkbox-input mt-3">
-                                        <input type="checkbox" name="genre" value="indian" id="indian">
-                                        <label for="indian">Indian</label>
-                                    </div>
-                                </div>
 
-                                <div class="col-6 checkbox-right">
-                                    <div class="checkbox-input">
-                                        <input type="checkbox" name="genre" value="italian" id="italian">
-                                        <label for="italian">Italian</label>
-                                    </div>
-                                    <div class="checkbox-input mt-3">
-                                        <input type="checkbox" name="genre" value="french" id="french">
-                                        <label for="french">French</label>
-                                    </div>
-                                    <div class="checkbox-input mt-3">
-                                        <input type="checkbox" name="genre" value="other" id="other">
-                                        <label for="other">Other</label>
-                                    </div>
-                                </div>
-                            </div> --}}
 
                         </div>
                     </div>
@@ -96,6 +63,9 @@
 
                 </div>
                 <div class="modal-footer create-footer bg-white border-0 mb-2">
+                    @isset($group)
+                        <input type="hidden" name="group_id" id="group_id" value="{{ $group->id }}">
+                    @endisset
                     <button type="submit" class="create-btn float-end">Create</button>
                 </div>
             </form>

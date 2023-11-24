@@ -14,67 +14,9 @@ class PlanController extends Controller
 
     public function __construct(Plan $plan)
     {
-        $this->plan = $plan;
+        $this->plan =   $plan;
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    // public function create()
-    // {
-    //     $all_plans = Plan::all();
-
-    //     return view('users.modals.create')
-    //         ->with('all_plans', $all_plans);
-    // }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    // public function store(Request $request)
-    // {
-    //     // dd($request);
-    //     $request->validate([
-    //         'date'          =>  'required|min:1|max:30',
-    //         's_time'        =>  'sometimes',
-    //         'e_time'        =>  'sometimes',
-    //         'restaurant'    =>  'required|min:1|max:30',
-    //         'genre'         =>  'array',
-    //         'description'   =>  'required|min:1|max:500',
-    //     ]);
-
-    //     $plan = Plan::create([
-    //         'user_id'           =>   Auth::user()->id,
-    //         'date'              =>   $request->date,
-    //         's_time'            =>     $request->s_time,
-    //         'e_time'            =>   $request->e_time,
-    //         'restaurant_id'     =>   $request->restaurant_id,
-    //         'description'       =>   $request->description,
-    //     ]);
-
-    //     $plan_genres = [];
-    //     foreach ($request->genre as $genre_id) {
-    //         $plan_genres[] = [
-    //             'genre_id'      => $genre_id,
-    //             'plan_id'       => $plan->id,
-    //         ];
-    //     }
-
-    //     $plan->genres()->attach($request->genre);
-
-    //     return view('users.calendars.public.calendar');
-    // }
     public function store(Request $request)
     {
         $request->validate([
@@ -112,14 +54,6 @@ class PlanController extends Controller
         return redirect()->route('plan.show', ['date' => date('Ymd')]);
     }
 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Plan  $plan
-     * @return \Illuminate\Http\Response
-     */
-
     public function showPublicCalendar()
     {
         $genres = Genre::all()->toArray();
@@ -127,12 +61,14 @@ class PlanController extends Controller
         // dd($plans);
         return view('users.calendars.public.calendar', ['genres' => $genres, 'plans' => $plans]);
     }
+
     public function show($date, Request $request)
     {
         // $date = $request->input('date');
         $formattedDate = substr($date, 0, 4) . '-' . substr($date, 4, 2) . '-' . substr($date, 6, 2);
         $plans = Plan::with('genres')->whereDate('date', $formattedDate)->get();
         $genres = Genre::all()->toArray();
+
         if (count($plans) > 0) {
             $plan_id = $request->input('id') ?: $plans[0]->id;
             // get the plan with $plan->id

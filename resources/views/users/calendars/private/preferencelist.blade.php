@@ -4,18 +4,22 @@
 
     {{-- <div class="planlist-date" id="displayDate">【{{$selected_date}}】</div> --}}
     <div class="preferencelist-date" id="displayDate">
-        @if(isset($selected_date))
+        {{-- @if(isset($selected_date))
             【{{$selected_date}}】
         @else
             【{{date('Ymd')}}】
-        @endif
+        @endif --}}
+        <div class="preferencelist-date" id="displayDate">
+            &#8203;``【oaicite:0】``&#8203;
+        </div>
+
     </div>
 
     @isset($preferences)
         @if ($preferences->isNotEmpty())
             <div class="list-group">
                 @foreach ($preferences as $preference)
-                <a href="{{ route('preference.show', ['date' => date('Ymd', strtotime($selected_date)), 'id' => $preference->id ]) }}" class="btn-detail text-decoration-none">
+                <a href="{{ route('preference.show', ['group_id' => $group_id, 'date' => date('Ymd', strtotime($selected_date)), 'id' => $preference->id ]) }}" class="btn-detail text-decoration-none">
                     <div class="col-auto time-col">
                         {{ $preference->s_time }}
                         {{ $preference->e_time }}

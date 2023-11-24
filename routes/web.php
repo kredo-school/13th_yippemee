@@ -88,18 +88,18 @@ Route::get('/group/{id}/edit', [GroupController::class, 'edit'])->name('group.ed
 Route::patch('/group/{id}/update', [GroupController::class], 'update')->name('group.update');
 Route::delete('/group/{id}/destroy', [GroupController::class, 'destroy'])->name('group.destroy');
 // private calendar
-Route::get('/users/calendars/private/calendar', [PreferenceController::class, 'showPrivateCalendar'])->name('private_calendar');
+Route::get('/users/calendars/private/calendar/{group_id}', [PreferenceController::class, 'showPrivateCalendar'])->name('private_calendar');
 // Preference
-Route::get('/preference/create', [PreferenceController::class, 'create'])->name('preference.create');
+// Route::get('/users/calendars/private/modal/{group_id}', [PreferenceController::class, 'showPreferenceModal'])->name('preference.modal');
 Route::post('/preference/store', [PreferenceController::class, 'store'])->name('preference.store');
-Route::get('/preference/private/{date}/show', [PreferenceController::class, 'show'])->name('preference.show');
+Route::get('/preference/{group_id}/show/{date}/{id}', [PreferenceController::class, 'show'])->name('preference.show');
 
 // Public calendar
 Route::get('/users/calendars/public/calendar', [PlanController::class, 'showPublicCalendar'])->name('calendar');
 // Plan
 Route::get('/plan/create', [PlanController::class, 'create'])->name('plan.create');
 Route::post('/plan/store', [PlanController::class, 'store'])->name('plan.store');
-Route::get('/plan/public/{date}/show', [PlanController::class, 'show'])->name('plan.show'); //display planlist and the detail for each
+Route::get('/plan/public/{date}/show', [PlanController::class, 'show'])->name('plan.show');
 
 
 //Restaurant list

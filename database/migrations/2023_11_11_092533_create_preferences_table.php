@@ -16,6 +16,7 @@ class CreatePreferencesTable extends Migration
         Schema::create('preferences', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('group_id');
             $table->string('date');
             $table->string('s_time');
             $table->string('e_time')->nullable();
@@ -24,6 +25,7 @@ class CreatePreferencesTable extends Migration
 
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('group_id')->references('id')->on('groups');
         });
     }
 

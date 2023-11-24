@@ -17,7 +17,7 @@ class CreateGroupsTable extends Migration
             $table->id();
             $table->string('name');
             $table->longText('image')->nullable();
-            $table->string('member_id');
+            $table->string('member_id')->nullable();
             $table->string('restaurant_id');
             $table->dateTime('date')->nullable();
             $table->dateTime('time')->nullable();

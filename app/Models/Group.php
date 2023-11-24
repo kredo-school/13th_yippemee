@@ -15,4 +15,9 @@ class Group extends Model
         'member_id',
         'image'
     ];
+
+    public function preference()
+    {
+        return $this->hasMany(Preference::class);
+    }
 }

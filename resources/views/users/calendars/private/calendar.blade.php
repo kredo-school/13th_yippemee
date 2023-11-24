@@ -18,11 +18,25 @@
         <div class="top-button">
             <div class="row">
                 <div class="col text-end">
-                    <a href="#" class="btn btn-create-plan mt-2" data-bs-toggle="modal" data-bs-target="#preference-modal"><i class="fa-regular fa-calendar-plus fa-3x"></i></a>
+                    @isset($group)
+                        <a href="#" class="btn btn-create-plan mt-2" data-bs-toggle="modal" data-bs-target="#preference-modal" data-group-id="{{ $group->id }}"><i class="fa-regular fa-calendar-plus fa-3x"></i></a>
+                    @endisset
                 </div>
             </div>
         </div>
-        @include(('users.calendars.calendar'))
+        @include('users.calendars.calendar')
+        <script>
+            $(document).ready(function () {
+                // モーダルを開くトリガーに対してクリックイベントを設定
+                $('.btn-create-plan').on('click', function () {
+                    // 選択されているグループの group_id を取得
+                    var groupId = $(this).data('group-id');
+
+                    // モーダル内のフォームに group_id を設定
+                    $('#preference-modal').find('#group_id').val(groupId);
+                });
+            });
+        </script>
     </div>
 
 </div>

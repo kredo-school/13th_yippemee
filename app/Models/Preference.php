@@ -11,6 +11,7 @@ class Preference extends Model
 
     protected $fillable  = [
         'user_id',
+        'group_id',
         'date',
         's_time',
         'e_time',
@@ -20,5 +21,10 @@ class Preference extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function group()
+    {
+        return $this->belongsTo(Group::class);
     }
 }

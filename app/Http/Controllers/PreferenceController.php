@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Group;
 use App\Models\Preference;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -16,119 +17,85 @@ class PreferenceController extends Controller
         $this->preference   =   $preference;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    // public function create()
-    // {
-    //     $all_preferences = Preference::all();
 
-    //     return view('users.modals.create-pre')
-    //         ->with('all_plans', $all_preferences);
-    // }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
-            'date'          =>  'required|min:1|max:30',
-            's_time'        =>  'required',
-            'e_time'        =>  'required',
-            'description'   =>  'required|min:1|max:500',
+            'group_id'    => 'required|exists:groups,id', // Validate group_id existence in the groups table
+            'date'        => 'required|min:1|max:30',
+            's_time'      => 'required',
+            'e_time'      => 'required',
+            'description' => 'required|min:1|max:500',
         ]);
+
+        $group = Group::find($request->id);
 
         $preference = Preference::create([
             'user_id'       =>  Auth::user()->id,
+            'group_id'      =>  $group->id,
             'date'          =>  $request->date,
             's_time'        =>  $request->s_time,
             'e_time'        =>  $request->e_time,
-            'description'   =>  $request->description,
+            'description'   =>  $request->description
         ]);
+
 
         return redirect()->route('preference.show', ['date' => date('Ymd')]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Preference  $preference
-     * @return \Illuminate\Http\Response
-     */
-    public function showPrivateCalendar()
+    public function showPrivateCalendar($group_id)
     {
-        $preferences = Preference::with('user')->get();
+        $group = Group::find($group_id);
+        $preferences = Preference::where('group_id', $group_id)->with('user')->get();
 
-        return view ('users.calendars.private.calendar',['preferences' => $preferences]);
+        return view('users.calendars.private.calendar', [
+            'preferences' => $preferences,
+            'group' => $group,
+        ]);
     }
 
-    public function show($date, Request $request)
-    {
-        $date = $request->input('date');
 
+
+    public function show($group_id, $date, Request $request)
+    {
         $formattedDate = substr($date, 0, 4) . '-' . substr($date, 4, 2) . '-' . substr($date, 6, 2);
         $selected_date = date('F d Y', strtotime($formattedDate));
-        $preferences = $this->preference->whereDate('date', $formattedDate)->get();
+        $preferences = Preference::whereDate('date', $formattedDate)->get();
+        $group = Group::find($group_id);
 
-
-        // dd($preferences);
         if (count($preferences) > 0) {
             $preference_id = $request->input('id') ?: $preferences[0]->id;
-            // get the plan with $plan->id
-            $selected_pre  = $this->preference->findOrFail($preference_id);
-            return view('users.calendars.private.calendar',
-                [
-                    'preferences' => $preferences,
-                    'selected_date' => date('F d Y', strtotime($formattedDate))
-                ]);
+            // $selected_pre  = Preference::findOrFail($preference_id);
+            return view('users.calendars.private.preferencelist', [
+                'preferences' => $preferences,
+                'selected_date' => $selected_date,
+                'group_id' => $group_id,
+            ]);
         }
         else {
-            $preferencesForToday = $this->preference->whereDate('date', now())->get();
+            $preferencesForToday = Preference::whereDate('date', now())->get();
 
             return view('users.calendars.private.calendar',
                 [
                     'preferences' => $preferencesForToday,
-                    'selected_date' => date('F d Y', strtotime($formattedDate))
+                    'selected_date' => $selected_date,
+                    'group_id' => $group_id,
                 ]);
-
         }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Preference  $preference
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Preference $preference)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Preference  $preference
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Preference $preference)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Preference  $preference
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Preference $preference)
     {
         //
