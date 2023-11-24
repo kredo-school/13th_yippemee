@@ -18,7 +18,7 @@
 }
 .left-navi {
     color: #fff;
-    height: 680px;
+    height: 700px;
     width: 25%;
     float: left;
     margin-top: 3%;
@@ -35,7 +35,7 @@
     border-left:3px dotted #253c5c;
     color: #fff;
     float: left;
-    height: 680px;
+    height: 700px;
     width: 25%;
     margin-top: 3%;
 }
@@ -76,7 +76,7 @@
     margin-bottom: 8%;
 }
 .list-group {
-    /* height: 50px; */
+    height: 450px;
     overflow: scroll;
 }
 .list-group a {
@@ -387,7 +387,7 @@
 .preference {
     border: 4px double #f1a29b;
     color: #253c5c;
-    margin-top: 15%;
+    margin-top: 5%;
     padding-right: 3px;
     padding-top: 0.3rem;
     padding-bottom: 0.5rem;
@@ -438,6 +438,15 @@
 .comment-screen {
     padding-top: 5px;
     padding-left: 2px;
+}
+div.comments-area div.col p {
+    text-decoration: none;
+    border-bottom: none;
+    font-size: 0.9em;
+}
+.comments-body {
+    height: 120px; 
+    overflow-y: auto; 
 }
 .user-name {
     color: rgb(100, 99, 99);

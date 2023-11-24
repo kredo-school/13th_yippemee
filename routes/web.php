@@ -17,10 +17,8 @@ use App\Http\Controllers\MyPlanController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RestaurantController;
-
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\FacebookController;
-
 use App\Http\Controllers\Admin\AdminPostsController;
 use App\Http\Controllers\Admin\AdminGenreController;
 use App\Http\Controllers\SocialCommentController;

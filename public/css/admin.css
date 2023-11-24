@@ -15,7 +15,8 @@
     transition: background-color 0.3s;
 }
 
-.admin-table th, .admin-table td {
+.admin-table th,
+.admin-table td {
     padding-left: 10px;
     text-align: left;
 }
@@ -53,9 +54,9 @@
     color: #ffffff;
 }
 
-.modal-header-title{
+.modal-header-title {
     display: flex;
-    justify-content: space-between;   
+    justify-content: space-between;
 }
 
 .modal-title-font {
@@ -64,11 +65,11 @@
 
 }
 
-.icon-green{
+.icon-green {
     color: #2ca559;
 }
 
-.modal-body{
+.modal-body {
     color: #253C5C;
 }
 
@@ -77,13 +78,13 @@
     color: #ffffff;
 }
 
-.icon-red{
-    color:#dc3545
+.icon-red {
+    color: #dc3545
 }
 
 .table thead.thead-plans {
     --bs-table-bg: #617EA8 !important;
-    --bs-table-color:#E6F2E9;
+    --bs-table-color: #E6F2E9;
 }
 
 .table thead.thead-plans th {
@@ -92,17 +93,16 @@
 
 .table thead.thead-posts {
     --bs-table-bg: #F1A29B !important;
-    --bs-table-color:#253C5C
-    ;
+    --bs-table-color: #253C5C;
 }
 
-.modal-header-primary{
+.modal-header-primary {
     background-color: #0074d9;
     color: #ffffff;
 }
 
-.icon-primary{
-    color:#0074d9
+.icon-primary {
+    color: #0074d9
 }
 
 .modal-primary {
@@ -111,7 +111,7 @@
 }
 
 .icon-warning {
-    color:#ffc107
+    color: #ffc107
 }
 
 .icon-large {
@@ -120,7 +120,7 @@
 
 .table thead.thead-genres {
     --bs-table-bg: #F2C84B !important;
-    --bs-table-color:#253C5C;
+    --bs-table-color: #253C5C;
 }
 
 .modal-header-warning {
@@ -142,7 +142,7 @@
 /* admin/contact */
 .table thead.thead-contact {
     --bs-table-bg: #E6F2E9 !important;
-    --bs-table-color:#253C5C;
+    --bs-table-color: #253C5C;
 }
 
 .modal-title-contact {
@@ -160,19 +160,19 @@
     content: none !important;
 }
 
-.no-hover-effect td:hover, 
+.no-hover-effect td:hover,
 .no-hover-effect .selected {
     color: inherit !important;
     border: inherit !important;
 }
 
-.no-hover-effect td:hover:after, 
+.no-hover-effect td:hover:after,
 .no-hover-effect .selected:after {
     background: none !important;
 }
 
 .admin {
-    width:100%;
+    width: 100%;
     min-height: 100%;
     position: relative;
 
@@ -185,7 +185,7 @@
     padding-right: 30px;
 }
 
-.modal-header-contact{
+.modal-header-contact {
     background-color: #E6F2E9;
 }
 
