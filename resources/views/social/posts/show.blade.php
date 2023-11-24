@@ -24,7 +24,12 @@
                         <div class="card-header bg-white py-2 card_header-post">
                             <div class="row align-items-center">
                                 <div class="col text-start">
-                                    <i class="fa-solid fa-circle-user"></i> <a href="#" class="text-decoration-none text-post"><strong>{{ $social_post->user->name }}</strong></a>
+                                    @if($social_post->user->avatar)
+                                        <img src="{{ $social_post->user->avatar }}" alt="{{ $social_post->user->avatar }}" class="rounded-circle user-avatar">
+                                    @else
+                                        <i class="fa-solid fa-circle-user text-secondary user-icon"></i>
+                                    @endif
+                                    <a href="{{ route('profile.show', ['id' => $social_post->user->id]) }}" class="text-decoration-none text-post"><strong>{{ $social_post->user->name }}</strong></a>
                                 </div>
                                 <div class="col-auto text-end"><i class="fa-solid fa-users text-success"></i></div>
                             </div>
@@ -41,7 +46,7 @@
 
                             </div>
 
-                            @include('social.contents.button', ['social_post' => $social_post])
+                            @include('social.contents.profile_button', ['social_post' => $social_post])
                             
                             <div class="row">
                                 <div class="col text-start">
