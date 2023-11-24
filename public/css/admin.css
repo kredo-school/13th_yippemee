@@ -192,3 +192,17 @@
 .btn-outline-danger {
     outline: 1px solid #dc3545;
 }
+
+.btn-outline-warning {
+    outline: 1px solid #ffc107;
+}
+
+.modal-genre-margin{
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: #ffffff;
+}
+
+.genre-content{
+    background-color: #ffffff;
+}
