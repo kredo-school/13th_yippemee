@@ -19,6 +19,7 @@ class PlanController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
             'date'          =>  'required|min:1|max:30',
             's_time'        =>  'sometimes',
@@ -59,6 +60,7 @@ class PlanController extends Controller
         $genres = Genre::all()->toArray();
         $plans = Plan::with('user')->get();
         // dd($plans);
+
         return view('users.calendars.public.calendar', ['genres' => $genres, 'plans' => $plans]);
     }
 
@@ -91,7 +93,6 @@ class PlanController extends Controller
                     'selected_date' => date('F d Y', strtotime($formattedDate)),
                     'selected_plan' => null
                 ]);
-
         }
     }
 

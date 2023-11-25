@@ -15,9 +15,16 @@
         @if ($social_post->comments && $social_post->comments->isNotEmpty())
             @foreach ($social_post->comments as $social_comment)  
             
-                <div class="row border-0 p-0 mx-2 mt-2 mb-1">
+                <div class="row border-0 p-0 mx-2 mt-2 mb-1 align-items-center">
                     <div class="col-auto">
-                        <a href="#" class="text-decoration-none text-post"><strong>{{ $social_comment->user->name }}</strong></a> &nbsp;
+                        <a href="{{ route('profile.show', ['id' => $social_comment->user->id]) }}" class="text-decoration-none text-post">
+                            @if($social_comment->user->avatar)
+                                <img src="{{ $social_comment->user->avatar }}" alt="{{ $social_comment->user->avatar }}" class="rounded-circle user-avatar">
+                            @else
+                                <i class="fa-solid fa-circle-user text-secondary user-icon"></i>
+                            @endif
+                            <strong>{{ $social_comment->user->username }}</strong>
+                        </a> &nbsp;
                     </div>
                     <div class="col-auto small text-muted">
                         {{ \Carbon\Carbon::parse($social_comment->created_at)->diffForHumans() }}

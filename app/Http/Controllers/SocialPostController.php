@@ -122,11 +122,19 @@ class SocialPostController extends Controller
      * @param  \App\Models\SocialPost
      * @return \Illuminate\Http\Response
      */
+
     public function show($id)
     {
         $social_post = SocialPost::with('genres')->findOrFail($id);
-        return view('social.posts.show', compact('social_post'));
+
+        $user = Auth::user();
+
+        # Get user's friend list ID
+        $friends_ids = $user->friends()->pluck('users.id')->toArray();
+
+        return view('social.posts.show', compact('social_post', 'friends_ids'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -233,8 +241,40 @@ class SocialPostController extends Controller
 
     public function social_home()
     {
+        $user = Auth::user();
         $social_posts = $this->social_post->latest()->get();
-        return view('social.social_home', compact('social_posts'));
+
+        # get user's friends list
+        $friends_ids = $user->friends()->pluck('users.id')->toArray();
+
+        return view('social.social_home', compact('social_posts', 'friends_ids'));
+    }
+
+
+    public function search(Request $request)
+    {
+        $searchWord = $request->search;
+
+        $social_posts = SocialPost::where(function ($query) use ($searchWord){
+            #search from user
+            $query->whereHas('user', function ($subQuery) use ($searchWord) {
+                $subQuery->where('name', 'like', '%' . $searchWord . '%');
+            })
+            #search from restaurant_name
+            ->orWhere('restaurant_name', 'like', '%' . $searchWord . '%')
+            #search from description
+            ->orWhere('description', 'like', '%' . $searchWord . '%')
+            #search from genres
+            ->orWhereHas('genres', function ($subQuery) use ($searchWord) {
+                $subQuery->where('name', 'like', '%' . $searchWord . '%');
+            })
+            #search from comments
+            ->orWhereHas('comments', function ($subQuery) use ($searchWord) {
+                $subQuery->where('body', 'like', '%' . $searchWord . '%');
+            });
+            })->get();
+
+            return view('social.social_home', compact('social_posts'));
     }
 
 

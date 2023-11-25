@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\Restaurant;
+use App\Models\Genre;
 
 
 class RestaurantController extends Controller
@@ -12,8 +13,11 @@ class RestaurantController extends Controller
     
     private $restaurant;
 
-    public function __construct(Restaurant $restaurant){
+    private $genre;
+
+    public function __construct(Restaurant $restaurant, Genre $genre){
         $this->restaurant = $restaurant;
+        $this->genre = $genre;
     }
 
 
@@ -21,16 +25,18 @@ class RestaurantController extends Controller
     public function restaurantlist()
     {
         $restaurants = $this->restaurant->all();
-        return view('users.restaurant_lists.index')->with('restaurants', $restaurants);
+        $all_genres = $this->genre->all( );
+        return view('users.restaurant_lists.index')->with('restaurants', $restaurants)->with('all_genres', $all_genres);
     }
 
     public function  restaurantpost()
     {
-        return view('users.restaurant_lists.post_restaurant');
+        $all_genres = $this->genre->all( );
+        return view('users.restaurant_lists.post_restaurant')->with('all_genres', $all_genres);
     }
 
     public function store(Request $request){
-
+        $all_genres = $this->genre->all( );
         $request->validate([
             'name'=>'required | min:1|max:100',
             'location'=>'required | min:1|max:100',
@@ -48,6 +54,7 @@ class RestaurantController extends Controller
             'url'=>'min:1|max:100',
             'price'=>'required',
             'googlemap'=>'min:1|max:100',
+             'genre' => 'required|array', 
         ]);
 
             $this->restaurant->name = $request->name;
@@ -63,22 +70,28 @@ class RestaurantController extends Controller
             $this->restaurant->friday = $request->friday;
             $this->restaurant->saturday = $request->saturday;
             $this->restaurant->sunday = $request->sunday;
+            
             $this->restaurant->url = $request->url;
             $this->restaurant->price = $request->price;
             $this->restaurant->googlemap = $request->googlemap;
+           
+            $this->restaurant->save();
+            
+            $this->restaurant->genres()->sync($request->genre);
 
-            $this->restaurant->save( );
 
-            return view('users.restaurant_lists.index');
+            return view('users.restaurant_lists.index')->with('all_genres', $all_genres);
        
     }
 
-    public function genrejapanese()
-    {
-        $restaurants = $this->restaurant->all();
-        
-        return view('users.restaurant_lists.genre.japanese')->with('restaurants', $restaurants);
-    }
+    public function restaurantsByGenre($genre)
+{
+    $restaurants = Restaurant::whereHas('genres', function ($query) use ($genre) {
+        $query->where('name', $genre);
+    })->get();
+
+    return view('users.restaurant_lists.genre.restaurants')->with('restaurants', $restaurants);
+}
 
     public function detail($id)
     {

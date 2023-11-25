@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Restaurant list')
+@section('title', 'Restaurant by Genre')
 
 @section('content')
 
@@ -16,7 +16,7 @@
         </form>
     </div>
     <div class="row mt-4">    
-            <h2 class="h3 text-start ms-3 mb-4">Japense</h2> 
+            <h2 class="h3 text-start ms-3 mb-4">{{ $genre }} </h2> 
             <hr>
     </div>
 

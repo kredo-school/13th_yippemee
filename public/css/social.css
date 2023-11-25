@@ -50,15 +50,15 @@ div.bg-genre-uncategorized {
 .header-padding {
     padding-top: 5px; 
     padding-bottom: 0;    
-    padding-left: 10px;    
-    padding-right: 10px;
+    padding-left: 1px;    
+    padding-right: 1px;
 }
 
 .body-padding {
     padding-top: 0;    
-    padding-bottom: 10px; 
-    padding-left: 10px;    
-    padding-right: 10px;
+    padding-bottom: 1px; 
+    padding-left: 1px;    
+    padding-right: 1px;
 }
 
 .custom-margin {
@@ -202,4 +202,13 @@ div.bg-genre-uncategorized {
 
 .card_header-post, .card_body-post{
     width: 100%; 
+}
+
+.user-avatar{
+    width: 30px;
+    height: 30px;
+}
+
+.btn-outline-success {
+    outline: 1px solid #28a745;
 }
