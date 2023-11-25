@@ -121,7 +121,7 @@
 
             let targetUrl;
             if (currentPage.includes('/private/calendar')) { //ADD ID later
-                targetUrl = `/private/calendar/${formattedDate}/show`;
+                targetUrl = `/private/calendar/${formattedDate}/show/{group_id}`;
             } else {
                 targetUrl = `/plan/public/${formattedDate}/show`;
             }

@@ -20,7 +20,7 @@ class PreferenceController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request);
+        dd($request);
         $request->validate([
             'group_id'    => 'required|exists:groups,id', // Validate group_id existence in the groups table
             'date'        => 'required|min:1|max:30',
@@ -44,17 +44,25 @@ class PreferenceController extends Controller
         return redirect()->route('preference.show', ['date' => date('Ymd')]);
     }
 
+    // public function showPrivateCalendar($group_id)
+    // {
+    //     $group = Group::find($group_id);
+    //     $preferences = Preference::where('group_id', $group_id)->with('user')->get();
+
+    //     return view('users.calendars.private.calendar', [
+    //         'preferences' => $preferences,
+    //         'group' => $group_id,
+    //     ]);
+    // }
     public function showPrivateCalendar($group_id)
     {
         $group = Group::find($group_id);
         $preferences = Preference::where('group_id', $group_id)->with('user')->get();
-
         return view('users.calendars.private.calendar', [
             'preferences' => $preferences,
-            'group' => $group,
+            'group' => $group,  // Change $group_id to $group
         ]);
     }
-
 
 
     public function show($group_id, $date, Request $request)

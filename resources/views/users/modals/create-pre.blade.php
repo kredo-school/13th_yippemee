@@ -64,7 +64,7 @@
                 </div>
                 <div class="modal-footer create-footer bg-white border-0 mb-2">
                     @isset($group)
-                        <input type="hidden" name="group_id" id="group_id" value="{{ $group->id }}">
+                        <input type="text" name="group_id" id="group_id" value="{{ $group->id }}">
                     @endisset
                     <button type="submit" class="create-btn float-end">Create</button>
                 </div>
