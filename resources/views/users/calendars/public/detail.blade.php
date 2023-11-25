@@ -1,3 +1,4 @@
+ 
 <div class="container detail-body">
     @if (!is_null($selected_plan))
         <p class="text-end" style="color:#253c5c;">
@@ -15,6 +16,7 @@
                 <div class="row">
                     <div class="col-auto"><i class="fa-regular fa-clock"></i>{{ $selected_plan ->date}}</div>
                     <div class="col-auto ps-2">{{ $selected_plan ->s_time}} - {{ $selected_plan ->e_time }}</div>
+
                 </div>
                 <div class="row">
                     <div class="col-auto"><i class="fa-solid fa-shop"></i></div>
@@ -48,9 +50,22 @@
                 <i class="fa-solid fa-user-check" style="color: #253c5c;"></i>
             </div>
             <div class="col-4">
-                <i class="fa-solid fa-circle-user" style="color: #1f5120;"></i>
-                <i class="fa-solid fa-circle-user" style="color: #8b3768;"></i>
-                <i class="fa-solid fa-circle-user" style="color: #e6bf33;"></i>
+            <div class="joined-users">
+                @foreach ($selected_plan->joinedUsers as $joinedUser)
+                    @if($joinedUser->avatar)
+                        <div class="col">
+                            <img src="{{ $joinedUser->avatar}}" alt="{{ $joinedUser->name }}" class="rounded-circle" style="height:100%; width:100%;">
+                            {{ $joinedUser->name }}
+                        </div>
+                    @else
+                        <div class="col">
+                            <i class="fa-regular fa-circle-user fa-1x" style="color:#253c5c;">
+                            {{ $joinedUser->name }}</i>
+                        </div>
+                    @endif               
+                @endforeach
+            </div>
+                
             </div>
             <div class="col-1">
                 <a href="#"><i class="fa-solid fa-angles-right" style="color: #253c5c;"></i></a>
@@ -59,39 +74,26 @@
         <div class="row comment-form">
             <div class="comment-area">
                 <h5>Comments:</h5>
-                <div class="comment-screen">
-                    <div class="row user-comment w-100">
-                        <div class="col-2"><i class="fa-regular fa-user-circle fa-xl"></i></div>
-                        <div class="col-10">
-                            <div class="row user-name">@user_1</div>
-                            <div class="row one-comment">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi deleniti eveniet aperiam non maxime placeat odio, reiciendis atque eius optio?</div>
-                        </div>
-                    </div>
-
-                    <div class="row user-comment w-100">
-                        <div class="col-2"><i class="fa-regular fa-user-circle fa-xl"></i></div>
-                        <div class="col-10">
-                            <div class="row user-name">@user_1</div>
-                            <div class="row one-comment">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi deleniti eveniet aperiam non maxime placeat odio, reiciendis atque eius optio?</div>
-                        </div>
-                    </div>
-                </div>
+                @include('users.calendars.public.public_comments',['plan_id'=> $selected_plan->id])
             </div>
-            <form action="#" method="post">
-                <div class="input-group comment">
-                    <input type="text" class="form-control form-comment" placeholder="Comment" aria-label="Comment" aria-describedby="comment-form">
-                    <button class="btn btn-comment" type="button" id="comment-form"><i class="fa-solid fa-paper-plane fa-white"></i></button>
-                </div>
-            </form>
         </div>
-        <form action="#" method="post" class="float-end">
-            {{-- could be checkbox...? --}}
-            <button type="submit" class="btn btn-join"><span>JOIN <i class="fa-solid fa-person-walking-arrow-right" style="color: #253c5c;"></i></span></button>
-            {{-- add undo button --}}
-        </form>
+            </div>
+    
+            @if (Auth::check() && $selected_plan->isJoined(Auth::user()))
+            
+            <form action="{{ route('join_group.destroy', ['plan_id' => $selected_plan->id]) }}" method="post" class="float-end">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-join"><span>UNJOIN <i class="fa-solid fa-person-walking-arrow-right" style="color: #253c5c;"></i></span></button>
+            </form>
+        @elseif(Auth::check())
+            <form action="{{ route('join_group.store', ['plan_id' => $selected_plan->id]) }}" method="post" class="float-end">
+                @csrf
+                <button type="submit" class="btn btn-join"><span>JOIN <i class="fa-solid fa-person-walking-arrow-right" style="color: #253c5c;"></i></span></button>
+            </form>
+        @endif
     @else
         <p class="text-end" style="color:#253c5c;">Plan Detail</p>
         <h5 class="text-center pt-5" style="color:gray;">Select from Plan List</h5>
     @endif
 </div>
-

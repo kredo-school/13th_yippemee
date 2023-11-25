@@ -19,14 +19,18 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PreferenceController;
 use App\Http\Controllers\RestaurantController;
-use App\Http\Controllers\SocialPostController;
-use App\Http\Controllers\Admin\UsersController;
-use App\Http\Controllers\ListCommentController;
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\Admin\AdminPostsController;
+use App\Http\Controllers\Admin\AdminGenreController;
 use App\Http\Controllers\SocialCommentController;
+use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\SocialPostController;
+use App\Http\Controllers\ListCommentController;
 use App\Http\Controllers\PublicCalendarController;
 use App\Http\Controllers\PrivateCalendarController;
-use App\Http\Controllers\Admin\AdminGenreController;
-use App\Http\Controllers\Admin\AdminPostsController;
+use App\Http\Controllers\PublicCommentController;
+use App\Http\Controllers\JoinGroupController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,11 +86,12 @@ Route::get('/myplans/{id}/show', [MyplanController::class, 'show'])->name('mypla
 // Group
 Route::get('/users/calendars/private/group_list', [GroupController::class, 'group'])->name('group_list');
 Route::get('/group/create', [GroupController::class, 'create'])->name('group.create');
-Route::post('/group/store', [GroupController::class, 'store'])->name('group.store');
+Route::post('/group/create', [GroupController::class, 'store'])->name('group.store');
 Route::get('/group/{id}/show', [GroupController::class, 'show'])->name('group.show');
 Route::get('/group/{id}/edit', [GroupController::class, 'edit'])->name('group.edit');
 Route::patch('/group/{id}/update', [GroupController::class], 'update')->name('group.update');
 Route::delete('/group/{id}/destroy', [GroupController::class, 'destroy'])->name('group.destroy');
+
 // private calendar
 Route::get('/users/calendars/private/calendar/{group_id}', [PreferenceController::class, 'showPrivateCalendar'])->name('private_calendar');
 // Preference
@@ -95,18 +100,26 @@ Route::post('/preference/store', [PreferenceController::class, 'store'])->name('
 Route::get('/preference/{group_id}/show/{date}/{id}', [PreferenceController::class, 'show'])->name('preference.show');
 
 // Public calendar
-Route::get('/users/calendars/public/calendar', [PlanController::class, 'showPublicCalendar'])->name('calendar');
+Route::get('/users/calendars/public/calendar',[PlanController::class,'showPublicCalendar'])->name('calendar');
+Route::post('join_group/{plan_id}/store',[JoinGroupController::class,'store'])->name('join_group.store');
+Route::delete('join_group/{plan_id}/destroy',[JoinGroupController::class,'destory'])->name('join_group.destroy');
+
 // Plan
 Route::get('/plan/create', [PlanController::class, 'create'])->name('plan.create');
 Route::post('/plan/store', [PlanController::class, 'store'])->name('plan.store');
-Route::get('/plan/public/{date}/show', [PlanController::class, 'show'])->name('plan.show');
+
+Route::get('/plan/public/{date}/show', [PlanController::class, 'show'])->name('plan.show'); 
+
+//public_comment
+Route::post('/users/calendars/public/comment/{plan_id}/store', [PublicCommentController::class, 'store'])->name('public_comment.store');
+Route::delete('/users/calendars/public/comment/{plan_id}/destroy', [PublicCommentController::class, 'destroy'])->name('public_comment.destroy');
 
 
 //Restaurant list
 Route::get('/restaurantlist', [RestaurantController::class, 'restaurantlist'])->name('restaurantlist');
 Route::post('/restaurantlist/store', [RestaurantController::class, 'store'])->name('restaurant.store');
 Route::get('/restaurantlist/post', [RestaurantController::class, 'restaurantpost'])->name('restaurantpost');
-Route::get('/genre/japanese/', [RestaurantController::class, 'genrejapanese'])->name('genrejapanese');
+Route::get('/genre/{genre}/restaurants', [RestaurantController::class, 'restaurantsByGenre']);
 Route::get('/genre/italian', [RestaurantController::class, 'genreitalian'])->name('genreitalian');
 Route::get('/genre/chinese', [RestaurantController::class, 'genrechinese'])->name('genrechinese');
 Route::get('/genrecafe/{id}', [RestaurantController::class, 'genrecafe'])->name('genrecafe');
@@ -158,6 +171,7 @@ Route::get('/social/posts/create', [SocialPostController::class, 'create'])->nam
 Route::get('/social/posts/{id}/edit', [SocialPostController::class, 'edit'])->name('social.posts.edit');
 Route::patch('/social/posts/{id}/update', [SocialPostController::class, 'update'])->name('social.posts.update');
 Route::delete('/social/posts/{id}/destroy', [SocialPostController::class, 'destroy'])->name('social.posts.destroy');
+Route::get('/social/posts/search',[SocialPostController::class,'search'])->name('social.posts.search');
 
 //social_comment
 Route::post('/social/comment/{social_post_id}/store', [SocialCommentController::class, 'store'])->name('social_comment.store');
@@ -167,14 +181,31 @@ Route::delete('/social/comment/{social_post_id}/destroy', [SocialCommentControll
 Route::get('/friends/list',  [FriendController::class, 'friends_list'])->name('friends.friends_list');
 Route::get('friends/search', [FriendController::class, 'search'])->name('friends.search');
 Route::post('/friends/add', [FriendController::class, 'addFriends'])->name('friends.add');
-// Route::post('/friends/remove/{friend_id}', [FriendController::class, 'removeFriend'])->name('friends.remove');
 Route::delete('/friends/remove/{friend_id}', [FriendController::class, 'removeFriend'])->name('friends.remove');
-
-
 
 //like
 Route::post('social/posts/{social_post}/like', [LikeController::class, 'store'])->name('social.posts.like');
 Route::delete('social/posts/{social_post}/unlike', [LikeController::class, 'destroy'])->name('social.posts.unlike');
+
+
+//google login
+
+Route::get('auth/google',[GoogleController::class,'googlepage']);
+Route::get('auth/google/callback',[GoogleController::class,'googlecallback']);
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
+
+//Facebook login
+Route::get('auth/facebook',[FacebookController::class,'facebookpage']);
+Route::get('auth/facebook/callback',[FacebookController::class,'facebookredirect']);
 
 //want
 Route::post('social/posts/{social_post}/want', [WantController::class, 'store'])->name('social.contents.want');
@@ -189,3 +220,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+

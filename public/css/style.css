@@ -1,3 +1,21 @@
+.btn-3 {
+    background: #617EA8;
+    width: 140px;
+    height: 30px;
+    text-align: center;
+    border-radius: 5%;
+}
+.btn-3:hover {
+    background: #617EA8;
+    opacity: 70%;
+    letter-spacing: 0.04em;
+}
+.btn-3 a{
+    color: white;
+    text-decoration: none;
+}
+/* end */
+
 .reviewed:not(:checked) > label {
     width:1em;
     overflow:hidden;
@@ -535,24 +553,27 @@ label[for]:hover {
     display: none;
 }
 
-.only-background {
+.only-background a{
     background: #617EA8;
     color: #E6F2E9;
     width: 100px;
     height: 27px;
     text-align: center;
-    opacity: 80%;
-    border-radius: 10%;
+    opacity: 90%;
+    border-radius: 5%;
     font-size: 15px;
     padding: 3px;
     text-decoration: none;
     }
 
-    .only-background:hover {
+    .only-background:hover a{
         background: #617EA8;
     color: #E6F2E9;
     opacity: 50%;
-    letter-spacing: 0.07em;
+    }
+
+    .NoneBorder{
+        text-decoration: none;
     }
 
 /* bucket icon */
@@ -915,7 +936,14 @@ body{
     }
 
     .avatar-lg {
-        width: 6rem;
+        font-size: 5rem;
+        margin: 0 0 0 500px;
+        height: 90px;
+    }
+
+    .editProfile{
+        width: 580px;
+        margin: -165px;
     }
 
 /* review */

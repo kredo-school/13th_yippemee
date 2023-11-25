@@ -3,16 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Group;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class GroupController extends Controller
 {
     private $group;
+    private $user;
 
-    public function __construct(Group $group)
+    public function __construct(Group $group, User $user)
     {
         $this->group = $group;
+        $this->user = $user;
     }
     /**
      * Display a listing of the resource.
@@ -33,10 +36,10 @@ class GroupController extends Controller
      */
     public function create()
     {
-        $all_groups = $this->group->all();
+        $users = User::all();
 
-        return view('users.modals.add_group')
-            ->with('all_groups', $all_groups);
+        return view('users.calendars.private.group_create')
+            ->with('users', $users);
     }
 
     /**
@@ -49,16 +52,13 @@ class GroupController extends Controller
     {
         $request->validate([
             'name'          =>  'required|min:1|max:30',
-            // restaurant/member_id will be array later
             'restaurant_id' =>  'required|min:1|max:30',
-            'member_id'     =>  'required|min:1|max:30',
             'image'         =>  'mimes:jpeg,jpg,png,gif|max:2048'
         ]);
 
         // save
         $this->group->name          =   $request->name;
         $this->group->restaurant_id =   $request->restaurant_id;
-        $this->group->member_id     =   $request->member_id;
 
         // $this->group->image         =   'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
 
@@ -75,6 +75,8 @@ class GroupController extends Controller
         $file->move(public_path('storage/images/'), $this->group->image);
 
         $this->group->save();
+
+        $this->group->users()->sync($request->user_id);
 
         return redirect()->route('group_list');
 

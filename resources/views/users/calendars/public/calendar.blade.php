@@ -28,6 +28,11 @@
 
 <div class="right-navi">
     @include('users.calendars.public.detail')
+    {{-- @if(isset($selectedPlan))
+        @include('users.calendars.public.detail', compact('selectedPlan'))
+    @else
+        @include('users.calendars.public.detail')
+    @endif --}}
 </div>
 
 {{-- modal --}}

@@ -18,16 +18,8 @@
 
     <div class="card-body body-padding">
 
-        @include('social.contents.button', ['social_post' => $social_post])
+        @include('social.contents.button_home', ['social_post' => $social_post])
     
-        <div class="row align-items-center">
-            <div class="col text-start">
-                <i class="fa-solid fa-circle-user"></i>
-                <a href="#" class="text-decoration-none text-post"><strong>{{ $social_post->user->name }}</strong></a>
-                &nbsp;
-                <p class="d-inline fw-light text-post">{{ $social_post->description }}</p>
-            </div>
-        </div>
     </div>
 </div>
 
