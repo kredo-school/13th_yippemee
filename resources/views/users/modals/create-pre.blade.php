@@ -12,7 +12,7 @@
 
 <div class="modal fade" id="preference-modal" aria-hidden="true">
     <div class="modal-dialog create-dialog modal-xl">
-        <div class="modal-content create-content">
+        <div class="modal-content create-content-pre">
             <div class="modal-header create-header w-100" style="background-color: #F2C84B;">
                 <div class="row w-100" >
                     <div class="col-11">
@@ -34,7 +34,7 @@
                                 <input name="date" type="date" id="date">
                             </div>
                             <h2 class="label-title mt-2"><i class="fa-regular fa-clock"></i> Time</h2>
-                            <div class="row time-row">
+                            <div class="row time">
                                 <div class="col-auto">
                                     <label class="s-time" for="s-time">Start Time</label><br>
                                     <input type="time" class="s-time me-3" name="s_time" id="s-time">
@@ -64,7 +64,7 @@
                 </div>
                 <div class="modal-footer create-footer bg-white border-0 mb-2">
                     @isset($group)
-                        <input type="text" name="group_id" id="group_id" value="{{ $group->id }}">
+                        <input type="hidden" name="group_id" id="group_id" value="{{ $group->id }}">
                     @endisset
                     <button type="submit" class="create-btn float-end">Create</button>
                 </div>

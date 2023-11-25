@@ -20,7 +20,7 @@ class PreferenceController extends Controller
 
     public function store(Request $request)
     {
-        dd($request);
+        // dd($request);
         $request->validate([
             'group_id'    => 'required|exists:groups,id', // Validate group_id existence in the groups table
             'date'        => 'required|min:1|max:30',

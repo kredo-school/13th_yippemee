@@ -5,7 +5,7 @@
         @if(isset($selected_date))
             &#8203;【{{ $selected_date ?? '' }}】&#8203;
         @else
-            &#8203;【{{date('Ymd')}}】&#8203;
+            &#8203;【{{date('F d Y')}}】&#8203;
         @endif
         {{-- <div class="preferencelist-date" id="displayDate">
             &#8203;&#8203;``【oaicite:0】``&#8203;&#8203;
