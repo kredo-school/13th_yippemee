@@ -1,12 +1,19 @@
 /* admin.css */
-.admin .list-group .list-group-item {
+.admin .admin-list-group .list-group-item:hover {
+    background-color: #E6F2E9;
+    color: #253C5C;
+    transition: background-color 0.3s;
+}
+
+.admin .admin-list-group .list-group-item {
     background-color: #253C5C;
     color: #ffffff;
     font-family: 'Marcellus', serif;
-}
-
-.admin .list-group .list-group-item {
     text-align: left;
+    line-height: 3;
+    font-size: 18px;
+    padding-left: 15px;
+    margin-bottom: 2px;
 }
 
 .admin .list-group-item:hover {
@@ -191,4 +198,21 @@
 
 .btn-outline-danger {
     outline: 1px solid #dc3545;
+}
+
+.btn-outline-warning {
+    outline: 1px solid #ffc107;
+}
+
+.modal-genre-margin{
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: #ffffff;
+}
+
+.genre-content{
+    background-color: #ffffff;
+}
+.text-center .genre-btn {
+    text-align: center;
 }

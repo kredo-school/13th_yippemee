@@ -1,6 +1,21 @@
-<div class="row align-items-center">
-
+<div class="row align-items-center justify-content-between">
     <div class="col">
+        <div class="dropdown">
+            <button class="btn btn-sm shadow-none" data-bs-toggle="dropdown">
+                <i class="fa-solid fa-ellipsis"></i>
+            </button>
+            <div class="dropdown-menu">
+                <a href="{{ route('social.posts.edit', $social_post->id) }}" class="dropdown-item">
+                    <i class="fa-solid fa-pen-to-square text-post"></i> Edit
+                </a>
+                <button class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#delete-post-{{ $social_post->id }}">
+                    <i class="fa-solid fa-trash-can"></i> Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-auto">
         @if($social_post->isLiked())
             <form action="{{ route('social.posts.unlike', $social_post->id) }}" method="POST">
                 @csrf
@@ -23,7 +38,7 @@
         @include('social.posts.modal.likes')
     </div>
 
-    <div class="col">
+    <div class="col-auto">
         @if($social_post->iswanted())
             <form action="{{ route('social.contents.want.destroy', $social_post->id) }}" method="POST">
                 @csrf
@@ -46,19 +61,5 @@
         @include('social.posts.modal.wants')
     </div>
 
-    <div class="col-md-4 text-end">
-        <div class="dropdown">
-            <button class="btn btn-sm shadow-none" data-bs-toggle="dropdown">
-                <i class="fa-solid fa-ellipsis"></i>
-            </button>
-            <div class="dropdown-menu">
-                <a href="{{ route('social.posts.edit', $social_post->id) }}" class="dropdown-item">
-                    <i class="fa-solid fa-pen-to-square text-post"></i> Edit
-                </a>
-                <button class="dropdown-item text-danger" data-bs-toggle="modal" data-bs-target="#delete-post-{{ $social_post->id }}">
-                    <i class="fa-solid fa-trash-can"></i> Delete
-                </button>
-            </div>
-        </div>
-    </div>
+    
 </div>

@@ -56,12 +56,20 @@ class AdminGenreController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'new_name' => 'required|min:1|max:50|unique:genres,name,' . $id
+            'new_name' => 'required|min:1|max:50|unique:genres,name,' . $id,
+            'image' => 'sometimes|mimes:jpg,png,jpeg,gif|max:1048', // sometimes を使用して、画像がオプションであることを指定
         ]);
 
         $genre = $this->genre->findOrFail($id);
         $genre->name = ucwords(strtolower($request->new_name));
 
+        
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('images'), $imageName);
+            $genre->image = 'images/' . $imageName;
+        }
+        
         $genre->save();
 
         return redirect()->back();

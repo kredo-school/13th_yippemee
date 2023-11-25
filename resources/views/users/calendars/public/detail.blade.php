@@ -1,7 +1,8 @@
-
+ 
 <div class="container detail-body">
     @if (!is_null($selected_plan))
         <p class="text-end" style="color:#253c5c;">
+            {{ $selected_plan->user->name }}
             @if ($selected_plan->avatar)
                 <img id="#" src="{{ $selected_plan->avatar }}"
                 alt="{{ $plan->user->username }}" class="rounded-circle" style="height: 45px; width:45px;">
@@ -49,9 +50,22 @@
                 <i class="fa-solid fa-user-check" style="color: #253c5c;"></i>
             </div>
             <div class="col-4">
-                <i class="fa-solid fa-circle-user" style="color: #1f5120;"></i>
-                <i class="fa-solid fa-circle-user" style="color: #8b3768;"></i>
-                <i class="fa-solid fa-circle-user" style="color: #e6bf33;"></i>
+            <div class="joined-users">
+                @foreach ($selected_plan->joinedUsers as $joinedUser)
+                    @if($joinedUser->avatar)
+                        <div class="col">
+                            <img src="{{ $joinedUser->avatar}}" alt="{{ $joinedUser->name }}" class="rounded-circle" style="height:100%; width:100%;">
+                            {{ $joinedUser->name }}
+                        </div>
+                    @else
+                        <div class="col">
+                            <i class="fa-regular fa-circle-user fa-1x" style="color:#253c5c;">
+                            {{ $joinedUser->name }}</i>
+                        </div>
+                    @endif               
+                @endforeach
+            </div>
+                
             </div>
             <div class="col-1">
                 <a href="#"><i class="fa-solid fa-angles-right" style="color: #253c5c;"></i></a>
@@ -63,12 +77,21 @@
                 @include('users.calendars.public.public_comments',['plan_id'=> $selected_plan->id])
             </div>
         </div>
-        <form action="#" method="post" class="float-end">
-            {{-- could be checkbox...? --}}
-            <button type="submit" class="btn btn-join"><span>JOIN <i class="fa-solid fa-person-walking-arrow-right" style="color: #253c5c;"></i></span></button>
-            {{-- add undo button --}}
-        </form>
-
+            </div>
+    
+            @if (Auth::check() && $selected_plan->isJoined(Auth::user()))
+            
+            <form action="{{ route('join_group.destroy', ['plan_id' => $selected_plan->id]) }}" method="post" class="float-end">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-join"><span>UNJOIN <i class="fa-solid fa-person-walking-arrow-right" style="color: #253c5c;"></i></span></button>
+            </form>
+        @elseif(Auth::check())
+            <form action="{{ route('join_group.store', ['plan_id' => $selected_plan->id]) }}" method="post" class="float-end">
+                @csrf
+                <button type="submit" class="btn btn-join"><span>JOIN <i class="fa-solid fa-person-walking-arrow-right" style="color: #253c5c;"></i></span></button>
+            </form>
+        @endif
     @else
         <p class="text-end" style="color:#253c5c;">Plan Detail</p>
         <h5 class="text-center pt-5" style="color:gray;">Select from Plan List</h5>

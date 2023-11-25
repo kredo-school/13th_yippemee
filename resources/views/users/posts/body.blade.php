@@ -6,7 +6,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
                     <div class="post">
                         <div class="card border-0">
-                            @include('social.contents.body', ['id' => $social_post->id])
+                            @include('social.contents.profile_body', ['id' => $social_post->id])
                         </div>
                     </div>
                 </div>
