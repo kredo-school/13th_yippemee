@@ -34,63 +34,61 @@
                 @include('admin.left_side_menu')
             </div>
 
-                </div>
+            <div class="col-9 mb-3">
+                <div class="admin-table">
+                    <table class="table align-middle bg-white border">
+                        <thead class="thead-genres">
+                            <tr>
+                                <th>ID</th>
+                                <th>Image</th>
+                                <th>name</th>
+                                <th>count</th>
+                                <th>last updated</th>
+                                <th></th>
+                            </tr>
+                        </thead>
 
-                <div class="col-9 mb-3">
-                    <div class="admin-table">
-                        <table class="table align-middle bg-white border">
-                            <thead class="thead-genres">
+                        <tbody class="no-hover-effect">
+                            @if ($all_genres->isEmpty())
+                            <tr>
+                                <td colspan=6 class="text-muted text-center">No genres match your search.</td>
+                            </tr>
+                            @elseif($all_genres->isNotEmpty())
+                                @foreach ($all_genres as $genre)
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Image</th>
-                                    <th>name</th>
-                                    <th>count</th>
-                                    <th>last updated</th>
-                                    <th></th>
+                                    <td>{{ $genre->id }}</td>
+                                    <td>
+                                        @if ($genre->image)
+                                            <img src="{{ asset($genre->image) }}" alt="{{ $genre->image }}" class="d-block mu-auto admin-post-img">    
+                                        @else
+                                            <span>No Image</span>
+                                        @endif
+                                    </td>
+                                    <td>{{ $genre->name }}</td>
+                                    <td>{{ $genre->social_posts ? $genre->social_posts->count() : 0 }}</td>
+                                    <td>{{ $genre->updated_at }}</td>
+                                    
+                                    <td class="justify-content-center">
+                                        <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#updateGenre-{{ $genre->id }}" title="Edit"><i class="fa-solid fa-pen icon-warning"></i>
+                                        <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#deleteGenre-{{ $genre->id }}" title="Delete"><i class="fa-solid fa-trash-can icon-red"></i>
+                                    </td>
+                                    
                                 </tr>
-                            </thead>
-
-                            <tbody class="no-hover-effect">
-                                @if ($all_genres->isEmpty())
+                                @include('admin.genres.modal.actions', ['genre' => $genre])
+                                @endforeach
                                 <tr>
-                                    <td colspan=6 class="text-muted text-center">No genres match your search.</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>Uncategorized</td>
+                                    <td>{{ $uncategorized_count }}</td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
-                                @elseif($all_genres->isNotEmpty())
-                                    @foreach ($all_genres as $genre)
-                                    <tr>
-                                        <td>{{ $genre->id }}</td>
-                                        <td>
-                                            @if ($genre->image)
-                                                <img src="{{ asset($genre->image) }}" alt="{{ $genre->image }}" class="d-block mu-auto admin-post-img">    
-                                            @else
-                                                <span>No Image</span>
-                                            @endif
-                                        </td>
-                                        <td>{{ $genre->name }}</td>
-                                        <td>{{ $genre->social_posts ? $genre->social_posts->count() : 0 }}</td>
-                                        <td>{{ $genre->updated_at }}</td>
-                                        
-                                        <td class="justify-content-center">
-                                            <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#updateGenre-{{ $genre->id }}" title="Edit"><i class="fa-solid fa-pen icon-warning"></i>
-                                            <button class="btn btn-lg m-auto" data-bs-toggle="modal" data-bs-target="#deleteGenre-{{ $genre->id }}" title="Delete"><i class="fa-solid fa-trash-can icon-red"></i>
-                                        </td>
-                                        
-                                    </tr>
-                                    @include('admin.genres.modal.actions', ['genre' => $genre])
-                                    @endforeach
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td>Uncategorized</td>
-                                        <td>{{ $uncategorized_count }}</td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                @endif
-                            </tbody>
-                        </table>
-                    </div>
+                            @endif
+                        </tbody>
+                    </table>
                 </div>
+            </div>
             </div>
         </div>
     </div>

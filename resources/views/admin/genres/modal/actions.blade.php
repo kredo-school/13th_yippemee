@@ -27,8 +27,8 @@
                         <label for="genreImage-{{ $genre->id }}" class="form-label">Genre Image</label>
                         <div>
                             @if ($genre->image)
-                            <img src="{{ asset($genre->image) }}" alt="Genre Image" class="img mb-2">
-                        @endif
+                            <img src="{{ asset($genre->image) }}" alt="Genre Image" class="genre-img mb-2">
+                            @endif
                         </div>
                         <input type="file" class="form-control edit-genre" id="genreImage-{{ $genre->id }}" name="image">
                     </div>
