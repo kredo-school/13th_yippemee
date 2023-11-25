@@ -91,7 +91,7 @@ class PlanController extends Controller
         //     'selected_plan' => $selected_plan
         // ]);
         return redirect()->route('plan.show', ['date' => date('Ymd')]);
-    }
+
         $plan->genres()->attach($request->genre);
 
         return view('users.calendars.public.calendar');
