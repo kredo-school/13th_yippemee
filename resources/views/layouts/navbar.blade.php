@@ -48,11 +48,7 @@
                         <i class="fa-solid fa-bell fa-lg"></i>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item text-warning h5" href="#">You have an event!</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Public calendar</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Post</a></li>
+                        <li><a class="dropdown-item text-warning h5" href="{{ route('profile_plans', Auth::user()->id) }}">You have an event!</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><button type="button" class="btn-close float-end me-3 fs-6" aria-label="Close"></button></li>
                     </ul>

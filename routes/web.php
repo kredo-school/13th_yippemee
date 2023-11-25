@@ -17,13 +17,18 @@ use App\Http\Controllers\MyPlanController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RestaurantController;
+
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\FacebookController;
+
 use App\Http\Controllers\Admin\AdminPostsController;
 use App\Http\Controllers\Admin\AdminGenreController;
+use App\Http\Controllers\Admin\AdminPlansController;
 use App\Http\Controllers\SocialCommentController;
 use App\Http\Controllers\Admin\UsersController;
+
 use App\Http\Controllers\SocialPostController;
+
 use App\Http\Controllers\ListCommentController;
 use App\Http\Controllers\PublicCalendarController;
 use App\Http\Controllers\PrivateCalendarController;
@@ -76,7 +81,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //MY PLANS
-Route::get('/myplans/{id}/show', [MyplanController::class, 'show'])->name('myplans.show');
+Route::get('/myplans/{id}/show', [AdminPlansController::class, 'profile_plans_index'])->name('profile_plans');
 
 
 // Calendars
@@ -86,7 +91,7 @@ Route::get('/group/create', [GroupController::class, 'create'])->name('group.cre
 Route::post('/group/create', [GroupController::class, 'store'])->name('group.store');
 Route::get('/group/{id}/show', [GroupController::class, 'show'])->name('group.show');
 Route::get('/group/{id}/edit', [GroupController::class, 'edit'])->name('group.edit');
-Route::patch('/group/{id}/update', [GroupController::class], 'update')->name('group.update');
+Route::patch('/group/{id}/update', [GroupController::class, 'update'])->name('group.update');
 Route::delete('/group/{id}/destroy', [GroupController::class,'destroy'])->name('group.destroy');
 
 // private calendar
@@ -131,7 +136,10 @@ Route::delete('/admin/users/{id}/deactivate',[UsersController::class,'deactivate
 Route::post('/admin/users/{id}/activate',[UsersController::class,'activate'])->name('users.activate');
 Route::get('/admin/users/search',[UsersController::class,'search'])->name('users.search');
 
-Route::get('/admin/plans/index', [HomeController::class, 'admin_plans_index'])->name('admin.plans.index');
+Route::get('/admin/plans/index', [AdminPlansController::class, 'admin_plans_index'])->name('admin.plans.index');
+Route::post('/admin/plans/{id}/unhide', [AdminPlansController::class, 'unhide'])->name('admin.plans.unhide');
+Route::delete('/admin/plans/{id}/hide', [AdminPlansController::class, 'hide'])->name('admin.plans.hide');
+Route::get('/admin/plans/search',[AdminPlansController::class,'search'])->name('plans.search');
 
 Route::get('/admin/posts/index', [AdminPostsController::class, 'admin_posts_index'])->name('admin.posts.index');
 Route::post('/admin/posts/{id}/unhide', [AdminPostsController::class, 'unhide'])->name('admin.posts.unhide');
