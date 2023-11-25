@@ -16,7 +16,7 @@ class CreateBucketTable extends Migration
         Schema::create('buckets', function (Blueprint $table) {
             $table->id();
             $table->string('restaurantName')->nullable();
-            $table->binary('image')->nullable();
+            $table->longtext('image',500)->nullable();
             $table->string('hoursOption')->nullable();
             $table->string('url')->nullable();
             $table->text('description')->nullable();

@@ -28,27 +28,11 @@
                 </div>
             </div>
 
-            <div class="row mb-3">
-                <div class="col-3 mb-auto">
-                    <div class="admin">
-                        <div class="list-group">
-                            <a href="{{ route('admin.users.index') }}" class="list-group-item">
-                                <i class="fa-solid fa-users"></i>  Users
-                            </a>
-                            <a href="{{ route('admin.plans.index') }}" class="list-group-item">
-                                <i class="fa-solid fa-calendar-days"></i>  Plans
-                            </a>
-                            <a href="{{ route('admin.posts.index') }}" class="list-group-item">
-                                <i class="fa-regular fa-window-restore"></i>  Post
-                            </a>
-                            <a href="{{ route('admin.genres.index') }}" class="list-group-item">
-                                <i class="fa-solid fa-shapes"></i>  Genre
-                            </a>
-                            <a href="{{ route('admin.contacts.index') }}" class="list-group-item">
-                                <i class="fa-solid fa-envelopes-bulk"></i>  contact
-                            </a>
-                        </div>
-                    </div>
+
+        <div class="row mb-3">
+            <div class="col-3 mb-auto">
+                @include('admin.left_side_menu')
+            </div>
 
                 </div>
 

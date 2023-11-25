@@ -18,7 +18,7 @@
 
     <div class="card-body body-padding">
 
-        @include('social.contents.button_home', ['social_post' => $social_post])
+        @include('social.contents.profile_button', ['social_post' => $social_post])
     
     </div>
 </div>
