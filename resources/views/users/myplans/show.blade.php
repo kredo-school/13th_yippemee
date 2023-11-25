@@ -3,84 +3,93 @@
 @section('title', 'My Plan')
 
 @section('content')
-<div class="friends">
-    <div class="container my-4 margin-container bg-white">
 
-        <div class="row">
-            <div class="col  page-title">
-                <h2 class="text-center " >My Plans</h2>
-                <span class="bar bar-short mt-4"></span>
+
+    <div class="container my-5 margin-container">
+        <div class="row mb-5">
+
+            <div class="row">
+                <div class="col  page-title">
+                    <h2 class="text-center " >My Plans</h2>
+                    <span class="bar bar-short mt-4"></span>
+                </div>
             </div>
-        </div>
 
-        @forelse ($all_myplans as $myplan)
-        <div class="row mt-3">
-
-            <div class="col-3 ms-auto mb-3">
-                <form action="#">
-                    <input type="search" name="search" class="form-control form-control-sm" placeholder="Search for plans">
-                </form>
-            </div>
         </div>
 
         <div class="row mb-3">
-            <div class="col mb-3">
+            <div class="col-2 mb-auto">
+
+
+            </div>
+
+            @if ($plans->isNotEmpty())
+
+            <div class="col-9 mb-3">
                 <div class="admin-table">
-                    <table class="table align-middle border">
+                    <table class="table align-middle bg-white border">
                         <thead class="thead-plans">
                             <tr>
-                                <th class="fw-light"><i class="fa-regular fa-calendar-check icon-sm"></i> Date</th>
-                                <th class="fw-light"><i class="fa-regular fa-clock icon-sm"></i> Time</th>
-                                <th class="fw-light"><i class="fa-solid fa-utensils icon-sm"></i> Place</th>
-                                <th class="fw-light"><i class="fa-solid fa-people-group icon-sm"></i> Group</th>
-                                <th class="fw-light"><i class="fa-regular fa-message icon-sm"></i> Memo</th>
-                                <th class="fw-light"></th>
+                                <th>plan ID</th>
+                                <th>plan date</th>
+                                <th>Start time</th>
+                                <th>End time</th>
+                                <th>Created At</th>
+                                <th></th>
+                                <th></th>
                             </tr>
                         </thead>
-
                         <tbody>
+
+                            @forelse ($plans->where('user_id', Auth::id()) as $plan)
+
                             <tr>
-                                <td>{{ $myplan->groupMyplan->date }}</td>
-
-                                <td>{{ $myplan->groupMyplan->time }}</td>
-
-                                <td>#</td>
-
-                                <td><a class="link-secondary link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" href="#">#</a></td>
-
-                                <td>{{ $myplan->description }}</td>
-
+                                <td><a href="{{ route('plan.show', ['date' => date('Ymd')]) }}" class="text-decoration-none text-dark">{{ $plan->id }}</a></td>
+                                <td>{{ $plan->date }}</td>
+                                <td>{{ $plan->s_time }}</td>
+                                <td>{{ $plan->e_time }}</td>
+                                <td>{{ $plan->created_at }}</td>
+                                <td>
+                                    @if ($plan->trashed())
+                                    <i class="fa-solid fa-calendar-xmark text-danger me-1"></i>Deactivate
+                                    @else
+                                    <i class="fa-solid fa-calendar text-success me-1"></i>Activate
+                                    @endif
+                                </td>
                                 <td>
                                     <div class="dropdown">
                                         <button class="btn btn-sm" data-bs-toggle="dropdown">
-                                            <i class="fa-solid fa-bars"></i>
+                                            <i class="fa-solid fa-calendar text-secondary"></i>
                                         </button>
 
                                         <div class="dropdown-menu menu-hover">
-                                            <a href="#" class="dropdown-item">
-                                                <i class="fa-regular fa-pen-to-square" data-bs-toggle="modal" data-bs-target="#edit_plan"></i> Edit</a>
-
-                                            <a href="#" class="dropdown-item text-danger">
-                                                <i class="fa-regular fa-trash-can" data-bs-toggle="modal" data-bs-target="#delete-plan"></i> Delete</a>
+                                            @if ($plan->trashed())
+                                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#activateModal-{{ $plan->id }}">
+                                                <i class="fa-solid fa-calendar text-success me-1"></i>Activate
+                                            </a>
+                                            @else
+                                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deactivateModal-{{ $plan->id }}">
+                                                <i class="fa-solid fa-calendar-xmark text-danger me-1"></i>Deactivate
+                                            </a>
+                                            @endif
                                         </div>
-                                        @include('users.myplans.modals.delete')
+                                        @include('admin.plans.modal.status.activate')
+                                        @include('admin.plans.modal.status.deactivate')
                                     </div>
                                 </td>
                             </tr>
+                            @empty
+                            <li class="list-group-item d-flex align-items-center">
+                                <p class="text-center">No Plan Yet.</p>
+                            </li>
+                            @endforelse
                         </tbody>
                     </table>
+                    @endif
                 </div>
+
             </div>
         </div>
-
-        @empty
-
-        @endforelse
-        <div class="text-center mt-5">
-            <h4>No your plan yet.</h4>
-        </div>
     </div>
-
-</div>
-
 @endsection
+
