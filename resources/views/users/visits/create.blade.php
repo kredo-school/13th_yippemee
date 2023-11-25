@@ -22,8 +22,8 @@
                     </div>
 
                     <div class="mb-2">
-                        <label for="visit_date" class="form-label fw-bold mb-0 mt-3">When did you go ?</label>
-                        <input type="date" name="date" id="visit_date" class="form-control" autofocus>
+                        <label for="date" class="form-label fw-bold mb-0 mt-3">When did you go ?</label>
+                        <input type="date" name="date" id="date" class="form-control" autofocus>
                     </div>
 
                     {{-- star_rating --}}

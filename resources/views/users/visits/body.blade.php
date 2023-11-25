@@ -5,8 +5,8 @@
         @foreach ($user->visits as $visit)
         {{-- @forelse($all_visits as $visit) --}}
         <div class="row visit_body_line ms-1">
-            <div class="col-4 mb-3 mt-3">
-                <img src="{{ $visit->image }}" alt="{{ $visit->id }}" class="img-size-visit">
+            <div class="col-4 mt-3 c-btn float">
+                <a href="{{ $visit->url }}"><img src="{{ $visit->image }}" alt="{{ $visit->id }}" class="img-size-visit"></a>
             </div>
 
             <div class="col-7">
@@ -38,19 +38,20 @@
                 </div>
 
                 <h3>
-                    <div class="visit-show reviewed mb-4">
+                    <div class="visit-show reviewed mb-3">
                         @for($i=1; $i<=$visit->star_rating; $i++)
                             <label class="text">{{$i}} stars</label>
                         @endfor
                     </div>
                 </h3>
 
-                <div class="visit-show mb-3 fw-bold">
-                    {{ $visit->date }}
+                <div class="visit-show mb-3" style="font-family: 'Marcellus';">
+                    <i class="fa-solid fa-person-circle-check"></i> {{ $visit->date }}
                 </div>
 
+
                 <h5>
-                    <div class="col-11 visit-show-scroll">
+                    <div class="col-11 visit-show-scroll mb-2">
                     {{ $visit->description }}
                     </div>
                 </h5>
