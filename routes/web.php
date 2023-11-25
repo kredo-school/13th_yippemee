@@ -28,6 +28,7 @@ use App\Http\Controllers\ListCommentController;
 use App\Http\Controllers\PublicCalendarController;
 use App\Http\Controllers\PrivateCalendarController;
 use App\Http\Controllers\PublicCommentController;
+use App\Http\Controllers\JoinGroupController;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,6 +94,8 @@ Route::delete('/group/{id}/destroy', [GroupController::class,'destroy'])->name('
 Route::get('/users/calendars/private/calendar',[PlanController::class,'showPrivateCalendar'])->name('private_calendar'); //make it PlanController
 // Public calendar
 Route::get('/users/calendars/public/calendar',[PlanController::class,'showPublicCalendar'])->name('calendar');
+Route::post('join_group/{plan_id}/store',[JoinGroupController::class,'store'])->name('join_group.store');
+Route::delete('join_group/{plan_id}/destroy',[JoinGroupController::class,'destory'])->name('join_group.destroy');
 // Plan
 Route::get('/plan/create', [PlanController::class, 'create'])->name('plan.create');
 Route::post('/plan/store', [PlanController::class, 'store'])->name('plan.store');
