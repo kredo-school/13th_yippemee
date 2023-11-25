@@ -5,7 +5,7 @@
         @else
             <i class="fa-solid fa-circle-user text-secondary user-icon"></i>
         @endif
-        <a href="{{ route('profile.show', ['id' => $social_post->user->id]) }}" class="text-decoration-none text-post"><strong>{{ $social_post->user->name }}</strong></a>
+        <a href="{{ route('profile.show', ['id' => $social_post->user->id]) }}" class="text-decoration-none text-post"><strong>{{ $social_post->user->username }}</strong></a>
     </div>
     <div class="col-auto">
         @if($social_post->isLiked())

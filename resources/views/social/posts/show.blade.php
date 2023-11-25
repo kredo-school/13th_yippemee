@@ -31,7 +31,11 @@
                                     @endif
                                     <a href="{{ route('profile.show', ['id' => $social_post->user->id]) }}" class="text-decoration-none text-post"><strong>{{ $social_post->user->name }}</strong></a>
                                 </div>
-                                <div class="col-auto text-end"><i class="fa-solid fa-users text-success"></i></div>
+                                <div class="col-auto text-end">
+                                    @if(in_array($social_post->user->id, $friends_ids))
+                                        <i class="fa-solid fa-users text-success"></i>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                         <div class="card-body body-padding bg-white border-0 card_body-post">
