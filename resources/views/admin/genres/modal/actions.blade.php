@@ -1,36 +1,49 @@
 <!--update genre-->
 <div class="modal fade" id="updateGenre-{{ $genre->id }}" tabindex="-1" role="dialog" aria-labelledby="updateGenre"
-aria-hidden="true">
-
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
+    
         <!--Content-->
-        <div class="modal-content border-warning">
-
+        <div class="modal-content genre-content">
+        
             <!--Header-->
             <div class="modal-header-warning modal-header-title">
                 <p class="heading lead modal-title-font m-4">Edit Genre</p>
                 <button type="button" class="btn-close btn-close-edit m-4" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-
-
+        
             <!--Footer-->
-            <div class="modal-footer d-flex justify-content-center border-0"> 
-                <form action="{{ route('admin.genres.update', ['id' => $genre->id]) }}"  method="post">
-                    @csrf
-                    @method('PATCH')
+            <form action="{{ route('admin.genres.update', ['id' => $genre->id]) }}"  method="post" enctype="multipart/form-data">
+                @csrf
+                @method('PATCH')
 
-                    <div class="w-100 mb-4">
-                        <input type="text" name="new_name" class="form-control mb-4 text-width" placeholder="Genre name" autofocus value="{{ $genre->name }}" >
+                <div class="modal-body modal-genre-margin">
+                    <div class="mb-3">
+                        <label for="genreImage-{{ $genre->id }}" class="form-label">Genre Name</label>
+                        <input type="text" class="form-control edit-genre" name="new_name"  placeholder="Genre name" autofocus value="{{ $genre->name }}" >
                     </div>
-                    <div class="d-flex justify-content-center">
-                        <button type="button" class="btn btn-outline-warning btn-lg" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-warning btn-lg text">Update</button>
+        
+                    <div class="mb-3">
+                        <label for="genreImage-{{ $genre->id }}" class="form-label">Genre Image</label>
+                        <div>
+                            @if ($genre->image)
+                            <img src="{{ asset($genre->image) }}" alt="Genre Image" class="img mb-2">
+                        @endif
+                        </div>
+                        <input type="file" class="form-control edit-genre" id="genreImage-{{ $genre->id }}" name="image">
                     </div>
-                </form>
-            </div>
+
+                    <div class="modal-footer border-0 d-flex justify-content-center">
+                        <button type="button" class="btn btn-outline-warning btn-md me-2" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-warning btn-md text">Update</button>
+                    </div>
+
+                </div>
+                
+            </form>
         </div>
     </div>
-</div>
+</div>   
 
 <!--delete genre-->
 <div class="modal fade" id="deleteGenre-{{ $genre->id }}" tabindex="-1" role="dialog" aria-labelledby="deleteGenre"
@@ -59,8 +72,8 @@ aria-hidden="true">
                     @csrf
                     @method('DELETE')
 
-                    <button type="submit" class="btn btn-danger btn-lg me-2">Delete</button>
-                    <button type="button" class="btn btn-outline-danger btn-lg" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-danger btn-md me-2">Delete</button>
+                    <button type="button" class="btn btn-outline-danger btn-md" data-bs-dismiss="modal">Cancel</button>
                 </form>
                 
             </div>
