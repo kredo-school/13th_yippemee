@@ -4,7 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Database\Eloquent\Softdeletes;
+
 
 class Plan extends Model
 {
@@ -32,5 +36,20 @@ class Plan extends Model
     public function publicComments()
     {
         return $this->hasMany(PublicComment::class)->orderBy('created_at', 'desc');
+    }
+
+    public function join_groups( )
+    {
+        return $this->hasMany(JoinGroup::class);
+    }
+
+    public function joinedUsers( )
+    {
+        return $this->belongsToMany(User::class,'join_groups', 'plan_id', 'user_id');
+    }
+
+    public function isJoined( )
+    {
+        return $this->joinedUsers( )->where('user_id', Auth::user( )->id)->exists( );
     }
 }

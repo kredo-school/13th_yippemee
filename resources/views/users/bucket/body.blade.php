@@ -56,7 +56,7 @@
                                 {{ $bucket->hoursOption }}
                             </li>
 
-                            <li class="bucketScroll mt-2 mb-3">{{ $bucket->description }}</li>
+                            <li class="bucketScroll mt-1 mb-1">{{ $bucket->description }}</li>
 
                             <li>
                                 @if ($bucket->url)
