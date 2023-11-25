@@ -216,3 +216,10 @@
 .text-center .genre-btn {
     text-align: center;
 }
+
+.modal-content .genre-img {
+    max-width: 100%;
+    max-height: 200px; 
+    object-fit: cover; 
+    margin: 0 auto; 
+}

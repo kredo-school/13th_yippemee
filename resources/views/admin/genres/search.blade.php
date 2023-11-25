@@ -10,8 +10,8 @@
             <div class="col">
                 <h2 class="admin_friends_list_title">Genre</h2>
             </div>
-            <div class="col-3 ms-auto mb-auto">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addGenreModal">
+            <div class="col-3 ms-auto mb-auto admin-genre-margin d-flex justify-content-end">
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addGenreModal">
                     Add Genre
                 </button>
             </div>

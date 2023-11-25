@@ -34,7 +34,7 @@
          </div>
         <div class="row mt-3 mb-4">
          <div class="link-date col">
-           <a href="{{ route('calendar') }}" class="link-date-icon">
+            <a href="{{ route('plan.show', ['date' => date('Ymd')]) }}" class="link-date-icon">
             <i class="fa-solid fa-calendar-days fa-5x">
               <p class="main-p2 h4 mt-2">Decide by date</p>
             </i>
