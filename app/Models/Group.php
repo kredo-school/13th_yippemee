@@ -18,9 +18,13 @@ class Group extends Model
         'image'
     ];
 
+    public function preference()
+    {
+        return $this->hasMany(Preference::class);
+    }
+
     public function users()
     {
         return $this->belongsToMany(User::class, 'group_user');
     }
-
 }

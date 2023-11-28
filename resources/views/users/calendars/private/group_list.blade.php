@@ -31,14 +31,14 @@
                     <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
                         <div class="card" id="group-card">
                             <div class="card-header group-header bg-white" id="group-header">
-                                <a href="{{ route('private_calendar') }}">
+                                <a href="{{ route('private_calendar', ['group_id' => $group->id]) }}">
                                     <img src="{{ asset('storage/images/' . $group->image) }}" alt=" {{ $group->name }}" class="group-pic">
                                 </a>
                             </div>
                             <div class="card-body bg-white d-flex" id="group-body">
                                 <div class="row w-100">
                                     <div class="col-10 group-div">
-                                        <a href="{{ route('private_calendar') }}" class="text-decoration-none"
+                                        <a href="{{ route('private_calendar', ['group_id' => $group->id]) }}" class="text-decoration-none"
                                             style="color:#253c5c;">
                                             <h5>{{ $group->name }}</h5>
                                         </a>
@@ -99,31 +99,6 @@
 
         @endif
     </div>
-    {{--
-    <script>
-        item-member
-        $(".item-member").on("click", function() {
-            var groupMember       = $(this).attr('data-member');
-            $('.classname').text(groupMember);
-        });
-
-        item-edit
-        $(".item-edit").on("click", function() {
-            var editGroupId       = $(this).attr('data-group-name');
-            var restaurantId    = $(this).attr('data-restaurant');
-            var editImage           = $(this).attr("data-image");
-            $('.group-name').text(editGroupId);
-            $('.restaurant-id').text(restaurantId);
-            $("#modal-image").attr("src", editImage);
-        });
-        item-delete
-        $(".item-delete").on("click", function() {
-            var deleteGroupId       = $(this).attr('data-group-name');
-            var deleteImage           = $(this).attr("data-image");
-            $('.group-name').text(deleteGroupId);
-            $("#modal-image").attr("src", deleteImage);
-        });
-    </script> --}}
 
     {{-- @include('users.modals.add_group') --}}
 

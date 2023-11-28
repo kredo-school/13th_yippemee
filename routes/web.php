@@ -1,11 +1,11 @@
 <?php
 
+use App\Models\Preference;
 use App\Models\SocialComment;
 use App\Http\Controllers\Genre;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\FriendController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PlanController;
 use App\Http\Controllers\PostController;
@@ -13,9 +13,11 @@ use App\Http\Controllers\WantController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\VisitController;
 use App\Http\Controllers\BucketController;
+use App\Http\Controllers\FriendController;
 use App\Http\Controllers\MyPlanController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PreferenceController;
 use App\Http\Controllers\RestaurantController;
 
 use App\Http\Controllers\GoogleController;
@@ -92,19 +94,26 @@ Route::get('/group/create', [GroupController::class, 'create'])->name('group.cre
 Route::post('/group/create', [GroupController::class, 'store'])->name('group.store');
 Route::get('/group/{id}/show', [GroupController::class, 'show'])->name('group.show');
 Route::get('/group/{id}/edit', [GroupController::class, 'edit'])->name('group.edit');
-Route::patch('/group/{id}/update', [GroupController::class, 'update'])->name('group.update');
-Route::delete('/group/{id}/destroy', [GroupController::class,'destroy'])->name('group.destroy');
+Route::patch('/group/{id}/update', [GroupController::class], 'update')->name('group.update');
+Route::delete('/group/{id}/destroy', [GroupController::class, 'destroy'])->name('group.destroy');
 
 // private calendar
-Route::get('/users/calendars/private/calendar',[PlanController::class,'showPrivateCalendar'])->name('private_calendar'); //make it PlanController
+Route::get('/users/calendars/private/calendar/{group_id}', [PreferenceController::class, 'showPrivateCalendar'])->name('private_calendar');
+// Preference
+// Route::get('/users/calendars/private/modal/{group_id}', [PreferenceController::class, 'showPreferenceModal'])->name('preference.modal');
+Route::post('/preference/store', [PreferenceController::class, 'store'])->name('preference.store');
+Route::get('/preference/{group_id}/show/{date}/{id}', [PreferenceController::class, 'show'])->name('preference.show');
+
 // Public calendar
 Route::get('/users/calendars/public/calendar',[PlanController::class,'showPublicCalendar'])->name('calendar');
 Route::post('join_group/{plan_id}/store',[JoinGroupController::class,'store'])->name('join_group.store');
 Route::delete('join_group/{plan_id}/destroy',[JoinGroupController::class,'destory'])->name('join_group.destroy');
+
 // Plan
 Route::get('/plan/create', [PlanController::class, 'create'])->name('plan.create');
 Route::post('/plan/store', [PlanController::class, 'store'])->name('plan.store');
-Route::get('/plan/public/{date}/show', [PlanController::class, 'show'])->name('plan.show'); //display planlist and the detail for each
+
+Route::get('/plan/public/{date}/show', [PlanController::class, 'show'])->name('plan.show'); 
 
 //public_comment
 Route::post('/users/calendars/public/comment/{plan_id}/store', [PublicCommentController::class, 'store'])->name('public_comment.store');
@@ -135,9 +144,9 @@ Route::get('/public/yourplan', [HomeController::class, 'publicyourplan'])->name(
 
 //admin
 Route::get('/admin/users/index', [UsersController::class, 'admin_users_index'])->name('admin.users.index');
-Route::delete('/admin/users/{id}/deactivate',[UsersController::class,'deactivate'])->name('users.deactivate');
-Route::post('/admin/users/{id}/activate',[UsersController::class,'activate'])->name('users.activate');
-Route::get('/admin/users/search',[UsersController::class,'search'])->name('users.search');
+Route::delete('/admin/users/{id}/deactivate', [UsersController::class, 'deactivate'])->name('users.deactivate');
+Route::post('/admin/users/{id}/activate', [UsersController::class, 'activate'])->name('users.activate');
+Route::get('/admin/users/search', [UsersController::class, 'search'])->name('users.search');
 
 Route::get('/admin/plans/index', [AdminPlansController::class, 'admin_plans_index'])->name('admin.plans.index');
 Route::post('/admin/plans/{id}/unhide', [AdminPlansController::class, 'unhide'])->name('admin.plans.unhide');
@@ -147,19 +156,19 @@ Route::get('/admin/plans/search',[AdminPlansController::class,'search'])->name('
 Route::get('/admin/posts/index', [AdminPostsController::class, 'admin_posts_index'])->name('admin.posts.index');
 Route::post('/admin/posts/{id}/unhide', [AdminPostsController::class, 'unhide'])->name('admin.posts.unhide');
 Route::delete('/admin/posts/{id}/hide', [AdminPostsController::class, 'hide'])->name('admin.posts.hide');
-Route::get('/admin/posts/search',[AdminPostsController::class,'search'])->name('posts.search');
+Route::get('/admin/posts/search', [AdminPostsController::class, 'search'])->name('posts.search');
 
 Route::get('/admin/genres/index', [AdminGenreController::class, 'admin_genres_index'])->name('admin.genres.index');
 Route::post('admin/genres/store', [AdminGenreController::class, 'store'])->name('admin.genres.store');
 Route::patch('/admin/genres/{id}/update', [AdminGenreController::class, 'update'])->name('admin.genres.update');
 Route::delete('/admin/genres/{id}/destroy', [AdminGenreController::class, 'destroy'])->name('admin.genres.destroy');
-Route::get('/admin/genres/search',[AdminGenreController::class,'search'])->name('genres.search');
+Route::get('/admin/genres/search', [AdminGenreController::class, 'search'])->name('genres.search');
 
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/admin/contacts/index', [ContactController::class, 'admin_contacts_index'])->name('admin.contacts.index');
 Route::delete('/admin/contacts/{id}/destroy', [ContactController::class, 'destroy'])->name('admin.contacts.destroy');
-Route::get('/admin/contacts/search',[ContactController::class,'search'])->name('contacts.search');
+Route::get('/admin/contacts/search', [ContactController::class, 'search'])->name('contacts.search');
 
 
 //social
@@ -209,4 +218,14 @@ Route::get('auth/facebook/callback',[FacebookController::class,'facebookredirect
 //want
 Route::post('social/posts/{social_post}/want', [WantController::class, 'store'])->name('social.contents.want');
 Route::delete('social/posts/{social_post}/want/destroy', [WantController::class, 'destroy'])->name('social.contents.want.destroy');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 

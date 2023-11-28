@@ -1,5 +1,5 @@
 <div class="container plan-body" id="planList">
-    <p class="text-center" style="color:#253c5c;"><i class="fa-regular fa-clipboard"></i> Created Plan List</p>
+    <p class="text-center" style="color:#253c5c;"><i class="fa-regular fa-clipboard"></i> Plan List</p>
 
 
     {{-- <div class="planlist-date" id="displayDate">【{{$selected_date}}】</div> --}}
@@ -33,7 +33,7 @@
             @endforeach
         </div>
         @else
-            <h5 class="pt-3 ps-3" style="color: gray">No plans added yet</h5>
+            <h5 class="pt-3 ps-3" style="color: gray">Nothing added yet</h5>
         @endif
     @endisset
 </div>
