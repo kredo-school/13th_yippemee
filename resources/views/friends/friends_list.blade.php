@@ -41,7 +41,7 @@
                                 <tbody class="no-hover-effect">
                                     <tr>
                                         <td>
-                                            <a href="#">
+                                            <a href="{{ route('profile.show', ['id' => $friend->id]) }}">
                                                 @if($friend->avatar)
                                                     <img src={{ $friend->avatar }} alt={{ $friend->avatar }} class="rounded-circle user-avatar">
                                                 @else
@@ -50,7 +50,7 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="#" class="text-decoration-none text-dark">{{ $friend->name }}</a>
+                                            <a href="{{ route('profile.show', ['id' => $friend->id]) }}" class="text-decoration-none text-dark">{{ $friend->name }}</a>
                                         </td>
                                         <td>{{ $friend->username }}</td>
                                         <td>{{ $friend->email }}</td>
