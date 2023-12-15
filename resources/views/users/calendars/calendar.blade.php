@@ -115,7 +115,18 @@
             event.preventDefault();
             const selectedDate = event.target.dataset.date;
             const formattedDate = formatDate(selectedDate);
-            window.location.href = `/plan/public/${formattedDate}/show`;
+            // Get the current page URL or use a data attribute on the anchor elements to indicate the page type
+            const currentPage = window.location.pathname;
+
+
+            let targetUrl;
+            if (currentPage.includes('/private/calendar')) { //ADD ID later
+                targetUrl = `/private/calendar/${formattedDate}/show/{group_id}`;
+            } else {
+                targetUrl = `/plan/public/${formattedDate}/show`;
+            }
+
+            window.location.href = targetUrl;
         }
 
         function formatDate(selectedDate) {

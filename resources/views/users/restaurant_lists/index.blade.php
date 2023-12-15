@@ -36,9 +36,9 @@
        <div class="row text-center">
        <div class="row text-center">
     @foreach($all_genres as $index => $genre)
-        @if($index < 4)
+        @if($index <= 4)
             <div class="col-md">
-                <img src="/images/sushi.jpg" alt="" class="restaurant-list img rounded" style="width:100%; aspect-ratio: 4 / 3;">
+                <img src="{{ $genre->image }}" alt="" class="restaurant-list img rounded" style="width:25%; aspect-ratio: 4 / 3;">
                 <br>
                 <label for="{{ $genre->name }}" class="h4"><a href="{{ url('/genre/'.$genre->name.'/restaurants') }}" class="text-decoration-none">{{ $genre->name }}</a></label>
             </div>

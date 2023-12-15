@@ -35,7 +35,7 @@
                                 <label class="label-title" for="date"><i class="fa-regular fa-calendar"></i>
                                     Date</label>
                                 <br>
-                                <input type="date" name="date" id="dateToCheck">
+                                <input type="date" name="date" id="date">
                             </div>
                             <h2 class="label-title mt-2"><i class="fa-regular fa-clock"></i> Time</h2>
                             <div class="row time-row">
