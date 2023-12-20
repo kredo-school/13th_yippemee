@@ -49,7 +49,7 @@ use App\Http\Controllers\JoinGroupController;
 */
 
 Route::get('/', function () {
-    return view('Home');
+    return view('home');
 });
 
 Auth::routes();
@@ -112,7 +112,6 @@ Route::delete('join_group/{plan_id}/destroy',[JoinGroupController::class,'destor
 // Plan
 Route::get('/plan/create', [PlanController::class, 'create'])->name('plan.create');
 Route::post('/plan/store', [PlanController::class, 'store'])->name('plan.store');
-
 Route::get('/plan/public/{date}/show', [PlanController::class, 'show'])->name('plan.show');
 
 //public_comment
