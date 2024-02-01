@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="col-auto text-end">
                                     @if(in_array($social_post->user->id, $friends_ids))
-                                    <a href="{{ route('friends.friends_list') }}"><i class="fa-solid fa-users text-success"></i></a>
+                                        <a href="{{ route('friends.friends_list') }}"><i class="fa-solid fa-users text-success"></i></a>
                                     @endif
                                 </div>
                             </div>
