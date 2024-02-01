@@ -40,13 +40,13 @@
             </i>
            </a>
          </div>
-         <div class="link-place col">
+         {{-- <div class="link-place col">
             <a href="{{ route('group_list') }}" class="link-place-icon">
               <i class="fa-solid fa-map-location-dot fa-5x">
                 <p class="main-p2 h4 mt-2">Decide by place</p>
               </i>
             </a>
-         </div>
+         </div> --}}
         </div>
       </div>
     </div>

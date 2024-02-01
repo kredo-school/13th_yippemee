@@ -24,11 +24,11 @@
                         <a href="{{ route('home') }}" class="nav-link text-white">Home</a>
                     </li>
                     <li class="navbar-item footer-item">
-                        <a href="{{ route('plan.show', ['date' => date('Ymd')]) }}" class="link-date-icon">
+                        <a href="{{ route('plan.show', ['date' => date('Ymd')]) }}" class="nav-link text-white">Date</a>
                     </li>
-                    <li class="navbar-item footer-item">
+                    {{-- <li class="navbar-item footer-item">
                         <a href="{{ route('group_list') }}" class="nav-link text-white">Place</a>
-                    </li>
+                    </li> --}}
                     <li class="navbar-item footer-item">
                         <a href="{{ route('friends.friends_list') }}" class="nav-link text-white">Friends</a>
                     </li>
